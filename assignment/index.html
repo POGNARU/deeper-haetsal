@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과제 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
+    --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--serif); min-height:100vh; padding:3rem 1.25rem 4rem;}
+  .wrap{max-width:640px; margin:0 auto;}
+  .home{font-family:var(--gothic); font-size:.82rem; color:var(--terra); text-decoration:none; display:inline-block; margin-bottom:1.6rem;}
+  .home:hover{text-decoration:underline;}
+  .eyebrow{font-family:var(--gothic); font-size:.78rem; letter-spacing:.3em; color:var(--terra); text-transform:uppercase; margin-bottom:.6rem;}
+  h1{font-family:var(--logo); font-size:2.2rem; font-weight:700; margin-bottom:.5rem;}
+  .lead{color:#6b5536; font-size:.98rem; line-height:1.7;}
+  .sun-line{width:54px; height:3px; background:var(--leaf); border-radius:3px; margin:1.6rem 0 2.2rem;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem;}
+  .card{background:#fff; border:1.5px solid rgba(58,42,18,.08); border-top:5px solid var(--leaf);
+    border-radius:14px; padding:1.3rem 1.4rem; text-decoration:none; color:var(--brown);
+    transition:transform .16s ease, box-shadow .16s ease;}
+  .card:hover{transform:translateY(-4px); box-shadow:0 8px 20px rgba(111,165,46,.18);}
+  .card .tag{font-family:var(--gothic); font-size:.74rem; color:var(--leaf); letter-spacing:.06em;}
+  .card .title{font-family:var(--logo); font-size:1.12rem; font-weight:700; margin:.3rem 0 .4rem;}
+  .card .sub{font-family:var(--gothic); font-size:.82rem; color:#8a7a5e; line-height:1.55;}
+  .placeholder{background:rgba(255,255,255,.5); border:1.5px dashed rgba(111,165,46,.45); color:#a8997d;
+    border-radius:14px; padding:1.3rem 1.4rem; font-family:var(--gothic); font-size:.84rem; line-height:1.6; text-align:center;}
+  footer{margin-top:3rem; font-family:var(--gothic); font-size:.76rem; color:#a8997d; text-align:center; line-height:1.9;}
+  footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="home" href="../">← 햇살</a>
+    <div class="eyebrow">Assignment</div>
+    <h1>과제</h1>
+    <p class="lead">디퍼 언브랜딩-햇살 과정에서 나온 과제와 정리물을 한자리에 쌓아 둡니다.</p>
+    <div class="sun-line"></div>
+
+    <div class="grid">
+      <div class="placeholder">아직 비어 있는 자리예요.<br>과제가 완성되면 카드 하나씩 이곳에 더해 갑니다.</div>
+    </div>
+
+    <footer>고요히, 마음에 머무는 글을 전하는 포근나루<span class="brand">POGNARU × DEEPER UNBRANDING</span></footer>
+  </div>
+</body>
+</html>

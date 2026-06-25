@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보이지 않는 문 · 2026.06.19–06.25 인사이트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
+    --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--serif); min-height:100vh; padding:3rem 1.25rem 4rem; line-height:1.85;}
+  .wrap{max-width:640px; margin:0 auto;}
+  .home{font-family:var(--gothic); font-size:.82rem; color:var(--terra); text-decoration:none; display:inline-block; margin-bottom:1.8rem;}
+  .home:hover{text-decoration:underline;}
+  .date{font-family:var(--gothic); font-size:.8rem; letter-spacing:.12em; color:var(--leaf); margin-bottom:.6rem;}
+  h1{font-family:var(--logo); font-size:2.3rem; font-weight:700; line-height:1.3; margin-bottom:.8rem;}
+  .summary{color:#6b5536; font-size:1rem; line-height:1.8;}
+  .summary b{color:var(--terra); font-weight:400;}
+  .sun-line{width:54px; height:3px; background:var(--sun); border-radius:3px; margin:2rem 0;}
+  section{margin-bottom:2.8rem;}
+  .num{font-family:var(--logo); font-size:.9rem; color:var(--terra); letter-spacing:.1em; margin-bottom:.35rem;}
+  h2{font-family:var(--logo); font-size:1.5rem; font-weight:700; margin-bottom:.9rem;}
+  p{margin-bottom:1.1rem;}
+  .routines{list-style:none; background:#fff; border:1.5px solid rgba(58,42,18,.08); border-radius:14px; padding:1rem 1.3rem; margin:0 0 1.2rem; font-family:var(--gothic); font-size:.88rem;}
+  .routines li{padding:.45rem 0; border-top:1px solid rgba(58,42,18,.06); display:flex; gap:.6rem; align-items:baseline;}
+  .routines li:first-child{border-top:none;}
+  .routines .k{color:var(--brown); min-width:6.2em;}
+  .routines .tag{font-size:.74rem; padding:.1rem .55rem; border-radius:20px;}
+  .tag.local{background:#FBEFD0; color:#8a6a16;}
+  .tag.cloud{background:#E4F1D4; color:#4d7320;}
+  .note{background:#fff; border-left:5px solid var(--leaf); border-radius:0 12px 12px 0;
+    padding:1rem 1.3rem; font-family:var(--gothic); font-size:.9rem; color:#5f5230; line-height:1.7; margin:1.2rem 0;}
+  .note b{color:var(--terra); font-weight:400;}
+  .works{background:#fff; border:1.5px solid rgba(58,42,18,.08); border-radius:16px; padding:1.6rem 1.6rem 1.3rem;}
+  .works h3{font-family:var(--logo); font-size:1.15rem; font-weight:700; margin-bottom:.4rem;}
+  .works .desc{font-family:var(--gothic); font-size:.84rem; color:#8a7a5e; margin-bottom:1.1rem;}
+  .work{display:flex; align-items:center; gap:.7rem; padding:.7rem 0; border-top:1px solid rgba(58,42,18,.07); text-decoration:none; color:var(--brown);}
+  .work:hover .wt{color:var(--terra);}
+  .work .dot{width:9px; height:9px; border-radius:50%; background:var(--sun); flex:none;}
+  .work .wt{font-family:var(--logo); font-size:1rem; font-weight:700; transition:color .15s ease;}
+  .work .wd{font-family:var(--gothic); font-size:.78rem; color:#8a7a5e;}
+  .work .arrow{margin-left:auto; color:var(--leaf); font-family:var(--gothic); font-size:.8rem;}
+
+  .extra{margin-top:3.2rem; padding-top:2.2rem; border-top:2px dashed rgba(111,165,46,.4);}
+  .extra .kicker{font-family:var(--gothic); font-size:.76rem; letter-spacing:.16em; color:var(--leaf); text-transform:uppercase; margin-bottom:.4rem;}
+  .extra h2{margin-bottom:.5rem;}
+  .extra .sub{font-family:var(--gothic); font-size:.86rem; color:#8a7a5e; line-height:1.6; margin-bottom:1.8rem;}
+  .block{margin-bottom:2.2rem;}
+  .block h3{font-family:var(--logo); font-size:1.18rem; font-weight:700; margin-bottom:.3rem;}
+  .block .h-sub{font-family:var(--gothic); font-size:.82rem; color:#8a7a5e; margin-bottom:.9rem;}
+  .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin-bottom:.9rem;}
+  .cards img{width:100%; border-radius:12px; border:1px solid rgba(58,42,18,.08); display:block;}
+  .linkpill{display:inline-flex; align-items:center; gap:.4rem; font-family:var(--gothic); font-size:.82rem;
+    background:var(--sun); color:var(--brown); text-decoration:none; padding:.45rem 1rem; border-radius:24px;}
+  .linkpill:hover{background:#ffb800;}
+  .prompt{background:#2a2114; color:#f3e6c8; border-radius:14px; padding:1.2rem 1.3rem; font-family:var(--gothic); font-size:.82rem; line-height:1.75; margin-top:1rem;}
+  .prompt .pt{color:var(--sun); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; display:block; margin-bottom:.7rem;}
+  .prompt b{color:#ffd968; font-weight:400;}
+  .prompt hr{border:none; border-top:1px solid rgba(255,255,255,.12); margin:.7rem 0;}
+  .icons{display:flex; flex-wrap:wrap; gap:1.3rem; align-items:flex-start; margin-top:.4rem;}
+  .icons figure{text-align:center; width:62px;}
+  .icons img{width:46px; height:46px; image-rendering:auto;}
+  .icons figcaption{font-family:var(--gothic); font-size:.7rem; color:#8a7a5e; margin-top:.4rem; line-height:1.3;}
+
+  footer{margin-top:3rem; font-family:var(--gothic); font-size:.76rem; color:#a8997d; text-align:center; line-height:1.9;}
+  footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="home" href="./">← 인사이트 목록</a>
+    <div class="date">2026.06.19 — 06.25</div>
+    <h1>보이지 않는 문</h1>
+    <p class="summary">이번 주는 무언가를 새로 만든 주이기도 했지만, 그보다 <b>무엇을 열어두고 무엇을 닫아둘지</b>를 배운 주였다. 권한의 문, 공개와 사적의 경계, 그리고 흩어진 것에 자리를 마련하는 일.</p>
+    <div class="sun-line"></div>
+
+    <section>
+      <div class="num">하나</div>
+      <h2>자동화와 권한</h2>
+      <p>이번 주에는 아침 글감과 일지 자동화가 기대만큼 안정적으로 이어지지 않은 이유를 점검했다. 원인은 실행 의지의 문제가 아니라, 새벽 시간대마다 자동화가 권한 확인 단계에서 멈추는 구조에 있었다.</p>
+      <p>이를 통해 자동화는 단순히 기능을 연결하는 작업이 아니라, 시스템이 스스로 실행될 수 있도록 신뢰와 권한을 사전에 정리하는 일이라는 점을 분명히 확인했다. 이번 작업은 도구가 어디까지 자율적으로 움직일 수 있고, 어디에서 반드시 멈추고 확인해야 하는지 그 경계를 다시 인식하게 했다.</p>
+    </section>
+
+    <section>
+      <div class="num">둘</div>
+      <h2>공개와 사적 기록의 경계</h2>
+      <p>dh.archive를 정비하는 과정에서 어떤 기록을 공개하고 어떤 기록을 개인 영역에 남길지 기준을 구체화했다. 대화 페이지는 공개 영역에서 분리해 로컬 중심으로 관리하고, 모닝페이지 같은 사적인 글은 클라우드 밖에 보관하는 방식으로 정리했다.</p>
+      <p>이번 주 작업은 단순한 파일 이동이 아니라, 기록의 성격에 따라 공개 범위와 보관 위치를 다르게 설계한 과정이었다. 이를 통해 외부에 보여줄 작업과 개인의 내면 기록은 분리되어야 한다는 원칙을 더 분명히 세웠다.</p>
+    </section>
+
+    <section>
+      <div class="num">셋</div>
+      <h2>흩어진 기록의 구조화</h2>
+      <p>이번 주에는 그동안 만들어 온 자동화 루틴 전반을 정리했다.</p>
+      <ul class="routines">
+        <li><span class="k">아침 글감</span><span class="tag local">로컬 → 깃허브 공개</span></li>
+        <li><span class="k">여우 일지</span><span class="tag local">로컬</span></li>
+        <li><span class="k">저녁 마무리 체크</span><span class="tag cloud">클라우드 · 매일 발송</span></li>
+        <li><span class="k">주간 콘텐츠 브리핑</span><span class="tag cloud">클라우드 · 매주</span></li>
+        <li><span class="k">모닝페이지 회고</span><span class="tag local">로컬 · 주간/월간</span></li>
+      </ul>
+      <p>그중 아침 글감과 아카이브 허브를 새로 구성하면서, 흩어져 있던 기록에 구조를 부여하는 작업을 진행했다. 매일 축적되던 글감은 dawn이라는 독립된 자리로 모였고, 이전에 써둔 글감과 페이지들도 허브 안에서 다시 연결되기 시작했다. 이 작업은 단순히 자료를 쌓는 데서 그치지 않고, 축적된 결과물이 이후에도 탐색되고 이어질 수 있도록 자리를 마련한 데 의미가 있다.</p>
+    </section>
+
+    <div class="works">
+      <h3>이번 주 손으로 지은 것들</h3>
+      <p class="desc">공개된 결과물은 눌러서 직접 볼 수 있어요.</p>
+      <a class="work" href="https://pognaru.github.io/dawn/" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">dawn</span> <span class="wd">— 아침 글감 아카이브, ‘여명’ 디자인</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+      <a class="work" href="https://pognaru.github.io/dh.archive/" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">다현 아카이브 허브</span> <span class="wd">— 공개/사적 페이지를 갈라 정리</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+      <a class="work" href="https://pognaru.github.io/deeper-index/" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">deeper-index</span> <span class="wd">— 디퍼 살롱 자료 별자리 목차</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+    </div>
+
+    <div class="extra">
+      <div class="kicker">함께 나누는 기록</div>
+      <h2>AI를 디자인에 쓴 사례</h2>
+      <p class="sub">디퍼 본 과정과는 별개지만, AI를 실제 디자인 작업에 활용한 기록으로 함께 남겨 둡니다.</p>
+
+      <div class="block">
+        <h3>나루의밤 커리큘럼 디자인</h3>
+        <p class="h-sub">3분기 『마음』(나쓰메 소세키) 모집 — 인스타 카드뉴스 4장</p>
+        <div class="cards">
+          <img src="../assets/bamnaru_card1.png" alt="나루의밤 3분기 카드 1">
+          <img src="../assets/bamnaru_card2.png" alt="나루의밤 3분기 카드 2">
+          <img src="../assets/bamnaru_card3.png" alt="나루의밤 3분기 카드 3">
+          <img src="../assets/bamnaru_card4.png" alt="나루의밤 3분기 카드 4">
+        </div>
+        <a class="linkpill" href="https://pognaru.github.io/bamnaru/" target="_blank" rel="noopener">랜딩 페이지 열기 ↗</a>
+      </div>
+
+      <div class="block">
+        <h3>가비 주간 플래너</h3>
+        <p class="h-sub">알림장 한 장을 모바일 주간 계획표 HTML로 만드는 작업</p>
+        <a class="linkpill" href="https://pognaru.github.io/gabi-planner/" target="_blank" rel="noopener">플래너 열기 ↗</a>
+        <div class="prompt">
+          <span class="pt">공유 — 디자인 프롬프트</span>
+          <b>역할.</b> 주간 계획표를 모바일에서 바로 열어볼 수 있는 HTML 한 장으로 만드는 디자이너.<br>
+          <b>입력.</b> 옵시디언 알림장 Markdown(자연어로 적힌 한 주 일정).
+          <hr>
+          <b>할 일.</b><br>
+          1. 자연어를 파싱해 <b>마감 · 루틴 · 독서</b> 세 갈래로 분류한다.<br>
+          2. 요일별(월~일)로 배치하되, 체력 흐름을 해치지 않게 무리한 날 없이 고르게 편다.<br>
+          3. 모바일 세로 화면 기준 한 장 HTML로 만든다. 파일명은 <b>YYYY-Www.html</b>.
+          <hr>
+          <b>디자인 톤.</b><br>
+          · 포근나루 컬러 — 크림 #FDF4EE 바탕, 살구 #F8E4D4 카드, 테라코타 #C8845A 강조, 다크브라운 #3C2415 텍스트.<br>
+          · 글꼴 — 제목 Gowun Batang, 본문 Nanum Myeongjo, 보조 Gowun Dodum.<br>
+          · 둥근 모서리·넉넉한 여백, 장식 최소. ‘고요히 머무는’ 결.<br>
+          · 마감은 테라코타 점, 루틴은 살구 박스, 독서는 분량까지 표기.
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>PC 바탕화면 아이콘 제작</h3>
+        <p class="h-sub">매일 쓰는 도구들을 한눈에 — 브랜드 결을 입힌 아이콘</p>
+        <div class="icons">
+          <figure><img src="../assets/icons/dawn.ico" alt="아침글감 아이콘"><figcaption>아침글감</figcaption></figure>
+          <figure><img src="../assets/icons/gabi.ico" alt="가비 플래너 아이콘"><figcaption>가비 플래너</figcaption></figure>
+          <figure><img src="../assets/icons/bamnaru.ico" alt="나루의 밤 아이콘"><figcaption>나루의 밤</figcaption></figure>
+          <figure><img src="../assets/icons/morning.ico" alt="모닝페이지 아이콘"><figcaption>모닝페이지</figcaption></figure>
+          <figure><img src="../assets/icons/archive.ico" alt="아카이브 아이콘"><figcaption>아카이브</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      고요히, 마음에 머무는 글을 전하는 포근나루
+      <span class="brand">POGNARU × DEEPER UNBRANDING</span>
+    </footer>
+  </div>
+</body>
+</html>

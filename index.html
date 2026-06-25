@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>햇살 · Deeper Unbranding Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
+    --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--ivory); color:var(--brown); font-family:var(--serif);
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:2rem 1.25rem; text-align:center;
+    background-image:radial-gradient(circle at 50% 18%, rgba(255,198,30,.18), transparent 55%);
+  }
+  .eyebrow{font-family:var(--gothic); font-size:.82rem; letter-spacing:.32em; color:var(--terra); text-transform:uppercase; margin-bottom:1.4rem;}
+  h1{font-family:var(--logo); font-size:3.4rem; font-weight:700; letter-spacing:.18em; margin-bottom:.7rem;}
+  .tagline{font-size:1.02rem; color:#6b5536; margin-bottom:.4rem;}
+  .sun-line{width:64px; height:3px; background:var(--sun); border-radius:3px; margin:1.8rem auto 2.6rem;}
+  .menu{display:flex; gap:1.1rem; flex-wrap:wrap; justify-content:center; width:100%; max-width:520px;}
+  .card{
+    flex:1 1 200px; background:#fff; border:1.5px solid rgba(58,42,18,.08);
+    border-radius:20px; padding:1.9rem 1.4rem; text-decoration:none; color:var(--brown);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    display:flex; flex-direction:column; align-items:center; gap:.55rem;
+  }
+  .card:hover{transform:translateY(-4px); box-shadow:0 10px 26px rgba(213,90,43,.16);}
+  .card .ic{width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--logo); font-size:1.5rem; color:#fff;}
+  .card.insight .ic{background:var(--sun); color:var(--brown);}
+  .card.insight:hover{border-color:var(--sun);}
+  .card.task .ic{background:var(--leaf);}
+  .card.task:hover{border-color:var(--leaf);}
+  .card .label{font-family:var(--logo); font-size:1.35rem; font-weight:700;}
+  .card .desc{font-family:var(--gothic); font-size:.82rem; color:#8a7a5e; line-height:1.55;}
+  footer{margin-top:3rem; font-family:var(--gothic); font-size:.78rem; color:#a8997d; line-height:1.9;}
+  footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
+</style>
+</head>
+<body>
+  <div class="eyebrow">Deeper Unbranding Salon</div>
+  <h1>햇 살</h1>
+  <p class="tagline">따뜻한 빛으로 하루를 여는 별</p>
+  <div class="sun-line"></div>
+
+  <nav class="menu">
+    <a class="card insight" href="insight/">
+      <span class="ic">窓</span>
+      <span class="label">인사이트</span>
+      <span class="desc">한 주를 돌아보며<br>건져 올린 성찰</span>
+    </a>
+    <a class="card task" href="assignment/">
+      <span class="ic">課</span>
+      <span class="label">과제</span>
+      <span class="desc">언브랜딩-햇살<br>과정의 기록</span>
+    </a>
+  </nav>
+
+  <footer>고요히, 마음에 머무는 글을 전하는 포근나루<span class="brand">POGNARU × DEEPER UNBRANDING</span></footer>
+</body>
+</html>

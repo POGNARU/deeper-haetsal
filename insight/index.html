@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
+    --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--serif); min-height:100vh; padding:3rem 1.25rem 4rem;}
+  .wrap{max-width:640px; margin:0 auto;}
+  .home{font-family:var(--gothic); font-size:.82rem; color:var(--terra); text-decoration:none; display:inline-block; margin-bottom:1.6rem;}
+  .home:hover{text-decoration:underline;}
+  .eyebrow{font-family:var(--gothic); font-size:.78rem; letter-spacing:.3em; color:var(--terra); text-transform:uppercase; margin-bottom:.6rem;}
+  h1{font-family:var(--logo); font-size:2.2rem; font-weight:700; margin-bottom:.5rem;}
+  .lead{color:#6b5536; font-size:.98rem; line-height:1.7; margin-bottom:.4rem;}
+  .sun-line{width:54px; height:3px; background:var(--sun); border-radius:3px; margin:1.6rem 0 2.2rem;}
+  .item{display:block; background:#fff; border:1.5px solid rgba(58,42,18,.08); border-left:5px solid var(--sun);
+    border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:1rem; text-decoration:none; color:var(--brown);
+    transition:transform .16s ease, box-shadow .16s ease;}
+  .item:hover{transform:translateX(4px); box-shadow:0 8px 20px rgba(255,198,30,.18);}
+  .item .date{font-family:var(--gothic); font-size:.78rem; color:var(--leaf); letter-spacing:.06em;}
+  .item .title{font-family:var(--logo); font-size:1.2rem; font-weight:700; margin:.25rem 0 .35rem;}
+  .item .sub{font-family:var(--gothic); font-size:.84rem; color:#8a7a5e; line-height:1.55;}
+  .empty{font-family:var(--gothic); font-size:.85rem; color:#a8997d; margin-top:1.5rem;}
+  footer{margin-top:3rem; font-family:var(--gothic); font-size:.76rem; color:#a8997d; text-align:center; line-height:1.9;}
+  footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="home" href="../">← 햇살</a>
+    <div class="eyebrow">Insight</div>
+    <h1>인사이트</h1>
+    <p class="lead">한 주를 돌아보며, 일의 표면 아래에서 건져 올린 성찰을 한 편씩 쌓아 둡니다.</p>
+    <div class="sun-line"></div>
+
+    <a class="item" href="260625.html">
+      <span class="date">2026.06.19 — 06.25</span>
+      <div class="title">보이지 않는 문</div>
+      <div class="sub">권한과 자동화, 공개와 사적의 경계, 흩어진 것에 집을 짓는 일</div>
+    </a>
+
+    <p class="empty">5월의 회고들도 곧 이 자리에 날짜순으로 더해집니다.</p>
+
+    <footer>고요히, 마음에 머무는 글을 전하는 포근나루<span class="brand">POGNARU × DEEPER UNBRANDING</span></footer>
+  </div>
+</body>
+</html>
