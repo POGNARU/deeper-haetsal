@@ -17,9 +17,22 @@ deeper-haetsal/
 │   ├─ 260625.html         # 「보이지 않는 문」 (2026.06.19–06.25)
 │   └─ 260702.html         # 「완벽하지 않아도 짓는다」 (2026.06.26–07.02)
 ├─ assignment/
-│   └─ index.html          # 과제 아카이브 (틀, 채워 가는 중)
+│   └─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘)
 ```
+
+## 과제 아카이브
+
+`assignment/index.html`에서 아래 과제로 바로 넘어갈 수 있습니다 (각 과제는 별도 레포·페이지로 배포).
+
+| 과제 | 링크 |
+|---|---|
+| 포근한 글쓰기 | https://pognaru.github.io/pognaru-writing/ |
+| 아침 글 배달 | https://pognaru.github.io/dawn/ |
+| 가비 플래너 | https://pognaru.github.io/gabi-planner/ |
+| 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
+| 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
+| 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
 
 ## 인사이트 리포트 구성 규칙
 
