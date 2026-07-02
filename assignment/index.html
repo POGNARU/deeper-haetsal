@@ -31,6 +31,8 @@
   .card .sub{font-family:var(--gothic); font-size:.82rem; color:#8a7a5e; line-height:1.55;}
   .placeholder{background:rgba(255,255,255,.5); border:1.5px dashed rgba(111,165,46,.45); color:#a8997d;
     border-radius:14px; padding:1.3rem 1.4rem; font-family:var(--gothic); font-size:.84rem; line-height:1.6; text-align:center;}
+  .card.featured{border-top-color:var(--sun); grid-column:1 / -1;}
+  .card.featured .tag{color:var(--terra);}
   footer{margin-top:3rem; font-family:var(--gothic); font-size:.76rem; color:#a8997d; text-align:center; line-height:1.9;}
   footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
 </style>
@@ -44,7 +46,36 @@
     <div class="sun-line"></div>
 
     <div class="grid">
-      <div class="placeholder">아직 비어 있는 자리예요.<br>과제가 완성되면 카드 하나씩 이곳에 더해 갑니다.</div>
+      <a class="card featured" href="https://pognaru.github.io/pognaru-writing/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">WRITING</span>
+        <div class="title">포근한 글쓰기</div>
+        <p class="sub">마음을 다독이며 나를 위한 글을 짓는 포근나루의 글쓰기 공간</p>
+      </a>
+      <a class="card" href="https://pognaru.github.io/dawn/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">MORNING</span>
+        <div class="title">아침 글 배달</div>
+        <p class="sub">매일 아침, 글감 하나가 문 앞에 도착합니다</p>
+      </a>
+      <a class="card" href="https://pognaru.github.io/gabi-planner/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">PLANNER</span>
+        <div class="title">가비 플래너</div>
+        <p class="sub">하루의 리듬을 가만히 정리해 주는 플래너</p>
+      </a>
+      <a class="card" href="https://pognaru.github.io/naru-review/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">REVIEW</span>
+        <div class="title">모닝 페이지 회고</div>
+        <p class="sub">써 내려간 모닝 페이지를 다시 읽고 돌아보는 시간</p>
+      </a>
+      <a class="card" href="https://pognaru.github.io/bamnaru/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">CURRICULUM</span>
+        <div class="title">나루의 밤 고전 클래스 커리큘럼</div>
+        <p class="sub">밤마다 고전을 함께 읽어 가는 클래스 커리큘럼</p>
+      </a>
+      <a class="card" href="https://pognaru.github.io/irum-picturebook/index.html" target="_blank" rel="noopener noreferrer">
+        <span class="tag">COLLAB</span>
+        <div class="title">어린이 작가와 그림책 협업 일정</div>
+        <p class="sub">어린이 작가와 함께 그림책을 만들어 가는 협업 일정표</p>
+      </a>
     </div>
 
     <footer>고요히, 마음에 머무는 글을 전하는 포근나루<span class="brand">POGNARU × DEEPER UNBRANDING</span></footer>
