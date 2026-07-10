@@ -17,13 +17,14 @@ deeper-haetsal/
 │   ├─ 260625.html         # 「보이지 않는 문」 (2026.06.19–06.25)
 │   └─ 260702.html         # 「완벽하지 않아도 짓는다」 (2026.06.26–07.02)
 ├─ assignment/
-│   └─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
+│   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
+│   └─ 260710.html         # 「금양체질 안내」 — 8체질 의학 자료 (장부 도해·식단·운동)
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘)
 ```
 
 ## 과제 아카이브
 
-`assignment/index.html`에서 아래 과제로 바로 넘어갈 수 있습니다 (각 과제는 별도 레포·페이지로 배포).
+`assignment/index.html`에서 아래 과제로 바로 넘어갈 수 있습니다 (대부분 별도 레포·페이지로 배포하고, 일부는 이 레포 안에 둡니다).
 
 | 과제 | 링크 |
 |---|---|
@@ -33,6 +34,7 @@ deeper-haetsal/
 | 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
 | 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
+| 금양체질 안내 (8체질 의학) | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 
 ## 인사이트 리포트 구성 규칙
 
@@ -45,7 +47,8 @@ deeper-haetsal/
 2. **성찰은 하단에, 요약형으로** — 서술형 문단이 아니라 **짧은 항목(제목 + 한두 줄) 요약**으로 정리한다. 길게 풀어 쓰지 않는다.
 
 - **파일명은 `YYMMDD.html`로 통일**한다. 새 회고는 같은 규칙으로 떨어뜨리면 목록에 한 줄씩 쌓인다 (5월 회고분도 같은 형식으로 재작성해 추가 예정).
-- **과제**는 완성되는 대로 카드 하나씩 `assignment/`에 더해 간다.
+- **과제**는 완성되는 대로 카드 하나씩 `assignment/`에 더해 간다. 과제 상세 페이지도 `YYMMDD.html` 규칙을 따른다.
+- 과제 페이지가 **개인의 몸·건강·병력 같은 사적 정보**를 다룰 때는, 개인의 응답·증상은 싣지 않고 **일반 자료(공통 지식)로만** 정리한다. 필요하면 `<meta name="robots" content="noindex, nofollow">`를 넣는다.
 
 ## 무엇을 담나
 
