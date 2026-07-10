@@ -19,7 +19,10 @@ deeper-haetsal/
 │   └─ 260710.html         # 「재료는 이미 내 안에 있었다」 (2026.07.03–07.10)
 ├─ assignment/
 │   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
-│   └─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
+│   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
+│   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
+│   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
+│   └─ family.html         # 「포근나루 열한 식구」 — 픽셀 캐릭터 갤러리
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘 · 체질 도해 인물)
 ```
 
@@ -37,6 +40,12 @@ deeper-haetsal/
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
 | 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
+| 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
+| 포근나루 열한 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
+
+> 독서 DNA와 열한 식구 페이지는 2026-07-10에 폐지된 `dh.archive` 레포에서 옮겨온 것입니다.
+> `Bookish_DNA.html`의 숫자를 다시 뽑는 생성 스크립트(`analyze.py` · `build_data.py` · `data/*.json`)는
+> 볼트 `클로드 에이전트/도구/독서DNA 생성기/`에 보관돼 있습니다. 북모리 백업으로 `data.js`를 재생성한 뒤 여기에 덮어씁니다.
 
 ## 인사이트 리포트 구성 규칙
 
