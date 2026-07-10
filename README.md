@@ -35,6 +35,7 @@ deeper-haetsal/
 | 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
 | 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
+| 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 
 ## 인사이트 리포트 구성 규칙
