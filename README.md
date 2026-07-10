@@ -18,8 +18,8 @@ deeper-haetsal/
 │   └─ 260702.html         # 「완벽하지 않아도 짓는다」 (2026.06.26–07.02)
 ├─ assignment/
 │   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
-│   └─ 260710.html         # 「금양체질 안내」 — 8체질 의학 자료 (장부 도해·식단·운동)
-└─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘)
+│   └─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
+└─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘 · 체질 도해 인물)
 ```
 
 ## 과제 아카이브
@@ -34,7 +34,7 @@ deeper-haetsal/
 | 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
 | 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
-| 금양체질 안내 (8체질 의학) | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
+| 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 
 ## 인사이트 리포트 구성 규칙
 
@@ -79,6 +79,7 @@ deeper-haetsal/
 ## 메모
 
 - **공개 저장소**입니다. 개인적인 자기분석 기록·식구 일기·사적인 이야기는 이 저장소에 두지 않습니다 — 성찰 글만 공개합니다.
+- `assets/taeeumin-body.png`는 **햇살이 평생 이용권으로 정식 구매한 Getty Images 소재**(GettyImages-1305883689)에서 인물 하나만 잘라내 배경을 투명 처리한 것입니다. 라이선스가 없는 스톡 이미지는 이 저장소에 두지 않습니다.
 
 ---
 

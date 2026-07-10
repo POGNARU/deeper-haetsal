@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>금양체질 안내 · 8체질 다이어트 자료</title>
+<title>태음인 · 목음체질 안내 · 체질 판별 기록</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
   :root{
     --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
-    /* 금(金)의 결 — 금양체질 전용 악센트 */
-    --gold:#C29A3A; --gold-soft:#EFE0B8; --sage:#9FB08C; --mist:#B9C2BC;
+    /* 목(木)의 결 — 태음인·목음체질 전용 악센트 */
+    --wood:#5E8F27; --wood-deep:#4C7620; --wood-soft:#DDE8CC;
+    --earth:#8A6A3B; --mist:#A7B4AC;
     --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -22,45 +23,55 @@
   .home{font-family:var(--gothic); font-size:.82rem; color:var(--terra); text-decoration:none; display:inline-block; margin-bottom:1.8rem;}
   .home:hover{text-decoration:underline;}
 
-  .eyebrow{font-family:var(--gothic); font-size:.78rem; letter-spacing:.3em; color:var(--gold); text-transform:uppercase; margin-bottom:.6rem;}
-  h1{font-family:var(--logo); font-size:2.3rem; font-weight:700; line-height:1.3; margin-bottom:.2rem;}
-  .hanja{font-family:var(--logo); font-size:.95rem; color:var(--gold); letter-spacing:.16em; margin-bottom:.9rem;}
+  .eyebrow{font-family:var(--gothic); font-size:.78rem; letter-spacing:.3em; color:var(--wood); text-transform:uppercase; margin-bottom:.6rem;}
+  h1{font-family:var(--logo); font-size:2.2rem; font-weight:700; line-height:1.3; margin-bottom:.2rem;}
+  .hanja{font-family:var(--logo); font-size:.95rem; color:var(--wood); letter-spacing:.16em; margin-bottom:.9rem;}
   .summary{color:#6b5536; font-size:1rem; line-height:1.8;}
   .summary b{color:var(--terra); font-weight:400;}
-  .sun-line{width:54px; height:3px; background:var(--gold); border-radius:3px; margin:2rem 0;}
+  .sun-line{width:54px; height:3px; background:var(--wood); border-radius:3px; margin:2rem 0;}
 
   /* 인체 도해 */
   .figure{background:#fff; border:1.5px solid rgba(58,42,18,.08); border-radius:16px;
-    padding:1.8rem 1.4rem 1.4rem; margin-bottom:2.4rem; text-align:center;}
+    padding:1.8rem 1.2rem 1.2rem; margin-bottom:2.4rem; text-align:center;}
   .figure h3{font-family:var(--logo); font-size:1.15rem; font-weight:700; margin-bottom:.3rem;}
-  .figure .desc{font-family:var(--gothic); font-size:.84rem; color:#8a7a5e; margin-bottom:1.2rem;}
-  .figure svg{max-width:260px; width:100%; height:auto;}
-  .legend{display:flex; justify-content:center; gap:1.6rem; margin-top:1.1rem; flex-wrap:wrap;}
-  .legend div{display:flex; align-items:center; gap:.45rem; font-family:var(--gothic); font-size:.82rem; color:#6b5536;}
+  .figure .desc{font-family:var(--gothic); font-size:.84rem; color:#8a7a5e; margin-bottom:1rem;}
+  .figure svg{width:100%; max-width:460px; height:auto;}
+  .legend{display:flex; justify-content:center; gap:1.4rem; margin-top:.8rem; flex-wrap:wrap;}
+  .legend div{display:flex; align-items:center; gap:.45rem; font-family:var(--gothic); font-size:.8rem; color:#6b5536;}
   .legend .swatch{width:14px; height:14px; border-radius:4px; flex:none;}
-  .legend .s-strong{background:var(--gold);}
+  .legend .s-strong{background:var(--wood);}
   .legend .s-weak{background:var(--mist);}
+  .credit{font-family:var(--gothic); font-size:.7rem; color:#b3a68f; margin-top:1rem;}
 
   /* 섹션 */
   section{margin-bottom:2.6rem;}
   .sec-head{display:flex; align-items:center; gap:.7rem; margin-bottom:.5rem;}
   .sec-head svg{width:30px; height:30px; flex:none;}
-  h2{font-family:var(--logo); font-size:1.35rem; font-weight:700;}
+  h2{font-family:var(--logo); font-size:1.32rem; font-weight:700;}
   .sec-lead{font-family:var(--gothic); font-size:.86rem; color:#8a7a5e; line-height:1.7; margin-bottom:1.1rem;}
+  .sec-lead b{color:var(--terra);}
 
   ul.items{list-style:none;}
-  ul.items li{background:#fff; border:1.5px solid rgba(58,42,18,.07); border-left:4px solid var(--gold);
+  ul.items li{background:#fff; border:1.5px solid rgba(58,42,18,.07); border-left:4px solid var(--wood);
     border-radius:0 12px 12px 0; padding:.9rem 1.15rem; margin-bottom:.7rem;}
   ul.items .it{font-family:var(--logo); font-weight:700; font-size:1rem; margin-bottom:.22rem;}
   ul.items .id{font-family:var(--gothic); font-size:.85rem; color:#6b5536; line-height:1.7;}
   ul.avoid li{border-left-color:var(--terra);}
-  ul.move li{border-left-color:var(--sage);}
+  ul.move li{border-left-color:var(--earth);}
+
+  /* 판별 근거 표 */
+  .evidence{background:#fff; border:1.5px solid rgba(58,42,18,.08); border-radius:16px; padding:1.4rem 1.5rem; overflow-x:auto;}
+  table{border-collapse:collapse; width:100%; font-family:var(--gothic); font-size:.84rem; min-width:420px;}
+  th,td{text-align:left; padding:.6rem .5rem; border-bottom:1px solid rgba(58,42,18,.08); line-height:1.6;}
+  th{font-family:var(--logo); font-weight:700; font-size:.9rem; color:var(--wood-deep);}
+  td.yes{color:var(--wood-deep); font-weight:700;}
+  td.no{color:var(--terra);}
 
   .traits{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.8rem;}
-  .trait{background:#fff; border:1.5px solid rgba(58,42,18,.07); border-top:4px solid var(--gold-soft);
+  .trait{background:#fff; border:1.5px solid rgba(58,42,18,.07); border-top:4px solid var(--wood-soft);
     border-radius:12px; padding:1rem 1.1rem;}
   .trait .tt{font-family:var(--logo); font-weight:700; font-size:.96rem; margin-bottom:.25rem;}
-  .trait .td{font-family:var(--gothic); font-size:.82rem; color:#6b5536; line-height:1.65;}
+  .trait .td2{font-family:var(--gothic); font-size:.82rem; color:#6b5536; line-height:1.65;}
 
   .note{background:rgba(213,90,43,.06); border:1.5px dashed rgba(213,90,43,.35); border-radius:14px;
     padding:1.1rem 1.3rem; font-family:var(--gothic); font-size:.84rem; color:#8a5a3c; line-height:1.75;}
@@ -77,160 +88,151 @@
 <body>
   <div class="wrap">
     <a class="home" href="./">← 과제 목록</a>
-    <div class="eyebrow">Eight-Constitution Medicine</div>
-    <h1>금양체질 안내</h1>
-    <div class="hanja">金陽體質 · Pulmotonia</div>
-    <p class="summary">여덟 체질 가운데 <b>폐(肺)가 가장 강하고 간(肝)이 가장 약한</b> 체질. 몸속에 열이 많아 더위에 약하고, 땀을 흘리면 개운해지기보다 기운이 빠진다. 담백한 채식과 흰살생선이 편하고, 기름진 육류와 유제품은 부담이 된다. 신경이 예민해 스트레스가 곧장 소화기로 내려오며, 알레르기·천식·아토피 성향이 여덟 체질 중 가장 두드러진다.</p>
+    <div class="eyebrow">Constitution</div>
+    <h1>태음인 · 목음체질 안내</h1>
+    <div class="hanja">太陰人 · 木陰體質 · Cholecystotonia</div>
+    <p class="summary">사상의학의 <b>태음인</b>, 그중 8체질로는 <b>목음체질</b>. 간(肝)이 가장 강하고 폐(肺)가 약하며, 여덟 장부 중 <b>대장(大腸)이 가장 약하다</b>. 허리에 무게중심이 실리고, 소화는 되는데 가스가 잘 차며, 폐가 약해 알레르기·천식 성향이 따라온다.</p>
     <div class="sun-line"></div>
 
     <!-- 인체 도해 -->
     <div class="figure">
       <h3>강한 장부와 약한 장부</h3>
-      <p class="desc">금양체질은 폐가 강하고 간이 약합니다. 이 불균형을 식단과 생활로 고르게 합니다.</p>
+      <p class="desc">간은 강하고, 폐와 대장은 약합니다. 강한 것을 더 키우지 않고 약한 것을 채웁니다.</p>
 
-      <svg viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="금양체질 인체 도해 — 폐는 강하고 간은 약함">
-        <!-- 몸 실루엣 -->
-        <g fill="#FBF3DF" stroke="#E3D6B4" stroke-width="1.6" stroke-linejoin="round">
-          <circle cx="110" cy="34" r="23"/>
-          <path d="M99 56 h22 v12 h-22 z"/>
-          <path d="M110 66
-                   c-20 0 -34 7 -38 18
-                   l-9 58 c-1 7 4 11 10 9 l6 -2
-                   -4 62 c-1 8 3 12 10 12
-                   h50 c7 0 11 -4 10 -12
-                   l-4 -62 6 2 c6 2 11 -2 10 -9
-                   l-9 -58 c-4 -11 -18 -18 -38 -18 z"/>
-          <!-- 팔 -->
-          <path d="M69 88 c-9 6 -13 16 -15 27 l-8 46 c-1 7 8 9 10 2 l14 -50 z"/>
-          <path d="M151 88 c9 6 13 16 15 27 l8 46 c1 7 -8 9 -10 2 l-14 -50 z"/>
-          <!-- 다리 -->
-          <path d="M88 224 l-4 74 c0 8 1 22 2 30 c1 7 12 7 13 0 l6 -104 z"/>
-          <path d="M132 224 l4 74 c0 8 -1 22 -2 30 c-1 7 -12 7 -13 0 l-6 -104 z"/>
+      <svg viewBox="-150 0 700 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="figTtl figDsc">
+        <title id="figTtl">태음인·목음체질 인체 도해</title>
+        <desc id="figDsc">둥근 몸의 인물 그림 위에 강한 장부인 간을 진한 초록으로, 약한 장부인 폐와 대장을 흐린 회녹색으로 표시했다. 허리에 무게중심이 실린 체형을 함께 보여준다.</desc>
+
+        <image href="../assets/taeeumin-body.png" x="0" y="0" width="399" height="900"/>
+
+        <!-- 폐 (약) -->
+        <g opacity=".62">
+          <rect x="195" y="168" width="9" height="26" rx="4" fill="#A7B4AC"/>
+          <path d="M193 180 c-15 3 -29 14 -34 33 c-5 19 -4 47 3 61 c4 9 17 9 24 1 c5 -5 7 -14 7 -25 z" fill="#A7B4AC"/>
+          <path d="M206 180 c15 3 29 14 34 33 c5 19 4 47 -3 61 c-4 9 -17 9 -24 1 c-5 -5 -7 -14 -7 -25 z" fill="#A7B4AC"/>
         </g>
 
-        <!-- 폐 (강) -->
-        <g>
-          <path d="M104 84 c-12 3 -22 12 -25 26 c-3 13 -2 27 3 36 c3 6 12 6 17 1 c4 -4 6 -11 6 -19 z"
-                fill="#C29A3A" opacity=".9"/>
-          <path d="M116 84 c12 3 22 12 25 26 c3 13 2 27 -3 36 c-3 6 -12 6 -17 1 c-4 -4 -6 -11 -6 -19 z"
-                fill="#C29A3A" opacity=".9"/>
-          <!-- 기관 -->
-          <path d="M110 76 v18" stroke="#C29A3A" stroke-width="4" stroke-linecap="round"/>
-          <!-- 강함 표시: 발산하는 결 -->
-          <g stroke="#C29A3A" stroke-width="1.4" opacity=".45" stroke-linecap="round">
-            <path d="M84 92 l-10 -6"/><path d="M80 108 l-12 -2"/><path d="M82 124 l-11 4"/>
-            <path d="M136 92 l10 -6"/><path d="M140 108 l12 -2"/><path d="M138 124 l11 4"/>
-          </g>
-        </g>
+        <!-- 대장 (약) — 상행·횡행·하행 -->
+        <path d="M160 408 V362 Q160 351 171 351 H229 Q240 351 240 362 V402 Q240 414 228 414 H208"
+              fill="none" stroke="#A7B4AC" stroke-width="12" stroke-linecap="round" opacity=".62"/>
 
-        <!-- 간 (약) — 해부학적 우측 = 화면 좌측 -->
-        <path d="M80 156 c-6 1 -9 6 -8 12 l2 14 c1 6 6 10 12 10 l26 -2 c8 -1 12 -6 11 -13 c-1 -8 -8 -12 -18 -14 z"
-              fill="#B9C2BC" opacity=".75"/>
+        <!-- 간 (강) — 크고 진하게, 우엽이 크다 -->
+        <path d="M136 292 c-9 2 -13 10 -11 19 l5 19 c3 9 12 15 22 14 l48 -4 c15 -1 22 -11 18 -23 c-4 -13 -18 -20 -35 -23 z"
+              fill="#5E8F27"/>
+        <path d="M150 308 c14 2 32 6 46 12" fill="none" stroke="#4C7620" stroke-width="2" opacity=".45" stroke-linecap="round"/>
 
         <!-- 라벨 -->
-        <g font-family="'Gowun Dodum',sans-serif" font-size="11">
-          <line x1="152" y1="106" x2="176" y2="98" stroke="#C29A3A" stroke-width="1.2"/>
-          <circle cx="152" cy="106" r="2.6" fill="#C29A3A"/>
-          <text x="180" y="96" fill="#C29A3A" font-weight="700">폐 肺</text>
-          <text x="180" y="110" fill="#8a7a5e" font-size="9.5">가장 강함</text>
+        <g font-family="'Gowun Dodum','Apple SD Gothic Neo',sans-serif" font-size="15">
+          <!-- 폐 -->
+          <line x1="238" y1="215" x2="330" y2="192" stroke="#8A9A92" stroke-width="1.6"/>
+          <circle cx="238" cy="215" r="3.6" fill="#8A9A92"/>
+          <text x="338" y="188" fill="#6F7E77" font-weight="700">폐 肺</text>
+          <text x="338" y="208" fill="#9AA8A1" font-size="12.5">약함 — 천식·알레르기</text>
 
-          <line x1="76" y1="172" x2="48" y2="188" stroke="#8a9a92" stroke-width="1.2"/>
-          <circle cx="76" cy="172" r="2.6" fill="#8a9a92"/>
-          <text x="10" y="202" fill="#7f8d86" font-weight="700">간 肝</text>
-          <text x="10" y="216" fill="#a8997d" font-size="9.5">가장 약함</text>
-        </g>
+          <!-- 간 -->
+          <line x1="140" y1="310" x2="-16" y2="292" stroke="#5E8F27" stroke-width="1.6"/>
+          <circle cx="140" cy="310" r="3.6" fill="#5E8F27"/>
+          <text x="-146" y="288" fill="#4C7620" font-weight="700">간 肝</text>
+          <text x="-146" y="308" fill="#7E9A62" font-size="12.5">가장 강함</text>
 
-        <!-- 열(熱) 기운 -->
-        <g stroke="#D55A2B" stroke-width="1.5" opacity=".5" fill="none" stroke-linecap="round">
-          <path d="M110 236 c-4 -6 4 -10 0 -16"/>
-          <path d="M98 240 c-4 -6 4 -10 0 -16"/>
-          <path d="M122 240 c-4 -6 4 -10 0 -16"/>
+          <!-- 대장 -->
+          <line x1="240" y1="380" x2="330" y2="372" stroke="#8A9A92" stroke-width="1.6"/>
+          <circle cx="240" cy="380" r="3.6" fill="#8A9A92"/>
+          <text x="338" y="368" fill="#6F7E77" font-weight="700">대장 大腸</text>
+          <text x="338" y="388" fill="#9AA8A1" font-size="12.5">가장 약함 — 가스·팽만</text>
+
+          <!-- 체형 -->
+          <line x1="120" y1="430" x2="-16" y2="452" stroke="#C8845A" stroke-width="1.6" stroke-dasharray="4 4"/>
+          <text x="-146" y="448" fill="#C8845A" font-weight="700">허리 腰圍</text>
+          <text x="-146" y="468" fill="#C9A88F" font-size="12.5">무게중심이 여기</text>
+          <text x="-146" y="488" fill="#C9A88F" font-size="12.5">腰圍之立勢 盛壯</text>
+
+          <line x1="300" y1="470" x2="352" y2="492" stroke="#C9A88F" stroke-width="1.6" stroke-dasharray="4 4"/>
+          <text x="338" y="512" fill="#B99B84" font-size="12.5">팔은 가늘고</text>
+          <text x="338" y="532" fill="#B99B84" font-size="12.5">하체는 실하다</text>
         </g>
-        <text x="110" y="262" text-anchor="middle" font-family="'Gowun Dodum',sans-serif"
-              font-size="9.5" fill="#c9805c">몸 안의 열 — 더위에 약함</text>
       </svg>
 
       <div class="legend">
-        <div><span class="swatch s-strong"></span> 폐 · 강한 장부 (덜어낸다)</div>
-        <div><span class="swatch s-weak"></span> 간 · 약한 장부 (채운다)</div>
+        <div><span class="swatch s-strong"></span> 간 · 강한 장부 (덜어낸다)</div>
+        <div><span class="swatch s-weak"></span> 폐 · 대장 · 약한 장부 (채운다)</div>
       </div>
+      <p class="credit">일러스트 © Getty Images — 라이선스 보유분 사용. 장부 도해는 직접 그려 얹음.</p>
     </div>
 
-    <!-- 특징 -->
+    <!-- 판별 근거 -->
     <section>
       <div class="sec-head">
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" fill="#EFE0B8"/>
-          <path d="M16 8v16M8 16h16" stroke="#C29A3A" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="14" fill="#DDE8CC"/>
+          <path d="M10 16.5l4 4 8-9" stroke="#5E8F27" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <h2>체질의 특징</h2>
+        <h2>어떻게 판별했나</h2>
       </div>
-      <p class="sec-lead">금양체질의 몸은 이런 신호를 보냅니다.</p>
+      <p class="sec-lead">『동의수세보원』「사상인 변증론」은 순서를 못 박습니다 — <b>체형기상이 먼저</b>, 용모사기와 성질재간이 다음, 병증약리는 마지막에 <b>참작만</b> 한다. 병증부터 물으면 답이 어긋납니다.</p>
 
-      <div class="traits">
-        <div class="trait">
-          <div class="tt">🌡️ 땀</div>
-          <div class="td">땀을 흘리면 개운해지지 않고 오히려 처지고 기운이 빠진다.</div>
-        </div>
-        <div class="trait">
-          <div class="tt">🔥 체온</div>
-          <div class="td">몸 안에 열이 많다. 추위보다 더위에 약하고, 손발이 잘 차지 않는다.</div>
-        </div>
-        <div class="trait">
-          <div class="tt">🥗 소화</div>
-          <div class="td">기름진 육류·유제품은 부담. 채소와 흰살생선이 몸에 편하다.</div>
-        </div>
-        <div class="trait">
-          <div class="tt">😰 감정</div>
-          <div class="td">신경이 예민해 감정의 진폭이 크고, 스트레스가 곧장 위장으로 내려온다.</div>
-        </div>
-        <div class="trait">
-          <div class="tt">🤧 알레르기</div>
-          <div class="td">천식·비염·아토피 등 알레르기 성향이 여덟 체질 중 가장 뚜렷하다.</div>
-        </div>
-        <div class="trait">
-          <div class="tt">⚖️ 균형점</div>
-          <div class="td">강한 폐를 덜어내고 약한 간을 채우는 방향으로 먹고 움직인다.</div>
-        </div>
+      <div class="evidence">
+        <table>
+          <thead>
+            <tr><th>단계</th><th>관찰</th><th>가리키는 곳</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>① 체형기상</td><td>허리에 무게중심, 배가 나오고 하체가 실함. 팔은 가늘다</td><td class="yes">태음인<br><span style="font-weight:400;color:#8a7a5e">腰圍之立勢 盛壯</span></td></tr>
+            <tr><td>① 체형기상</td><td>목덜미가 도톰한 것은 거북목·자세에서 온 후천적 변화</td><td class="no">태양인 근거 아님<br><span style="color:#8a7a5e">腦顀 기세는 타고난 골격</span></td></tr>
+            <tr><td>② 용모사기</td><td>둥근 얼굴, 맑고 높은 목소리, 빠르고 거침없는 말</td><td>혼재 — 판별 보조</td></tr>
+            <tr><td>③ 성질재간</td><td>먼저 나서고 단칼에 결정하나, 지금은 오래 쌓는 힘이 큼</td><td>신뢰도 낮음<br><span style="color:#8a7a5e">후천적 교육에 가려짐</span></td></tr>
+            <tr><td>④ 병증약리</td><td>열격반위(噎膈反胃)·해역증(解㑊證) 모두 없음</td><td class="no">태양인 배제</td></tr>
+            <tr><td>④ 병증약리</td><td>소화는 되나 가스가 심하게 참</td><td class="yes">대장 최약 → 목음체질</td></tr>
+            <tr><td>④ 병증약리</td><td>돼지고기·부드러운 육류가 잘 맞음</td><td class="yes">태음인 계열</td></tr>
+            <tr><td>④ 병증약리</td><td>해물·날것이 잘 안 받음</td><td class="yes">목음체질</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <div class="pull">강한 것을 더 키우지 않고,<br>약한 것을 조용히 채우는 일.</div>
 
+    <!-- 특징 -->
+    <section>
+      <div class="sec-head">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="#DDE8CC"/>
+          <path d="M16 8v16M8 16h16" stroke="#5E8F27" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <h2>체질의 특징</h2>
+      </div>
+      <p class="sec-lead">목음체질의 몸은 이런 신호를 보냅니다.</p>
+
+      <div class="traits">
+        <div class="trait"><div class="tt">🫀 간 (강)</div><div class="td2">여덟 장부 중 가장 강하다. 강한 장부일수록 부담이 몰릴 때 크게 무너지기도 한다.</div></div>
+        <div class="trait"><div class="tt">🫁 폐 (약)</div><div class="td2">천식·비염·알레르기가 따라붙기 쉽다. 호흡을 기르는 일이 곧 보약.</div></div>
+        <div class="trait"><div class="tt">🌀 대장 (최약)</div><div class="td2">소화 자체는 잘 되는데 가스가 차고 배가 부푼다. 아랫배를 늘 따뜻하게.</div></div>
+        <div class="trait"><div class="tt">💓 심장 (약)</div><div class="td2">가슴이 두근거리고 불안이 잦다. 놀라는 일을 줄이는 것이 관리다.</div></div>
+        <div class="trait"><div class="tt">🍠 소화</div><div class="td2">부드러운 육류와 뿌리채소가 편하다. 해물·날것은 부담이 된다.</div></div>
+        <div class="trait"><div class="tt">🧭 균형점</div><div class="td2">강한 간을 덜어내고, 약한 폐와 대장을 채우는 방향으로 먹고 움직인다.</div></div>
+      </div>
+    </section>
+
     <!-- 황금 식단 -->
     <section>
       <div class="sec-head">
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" fill="#E3EED6"/>
-          <path d="M16 24c0-7 4-12 9-13 0 8-4 12-9 13z" fill="#6FA52E"/>
+          <circle cx="16" cy="16" r="14" fill="#DDE8CC"/>
+          <path d="M16 24c0-7 4-12 9-13 0 8-4 12-9 13z" fill="#5E8F27"/>
           <path d="M16 24c0-5-3-9-7-10 0 6 3 9 7 10z" fill="#9FB08C"/>
           <path d="M16 24v-5" stroke="#3A2A12" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
         <h2>황금 식단</h2>
       </div>
-      <p class="sec-lead">체중 감량의 치트키 — 약한 간을 채우고 몸의 열을 식히는 음식들.</p>
+      <p class="sec-lead">약한 폐와 대장을 채우고, 아랫배를 따뜻하게 지키는 음식들.</p>
 
       <ul class="items">
-        <li>
-          <div class="it">🥬 잎채소류</div>
-          <div class="id">배추 · 케일 · 상추 · 미나리 · 브로콜리. 마음껏 먹어도 좋은 기본 베이스.</div>
-        </li>
-        <li>
-          <div class="it">🐟 흰살생선과 조개류</div>
-          <div class="id">대구 · 광어 · 조기 · 코다리 · 굴 · 조개. 단백질은 붉은 고기 대신 여기서 채운다.</div>
-        </li>
-        <li>
-          <div class="it">🌾 잡곡</div>
-          <div class="id">메밀 · 보리 · 팥 · 현미. 흰쌀보다 소화 부담이 적고 포만감이 오래간다.</div>
-        </li>
-        <li>
-          <div class="it">🍇 과일</div>
-          <div class="id">포도 · 딸기 · 바나나 · 파인애플. 몸의 열을 식혀 주는 성질을 지녔다.</div>
-        </li>
-        <li>
-          <div class="it">🍵 녹차와 코코아</div>
-          <div class="id">식후 소화를 돕고 열을 내린다. 커피 대신 두기 좋은 자리.</div>
-        </li>
+        <li><div class="it">🍠 뿌리채소</div><div class="id">무 · 연근 · 도라지 · 마 · 고구마. 대장을 든든하게 받쳐 주는 기본 베이스.</div></li>
+        <li><div class="it">🥩 부드러운 육류</div><div class="id">소고기 · 돼지고기의 살코기. 수육처럼 삶은 조리가 가장 편하다.</div></li>
+        <li><div class="it">🍄 버섯과 콩</div><div class="id">표고 · 느타리 · 두부 · 된장. 단백질을 해물 대신 여기서 채운다.</div></li>
+        <li><div class="it">🌰 견과류</div><div class="id">호두 · 잣 · 밤 · 은행. 폐를 돕는 것으로 오래 쓰여 온 것들.</div></li>
+        <li><div class="it">🌾 밀과 통곡</div><div class="id">태음인에게 밀은 대체로 무난하다. 다만 가스가 심하면 양을 줄인다.</div></li>
+        <li><div class="it">🍵 따뜻하게</div><div class="id">차든 물이든 미지근하게 이상으로. 찬 것이 대장을 가장 빨리 무너뜨린다.</div></li>
       </ul>
     </section>
 
@@ -244,82 +246,43 @@
         </svg>
         <h2>독이 되는 음식</h2>
       </div>
-      <p class="sec-lead">약한 간에 부담을 주고 대사를 떨어뜨리는 음식들. 살이 찌는 자리는 대개 여기다.</p>
+      <p class="sec-lead">약한 대장을 더 무르게 만드는 음식들.</p>
 
       <ul class="items avoid">
-        <li>
-          <div class="it">🥩 붉은 고기와 기름진 고기</div>
-          <div class="id">소고기 · 돼지고기. 간에 부담을 줘 대사를 무디게 만든다. 꼭 먹는다면 기름기 없는 살코기로.</div>
-        </li>
-        <li>
-          <div class="it">🥛 유제품</div>
-          <div class="id">우유 · 치즈 · 버터. 소화 부담이 크고 체지방으로 쉽게 쌓인다.</div>
-        </li>
-        <li>
-          <div class="it">🌶️ 맵고 자극적인 음식</div>
-          <div class="id">예민한 신경계와 소화기를 함께 자극해 스트레스성 체함을 악화시킨다.</div>
-        </li>
-        <li>
-          <div class="it">☕ 커피와 고카페인 음료</div>
-          <div class="id">본래 예민한 기질 위에 각성을 얹어, 스트레스 반응을 증폭시킨다.</div>
-        </li>
-        <li>
-          <div class="it">🍞 밀가루 음식</div>
-          <div class="id">소화력이 약한 체질에 정체감과 붓기를 남긴다.</div>
-        </li>
-        <li>
-          <div class="it">💊 인삼 · 홍삼 · 고용량 비타민C</div>
-          <div class="id">몸에 좋다고 알려진 것들이지만, 금양체질에는 맞지 않는 대표적 보양식으로 꼽힌다.</div>
-        </li>
+        <li><div class="it">🦐 해물과 갑각류</div><div class="id">조개 · 게 · 새우 · 오징어. 목음체질에 가장 안 맞는 것으로 꼽힌다.</div></li>
+        <li><div class="it">🍣 날것</div><div class="id">회 · 육회 · 찬 샐러드. 익히지 않은 것이 대장을 차게 한다.</div></li>
+        <li><div class="it">🧊 찬 음식과 얼음</div><div class="id">아이스 음료 하나로 하루의 배가 부푼다. 이 체질의 가장 큰 함정.</div></li>
+        <li><div class="it">🥬 생잎채소 과다</div><div class="id">몸에 좋다고 생채소만 쌓아 먹으면 오히려 가스가 는다. 익혀서 먹는다.</div></li>
+        <li><div class="it">☕ 커피 과다</div><div class="id">약한 심장 위에 각성을 얹으면 두근거림과 불안이 커진다.</div></li>
       </ul>
     </section>
 
-    <!-- 운동과 생활 루틴 -->
+    <!-- 운동과 생활 -->
     <section>
       <div class="sec-head">
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" fill="#DCE7F0"/>
-          <path d="M5 20c3-2 5 2 8 0s5-2 8 0 5 2 6 0" stroke="#6b8fa8" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M5 24c3-2 5 2 8 0s5-2 8 0 5 2 6 0" stroke="#9FB0C0" stroke-width="1.6" stroke-linecap="round"/>
-          <circle cx="18" cy="10" r="3" fill="#3A2A12" opacity=".7"/>
+          <circle cx="16" cy="16" r="14" fill="#EDE3D2"/>
+          <circle cx="18" cy="9" r="3" fill="#8A6A3B"/>
+          <path d="M8 26l5-8 5 3 4-7" stroke="#8A6A3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <h2>운동과 생활 루틴</h2>
       </div>
-      <p class="sec-lead">땀을 뻘뻘 흘리는 고강도 운동은 <b>역효과</b>다. 기력을 빼앗아 오히려 처지게 만든다. <strong>땀이 살짝 배는 정도</strong>가 이 체질의 적정 강도.</p>
+      <p class="sec-lead">문헌은 태음인에게 <b>땀을 내는 운동</b>을 권합니다. 다만 땀을 내고 나서 개운하지 않고 처진다면, 그건 체질 신호이기 이전에 <b>체중과 심폐의 부담</b>일 수 있습니다. 강도는 몸이 정합니다.</p>
 
       <ul class="items move">
-        <li>
-          <div class="it">🏊 수영 — 가장 잘 맞는 운동</div>
-          <div class="id">물속에서는 땀이 덜 나면서도 유산소 효과는 충분히 얻는다. 금양체질의 첫 번째 선택.</div>
-        </li>
-        <li>
-          <div class="it">🚶 가볍게 걷기</div>
-          <div class="id">20~30분. 땀이 흐르기 시작하기 전에 마무리한다.</div>
-        </li>
-        <li>
-          <div class="it">🧘 요가와 필라테스</div>
-          <div class="id">저강도로 코어와 하체 라인을 정리한다. 근육을 태우기보다 정돈하는 쪽으로.</div>
-        </li>
-        <li>
-          <div class="it">🌬️ 복식호흡</div>
-          <div class="id">폐가 강한 체질의 이점을 살린다. 스트레스 완화에도 함께 듣는다.</div>
-        </li>
-        <li>
-          <div class="it">❄️ 운동 뒤 회복</div>
-          <div class="id">땀은 곧바로 식히고 수분을 채운다. 빠져나간 기운을 서둘러 되돌린다.</div>
-        </li>
-        <li>
-          <div class="it">🕊️ 스트레스 관리가 곧 다이어트</div>
-          <div class="id">스트레스가 오면 체하는 체질이다. 마음이 어지러운 날은 식사량보다 마음의 정돈이 먼저다. 새벽의 고요한 루틴이 이 체질에 특히 잘 맞는다.</div>
-        </li>
+        <li><div class="it">🚶 걷기부터</div><div class="id">등에 땀이 살짝 밸 정도로 20~30분. 개운하면 조금씩 늘리고, 처지면 줄인다.</div></li>
+        <li><div class="it">🌬️ 복식호흡</div><div class="id">약한 폐를 직접 기르는 운동. 하루 5분이면 충분하다.</div></li>
+        <li><div class="it">♨️ 아랫배 보온</div><div class="id">대장이 최약이다. 배를 덮고 자고, 찬 바닥에 오래 앉지 않는다.</div></li>
+        <li><div class="it">🧘 목·어깨 스트레칭</div><div class="id">거북목과 굽은 등은 약한 폐의 자리를 더 좁힌다. 자세가 곧 호흡이다.</div></li>
+        <li><div class="it">🕊️ 놀라지 않는 하루</div><div class="id">심장이 약하다. 자극적인 소식과 늦은 밤의 화면을 줄이는 것이 관리다.</div></li>
       </ul>
     </section>
 
     <div class="note">
       <b>⚠️ 읽는 이를 위한 알림</b><br>
-      8체질 의학은 정식 의학적 진단 체계로 확립되어 있지 않습니다. 이 문서는 <b>참고용 프레임워크</b>로 읽어 주세요.
-      특히 천식·알레르기·만성질환이 있다면 전문의의 진단과 치료가 언제나 먼저입니다.
-      식단을 크게 바꾸기 전에는 기존 질환 관리와 반드시 함께 살펴보시길 권합니다.
+      사상의학과 8체질 의학은 현대 의학의 진단 체계로 확립되어 있지 않습니다. 이 문서는 <b>참고용 프레임워크</b>입니다.<br><br>
+      「변증론」은 스스로 이렇게 경고합니다 — <b>一貼藥 誤投重病險證 一貼藥 必殺人</b>. 잘못 투약하면 한 첩의 약이라도 반드시 사람을 죽인다. 체질 확정은 <b>맥진과 문진</b>을 거쳐야 합니다.<br><br>
+      특히 <b>간 수치 이상, 천식, 심장 질환</b>이 있다면 체질 식단보다 <b>의학적 검사와 치료가 언제나 먼저</b>입니다. 한약과 건강식품도 간에 부담이 될 수 있으니, 복용 중인 모든 것을 주치의에게 알리세요.
     </div>
 
     <footer>
