@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포근나루 식구 조직도</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDF4EE;
+    --apricot: #F8E4D4;
+    --terracotta: #C8845A;
+    --darkbrown: #3C2415;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--cream);
+    color: var(--darkbrown);
+    font-family: 'Gowun Dodum', sans-serif;
+    padding: 48px 24px 64px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+
+  .home {
+    font-size: 13px; color: var(--terracotta); text-decoration: none;
+    display: inline-block; margin-bottom: 24px;
+  }
+  .home:hover { text-decoration: underline; }
+  header { text-align: center; margin-bottom: 40px; }
+  header .brand {
+    font-family: 'Gowun Batang', serif;
+    font-size: 15px;
+    letter-spacing: 6px;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-family: 'Gowun Batang', serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  header .tagline {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 14px;
+    color: #8a6a52;
+  }
+
+  /* 바다 — 총괄 */
+  .bada {
+    width: 300px;
+    margin: 0 auto 0;
+    background: #fff;
+    border: 2px solid var(--terracotta);
+    border-radius: 18px;
+    padding: 22px 20px 18px;
+    text-align: center;
+    box-shadow: 0 3px 14px rgba(200,132,90,.15);
+    position: relative;
+    z-index: 2;
+  }
+  .bada .icon { font-size: 30px; }
+  .bada .name {
+    font-family: 'Gowun Batang', serif;
+    font-size: 24px; font-weight: 700; margin-top: 6px;
+  }
+  .bada .role { font-size: 13px; color: #8a6a52; margin-top: 6px; line-height: 1.5; }
+
+  /* 연결선 */
+  .stem { width: 2px; height: 34px; background: var(--terracotta); opacity: .45; margin: 0 auto; }
+  .crossbar {
+    height: 2px; background: var(--terracotta); opacity: .45;
+    margin: 0 auto; width: 76%;
+    position: relative; top: 0;
+  }
+
+  /* 팀 열 */
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .col-title {
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--terracotta);
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+  .col-sub {
+    text-align: center;
+    font-size: 11px;
+    color: #a98a70;
+    margin-bottom: 14px;
+  }
+  .card {
+    background: #fff;
+    border: 1.5px solid var(--apricot);
+    border-radius: 14px;
+    padding: 16px 14px 14px;
+    text-align: center;
+    margin-bottom: 14px;
+    transition: border-color .2s;
+  }
+  .card:hover { border-color: var(--terracotta); }
+  .card .icon { font-size: 22px; }
+  .card .name {
+    font-family: 'Gowun Batang', serif;
+    font-size: 18px; font-weight: 700; margin-top: 5px;
+  }
+  .card .role { font-size: 12px; color: #8a6a52; margin-top: 5px; line-height: 1.55; }
+
+  /* 사막여우 — 디퍼 전용 별채 */
+  .annex {
+    margin: 44px auto 0;
+    max-width: 420px;
+    border: 1.5px dashed var(--terracotta);
+    border-radius: 14px;
+    background: transparent;
+    padding: 16px 18px;
+    text-align: center;
+    opacity: .85;
+  }
+  .annex .label {
+    font-size: 11px; letter-spacing: 2px; color: var(--terracotta); margin-bottom: 8px;
+  }
+  .annex .name { font-family: 'Gowun Batang', serif; font-size: 17px; font-weight: 700; }
+  .annex .role { font-size: 12px; color: #8a6a52; margin-top: 5px; line-height: 1.55; }
+
+  footer {
+    margin-top: 48px; text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 12px; color: #a98a70;
+  }
+
+  @media (max-width: 860px) {
+    .columns { grid-template-columns: repeat(2, 1fr); }
+    .crossbar { display: none; }
+  }
+  @media (max-width: 480px) {
+    .columns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="home" href="./">← 과제</a>
+
+  <header>
+    <div class="brand">POGNARU STUDIO</div>
+    <h1>포근나루 식구 조직도</h1>
+    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루 · 2026. 7. 11 기준</div>
+  </header>
+
+  <div class="bada">
+    <div class="icon">🌊</div>
+    <div class="name">바다</div>
+    <div class="role">총괄 · 햇살의 파트너<br>의중을 건져 구조화하고, 식구에게 일감을 잇는다</div>
+  </div>
+
+  <div class="stem"></div>
+  <div class="crossbar"></div>
+
+  <div class="columns">
+
+    <div class="col">
+      <div class="col-title">길어 올리기</div>
+      <div class="col-sub">방향을 살피고 씨앗을 꺼내다</div>
+      <div class="card"><div class="icon">🔭</div><div class="name">등대</div><div class="role">기획 · 리서치<br>멀리서 조망해 방향을 그린다</div></div>
+      <div class="card"><div class="icon">🪷</div><div class="name">호수</div><div class="role">사유 · 분석<br>흩어진 글을 캐물어 씨앗을 꺼낸다</div></div>
+      <div class="card"><div class="icon">🌅</div><div class="name">새벽</div><div class="role">초안 집필<br>햇살의 목소리로 첫 글을 빚는다</div></div>
+    </div>
+
+    <div class="col">
+      <div class="col-title">빚고 다듬기</div>
+      <div class="col-sub">글과 배움을 매만지다</div>
+      <div class="card"><div class="icon">🌿</div><div class="name">정원</div><div class="role">편집 · 퇴고<br>결을 보존하며 덜어낸다</div></div>
+      <div class="card"><div class="icon">📖</div><div class="name">나루</div><div class="role">강의 · 독서<br>나누기 위해 체계를 세운다</div></div>
+      <div class="card"><div class="icon">🎨</div><div class="name">나무</div><div class="role">문서 · 서식 · 디자인<br>포근나루의 옷을 입힌다</div></div>
+    </div>
+
+    <div class="col">
+      <div class="col-title">건네고 잇기</div>
+      <div class="col-sub">세상과 독자에게 가닿다</div>
+      <div class="card"><div class="icon">🧭</div><div class="name">나침반</div><div class="role">발행 · 유통<br>EPUB 제작과 플랫폼 등록</div></div>
+      <div class="card"><div class="icon">✨</div><div class="name">윤슬</div><div class="role">콘텐츠 변주<br>하나의 원천을 여러 채널로</div></div>
+      <div class="card"><div class="icon">💌</div><div class="name">나들목</div><div class="role">독자 소통<br>보내기 직전의 말을 다듬는다</div></div>
+    </div>
+
+    <div class="col">
+      <div class="col-title">살림과 터전</div>
+      <div class="col-sub">포근나루가 서 있는 땅</div>
+      <div class="card"><div class="icon">📅</div><div class="name">가비</div><div class="role">운영 · 일정<br>한 주의 계획을 짓는다</div></div>
+      <div class="card"><div class="icon">🪴</div><div class="name">금전수</div><div class="role">수익 · 정산 · 재무<br>수익이 건강하게 자라도록</div></div>
+      <div class="card"><div class="icon">⚒️</div><div class="name">김리</div><div class="role">앱 개발<br>나루메모 · 포근한 글쓰기</div></div>
+      <div class="card"><div class="icon">🧱</div><div class="name">담벼락</div><div class="role">시스템 엔지니어<br>볼트 · 동기화 · 예약 루틴 점검</div></div>
+    </div>
+
+  </div>
+
+  <div class="annex">
+    <div class="label">별채 — 디퍼 살롱 전용</div>
+    <div class="name">🦊 사막여우</div>
+    <div class="role">디퍼 30일 여정 · 씨앗 · 오아시스 · 지형도<br>deeper-salon 볼트에서만 일한다 (deeper-os 플러그인)</div>
+  </div>
+
+  <footer>포근나루는 식구들과 함께 자란다 · 바다가 그림</footer>
+
+</div>
+</body>
+</html>

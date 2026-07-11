@@ -22,7 +22,8 @@ deeper-haetsal/
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
-│   └─ family.html         # 「포근나루 열한 식구」 — 픽셀 캐릭터 갤러리
+│   ├─ family.html         # 「포근나루 열한 식구」 — 픽셀 캐릭터 갤러리
+│   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다 아래 네 기둥 + 별채(사막여우)
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘 · 체질 도해 인물)
 ```
 
@@ -42,6 +43,7 @@ deeper-haetsal/
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 열한 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
+| 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.github.io/deeper-haetsal/assignment/family-chart.html) |
 
 > 독서 DNA와 열한 식구 페이지는 2026-07-10에 폐지된 `dh.archive` 레포에서 옮겨온 것입니다.
 > `Bookish_DNA.html`의 숫자를 다시 뽑는 생성 스크립트(`analyze.py` · `build_data.py` · `data/*.json`)는
