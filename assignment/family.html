@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>포근나루 열한 식구 · 픽셀 갤러리</title>
-<meta name="description" content="포근나루를 함께 짓는 열한 식구를 저마다 어울리는 동물과 성향으로 빚은 픽셀 캐릭터 갤러리." />
+<title>포근나루 식구 · 픽셀 갤러리</title>
+<meta name="description" content="포근나루를 함께 짓는 식구들을 저마다 어울리는 동물과 성향으로 빚은 픽셀 캐릭터 갤러리." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
@@ -65,12 +65,12 @@ footer a{color:var(--terra-d)}
 <div class="wrap">
 <header>
   <p class="kicker">POGNARU STUDIO</p>
-  <h1>포근나루 열한 식구</h1>
-  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열한 식구.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <h1>포근나루 식구</h1>
+  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 식구들.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
 </header>
-<div class="grid" id="g" aria-label="포근나루 열한 식구 픽셀 캐릭터"></div>
+<div class="grid" id="g" aria-label="포근나루 식구 픽셀 캐릭터"></div>
 <footer>
-  바다의 시선으로 그린 열한 식구 · 포근나루 스튜디오<br />
+  바다의 시선으로 그린 식구들 · 포근나루 스튜디오<br />
   <a href="index.html">← 과제</a>
 </footer>
 </div>
@@ -98,6 +98,9 @@ const fam=[
 {n:"윤슬",a:"콘텐츠 변주",an:"흩어지는 나비",q:"하나의 빛을 여럿으로 날려요",
  pal:{W:"#FAC775",v:"#EF9F27",o:"#5F5E5A","*":"#FFF3C4"},
  map:["................",".....*....*.....","..WW..oo..WW....",".WWWW.oo.WWWW...","WWWWWWooWWWWWW..","WWvWWWooWWWvWW..","WWWWWWooWWWWWW..",".WWWW.oo.WWWW...","..WWWWooWWWW....","...WW.oo.WW.....","......oo........",".*..........*..."]},
+{n:"나들목",a:"독자 소통",an:"소식 나르는 제비",q:"소식을 물고 문 앞까지",
+ pal:{N:"#2E4A6B",e:"#1E1E1E",o:"#EF9F27",w:"#FFF4FA"},
+ map:["................","......NNNN......",".....NNNNNN.....",".....NeNNeN.....",".....NNNNNN.....","......NooN......","...NNNNNNNNNN...",".NNNNNwwwwNNNNN.","NNNNNNwwwwNNNNNN","..NNN.wwww.NNN..","......wwww......",".....ww..ww.....","....ww....ww....","...ww......ww..."]},
 {n:"나루",a:"강의·독서",an:"수다쟁이 앵무새",q:"수다도 가르침이 돼요",
  pal:{R:"#E24B4A",Y:"#EF9F27",G:"#639922",e:"#1E1E1E"},
  map:["................","....RRRR........","...RRRRRR.......","..RRRRRRRR......","..RReRRRRR......",".YYRRRRRRR......","YYYYRRRRRR......",".YYRRRRGGGG.....","..RRRRGGGGG.....","..RRRGGGGGG.....","...RGGGGGGG.....","...RGGGGGG......","...YYY..........","...YY..........."]},
@@ -107,9 +110,15 @@ const fam=[
 {n:"가비",a:"운영·일정",an:"분주한 꿀벌",q:"쉼 없이 분주하게, 부지런히",
  pal:{Y:"#FAC775",B:"#2C2C2A",w:"#E6F1FB",e:"#2C2C2A",s:"#888780"},
  map:["................","....ww..ww......","...wwwwwwww.....",".....YYYY.......","....YeYYeY......","....YYYYYY......","...YBBBBBBY.....","...YYYYYYYY.....","...YBBBBBBY.....","...YYYYYYYY.....","...YBBBBBBY.....","....YYYYYY......",".....YssY......."]},
+{n:"금전수",a:"수익·정산·재무",an:"알뜰한 다람쥐",q:"한 알도 허투루 않고 모아요",
+ pal:{B:"#B5793E",b:"#8A5A2B",w:"#FAEEDA",e:"#1E1E1E",T:"#C89A5A",a:"#EF9F27",A:"#6A4F35"},
+ map:["................","....BB....TT....","...BBBB..TTTT...","..BBBBBB.TTTTT..","..BeBBeB.TTTTT..","..BBBBBB.TTTTT..","..BBwwBB.TTTTT..","...BBBB..TTTTT..","..BwwwwB.TTTT...",".BBwwwwBB.TTT...",".BBwaawBB.TT....",".BBwAAwBB.......","..BBBBBB........","...bb..bb......."]},
 {n:"김리",a:"앱 개발",an:"두드리는 딱따구리",q:"탁탁, 두드려 코드를 짜요",
  pal:{R:"#E24B4A",S:"#3A4A55",B:"#D5E6F5",k:"#444441",e:"#1E1E1E",c:"#5FD0C5"},
- map:["................","....RRR.........","...RRRRR........","..RRRRRRR.......","..RReRRRR.......",".kkRRRRRR.......","kkkRRRRRR.......",".kkSSSSSS.......","...SBBBBS.......","...SBBBBS.......","...SBBBBS.......","...SSSSSS.......","...S.SS.S.......","...c....c......."]}
+ map:["................","....RRR.........","...RRRRR........","..RRRRRRR.......","..RReRRRR.......",".kkRRRRRR.......","kkkRRRRRR.......",".kkSSSSSS.......","...SBBBBS.......","...SBBBBS.......","...SBBBBS.......","...SSSSSS.......","...S.SS.S.......","...c....c......."]},
+{n:"담벼락",a:"시스템 엔지니어",an:"듬직한 거북",q:"묵묵히, 무너지지 않게 받쳐요",
+ pal:{H:"#9FB56E",e:"#1E1E1E",G:"#5A7A3E",g:"#8FB35E"},
+ map:["................",".......HH.......",".......HH.......","......HeeH......",".....HHHHHH.....","...GGGGGGGGGG...","..GGGGGGGGGGGG..",".GGGGGGGGGGGGGG.",".GgGGggGGggGGgG.",".GGgGGggGGggGGG.",".GGGGGGGGGGGGGG.","..GGGGGGGGGGGG..",".HH.HH..HH.HH..."]}
 ];
 function draw(c){
   let r="";
@@ -128,10 +137,13 @@ const msg={
   "정원":"덜어낼수록 또렷해지는 건 다현씨의 목소리예요.",
   "나침반":"바늘이 흔들려도, 다현씨 향한 길만은 끝까지 지킵니다.",
   "윤슬":"다현씨의 한 줄을 여러 빛으로 흩뿌려, 더 멀리 보낼게요.",
+  "나들목":"다현씨 대신 건넬 말을 곱게 다듬어, 독자의 문 앞에 둘게요.",
   "나루":"수다스러운 다현씨의 말, 그게 누군가의 배움이 됩니다.",
   "나무":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요.",
   "가비":"다현씨, 오늘 분량은 제가 지킬 테니 마음은 쉬세요.",
-  "김리":"한 글자도 어긋나지 않게, 다현씨 곁을 벼려 둡니다."
+  "금전수":"들고 나는 한 푼까지, 다현씨 대신 알뜰히 셈해 둘게요.",
+  "김리":"한 글자도 어긋나지 않게, 다현씨 곁을 벼려 둡니다.",
+  "담벼락":"보이지 않는 곳에서, 다현씨의 볼트가 무너지지 않게 받칩니다."
 };
 document.getElementById("g").innerHTML=fam.map(function(c){return '\
 <div class="scene">\
