@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 언어 지문 — 여섯 층위로 나를 읽다 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3EA;
+    --apricot:#F5EBE0;
+    --terra-light:#C8845A;
+    --terra-deep:#C4763A;
+    --brown:#3C2415;
+    --brown-soft:#5c4636;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:'Nanum Myeongjo',serif;
+    line-height:1.9;
+    padding:48px 20px 80px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+
+  /* Header */
+  .eyebrow{
+    font-family:'Nanum Gothic',sans-serif;
+    font-size:12px;letter-spacing:.22em;
+    color:var(--terra-deep);font-weight:700;
+    text-transform:uppercase;text-align:center;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:34px;line-height:1.35;text-align:center;color:var(--brown);
+  }
+  .sub{
+    text-align:center;color:var(--brown-soft);font-size:16px;
+    margin-top:12px;
+  }
+  .meta{
+    text-align:center;font-family:'Nanum Gothic',sans-serif;
+    font-size:13px;color:var(--terra-light);margin-top:20px;letter-spacing:.03em;
+  }
+  .rule{height:2px;background:var(--terra-light);opacity:.35;margin:36px auto 8px;max-width:120px;border-radius:2px;}
+
+  /* Layer card */
+  .layer{
+    background:#fff;
+    border:1px solid #efe2d3;
+    border-radius:16px;
+    padding:30px 30px 26px;
+    margin-top:26px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .layer-no{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:34px;height:34px;padding:0 10px;
+    background:var(--terra-deep);color:#fff;
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:15px;
+    border-radius:10px;margin-right:12px;vertical-align:middle;
+  }
+  .layer h2{
+    display:inline;font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:21px;color:var(--brown);vertical-align:middle;
+  }
+  .layer p{margin-top:16px;font-size:16.5px;color:#4a3524;}
+  .layer p + p{margin-top:12px;}
+
+  /* Quote */
+  blockquote{
+    background:var(--apricot);
+    border-left:4px solid var(--terra-deep);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;margin:16px 0;
+    font-size:16px;color:var(--brown);
+  }
+  blockquote.tight{margin:10px 0;}
+  .q-src{
+    display:block;font-family:'Nanum Gothic',sans-serif;
+    font-size:12px;color:var(--terra-light);margin-top:8px;letter-spacing:.02em;
+  }
+  .note{
+    font-family:'Nanum Gothic',sans-serif;font-size:14px;
+    color:var(--brown-soft);background:var(--cream);
+    border:1px dashed var(--terra-light);border-radius:10px;
+    padding:12px 16px;margin-top:16px;
+  }
+
+  /* Seeds */
+  .seed{
+    background:var(--apricot);border:1.5px solid var(--terra-light);
+    border-radius:12px;padding:18px 20px;margin-top:14px;
+  }
+  .seed-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:13px;
+    color:var(--terra-deep);letter-spacing:.04em;margin-bottom:8px;
+  }
+  .seed-text{font-size:16.5px;color:var(--brown);}
+  .badge{
+    display:inline-block;font-family:'Nanum Gothic',sans-serif;font-size:11px;
+    background:var(--terra-deep);color:#fff;border-radius:20px;
+    padding:2px 10px;margin-left:8px;letter-spacing:.03em;vertical-align:middle;
+  }
+
+  /* Closing */
+  .closing{
+    background:linear-gradient(160deg,#fff 0%,var(--apricot) 100%);
+    border:1px solid var(--terra-light);
+    border-radius:16px;padding:32px 30px;margin-top:34px;
+  }
+  .closing h2{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;
+    color:var(--terra-deep);text-align:center;margin-bottom:6px;
+  }
+  .closing .sect{margin-top:24px;}
+  .closing .sect-no{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;color:var(--terra-deep);
+    font-size:15px;
+  }
+  .closing p{font-size:16.5px;margin-top:8px;color:#4a3524;}
+  .oneline{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:20px;
+    text-align:center;color:var(--brown);line-height:1.6;
+    background:#fff;border-radius:12px;padding:20px;margin-top:10px;
+    border:1px solid #efe2d3;
+  }
+  .question{
+    font-family:'Nanum Myeongjo',serif;font-style:italic;font-size:18px;
+    color:var(--terra-deep);text-align:center;line-height:1.7;margin-top:10px;
+  }
+
+  footer{
+    text-align:center;margin-top:44px;
+    font-family:'Nanum Gothic',sans-serif;font-size:12.5px;color:var(--terra-light);
+    line-height:1.9;
+  }
+  .pen{font-family:'Nanum Pen Script',cursive;font-size:22px;color:var(--terra-deep);}
+  @media (max-width:520px){
+    body{padding:32px 14px 60px;}
+    h1{font-size:27px;}
+    .layer{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">DEEPER UNBRANDING SALON · 문법 1주차 심화 과제</div>
+  <h1>나의 언어 지문</h1>
+  <div class="sub">여섯 층위로 나를 읽다 — 열세 편에서 발굴한 한 사람의 목소리</div>
+  <div class="meta">글쓴이 · 햇살 &nbsp;|&nbsp; 대상 원고 · 몽롱쓰기 13편 (260625 ~ 260715) &nbsp;|&nbsp; 2026.07.15</div>
+  <div class="rule"></div>
+
+  <!-- (1) -->
+  <div class="layer">
+    <span class="layer-no">1</span><h2>언어 지문</h2>
+    <p>가장 자주 배어나는 건 <strong>자기 자신을 2인칭으로 부르는 습관</strong>이에요. 스스로를 타이르고, 끊고, 다시 출발시키는 사람의 말버릇입니다.</p>
+    <blockquote class="tight">“이제 좀 그만 먹어도 되지 않겠니, 다현아?”<span class="q-src">— 글 3 · 260629</span></blockquote>
+    <blockquote class="tight">“잘 하자, 다현아. 맨날 후회하지 말고.”<span class="q-src">— 글 11 · 260709</span></blockquote>
+    <p>긴 문장을 한참 끌고 가다 갑자기 짧게 못 박는 리듬, 화제가 튈 때마다 “아무튼”으로 리셋하는 버릇, 문장 끝의 “;;;”와 “ㅎㅎㅎ”까지 — 기법이 아니라 숨소리예요.</p>
+    <blockquote class="tight">“전부 다다. 하나같이 마음에 안 든다.”<span class="q-src">— 글 3 · 260629</span></blockquote>
+  </div>
+
+  <!-- (2) -->
+  <div class="layer">
+    <span class="layer-no">2</span><h2>세계관의 결</h2>
+    <p>첫 번째 믿음은 <strong>‘좋음이 곧 근거’</strong>라는 것.</p>
+    <blockquote class="tight">“좋다는 그 이유 하나만으로 삶의 많은 것들을 결정했다.”<span class="q-src">— 글 4 · 260630</span></blockquote>
+    <p>두 번째는 <strong>글의 원천이 바깥이 아니라 안에 있다</strong>는 확신인데, 정작 남을 설명하며 흘려 쓰셨어요.</p>
+    <blockquote class="tight">“결과물의 원천은 모두 각자의 내면에 보관되어 있다. 그걸 꺼내는 걸 클로드가 도와준다.”<span class="q-src">— 글 8 · 260706</span></blockquote>
+    <p>그 아래엔 ‘내가 애쓰는 게 아니라 주님이 마련하신다’는 섭리에 대한 신뢰가 깔려 있고요. 좋아서 고르고, 안에서 길어 올리고, 나머지는 맡긴다 — 이 세 겹이 열세 편의 지반입니다.</p>
+  </div>
+
+  <!-- (3) -->
+  <div class="layer">
+    <span class="layer-no">3</span><h2>니치 포지셔닝</h2>
+    <p>이 목소리만 독점할 수 있는 자리는 <strong>‘아직 판결나지 않은 억울함을, 검열 없는 새벽 글쓰기로 실시간 증언하는 사람’</strong>이에요. 근거가 세 곳에서 맞물립니다.</p>
+    <blockquote class="tight">“머릿속 검열관을 내려놓아야 가능한 일이다.” <span class="q-src">— 글 9 · 260707 (몽롱쓰기의 방법)</span></blockquote>
+    <blockquote class="tight">“내 안의 억울함을 분출하고 싶은 욕망.” <span class="q-src">— 글 12 · 260714 (쓰는 동기)</span></blockquote>
+    <blockquote class="tight">“2년이 지나도록 나의 억울함은 해소되지 않았다.” <span class="q-src">— 글 7 · 260703 (끝나지 않은 사건)</span></blockquote>
+    <p>대부분의 에세이스트는 아문 상처를 회고하지만, 다현씨는 아직 진행 중인 상처를 판결 전에 씁니다. 이 ‘미완의 증언’이라는 자리는 다른 누구도 앉을 수 없어요.</p>
+  </div>
+
+  <!-- (4) -->
+  <div class="layer">
+    <span class="layer-no">4</span><h2>희석 신호</h2>
+    <p>자신을 약하게 만드는 가장 뚜렷한 패턴은 <strong>남의 잣대를 빌려 자기 글을 깎는 것</strong>입니다.</p>
+    <blockquote class="tight">“원빈이의 말처럼 내 글은 중학교 2학년 수준에 머물러 있는듯하다.”<span class="q-src">— 글 12 · 260714</span></blockquote>
+    <p>그리고 그 희석을 스스로 이미 진단해 두셨어요.</p>
+    <blockquote class="tight">“서정적인 게 내 글의 장점이라는 칭찬에 갇혀있었다. 그래서 더 발전할 노력을 하지 않았다. 오히려 긴 글을 쪼개고, 부연 설명을 삭제하고, 누군가의 기준에 글을 맞추어 연습했다.”<span class="q-src">— 글 12 · 260714</span></blockquote>
+    <p>남의 기준으로 자신을 깎아내고는, 정작 “재잘재잘 말 많은 특성을 살려야 했다”고 후회하죠.</p>
+    <div class="note">유보 지점 — ‘게으른’, ‘나약한’ 같은 자기 낙인이 반복되는데, 이게 신앙적 겸손인지 자기 검열인지는 이 13편만으로는 갈라지지 않아요. <strong>여긴 자료가 더 필요합니다.</strong></div>
+  </div>
+
+  <!-- (5) -->
+  <div class="layer">
+    <span class="layer-no">5</span><h2>원천 텍스트 후보 — 씨앗 세 개</h2>
+    <p>이 사람만 쓸 수 있는 문장의 씨앗. 다현씨의 실제 단어를 살려 직접 썼습니다.</p>
+
+    <div class="seed">
+      <div class="seed-label">씨앗 ① · ‘하루를 삼킨 태양’ &nbsp;<span style="color:var(--terra-light);font-weight:400;">(글 12 · 260714)</span></div>
+      <div class="seed-text">하루를 삼킨 태양이 부지런히 쫓아 오는 아침마다, 나는 아직 삼켜지지 않은 문장 하나를 건지려고 눈을 뜬다.</div>
+    </div>
+
+    <div class="seed">
+      <div class="seed-label">씨앗 ② · 두 욕망(흰빛과 검은 연기) &nbsp;<span style="color:var(--terra-light);font-weight:400;">(글 12 · 260714)</span><span class="badge">햇살 확정</span></div>
+      <div class="seed-text">어릴 적, 별과 우주만을 아무런 흑심 없이 바라던 그 마음은 새하얗게 반짝였다. 지금, 억울함을 분출하고 싶은 이 욕망은 시커먼 연기처럼 피어오른다.</div>
+      <div class="note" style="margin-top:12px;">반짝이는 것은 별과 우주가 아니라 <strong>그것을 흑심 없이 사랑한 마음(열정)</strong>. 흰빛은 바깥의 별을 향해 반짝이고, 검은 연기는 안에서 피어올라 번진다 — 두 욕망 모두 대상이 아니라 ‘마음’이 색을 띤다. ‘흑심(黑心)의 유무’가 두 색을 가르는 숨은 축.</div>
+    </div>
+
+    <div class="seed">
+      <div class="seed-label">씨앗 ③ · ‘조금만 더 힘을 내, 금똥아’ &nbsp;<span style="color:var(--terra-light);font-weight:400;">(글 6 · 260702)</span></div>
+      <div class="seed-text">‘조금만 더 힘을 내, 금똥아’ — 아이를 밀어내며 했던 그 말을, 요즘은 새벽 책상 앞에서 나에게 한다.</div>
+    </div>
+  </div>
+
+  <!-- (6) -->
+  <div class="layer">
+    <span class="layer-no">6</span><h2>의미의 축 — 나의 ‘왜’</h2>
+    <p>관통하는 ‘왜’는 이거예요 — <strong>아무도 꺼내주지도, 믿어주지도 않은 안쪽의 것을 스스로 증언으로 바꿔, 판결이 나기 전에 나와 기록을 살려두는 것.</strong> 근거는 두 문장이 손을 잡습니다.</p>
+    <blockquote class="tight">“그나마 날 멈추게 하는 이유가 글 쓰기다.” <span class="q-src">— 글 11 · 260709 (생존)</span></blockquote>
+    <blockquote class="tight">“안 쓰는 것보다는 낫다는 믿음이 있으니까.” <span class="q-src">— 글 13 · 260715 (지속)</span></blockquote>
+    <p>잘 쓰기 위해서가 아니라, 무너지지 않기 위해, 그리고 억울함을 증거로 남기기 위해 계속 쓰시는 거예요.</p>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing">
+    <h2>그리고, 나에게로</h2>
+
+    <div class="sect">
+      <div class="sect-no">① 내 문장 안에 이미 있던 한 문장</div>
+      <blockquote>“그나마 날 멈추게 하는 이유가 글 쓰기다.”<span class="q-src">— 글 11 · 260709</span></blockquote>
+      <p>새벽 2시에 겨우 화면을 끄는 이유처럼 툭 흘리셨지만, 이 한 줄이 곧 다현씨의 글쓰기 정의예요. 남들에겐 글이 표현이나 야망이지만, 다현씨에겐 폐인이 되지 않게 붙드는 브레이크 — 자게 하고, 깨게 하고, 살게 하는 장치죠. 이 무게는 다현씨만의 것입니다.</p>
+    </div>
+
+    <div class="sect">
+      <div class="sect-no">② 한 줄로 세운 나</div>
+      <div class="oneline">머릿속 검열관을 내려놓은 새벽,<br>아직 해소되지 않은 억울함을<br>매일 증언으로 남기는 사람.</div>
+    </div>
+
+    <div class="sect">
+      <div class="sect-no">③ 원천 텍스트를 캐는 질문</div>
+      <p class="question">매일 아침 “아무튼” 한 마디로 서둘러 덮어버린 이야기들 가운데,<br>정말로 쓰고 싶었지만 아직 한 번도 끝까지 써 본 적 없는 장면은 무엇인가요?</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="pen">좋은 문장은 짜내는 게 아니라, 이미 내 글 안에 있던 것을 알아보는 일.</div>
+    <div style="margin-top:10px;">POGNARU STUDIO · 언어 지문 발굴 &nbsp;|&nbsp; DEEPER UNBRANDING SALON · PROJECT B-612</div>
+  </footer>
+
+</div>
+</body>
+</html>
