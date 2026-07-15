@@ -20,6 +20,7 @@ deeper-haetsal/
 ├─ assignment/
 │   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
 │   ├─ 260715.html         # 「나의 언어 지문」 — 몽롱쓰기 128편을 관통해 건져 올린 포지셔닝
+│   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -42,6 +43,7 @@ deeper-haetsal/
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
 | 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
 | 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715.html) |
+| 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
