@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>백스페이스를 막아둔 자리 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBEF;
+    --apricot:#FBE7C9;
+    --terra-light:#C8845A;
+    --terra-deep:#C4763A;
+    --brown:#3C2415;
+    --brown-soft:#5c4636;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:'Nanum Myeongjo',serif;
+    line-height:1.9;
+    padding:0 0 90px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+  .topnav{max-width:760px;margin:0 auto;padding:22px 20px 0;}
+  .topnav a{
+    font-family:'Nanum Gothic',sans-serif;font-size:13px;
+    color:var(--terra-deep);text-decoration:none;letter-spacing:.02em;
+    border-bottom:1px solid transparent;
+  }
+  .topnav a:hover{border-bottom:1px solid var(--terra-deep);}
+
+  .hero{
+    position:relative;padding:44px 20px 36px;text-align:center;
+    background:linear-gradient(180deg,var(--apricot) 0%,var(--cream) 100%);
+    margin-top:18px;
+  }
+  .eyebrow{
+    font-family:'Nanum Gothic',sans-serif;
+    font-size:12px;letter-spacing:.22em;
+    color:var(--terra-deep);font-weight:700;
+    text-transform:uppercase;margin-bottom:16px;
+  }
+  h1{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:32px;line-height:1.4;color:var(--brown);
+    max-width:640px;margin:0 auto;
+  }
+  .sub{
+    color:var(--brown-soft);font-size:16px;margin-top:14px;
+    max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7;
+  }
+  .meta{
+    font-family:'Nanum Gothic',sans-serif;
+    font-size:12.5px;color:var(--terra-light);margin-top:22px;letter-spacing:.02em;
+  }
+  .wave-divider{display:block;width:100%;height:34px;margin-top:-2px;}
+
+  .section-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:13px;
+    letter-spacing:.14em;color:var(--terra-deep);text-transform:uppercase;
+    margin:52px 0 14px;text-align:center;
+  }
+  .section-label::before,.section-label::after{content:'';display:inline-block;width:26px;height:1px;background:var(--terra-light);opacity:.5;vertical-align:middle;margin:0 10px;}
+
+  .opening{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:30px 30px 28px;margin-top:6px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .opening p{font-size:16.5px;color:#4a3524;}
+  .opening p + p{margin-top:12px;}
+
+  .draft-box{
+    margin-top:20px;background:#faf6ef;border:1px dashed var(--terra-light);
+    border-radius:14px;padding:20px 22px;
+  }
+  .draft-box .draft-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:11.5px;
+    letter-spacing:.1em;color:var(--terra-light);margin-bottom:9px;
+  }
+  .draft-box .draft-text{font-size:16px;color:var(--brown-soft);line-height:1.75;}
+
+  .key-box{
+    margin-top:20px;background:linear-gradient(160deg,var(--apricot) 0%,#fff 100%);
+    border:1.5px solid var(--terra-light);border-radius:14px;
+    padding:22px 24px;text-align:center;
+  }
+  .key-box .key-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.1em;color:var(--terra-deep);margin-bottom:10px;
+  }
+  .key-box .key-text{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;
+    color:var(--brown);line-height:1.65;
+  }
+
+  .method{
+    background:linear-gradient(160deg,#fff 0%,var(--apricot) 100%);
+    border:1px solid #efe2d3;border-radius:14px;
+    padding:20px 24px;margin-top:18px;
+    font-size:15px;color:var(--brown-soft);text-align:center;line-height:1.8;
+  }
+  .method strong{color:var(--terra-deep);}
+
+  .layer{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:28px 28px 24px;margin-top:20px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .layer-no{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:34px;height:34px;padding:0 10px;
+    background:var(--terra-deep);color:#fff;
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:14px;
+    border-radius:10px;margin-right:12px;vertical-align:middle;
+  }
+  .layer h2{
+    display:inline;font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:20px;color:var(--brown);vertical-align:middle;
+  }
+  .layer .layer-tag{
+    display:block;font-family:'Nanum Gothic',sans-serif;font-size:12.5px;
+    color:var(--terra-light);margin-top:10px;margin-left:46px;letter-spacing:.02em;
+  }
+  .layer p{margin-top:14px;font-size:16px;color:#4a3524;}
+  .layer p + p{margin-top:10px;}
+
+  .met{
+    display:inline-block;font-family:'Nanum Gothic',sans-serif;font-weight:800;
+    font-size:11.5px;color:#fff;background:var(--terra-deep);
+    border-radius:20px;padding:3px 11px;margin-top:16px;letter-spacing:.03em;
+  }
+  .met.open{background:transparent;color:var(--terra-light);border:1px dashed var(--terra-light);}
+
+  blockquote{
+    background:var(--apricot);
+    border-left:4px solid var(--terra-deep);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;margin:16px 0;
+    font-size:15.5px;color:var(--brown);
+  }
+
+  .notyet{
+    background:#fdfaf4;border:1.5px dashed var(--terra-light);
+    border-radius:16px;padding:28px 28px 24px;margin-top:6px;
+  }
+  .notyet h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;color:var(--brown-soft);}
+  .notyet p{margin-top:13px;font-size:16px;color:#4a3524;}
+  .notyet blockquote{background:rgba(251,231,201,.6);border-left-color:var(--terra-light);}
+  .notyet .tense{
+    margin-top:18px;background:#fff;border:1px solid #efe2d3;border-radius:12px;
+    padding:16px 18px;font-size:15px;color:var(--brown-soft);
+  }
+  .notyet .tense b{color:var(--terra-deep);}
+
+  .source-block{
+    background:linear-gradient(160deg,#fff 0%,var(--apricot) 100%);
+    border:1.5px solid var(--terra-light);border-radius:16px;
+    padding:32px 28px;margin-top:6px;
+  }
+  .source-block .intro{font-size:15.5px;color:var(--brown-soft);text-align:center;margin-bottom:22px;}
+  .mirror{
+    background:#fff;border-radius:12px;padding:18px 20px;margin-top:14px;
+    border:1px solid #efe2d3;
+  }
+  .mirror-label{
+    display:inline-block;font-family:'Nanum Gothic',sans-serif;font-weight:800;
+    font-size:12.5px;color:#fff;background:var(--terra-deep);
+    border-radius:20px;padding:3px 12px;margin-bottom:10px;letter-spacing:.03em;
+  }
+  .mirror .hand{font-size:15.5px;color:var(--brown);}
+  .mirror .pen{font-size:15.5px;color:var(--brown-soft);margin-top:8px;}
+  .mirror .pen b{color:var(--terra-deep);font-weight:700;}
+  .rep-sentence{
+    margin-top:24px;background:var(--brown);border-radius:14px;
+    padding:26px 24px;text-align:center;
+  }
+  .rep-sentence .rep-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:11.5px;
+    letter-spacing:.14em;color:var(--terra-light);margin-bottom:10px;text-transform:uppercase;
+  }
+  .rep-sentence .rep-text{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:18px;
+    color:var(--cream);line-height:1.75;
+  }
+  .rep-sentence .rep-text em{color:#F2C48A;font-style:normal;}
+
+  .nextq{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:28px 28px 24px;margin-top:6px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .nextq .q{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:17.5px;
+    color:var(--brown);line-height:1.7;
+    background:var(--apricot);border-radius:12px;padding:20px 22px;
+  }
+  .nextq p{margin-top:14px;font-size:15.5px;color:#4a3524;}
+
+  .closing{
+    position:relative;margin-top:56px;padding:44px 30px 40px;
+    text-align:center;
+    background:linear-gradient(180deg,var(--cream) 0%,var(--apricot) 55%,var(--terra-light) 220%);
+    border-radius:20px;overflow:hidden;
+  }
+  .closing::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 100%, rgba(255,255,255,.5) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 100%, rgba(255,255,255,.35) 0%, transparent 40%);
+    pointer-events:none;
+  }
+  .closing-inner{position:relative;}
+  .closing .section-label{margin-top:0;}
+  .closing blockquote{
+    background:rgba(255,255,255,.75);text-align:left;
+    font-size:16px;margin:20px auto 0;max-width:520px;
+  }
+  .closing-line{
+    font-family:'Nanum Pen Script',cursive;font-size:30px;
+    color:var(--brown);margin-top:26px;line-height:1.5;
+  }
+
+  footer{
+    text-align:center;margin-top:48px;
+    font-family:'Nanum Gothic',sans-serif;font-size:12.5px;color:var(--terra-light);
+    line-height:2;
+  }
+  footer .tagline{
+    font-family:'Nanum Myeongjo',serif;font-size:14px;color:var(--brown-soft);
+    font-style:italic;margin-bottom:6px;
+  }
+
+  @media (max-width:520px){
+    .hero{padding:36px 16px 28px;}
+    h1{font-size:25px;}
+    .layer,.notyet{padding:22px 20px 20px;}
+    .closing-line{font-size:25px;}
+  }
+</style>
+</head>
+<body>
+  <div class="topnav"><a href="./">← 과제 목록</a></div>
+
+  <div class="hero">
+    <div class="eyebrow">Deeper Unbranding Salon · 출발지를 새롭게 정의하기</div>
+    <h1>백스페이스를<br>막아둔 자리</h1>
+    <p class="sub">브랜드 씨앗 문장을 네 조각으로 뜯어, 조각마다 실제로 일어났던 장면과 대질하다</p>
+    <div class="meta">햇살 · 도제 사막여우 &nbsp;|&nbsp; 세 번째 과제 &nbsp;|&nbsp; 2026.07.16</div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,20 C200,4 400,32 600,18 C800,4 1000,30 1200,16 L1200,34 L0,34 Z" fill="#FBE7C9" opacity=".55"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="section-label">여는 자리</div>
+    <div class="opening">
+      <p>브랜드 문장은 매끈해지기 쉽다. 매끈해진 문장은 누구나 쓸 수 있고, 누구나 쓸 수 있는 문장은 아무의 것도 아니다.</p>
+      <p>그래서 이번엔 문장을 다듬지 않았다. <strong>네 조각으로 뜯었다.</strong> 누구에게 · 무엇을 제시하고 · 무엇을 선사하고 · 어떤 성취를 돕는지. 그리고 조각마다 하나씩만 물었다 — <strong>"이게 실제로 일어났던 장면이 있나요?"</strong></p>
+      <p>장면이 나오면 그 조각은 특이점과 만난 것이다. 안 나오면 억지로 찾게 하지 않고, '아직 만나지 않은 조각'으로 표시만 하고 넘어갔다. 비판이 아니라 좌표다.</p>
+
+      <div class="draft-box">
+        <div class="draft-label">초고</div>
+        <div class="draft-text">나는 상처에 움츠러든 사람들에게 판단 없는 글쓰기, 몽롱쓰기를 선사하고, 내면의 빛나는 돌멩이를 찾는, 글쓰기를 돕는다.</div>
+      </div>
+
+      <div class="key-box">
+        <div class="key-label">뜯어보니 나온 것</div>
+        <div class="key-text">상처에 움츠러든 사람은<br>남이 아니라 나였다.</div>
+      </div>
+    </div>
+
+    <div class="method">
+      네 조각 중 <strong>셋은 이미 몸에서 일어난 일</strong>이었고, <strong>하나는 아직 일어나지 않은 일</strong>이었다.<br>
+      그리고 한 조각은 뜯는 도중에 <strong>반으로 갈라졌다</strong> — 배운 것과, 만든 것으로.
+    </div>
+
+    <div class="section-label">네 조각과 그 장면</div>
+
+    <div class="layer">
+      <span class="layer-no">1</span><h2>누구에게 — "상처에 움츠러든 사람들"</h2>
+      <span class="layer-tag">밖에서 관찰한 대상이 아니었다</span>
+      <p>첫 질문에 돌아온 답이 이 과제의 방향을 바꿨다. 관찰자가 아니라 <strong>당사자</strong>였다. 움츠러든 사람을 밖에서 본 것이 아니라, 안에서 살았다.</p>
+      <blockquote>"나의 이야기야. 나는 인간관계에서의 상처로 은둔생활을 했어. 나를 나로서 조금씩 설 수 있게 한 것이 글쓰기야."</blockquote>
+      <p>두 번째 과제에서 발굴한 세 동작 — 몸부터 일으키기 · 판단 없는 방 하나 · 쏟아내고 묻어두기 — 이 그대로 이 장면 안에 들어앉는다. 은둔은 관념이 아니라 주소였다.</p>
+      <span class="met">특이점을 만난 조각</span>
+    </div>
+
+    <div class="layer">
+      <span class="layer-no">2</span><h2>무엇을 제시하고 — "판단 없는 글쓰기, 몽롱쓰기"</h2>
+      <span class="layer-tag">이 조각은 반으로 갈라졌다</span>
+      <p>몽롱쓰기의 장면은 선명했다. 다만 그것은 <strong>건넨 장면이 아니라 받은 장면</strong>이었다.</p>
+      <blockquote>"생각학교 ASK에서 몽롱쓰기를 배웠어. 누구에게도 보여주지 않는 글 쓰기. 오타가 나도, 문법이 맞지 않아도 앞으로만 나아가는 글쓰기. 멈추지 않는 말처럼 다그닥 다그닥 타자를 치는 손."</blockquote>
+      <p>배운 것을 제시물 자리에 두면, 나만 설 수 있는 자리가 아니게 된다. 그래서 더 캐물었더니 <strong>과거형 동사 하나</strong>가 나왔다.</p>
+      <blockquote>"자기 검열을 지우기 위해 백스페이스를 막아둔 글쓰기 도구 '포근한 글쓰기'를 <strong>만들었어.</strong>"</blockquote>
+      <p>이것이 앞선 과제의 <strong>"어디서도 배운 적 없이 혼자 만든 동작"</strong>과 같은 계보다. 쏟아내고 묻어두기가 맨손의 동작이었다면, 백스페이스를 막아둔 도구는 그 동작이 굳어 손잡이가 된 것이다.</p>
+      <span class="met">특이점을 만난 조각 — 단, 몽롱쓰기가 아니라 '막아둔 자리'가</span>
+    </div>
+
+    <div class="layer">
+      <span class="layer-no">3</span><h2>무엇을 선사하고 — "내면의 빛나는 돌멩이를 찾는"</h2>
+      <span class="layer-tag">찾기가 목적이 아니었다</span>
+      <p>돌멩이 하나를 짚어 달라 하자, 지난주에 확정한 씨앗이 그대로 올라왔다.</p>
+      <blockquote>"어릴 적 순수하게 욕망하던 것들이 새하얗고 반짝였구나 깨달았지. 사람에게 상처 받았지만 나는 여전히 사람을 사랑하고 있다는 걸 알게 되었고."</blockquote>
+      <p>그런데 그 뒤에 붙은 문장이 이 조각을 옮겼다. 찾는 것이 목적이 아니라, 찾다 보니 <strong>알아보는 눈이 돌아온 것</strong>이었다.</p>
+      <blockquote>"내면에서부터 치유가 된 거야. 드디어 아름다운 것을 알아보고 다시 사랑하게 되었어."</blockquote>
+      <span class="met">특이점을 만난 조각</span>
+    </div>
+
+    <div class="layer">
+      <span class="layer-no">4</span><h2>어떤 성취를 돕는지 — "글쓰기를 돕는다"</h2>
+      <span class="layer-tag">'돕는다'가 스스로 뒤집혔다</span>
+      <p>초고에서 이 조각은 ②와 같은 자리를 가리키고 있었다. 제시한 것도 글쓰기, 돕는 성취도 글쓰기. 장면을 물었더니, 성취의 정체가 바뀌었다.</p>
+      <blockquote>"글 쓰는 사람은 어려운 벽을 넘는 게 아니었어. 내 안의 정제되지 않은 언어가, 날 것의 감정이 쌓이고 쌓여 글로 매만져질 준비를 하고 있는 거야."</blockquote>
+      <p>벽은 넘는 자와 못 넘는 자를 가른다. 쌓임은 가르지 않는다 — 시간만 있으면 된다. 그래서 다음 문장이 겸양이 아니라 <strong>논리적 귀결</strong>이 된다. 쌓이는 것이라면 가르칠 것이 없고, 쌓일 자리와 시간만 지키면 되니까.</p>
+      <blockquote>"나는 글쓰기를 가르치지 않아. 날 것의 언어, 몽롱쓰기를 함께할 뿐이야."</blockquote>
+      <p>그 쌓임은 이미 한 번 끝까지 일어났다. <strong>『파도는 여전히 하얗다』</strong>로 묶였고, 지금은 소설을 준비 중이다.</p>
+      <span class="met">특이점을 만난 조각 — '돕는다'가 '함께 쓴다'로</span>
+    </div>
+
+    <div class="section-label">아직 만나지 않은 조각</div>
+    <div class="notyet">
+      <h2>앞으로 만들 장면 — 건너편에 앉을 사람</h2>
+      <p>몽롱쓰기를 남에게 내밀었던 장면을 딱 한 번 물었다. 답은 짧았다.</p>
+      <blockquote>"없어. 아직 나만 하고 있어."</blockquote>
+      <p>그 뒤에 붙은 말들의 시제를 보면, 없는 것이 무엇인지 정확히 보인다.</p>
+
+      <div class="tense">
+        "도구를 쥐여 <b>줄거야</b>" · "그리고 함께 <b>쓸 거야</b>" · "새벽마다 함께 <b>쓰겠어</b>"<br>
+        — 전부 미래형이다.
+      </div>
+
+      <p>도구는 이미 만들어져 있다. 새벽은 이미 몸에 있다. 아직 없는 것은 <strong>건너편에 앉을 사람</strong>뿐이다. 이것은 결함이 아니라 좌표다 — 8월의 선릿모닝이 채울 자리.</p>
+      <span class="met open">아직 만나지 않은 조각</span>
+    </div>
+
+    <div class="section-label">다시 세운 문장</div>
+    <div class="source-block">
+      <p class="intro">초고의 단어를 최대한 지키되,<br>관념이던 자리를 오늘 나온 장면의 단어로 갈아 끼웠다.</p>
+
+      <div class="mirror">
+        <span class="mirror-label">바꾼 것 · 누구에게</span>
+        <div class="hand">"상처에 움츠러든 사람들" → <b>"상처에 움츠러들어 썼다 지우기를 반복하는 사람들"</b></div>
+        <div class="pen">→ 본인이 직접 특정한 순간, 대상이 관념에서 <b>손동작</b>으로 내려왔다.</div>
+      </div>
+
+      <div class="mirror">
+        <span class="mirror-label">바꾼 것 · 제시와 선사</span>
+        <div class="hand">둘 다 "몽롱쓰기"로 겹쳐 있던 것을 가름</div>
+        <div class="pen">→ 제시는 <b>만든 것</b>(백스페이스를 막아둔 자리), 선사는 그 위에서 일어나는 일(몽롱쓰기).</div>
+      </div>
+
+      <div class="mirror">
+        <span class="mirror-label">바꾼 것 · 성취</span>
+        <div class="hand">"돕는다" → <b>"함께 쓴다"</b> &nbsp;·&nbsp; "돌멩이를 찾는" → <b>"쌓여 돌멩이가 되고"</b></div>
+        <div class="pen">→ 내 판단이 아니라 본인 문장이다. 찾기는 뒤지는 동작, 겪은 것은 <b>쌓임</b>이었다.</div>
+      </div>
+
+      <div class="rep-sentence">
+        <div class="rep-label">Origin · 특이점 버전</div>
+        <div class="rep-text">나는 <em>상처에 움츠러들어 썼다 지우기를 반복하는 사람들</em>에게<br><em>백스페이스를 막아둔 새벽 한 자리</em>를 제시하여,<br><em>판단 없이 날 것의 언어를 쏟아내는 몽롱쓰기</em>를 선사하고,<br>그 날 것이 쌓여 <em>내면의 빛나는 돌멩이</em>가 되고<br>마침내 <em>아름다운 것을 다시 알아보게</em> 되기까지<br><em>함께 쓴다.</em></div>
+      </div>
+    </div>
+
+    <div class="section-label">지난 씨앗과 만나는 곳</div>
+    <div class="opening">
+      <p>지난주 확정한 씨앗 ②<strong>「두 욕망 — 흰빛과 검은 연기」</strong>와 이 문장은 같은 축 위에 있다.</p>
+      <blockquote>"어릴 적, 별과 우주만을 아무런 <strong>흑심 없이</strong> 바라던 그 마음은 새하얗게 반짝였다."</blockquote>
+      <p>씨앗은 <strong>흑심 없이</strong> 바라본 마음이 반짝였다고 하고, 새 문장은 <strong>판단 없이</strong> 쏟아낸 날 것이 돌멩이가 된다고 한다. 둘 다 같은 말을 하고 있다 — <strong>무언가를 덜어냈을 때 빛이 돌아온다.</strong></p>
+      <p>백스페이스를 막는 일이 곧 흑심을 막는 일이었던 셈이다.</p>
+    </div>
+
+    <div class="section-label">다음 주에 찾아볼 질문</div>
+    <div class="nextq">
+      <div class="q">생각학교 ASK에서 몽롱쓰기가 나에게 건네지던 그 자리 — 그때 나를 움츠러들지 않게 한 건 무엇이었나? 누군가의 어떤 말이었나, 아니면 아무도 아무 말도 하지 않은 것이었나?</div>
+      <p>건넨 장면은 없지만 <strong>받은 장면은 있다.</strong> 은둔 중이던 사람이 그 자리에서는 도망가지 않았다.</p>
+      <p>답의 절반은 이미 두 번째 과제에 적혀 있다 — <strong>"잘 하니 못 하니 그런 판단 없이"</strong>, 한 달에 한 번 끝까지 지킨 방. 새벽 줌에서 만들려는 것이 그 방이라면, <strong>그 방이 어떻게 생겼기에 내가 거기 앉아 있을 수 있었는지</strong>가 다음 주의 재료다.</p>
+    </div>
+
+    <div class="closing">
+      <div class="closing-inner">
+        <div class="section-label">닫는 자리</div>
+        <blockquote>"글 쓰는 사람은 어려운 벽을 넘는 게 아니었어.<br>날 것의 감정이 쌓이고 쌓여<br>글로 매만져질 준비를 하고 있는 거야."</blockquote>
+        <div class="closing-line">벽은 사람을 가르고,<br>쌓임은 아무도 가르지 않는다.</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루입니다</div>
+      POGNARU × DEEPER UNBRANDING
+    </footer>
+  </div>
+</body>
+</html>

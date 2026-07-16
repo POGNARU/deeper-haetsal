@@ -23,6 +23,7 @@ deeper-haetsal/
 │   ├─ 260715.html         # 「나의 언어 지문」 — 몽롱쓰기 128편을 관통해 건져 올린 포지셔닝
 │   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
 │   ├─ 260716-singularity.html # 「몸이 먼저 알던 세 개의 동작」 — 영웅 여정(캠벨) 발굴 · noindex
+│   ├─ 260716-origin.html  # 「백스페이스를 막아둔 자리」 — 출발지를 새롭게 정의하기 · noindex
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -48,6 +49,7 @@ deeper-haetsal/
 | 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715.html) |
 | 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
 | 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
+| 백스페이스를 막아둔 자리 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -124,6 +126,8 @@ deeper-haetsal/
 
 - **공개 저장소**입니다. 개인적인 자기분석 기록·식구 일기·사적인 이야기는 이 저장소에 두지 않습니다 — 성찰 글만 공개합니다.
 - `260716-singularity.html`은 위 규칙을 **서사에까지** 적용한 첫 과제 페이지입니다. 원본 실습에는 병력·가족·실명이 들어 있으나, 공개본에는 **발굴된 방법(세 동작)과 특이점만** 싣고 사연·병력·실명·가족은 전부 뺐습니다. 원본은 비공개 레포 `deeper-salon`의 `01-Grammar/Insights/260716-몸부터-일으키는-사람.md`에만 둡니다. 이후 유사한 과제도 같은 기준을 따릅니다.
+- **디퍼 살롱 과제 순서** — ① 암묵지 외부화(`260715-hands.html`) → ② 영웅 여정(`260716-singularity.html`) → ③ 출발지를 새롭게 정의하기(`260716-origin.html`). 세 번째는 앞의 둘이 발굴한 재료(손의 판단 기준 · 세 동작)를 브랜드 씨앗 문장에 대질시키는 과제라, 페이지도 앞선 두 과제를 명시적으로 참조합니다.
+- `260716-origin.html`도 위 서사 기준을 따릅니다 — 은둔은 이미 `260716-singularity.html`에 공개된 선이라 유지하되, 육아·가족·실명·사연의 원인은 싣지 않았습니다. 다만 이 페이지에는 **출처 기관명 '생각학교 ASK'**가 들어갑니다(몽롱쓰기를 배운 자리). 배운 것과 만든 것을 가르는 것이 이 과제의 핵심이라 출처 표기가 논지의 일부입니다. 원본 대화는 `deeper-salon`의 `01-Grammar/Insights/260716 브랜드 씨앗 - 특이점 버전.md`에 있습니다.
 - `assets/taeeumin-body.png`는 **햇살이 평생 이용권으로 정식 구매한 Getty Images 소재**(GettyImages-1305883689)에서 인물 하나만 잘라내 배경을 투명 처리한 것입니다. 라이선스가 없는 스톡 이미지는 이 저장소에 두지 않습니다.
 
 ---
