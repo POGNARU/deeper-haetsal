@@ -70,8 +70,10 @@ svg{max-width:100%;}
 .z4{background:linear-gradient(180deg,var(--dusk) 0%, #B06A5C 55%, var(--sunrise) 100%);
   padding:52px 0 46px;}
 .z4 .label{color:#FFE9C9;}
-.z4 p{font-size:18.5px;color:#FFF3E4;text-align:center;max-width:470px;margin-left:auto;margin-right:auto;}
-.z4 p + p{margin-top:32px;}
+.z4 p{font-size:18.5px;color:#FFF3E4;text-align:center;max-width:520px;margin-left:auto;margin-right:auto;}
+.z4 p + p{margin-top:34px;}
+/* 의미 단위로 끊어 읽도록 한 호흡씩 한 줄 */
+.ln{display:block;}
 .stone{font-family:'Gowun Batang',serif;font-weight:700;font-size:30px;color:var(--gold);}
 
 /* ── ZONE 5 : sunrise → apricot (이런 분께) ── */
@@ -172,8 +174,18 @@ footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5p
 
 <div class="z4"><div class="wrap">
   <div class="label">How we write</div>
-  <p>선릿모닝은 새벽에 함께 쓰는 시간입니다. 잘 쓰지 않아도 됩니다. 검열 없이, 떠오르는 대로 그냥 씁니다. 지우지 않고, 멈추지 않고 — 그게 전부입니다.</p>
-  <p>무엇을 써야 할지 몰라도 괜찮습니다. 일단 쓰다 보면, 그 안에서<br><span class="stone">빛나는 돌멩이</span><br>하나쯤 건져집니다.</p>
+  <p>
+    <span class="ln">선릿모닝은 새벽에 함께 쓰는 시간입니다.</span>
+    <span class="ln">잘 쓰지 않아도 됩니다.</span>
+    <span class="ln">검열 없이, 떠오르는 대로 그냥 씁니다.</span>
+    <span class="ln">지우지 않고, 멈추지 않고 — 그게 전부입니다.</span>
+  </p>
+  <p>
+    <span class="ln">무엇을 써야 할지 몰라도 괜찮습니다.</span>
+    <span class="ln">일단 씁니다.</span>
+    <span class="ln" style="margin-top:14px;">그 안에서 <span class="stone">빛나는 돌멩이</span>를</span>
+    <span class="ln">건질 수 있기를—</span>
+  </p>
 </div></div>
 <svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 C 95,-2 195,30 295,14 C 395,-2 485,28 585,16 C 668,6 726,22 760,13 L760,38 L0,38 Z" fill="#C97B5E"/></svg>
 
