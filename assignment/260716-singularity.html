@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>몸이 먼저 알던 세 개의 동작 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBEF;
+    --apricot:#FBE7C9;
+    --terra-light:#C8845A;
+    --terra-deep:#C4763A;
+    --brown:#3C2415;
+    --brown-soft:#5c4636;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:'Nanum Myeongjo',serif;
+    line-height:1.9;
+    padding:0 0 90px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+  .topnav{max-width:760px;margin:0 auto;padding:22px 20px 0;}
+  .topnav a{
+    font-family:'Nanum Gothic',sans-serif;font-size:13px;
+    color:var(--terra-deep);text-decoration:none;letter-spacing:.02em;
+    border-bottom:1px solid transparent;
+  }
+  .topnav a:hover{border-bottom:1px solid var(--terra-deep);}
+
+  .hero{
+    position:relative;padding:44px 20px 36px;text-align:center;
+    background:linear-gradient(180deg,var(--apricot) 0%,var(--cream) 100%);
+    margin-top:18px;
+  }
+  .eyebrow{
+    font-family:'Nanum Gothic',sans-serif;
+    font-size:12px;letter-spacing:.22em;
+    color:var(--terra-deep);font-weight:700;
+    text-transform:uppercase;margin-bottom:16px;
+  }
+  h1{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:32px;line-height:1.4;color:var(--brown);
+    max-width:640px;margin:0 auto;
+  }
+  .sub{
+    color:var(--brown-soft);font-size:16px;margin-top:14px;
+    max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7;
+  }
+  .meta{
+    font-family:'Nanum Gothic',sans-serif;
+    font-size:12.5px;color:var(--terra-light);margin-top:22px;letter-spacing:.02em;
+  }
+  .wave-divider{display:block;width:100%;height:34px;margin-top:-2px;}
+
+  .section-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:13px;
+    letter-spacing:.14em;color:var(--terra-deep);text-transform:uppercase;
+    margin:52px 0 14px;text-align:center;
+  }
+  .section-label::before,.section-label::after{content:'';display:inline-block;width:26px;height:1px;background:var(--terra-light);opacity:.5;vertical-align:middle;margin:0 10px;}
+
+  .opening{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:30px 30px 28px;margin-top:6px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .opening p{font-size:16.5px;color:#4a3524;}
+  .opening p + p{margin-top:12px;}
+  .key-box{
+    margin-top:20px;background:linear-gradient(160deg,var(--apricot) 0%,#fff 100%);
+    border:1.5px solid var(--terra-light);border-radius:14px;
+    padding:22px 24px;text-align:center;
+  }
+  .key-box .key-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:.1em;color:var(--terra-deep);margin-bottom:10px;
+  }
+  .key-box .key-text{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;
+    color:var(--brown);line-height:1.65;
+  }
+
+  .method{
+    background:linear-gradient(160deg,#fff 0%,var(--apricot) 100%);
+    border:1px solid #efe2d3;border-radius:14px;
+    padding:20px 24px;margin-top:18px;
+    font-size:15px;color:var(--brown-soft);text-align:center;line-height:1.8;
+  }
+  .method strong{color:var(--terra-deep);}
+
+  .layer{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:28px 28px 24px;margin-top:20px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .layer-no{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:34px;height:34px;padding:0 10px;
+    background:var(--terra-deep);color:#fff;
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:14px;
+    border-radius:10px;margin-right:12px;vertical-align:middle;
+  }
+  .layer h2{
+    display:inline;font-family:'Nanum Myeongjo',serif;font-weight:800;
+    font-size:20px;color:var(--brown);vertical-align:middle;
+  }
+  .layer .layer-tag{
+    display:block;font-family:'Nanum Gothic',sans-serif;font-size:12.5px;
+    color:var(--terra-light);margin-top:10px;margin-left:46px;letter-spacing:.02em;
+  }
+  .layer p{margin-top:14px;font-size:16px;color:#4a3524;}
+  .layer p + p{margin-top:10px;}
+
+  blockquote{
+    background:var(--apricot);
+    border-left:4px solid var(--terra-deep);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;margin:16px 0;
+    font-size:15.5px;color:var(--brown);
+  }
+
+  .source-block{
+    background:linear-gradient(160deg,#fff 0%,var(--apricot) 100%);
+    border:1.5px solid var(--terra-light);border-radius:16px;
+    padding:32px 28px;margin-top:6px;
+  }
+  .source-block .intro{font-size:15.5px;color:var(--brown-soft);text-align:center;margin-bottom:22px;}
+  .mirror{
+    background:#fff;border-radius:12px;padding:18px 20px;margin-top:14px;
+    border:1px solid #efe2d3;
+  }
+  .mirror-label{
+    display:inline-block;font-family:'Nanum Gothic',sans-serif;font-weight:800;
+    font-size:12.5px;color:#fff;background:var(--terra-deep);
+    border-radius:20px;padding:3px 12px;margin-bottom:10px;letter-spacing:.03em;
+  }
+  .mirror .hand{font-size:15.5px;color:var(--brown);}
+  .mirror .pen{font-size:15.5px;color:var(--brown-soft);margin-top:8px;}
+  .mirror .pen b{color:var(--terra-deep);font-weight:700;}
+  .rep-sentence{
+    margin-top:24px;background:var(--brown);border-radius:14px;
+    padding:26px 24px;text-align:center;
+  }
+  .rep-sentence .rep-label{
+    font-family:'Nanum Gothic',sans-serif;font-weight:800;font-size:11.5px;
+    letter-spacing:.14em;color:var(--terra-light);margin-bottom:10px;text-transform:uppercase;
+  }
+  .rep-sentence .rep-text{
+    font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:18px;
+    color:var(--cream);line-height:1.75;
+  }
+
+  .closing{
+    position:relative;margin-top:56px;padding:44px 30px 40px;
+    text-align:center;
+    background:linear-gradient(180deg,var(--cream) 0%,var(--apricot) 55%,var(--terra-light) 220%);
+    border-radius:20px;overflow:hidden;
+  }
+  .closing::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 100%, rgba(255,255,255,.5) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 100%, rgba(255,255,255,.35) 0%, transparent 40%);
+    pointer-events:none;
+  }
+  .closing-inner{position:relative;}
+  .closing .section-label{margin-top:0;}
+  .closing blockquote{
+    background:rgba(255,255,255,.75);text-align:left;
+    font-size:16px;margin:20px auto 0;max-width:520px;
+  }
+  .closing-line{
+    font-family:'Nanum Pen Script',cursive;font-size:30px;
+    color:var(--brown);margin-top:26px;line-height:1.5;
+  }
+
+  footer{
+    text-align:center;margin-top:48px;
+    font-family:'Nanum Gothic',sans-serif;font-size:12.5px;color:var(--terra-light);
+    line-height:2;
+  }
+  footer .tagline{
+    font-family:'Nanum Myeongjo',serif;font-size:14px;color:var(--brown-soft);
+    font-style:italic;margin-bottom:6px;
+  }
+
+  @media (max-width:520px){
+    .hero{padding:36px 16px 28px;}
+    h1{font-size:25px;}
+    .layer{padding:22px 20px 20px;}
+    .closing-line{font-size:25px;}
+  }
+</style>
+</head>
+<body>
+  <div class="topnav"><a href="./">← 과제 목록</a></div>
+
+  <div class="hero">
+    <div class="eyebrow">Deeper Unbranding Salon · 영웅 여정 — 돌아온 손의 발굴</div>
+    <h1>몸이 먼저 알던<br>세 개의 동작</h1>
+    <p class="sub">가장 힘들었던 시간을 '어떻게' 통과했는지 캐물어, 아무에게도 배운 적 없이 혼자 만든 방법을 꺼내다</p>
+    <div class="meta">햇살 · 도제 바다 &nbsp;|&nbsp; 방법 · 조셉 캠벨의 영웅 여정 &nbsp;|&nbsp; 2026.07.16</div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,20 C200,4 400,32 600,18 C800,4 1000,30 1200,16 L1200,34 L0,34 Z" fill="#FBE7C9" opacity=".55"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="section-label">여는 자리</div>
+    <div class="opening">
+      <p>캠벨은 말했다 — 돌아오는 영웅의 손에는, 그 여정에서만 얻을 수 있는 것이 들려 있다.</p>
+      <p>그래서 이번엔 <strong>무엇이 힘들었는지</strong>를 묻지 않았다. 그건 이미 적어 두었으니까. 대신 <strong>그 시간을 '어떻게' 통과했는지</strong>만 캐물었다. 집 밖으로 나가는 것조차 두렵던 시절, 무너지지 않으려고 그래도 했던 것 하나. 이름 붙인 적 없는 순서. 책에는 없고 몸에만 있는 조언.</p>
+      <p>세 개의 질문이 끝났을 때, 손에 들려 있던 것은 위로의 말이 아니었다. <strong>무너진 사람이 오늘 하루를 넘기는 세 개의 동작</strong>이었다.</p>
+
+      <div class="key-box">
+        <div class="key-label">손에 들려 있던 것</div>
+        <div class="key-text">버틴 사람이 아니라,<br>버티는 길을 몸으로 아는 사람.</div>
+      </div>
+    </div>
+
+    <div class="method">
+      캠벨의 여정에서 <strong>귀환</strong>은 빈손으로 오지 않는다.<br>
+      "그때 뭘 했는지 기억이 나지 않는다"는 자리에서 시작해, 기억이 아니라 <strong>몸에 남은 순서</strong>를 한 겹씩 되짚었다.
+    </div>
+
+    <div class="section-label">몸이 발명한 세 개의 동작</div>
+
+    <div class="layer">
+      <span class="layer-no">1</span><h2>몸부터 일으키기</h2>
+      <span class="layer-tag">마음이 서지 않으니, 순서를 뒤집었다</span>
+      <p>마음이 준비되기를 기다리지 않았다. 샤워를 하고, 머리를 감고, 외출준비를 하고 — 몸을 먼저 세워 마음이 뒤따라오게 하는 순서. 무너지는 날일수록 이 순서는 더 정확하게 지켜졌다.</p>
+      <p>스스로 건네는 조언의 첫 줄도, 몇 년이 지난 지금 똑같았다.</p>
+      <blockquote>"일단 몸을 일으키는 것."</blockquote>
+    </div>
+
+    <div class="layer">
+      <span class="layer-no">2</span><h2>판단 없는 방 하나</h2>
+      <span class="layer-tag">탈출은 아무 데로나 가지 않았다</span>
+      <p>한 달에 한 번, 책 하나로 삶을 관통하는 이야기를 나누는 자리. 잘 하니 못 하니 <strong>그런 판단 없이</strong>, 누구의 엄마가 아니라 오롯이 나로서 대화의 주체가 되는 방. 은둔의 한가운데서도 그 자리만은 끝까지 지켰다.</p>
+      <p>중요한 건 '나갔다'가 아니라 <strong>어디로 나갔는가</strong>였다. 판단이 없는 방 하나가, 감옥에서 나가는 문이었다.</p>
+      <blockquote>"차를 타고 모임 장소로 가는 길이 마치 나를 가둔 감옥을 탈출하는 것 같았어."</blockquote>
+    </div>
+
+    <div class="layer">
+      <span class="layer-no">3</span><h2>쏟아내고 묻어두기</h2>
+      <span class="layer-tag">쏟아내되, 붙들지 않는다</span>
+      <p>아무에게도 말할 수 없는 것을 메모장에 마구 쏟아낸다. 그리고 다시 읽지 않고 묻어둔다. 꺼내는 것과 정리하는 것을 분리한 것 — 어디서도 배운 적 없이 혼자 만든 동작이다.</p>
+      <p>지금 매일 새벽을 쓰는 사람의 첫 근육이, 이때 만들어졌다.</p>
+      <blockquote>"아무에게도 말하지 못할 것들을 메모장에 마구 쏟아내는 것. 그리고 묻어두는 것."</blockquote>
+    </div>
+
+    <div class="section-label">의미의 축과 만나는 자리</div>
+    <div class="source-block">
+      <p class="intro">지난주 발굴한 '의미의 축'이 <strong>왜</strong> 쓰는지를 말했다면,<br>이번 세 동작은 <strong>무엇을</strong> 건넬 수 있는지를 말한다.</p>
+
+      <div class="mirror">
+        <span class="mirror-label">축 · 왜</span>
+        <div class="hand">"나는, 내가 먼저 부서지며 건진 것을, 아직 그 파도를 건너지 못한 사람에게 건네기 위해 쓴다 — 두려움이 아니라, 사랑을 지키기 위해."</div>
+        <div class="pen">→ 여기서 <b>"먼저 부서지며 건진 것"</b>의 정체가 오래 비어 있었다.</div>
+      </div>
+
+      <div class="mirror">
+        <span class="mirror-label">길 · 무엇을</span>
+        <div class="hand">몸부터 일으키기 · 판단 없는 방 하나 · 쏟아내고 묻어두기</div>
+        <div class="pen">→ 건질 수 있었던 것은 위로의 말이 아니라, <b>무너진 사람이 오늘 하루를 넘기는 세 개의 동작</b>이었다.</div>
+      </div>
+
+      <div class="rep-sentence">
+        <div class="rep-label">Singularity · 특이점</div>
+        <div class="rep-text">은둔의 한가운데서도 몸부터 일으켜 '판단 없는 방' 하나까지<br>걸어가는 길을 스스로 냈고, 말 못 할 것은 쏟아내고 묻어두며 버텨낸 사람.<br>그래서 아직 다 지나가지 않은 시간 속에서도,<br>"버티면 언제고 이 시간은 지나가"를<br>관념이 아니라 <em>몸의 순서</em>로 아는 사람.</div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <div class="closing-inner">
+        <div class="section-label">닫는 자리</div>
+        <blockquote>"그거면 혼자여도, 버틸 수 있어.<br>버티면 언제고 이 시간은 지나가."</blockquote>
+        <div class="closing-line">몸이 먼저 일어나면,<br>마음은 뒤따라온다.</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루입니다</div>
+      POGNARU × DEEPER UNBRANDING
+    </footer>
+  </div>
+</body>
+</html>

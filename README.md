@@ -22,6 +22,7 @@ deeper-haetsal/
 │   ├─ sunlit-morning.html # 「선릿모닝 — 함께 쓰는 새벽」 — 8월 새벽 글쓰기 클래스 모집 페이지
 │   ├─ 260715.html         # 「나의 언어 지문」 — 몽롱쓰기 128편을 관통해 건져 올린 포지셔닝
 │   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
+│   ├─ 260716-singularity.html # 「몸이 먼저 알던 세 개의 동작」 — 영웅 여정(캠벨) 발굴 · noindex
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -46,6 +47,7 @@ deeper-haetsal/
 | 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
 | 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715.html) |
 | 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
+| 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -98,6 +100,7 @@ deeper-haetsal/
 ## 메모
 
 - **공개 저장소**입니다. 개인적인 자기분석 기록·식구 일기·사적인 이야기는 이 저장소에 두지 않습니다 — 성찰 글만 공개합니다.
+- `260716-singularity.html`은 위 규칙을 **서사에까지** 적용한 첫 과제 페이지입니다. 원본 실습에는 병력·가족·실명이 들어 있으나, 공개본에는 **발굴된 방법(세 동작)과 특이점만** 싣고 사연·병력·실명·가족은 전부 뺐습니다. 원본은 비공개 레포 `deeper-salon`의 `01-Grammar/Insights/260716-몸부터-일으키는-사람.md`에만 둡니다. 이후 유사한 과제도 같은 기준을 따릅니다.
 - `assets/taeeumin-body.png`는 **햇살이 평생 이용권으로 정식 구매한 Getty Images 소재**(GettyImages-1305883689)에서 인물 하나만 잘라내 배경을 투명 처리한 것입니다. 라이선스가 없는 스톡 이미지는 이 저장소에 두지 않습니다.
 
 ---
