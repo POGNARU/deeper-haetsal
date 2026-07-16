@@ -46,7 +46,8 @@ deeper-haetsal/
 | 아침 글 배달 | https://pognaru.github.io/dawn/ |
 | 가비 플래너 | https://pognaru.github.io/gabi-planner/ |
 | 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
-| 선릿모닝 — 함께 쓰는 새벽 (8월 새벽 글쓰기 클래스 모집) | https://pognaru.github.io/sunlit-morning/ |
+| 선릿모닝 — 함께 쓰는 새벽 (과제 기록 사본 · 카드가 가리키는 곳) | [`assignment/sunlit-morning.html`](https://pognaru.github.io/deeper-haetsal/assignment/sunlit-morning.html) |
+| └ 실제 모집 페이지 (살아 있는 본체 · 매월 갱신 · 공유용) | https://pognaru.github.io/sunlit-morning/ |
 | 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
 | 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
@@ -111,7 +112,7 @@ deeper-haetsal/
 
 과제로 만들었지만 실제로는 수강생 모집에 쓰는 살아 있는 랜딩이라, 처음 오는 손님에게 공유하는 주소였습니다. 그런데 이 레포 안에 두면 주소가 `.../deeper-haetsal/assignment/sunlit-morning.html`이 되고, 단축 주소로 공유해도 주소창에는 이 긴 주소가 남습니다. **뒷자리를 지우면 `/assignment/` 목록이 열려 디퍼 과제 전부가 노출됩니다.** 모집 페이지가 개인 아카이브 안에 세 들어 사는 구조 자체의 문제라 단축 주소로는 막을 수 없었습니다.
 
-- **`assignment/sunlit-morning.html`은 과제 기록 사본으로 남습니다.** 과제 목록의 카드도 이 사본이 아니라 독립 레포 주소를 가리킵니다.
+- **`assignment/sunlit-morning.html`은 과제 기록 사본으로 남습니다.** 과제 목록의 카드는 **이 사본**을 가리킵니다(같은 탭). 아카이브 안에서 완결되는 동선이라, 외부 독립 레포로 나가는 다른 카드들(`target="_blank"`)과 달리 새 탭을 쓰지 않습니다 — 사본에 `← 과제 목록`이 있으니까요.
 - **모집 내용을 고칠 때는 독립 레포만 고칩니다.** 두 파일은 2026-07-17 이후 각자 갑니다 — 사본은 그날의 과제 기록이라 뒤쫓아 맞추지 않습니다.
 - **이 사본의 주소는 공유하지 않습니다.** `tinyurl.com/sunlit-morning`이 이 사본을 가리키지만 로그인 없이 만들어 수정할 수 없어 폐기했습니다. 새 주소를 새로 뿌립니다.
 - **사본에만 `← 과제 목록` 돌아가기가 있습니다** (2026-07-17 추가). 이제 아카이브 안에서만 도는 페이지라 목록으로 돌아갈 수 있어야 합니다. 분리 전에는 공유용 단독 랜딩이라 일부러 뺐던 링크입니다. 독립 레포 쪽에는 **넣지 않습니다** — 손님이 디퍼 아카이브로 타고 들어가면 안 되니까요. 첫 화면이 '밤'이라 다른 과제 페이지처럼 크림 배경 위에 얹지 않고, 밤 안에 살구색(`--apricot`)으로 넣었습니다(대비 8.5:1).
