@@ -21,10 +21,6 @@ body{font-family:'Nanum Myeongjo',serif;line-height:1.95;background:var(--mornin
   word-break:keep-all;overflow-wrap:break-word;}
 svg{max-width:100%;}
 .wrap{width:100%;max-width:640px;margin:0 auto;padding:0 26px;}
-.topnav{max-width:640px;margin:0 auto;padding:22px 26px 0;}
-.topnav a{font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#9FB0D0;
-  text-decoration:none;border-bottom:1px solid transparent;}
-.topnav a:hover{border-bottom-color:#9FB0D0;}
 .eyebrow{font-family:'Gowun Dodum',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;}
 .eb-rule{width:44px;height:1px;margin:14px auto 0;border:none;}
 .label{font-family:'Gowun Dodum',sans-serif;font-size:11.5px;letter-spacing:.2em;
@@ -33,7 +29,7 @@ svg{max-width:100%;}
 
 /* ── ZONE 1 : night ── */
 .z1{background:linear-gradient(180deg,var(--night) 0%, var(--night2) 100%);}
-.hero{position:relative;text-align:center;padding:62px 26px 58px;overflow:hidden;}
+.hero{position:relative;text-align:center;padding:92px 26px 58px;overflow:hidden;}
 .stars{position:absolute;inset:0;pointer-events:none;
   background-image:
     radial-gradient(1.6px 1.6px at 14% 24%, #fff 50%, transparent 51%),
@@ -114,9 +110,9 @@ footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5p
 @media (max-width:560px){
   /* 강제 줄바꿈 해제 — 좁은 화면에서 문장이 자연스럽게 접히도록 */
   .brk{display:none;}
-  .wrap,.topnav{padding-left:20px;padding-right:20px;}
+  .wrap{padding-left:20px;padding-right:20px;}
   .wave{height:26px;}
-  .hero{padding:48px 20px 44px;}
+  .hero{padding:66px 20px 44px;}
   .hero .en{font-size:32px;margin-top:20px;}
   .hero .ko{font-size:42px;}
   .hero .sub{font-size:15px;margin-top:14px;}
@@ -145,7 +141,6 @@ footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5p
 <body>
 
 <div class="z1">
-  <div class="topnav"><a href="./">← 과제 목록</a></div>
   <div class="hero">
     <div class="stars"></div>
     <div class="eyebrow">POGNARU STUDIO</div><hr class="eb-rule">
