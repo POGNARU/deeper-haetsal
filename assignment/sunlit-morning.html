@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>선릿모닝 — 함께 쓰는 새벽 · 햇살</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBEF;
+    --apricot:#FBE7C9;
+    --terra-light:#C8845A;
+    --terra-deep:#C4763A;
+    --brown:#3C2415;
+    --brown-soft:#5c4636;
+    --serif:'Nanum Myeongjo',serif;
+    --logo:'Gowun Batang',serif;
+    --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--brown);
+    font-family:var(--serif);
+    line-height:1.95;
+    padding:0 0 90px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px;}
+
+  .topnav{max-width:680px;margin:0 auto;padding:22px 22px 0;}
+  .topnav a{
+    font-family:var(--gothic);font-size:13px;
+    color:var(--terra-deep);text-decoration:none;letter-spacing:.02em;
+    border-bottom:1px solid transparent;
+  }
+  .topnav a:hover{border-bottom:1px solid var(--terra-deep);}
+
+  .hero{
+    position:relative;padding:52px 22px 40px;text-align:center;
+    background:linear-gradient(180deg,var(--apricot) 0%,var(--cream) 100%);
+    margin-top:18px;
+  }
+  .eyebrow{
+    font-family:var(--gothic);
+    font-size:12px;letter-spacing:.24em;
+    color:var(--terra-deep);
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--logo);font-weight:700;
+    font-size:52px;line-height:1.2;color:var(--brown);
+    letter-spacing:.02em;
+  }
+  .hero .sub{
+    font-family:var(--logo);
+    color:var(--terra-deep);font-size:19px;margin-top:12px;letter-spacing:.06em;
+  }
+  .wave-divider{display:block;width:100%;height:34px;margin-top:-2px;}
+
+  .lede{
+    background:#fff;border:1px solid #efe2d3;border-radius:16px;
+    padding:30px 30px 26px;margin-top:8px;
+    box-shadow:0 2px 14px rgba(196,118,58,.06);
+    text-align:center;
+  }
+  .lede p{font-size:18px;color:#4a3524;line-height:1.85;}
+  .lede .accent{color:var(--terra-deep);font-weight:700;}
+
+  .body-text{margin-top:34px;}
+  .body-text p{font-size:17px;color:#4a3524;margin-top:18px;}
+  .body-text p:first-child{margin-top:0;}
+  .body-text .stone{
+    color:var(--terra-deep);font-weight:800;
+  }
+
+  .section-label{
+    font-family:var(--gothic);font-weight:400;font-size:13px;
+    letter-spacing:.16em;color:var(--terra-deep);text-transform:uppercase;
+    margin:44px 0 16px;text-align:center;
+  }
+  .section-label::before,.section-label::after{content:'';display:inline-block;width:26px;height:1px;background:var(--terra-light);opacity:.55;vertical-align:middle;margin:0 12px;}
+
+  .for-who{
+    background:linear-gradient(160deg,var(--apricot) 0%,#fff 100%);
+    border:1px solid #efe2d3;border-radius:16px;
+    padding:26px 28px;
+  }
+  .for-who .item{
+    font-size:16.5px;color:var(--brown);padding:11px 0 11px 24px;
+    position:relative;border-bottom:1px solid rgba(196,118,58,.14);
+  }
+  .for-who .item:last-child{border-bottom:none;}
+  .for-who .item::before{content:'·';position:absolute;left:6px;color:var(--terra-deep);font-weight:800;}
+
+  .info{
+    background:#fff;border:1.5px solid var(--terra-light);border-radius:16px;
+    padding:12px 26px;box-shadow:0 2px 14px rgba(196,118,58,.06);
+  }
+  .info .row{
+    display:flex;gap:16px;align-items:baseline;
+    padding:15px 0;border-bottom:1px solid #f2e6d6;
+  }
+  .info .row:last-child{border-bottom:none;}
+  .info .k{
+    flex:0 0 88px;font-family:var(--gothic);font-size:13.5px;
+    color:var(--terra-deep);letter-spacing:.04em;
+  }
+  .info .v{font-size:16.5px;color:var(--brown);}
+  .info .note{
+    margin-top:2px;padding:14px 0 4px;font-family:var(--gothic);
+    font-size:13.5px;color:var(--terra-light);text-align:center;
+  }
+
+  .cta{
+    margin-top:38px;text-align:center;
+    background:linear-gradient(180deg,var(--cream) 0%,var(--apricot) 130%);
+    border-radius:20px;padding:40px 26px 42px;
+  }
+  .cta p{font-size:16px;color:var(--brown-soft);margin-bottom:20px;}
+  .cta a{
+    display:inline-block;font-family:var(--gothic);font-size:16px;
+    color:#fff;background:var(--terra-deep);text-decoration:none;
+    padding:15px 40px;border-radius:40px;letter-spacing:.04em;
+    box-shadow:0 6px 18px rgba(196,118,58,.28);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta a:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(196,118,58,.34);}
+  .cta .apply-note{
+    display:block;margin-top:16px;font-family:var(--gothic);
+    font-size:12.5px;color:var(--terra-light);
+  }
+
+  footer{
+    text-align:center;margin-top:50px;
+    font-family:var(--gothic);font-size:12.5px;color:var(--terra-light);
+    line-height:2;
+  }
+  footer .tagline{
+    font-family:var(--serif);font-size:15px;color:var(--brown-soft);
+    font-style:italic;margin-bottom:6px;
+  }
+
+  @media (max-width:520px){
+    .hero{padding:40px 18px 30px;}
+    h1{font-size:40px;}
+    .lede,.for-who,.info,.body-text{padding-left:0;padding-right:0;}
+    .lede{padding:24px 22px 22px;}
+    .for-who{padding:22px 20px;}
+    .info{padding:8px 20px;}
+    .info .k{flex-basis:74px;}
+    .cta{padding:32px 18px 34px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav"><a href="./">← 과제 목록</a></div>
+
+<div class="hero">
+  <div class="eyebrow">POGNARU · 함께 쓰는 새벽 클래스</div>
+  <h1>선릿모닝</h1>
+  <div class="sub">함께 쓰는 새벽</div>
+</div>
+<svg class="wave-divider" viewBox="0 0 760 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,10 C 90,30 190,-6 285,12 C 380,30 470,-4 570,12 C 660,26 720,4 760,14 L760,0 L0,0 Z" fill="var(--cream)"/>
+</svg>
+
+<div class="wrap">
+
+  <div class="lede">
+    <p>새벽에 혼자 쓰기로 마음먹어도, 대개 사흘이면 멈춥니다.<br>
+    <span class="accent">함께 쓰는 동지가 있으면 달라집니다.</span><br>
+    혼자 쓰는 시간인데도 외롭지 않고, 그래서 이어집니다.</p>
+  </div>
+
+  <div class="body-text">
+    <p>선릿모닝은 새벽에 함께 쓰는 시간입니다.
+    매일 아침 5시 50분, 각자의 자리에서 30분을 씁니다.
+    잘 쓰지 않아도 됩니다. 검열 없이, 떠오르는 대로 그냥 씁니다.
+    지우지 않고, 멈추지 않고 — 그게 전부입니다.</p>
+
+    <p>무엇을 써야 할지 몰라도 괜찮습니다.
+    일단 쓰다 보면, 그 안에서 <span class="stone">빛나는 돌멩이</span> 하나쯤 건져집니다.</p>
+
+    <p>혼자였다면 며칠 못 갔을 시간이,
+    같은 새벽에 쓰는 사람들이 있어 이어집니다.
+    누구도 당신의 글을 들여다보지 않습니다.
+    다만 같은 시간에 깨어 함께 쓴다는 것, 그거면 충분합니다.</p>
+  </div>
+
+  <div class="section-label">이런 분께 권합니다</div>
+  <div class="for-who">
+    <div class="item">쓰고 싶은데 혼자서는 자꾸 미뤄지는 분</div>
+    <div class="item">새벽 시간을 나만의 것으로 갖고 싶은 분</div>
+    <div class="item">마음속 이야기를 어디서부터 꺼내야 할지 모르는 분</div>
+  </div>
+
+  <div class="section-label">모임 안내</div>
+  <div class="info">
+    <div class="row"><div class="k">기간</div><div class="v">8월 3일 ~ 28일 (월~금)</div></div>
+    <div class="row"><div class="k">시간</div><div class="v">새벽 5시 50분부터 30분간</div></div>
+    <div class="row"><div class="k">방식</div><div class="v">줌 (오디오 off, 화면 on)</div></div>
+    <div class="row"><div class="k">참가비</div><div class="v">2만원</div></div>
+    <div class="note">토·일·법정공휴일은 쉬어가는 날입니다</div>
+  </div>
+
+  <div class="cta">
+    <p>같은 새벽에, 함께 쓰시겠어요?</p>
+    <a href="https://www.instagram.com/sunshine_autora/" target="_blank" rel="noopener noreferrer">신청하기</a>
+    <span class="apply-note">인스타그램 프로필의 신청 링크로 연결됩니다</span>
+  </div>
+
+  <footer>
+    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루</div>
+    <div>POGNARU × DEEPER UNBRANDING</div>
+  </footer>
+
+</div>
+</body>
+</html>

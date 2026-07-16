@@ -19,6 +19,7 @@ deeper-haetsal/
 │   └─ 260710.html         # 「재료는 이미 내 안에 있었다」 (2026.07.03–07.10)
 ├─ assignment/
 │   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
+│   ├─ sunlit-morning.html # 「선릿모닝 — 함께 쓰는 새벽」 — 8월 새벽 글쓰기 클래스 모집 페이지
 │   ├─ 260715.html         # 「나의 언어 지문」 — 몽롱쓰기 128편을 관통해 건져 올린 포지셔닝
 │   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
@@ -39,6 +40,7 @@ deeper-haetsal/
 | 아침 글 배달 | https://pognaru.github.io/dawn/ |
 | 가비 플래너 | https://pognaru.github.io/gabi-planner/ |
 | 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
+| 선릿모닝 — 함께 쓰는 새벽 (8월 새벽 글쓰기 클래스 모집) | [`assignment/sunlit-morning.html`](https://pognaru.github.io/deeper-haetsal/assignment/sunlit-morning.html) |
 | 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
 | 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
 | 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
