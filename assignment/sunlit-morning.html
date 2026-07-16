@@ -34,12 +34,16 @@ svg{max-width:100%;}
 
 /* ── ZONE 1 : night ── */
 .z1{background:linear-gradient(180deg,var(--night) 0%, var(--night2) 100%);}
-/* 돌아가기 — 밤 위에 얹어 첫 화면이 '밤'으로 열리는 결을 지킨다 */
-.topnav{max-width:640px;margin:0 auto;padding:22px 26px 0;}
+/* 돌아가기 · 모집 페이지 — 밤 위에 얹어 첫 화면이 '밤'으로 열리는 결을 지킨다 */
+.topnav{max-width:640px;margin:0 auto;padding:22px 26px 0;
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
 .topnav a{font-family:'Gowun Dodum',sans-serif;font-size:13px;color:var(--apricot);
   text-decoration:none;letter-spacing:.02em;border-bottom:1px solid transparent;
   transition:border-color .15s ease;}
 .topnav a:hover{border-bottom:1px solid var(--apricot);}
+/* 이 사본은 과제 기록이라 내용이 멈춰 있다 — 살아 있는 모집 페이지로 나가는 문 */
+.topnav a.live{color:var(--gold);}
+.topnav a.live:hover{border-bottom-color:var(--gold);}
 .hero{position:relative;text-align:center;padding:60px 26px 58px;overflow:hidden;}
 .stars{position:absolute;inset:0;pointer-events:none;
   background-image:
@@ -153,7 +157,10 @@ footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5p
 <body>
 
 <div class="z1">
-  <div class="topnav"><a href="./">← 과제 목록</a></div>
+  <div class="topnav">
+    <a href="./">← 과제 목록</a>
+    <a class="live" href="https://pognaru.github.io/sunlit-morning/" target="_blank" rel="noopener noreferrer">지금 모집 중인 페이지 →</a>
+  </div>
   <div class="hero">
     <div class="stars"></div>
     <div class="eyebrow">POGNARU STUDIO</div><hr class="eb-rule">
