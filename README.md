@@ -23,7 +23,7 @@ deeper-haetsal/
 │   ├─ 260715.html         # 「나의 언어 지문」 — 몽롱쓰기 128편을 관통해 건져 올린 포지셔닝
 │   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
 │   ├─ 260716-singularity.html # 「몸이 먼저 알던 세 개의 동작」 — 영웅 여정(캠벨) 발굴 · noindex
-│   ├─ 260716-origin.html  # 「백스페이스를 막아둔 자리」 — 출발지를 새롭게 정의하기 · noindex
+│   ├─ 260716-origin.html  # 「빛나는 돌멩이를 건지는 시간」 — 출발지를 새롭게 정의하기 · noindex
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -49,7 +49,7 @@ deeper-haetsal/
 | 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715.html) |
 | 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
 | 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
-| 백스페이스를 막아둔 자리 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
+| 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
