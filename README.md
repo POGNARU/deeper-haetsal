@@ -28,6 +28,7 @@ deeper-haetsal/
 │   ├─ 260715-hands.html   # 「손이 아는 문법 — 인사」 — 암묵지 외부화 인터뷰(폴라니)
 │   ├─ 260716-singularity.html # 「몸이 먼저 알던 세 개의 동작」 — 영웅 여정(캠벨) 발굴
 │   ├─ 260716-origin.html  # 「빛나는 돌멩이를 건지는 시간」 — 출발지를 새롭게 정의하기
+│   ├─ 260718-detail.html  # 「스무하루의 빛 — 상세페이지」 — 판매 상세페이지 과제 기록 사본(다이어리 팔레트 · 예외)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -55,6 +56,7 @@ deeper-haetsal/
 | 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
 | 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
 | 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
+| 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -105,6 +107,14 @@ deeper-haetsal/
 선릿모닝은 '새벽'이 정체성이라 **페이지 자체가 새벽이 밝아오는 과정**이 되도록 설계했고(2026-07-16 햇살 요청 — "포근나루 컬러를 벗고 더 시각화된 페이지로"), 푸터도 디퍼를 병기하지 않고 `POGNARU STUDIO`만 씁니다.
 
 **팔레트·글꼴 규격과 운영 규칙은 이제 독립 레포에 있습니다** → [POGNARU/sunlit-morning](https://github.com/POGNARU/sunlit-morning)
+
+### 예외 — 스무하루의 빛 상세페이지
+
+`assignment/260718-detail.html`도 해바라기 팔레트를 쓰지 않습니다. 판매 상품인 《스무하루의 빛》 다이어리 본문 팔레트(밤 → 새벽 → 아침)를 그대로 이어받은 상세페이지라, 상품과 화면의 색이 어긋나지 않도록 원본을 유지했습니다.
+
+- **여기 있는 건 과제 기록 사본입니다.** 정본(고쳐야 할 파일)은 볼트 `클로드 에이전트/나무의 기록/260717 스무하루의 빛 판매판/상세페이지/`에 있고, 카피의 정본은 윤슬 문서입니다. **이 사본에서 문구·디자인을 고치지 않습니다.**
+- 실제 판매는 스마트스토어 상세페이지(업로드용 이미지 9장)로 이뤄집니다. 이 HTML은 그 이미지를 뽑아낸 화면이자 과제 기록입니다.
+- 다른 사본과 같이 상단에 `← 과제 목록`을 달았습니다(밤 배경 위 살구색). 원본에는 없는, 사본 전용 요소입니다.
 
 ## 선릿모닝은 왜 여기 있고, 왜 여기가 본체가 아닌가
 
