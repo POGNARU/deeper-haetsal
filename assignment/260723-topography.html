@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>햇살의 지식 지형도 · 2026-07-23</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0F2D1F; --night2:#123021; --deep:#07190F;
+    --cream:#FBF7EE; --gold:#E2C77B; --green:#1A4A35;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--night);color:var(--cream);
+       font-family:'Noto Sans KR',sans-serif;word-break:keep-all;}
+  .band-brand{background:var(--cream);padding:18px 20px;text-align:center;}
+  .band-brand img{height:36px;display:inline-block;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px 60px;}
+  .eyebrow{font-size:11.5px;letter-spacing:.22em;color:var(--gold);
+           text-transform:uppercase;margin:34px 0 12px;text-align:center;}
+  h1{font-family:'Noto Serif KR',serif;font-weight:400;font-size:30px;
+     color:var(--cream);text-align:center;margin:0 0 8px;line-height:1.4;}
+  .date{text-align:center;font-size:13px;color:rgba(251,247,238,.55);margin-bottom:6px;}
+  .sub{text-align:center;font-size:12.5px;color:rgba(251,247,238,.4);margin-bottom:30px;}
+  svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+  .sec-label{font-family:'Noto Serif KR',serif;font-size:12px;letter-spacing:.16em;
+             color:var(--gold);text-align:center;margin:8px 0 10px;}
+  .axis-text{font-family:'Noto Serif KR',serif;font-size:20px;line-height:1.75;
+             color:var(--cream);text-align:center;margin:6px auto 44px;max-width:560px;}
+  h2{font-family:'Noto Serif KR',serif;font-weight:400;font-size:15px;
+     letter-spacing:.14em;color:var(--gold);margin:52px 0 20px;
+     padding-bottom:9px;border-bottom:1px solid rgba(226,199,123,.2);}
+  .area{margin-bottom:26px;}
+  .area-name{font-family:'Noto Serif KR',serif;font-size:18px;color:var(--gold);
+             margin-bottom:9px;}
+  .area-name small{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;
+                   color:rgba(251,247,238,.45);letter-spacing:.02em;margin-left:6px;}
+  .gauge{height:10px;border-radius:6px;background:rgba(226,199,123,.15);
+         overflow:hidden;margin-bottom:14px;}
+  .gauge > i{display:block;height:100%;border-radius:6px;background:var(--gold);}
+  .card{border:1px solid rgba(226,199,123,.18);border-radius:10px;
+        padding:17px 19px;background:rgba(255,255,255,.018);}
+  .row{font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.72;
+       margin:0 0 11px;color:rgba(251,247,238,.9);}
+  .row:last-child{margin-bottom:0;}
+  .row b{color:var(--gold);font-weight:400;font-size:12.5px;
+         font-family:'Noto Sans KR',sans-serif;letter-spacing:.06em;
+         display:block;margin-bottom:2px;}
+  .caption{text-align:center;font-size:12.5px;color:rgba(251,247,238,.5);
+           margin-top:12px;font-family:'Noto Serif KR',serif;}
+  .pillars{margin-top:24px;}
+  .pill{border-left:2px solid rgba(226,199,123,.35);padding:2px 0 2px 15px;
+        margin-bottom:18px;}
+  .pill-t{font-family:'Noto Serif KR',serif;font-size:16px;color:var(--cream);
+          margin-bottom:5px;}
+  .pill-b{font-size:13px;line-height:1.7;color:rgba(251,247,238,.62);}
+  .now{background:var(--green);border-radius:12px;padding:26px 24px;margin-top:44px;}
+  .now-label{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:11px;}
+  .now-title{font-family:'Noto Serif KR',serif;font-size:18px;color:var(--cream);
+             line-height:1.6;margin-bottom:12px;}
+  .now-why{font-size:13.5px;line-height:1.78;color:rgba(251,247,238,.82);}
+  .fox{margin-top:14px;font-size:17px;}
+  footer{text-align:center;font-size:11px;letter-spacing:.1em;
+         color:rgba(251,247,238,.32);margin-top:48px;}
+  @keyframes tw{0%,100%{opacity:.85}50%{opacity:.35}}
+  @keyframes pulse{0%,100%{opacity:.5}50%{opacity:.9}}
+  .tw{animation:tw 3.4s ease-in-out infinite;}
+  .tw2{animation:tw 4.6s ease-in-out infinite;}
+  .pl{animation:pulse 3.8s ease-in-out infinite;}
+</style>
+</head>
+<body>
+
+<div class="band-brand"><img src="data:image/png;base64,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" alt="DEEPER"></div>
+
+<div class="wrap"><a href="./" style="display:inline-block;margin:22px 0 0;font-size:12.5px;color:#E2C77B;text-decoration:none;letter-spacing:.04em;">← 과제 목록</a>
+
+  <div class="eyebrow">DEEPER OS · 지식 지형도</div>
+  <h1>햇살의 지식 지형도</h1>
+  <div class="date">2026년 7월 23일</div>
+  <div class="sub">씨앗 68개 · 2026.04.24 – 07.23</div>
+
+  <svg viewBox="0 0 640 130" role="img" aria-label="북극성">
+    <defs>
+      <path id="star" d="M0-10 Q2-2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2-2 0-10Z" fill="#E2C77B"/>
+      <radialGradient id="halo">
+        <stop offset="0%" stop-color="#E2C77B" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#E2C77B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="320" cy="62" r="30" fill="url(#halo)" class="pl"/>
+    <use href="#star" transform="translate(320 62) scale(1.2)"/>
+    <circle cx="196" cy="40" r="1.3" fill="#FBF7EE" opacity=".3" class="tw"/>
+    <circle cx="452" cy="34" r="1.1" fill="#FBF7EE" opacity=".28" class="tw2"/>
+    <circle cx="418" cy="97" r="1.4" fill="#FBF7EE" opacity=".26" class="tw"/>
+    <circle cx="228" cy="100" r="1" fill="#FBF7EE" opacity=".3" class="tw2"/>
+  </svg>
+  <div class="sec-label">나의 씨앗 문장</div>
+  <p class="axis-text">사랑으로 의도한 것만이 진짜로 태어난다.<br>그리고 태어난 것은, 아직 건너지 못한 사람에게 건네져야 한다.</p>
+
+  <h2>영역의 깊이</h2>
+
+  <div class="area">
+    <div class="area-name">몽롱쓰기 — 검열 없이 쓰는 일<small>씨앗 26회</small></div>
+    <div class="gauge"><i style="width:96%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>백스페이스를 막아야 내면이 기록된다 · 손이 느리면 생각이 편집된다 · 침잠과 부양의 리듬 · 몽롱쓰기는 재료이자 자기 진단의 계기판</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>"유일하게 자유로웠던 몽롱쓰기에서마저 생각의 고삐에 당겨져 멈추게 되었다" — 방법이 흔들린 이야기</p>
+      <p class="row"><b>막히는 경계선</b>방법 자체를 의심하게 된 자리 — 자유롭던 쓰기가 처음으로 멈춘 곳</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">문체와 목소리 — 빌려온 옷을 벗는 일<small>오늘 하루에만 넷</small></div>
+    <div class="gauge"><i style="width:88%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>내 글 같지 않으면 내 글이 아니다 · 서정적이라는 칭찬의 덫 · 없어도 이해되면 뺀다 · 존재는 주어로 증명되지 않는다</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>절제와 미니멀리즘을 벗어난 뒤 무엇을 기준 삼을 것인가</p>
+      <p class="row"><b>막히는 경계선</b>평가의 기준 — 빼는 기준은 있는데 남기는 기준이 없다</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">상처에서 이해로 — 읽기가 사람을 바꾸는 경로<small>씨앗 14회</small></div>
+    <div class="gauge"><i style="width:80%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>폭풍의 언덕이 미움을 측은함으로 바꾼 과정 · 똑같아지지 않기로 한 선택 · 이해는 혼자가 아니라 여럿의 말을 들으며 왔다</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>그 이해가 실제 관계에서 무엇을 바꿨는지, 혹은 바꾸지 못했는지</p>
+      <p class="row"><b>막히는 경계선</b>실명과 실화의 경계 — 소설로 갈지 에세이로 갈지</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">몸과 회복<small>씨앗 16회 · 글은 거의 없음</small></div>
+    <div class="gauge"><i style="width:52%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>몸부터 일으키는 사람 · 걷기 유전자는 남아 있다 · 더 살고 싶은 사람</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>씨앗은 꾸준히 쌓였는데 완성된 글로 나온 적이 거의 없다</p>
+      <p class="row"><b>막히는 경계선</b>몸 이야기를 사적인 기록으로만 두어 온 습관</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">혼자 차린 출판사<small>조각은 많고 묶음은 없음</small></div>
+    <div class="gauge"><i style="width:48%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>그냥 출판사를 차렸다 · 혼자 일하는데 팀으로 일한다 · 응원에도 무게가 있다 · 공식이 아니라 경험으로</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>조각들을 하나로 묶은 글이 아직 없다</p>
+      <p class="row"><b>막히는 경계선</b>마케팅 — "하고 싶은 일은 많은데 아직 그 길은 감도 잡히지 않는다"</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">신앙<small>씨앗 5회 · 글 0편</small></div>
+    <div class="gauge"><i style="width:22%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>알고는 있었지만, 비로소 제대로 알고 싶어진 시기가 있었다</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>거의 전부 — 가장 크게 비어 있는 자리다</p>
+      <p class="row"><b>막히는 경계선</b>신앙을 공적인 글로 꺼내는 일에 대한 망설임</p>
+    </div>
+  </div>
+
+  <div class="area">
+    <div class="area-name">읽고 나누는 법<small>방법론이 아직 언어 없음</small></div>
+    <div class="gauge"><i style="width:18%"></i></div>
+    <div class="card">
+      <p class="row"><b>이미 쓸 수 있는 것</b>토론에서 목소리가 커진다는 것, 같음에서도 다름에서도 연결한다는 것</p>
+      <p class="row"><b>아직 꺼내지 않은 것</b>어떻게 그렇게 읽는지 — 방법으로 정리된 적이 없다</p>
+      <p class="row"><b>막히는 경계선</b>가르치는 말로 옮기면 자기 것이 아닌 것 같아지는 자리</p>
+    </div>
+  </div>
+
+  <h2>성도 — 씨앗에서 자란 기둥</h2>
+
+  <svg viewBox="0 0 640 440" role="img" aria-label="기둥 주제 성도">
+    <g stroke="#E2C77B" stroke-opacity=".22" stroke-width="1" fill="none">
+      <path d="M150 140 L80 105 M150 140 L95 212 M150 140 L222 176"/>
+      <path d="M462 132 L396 82 M462 132 L530 92 M462 132 L472 206"/>
+      <path d="M156 332 L86 292 M156 332 L102 400 M156 332 L229 372"/>
+      <path d="M472 326 L402 276 M472 326 L542 292 M472 326 L487 400"/>
+    </g>
+
+    <circle cx="150" cy="140" r="20" fill="url(#halo)" class="pl"/>
+    <use href="#star" transform="translate(150 140) scale(0.85)"/>
+    <circle cx="462" cy="132" r="20" fill="url(#halo)" class="pl"/>
+    <use href="#star" transform="translate(462 132) scale(0.85)"/>
+    <circle cx="156" cy="332" r="20" fill="url(#halo)" class="pl"/>
+    <use href="#star" transform="translate(156 332) scale(0.85)"/>
+    <circle cx="472" cy="326" r="20" fill="url(#halo)" class="pl"/>
+    <use href="#star" transform="translate(472 326) scale(0.85)"/>
+
+    <g fill="#E2C77B" opacity=".75">
+      <use href="#star" transform="translate(80 105) scale(0.34)" class="tw"/>
+      <use href="#star" transform="translate(95 212) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(222 176) scale(0.34)" class="tw"/>
+      <use href="#star" transform="translate(396 82) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(530 92) scale(0.34)" class="tw"/>
+      <use href="#star" transform="translate(472 206) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(86 292) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(102 400) scale(0.34)" class="tw"/>
+      <use href="#star" transform="translate(229 372) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(402 276) scale(0.34)" class="tw"/>
+      <use href="#star" transform="translate(542 292) scale(0.34)" class="tw2"/>
+      <use href="#star" transform="translate(487 400) scale(0.34)" class="tw"/>
+    </g>
+
+    <g fill="#FBF7EE" font-family="'Noto Sans KR',sans-serif" text-anchor="middle">
+      <text x="150" y="172" font-size="13.5">몽롱쓰기</text>
+      <text x="462" y="164" font-size="13.5">문체</text>
+      <text x="156" y="364" font-size="13.5">상처에서 이해로</text>
+      <text x="472" y="358" font-size="13.5">혼자 차린 출판사</text>
+    </g>
+    <g fill="#FBF7EE" fill-opacity=".62" font-family="'Noto Sans KR',sans-serif"
+       font-size="10.5" text-anchor="middle">
+      <text x="80" y="94">백스페이스</text>
+      <text x="95" y="231">손글씨와 타자</text>
+      <text x="222" y="195">침잠한 날의 글</text>
+      <text x="396" y="71">칭찬의 덫</text>
+      <text x="530" y="81">'나' 없는 문장</text>
+      <text x="472" y="225">줄임말</text>
+      <text x="86" y="281">캐시와 측은함</text>
+      <text x="102" y="419">똑같아지지 않기</text>
+      <text x="229" y="391">여럿의 말</text>
+      <text x="402" y="265">기다리지 않고</text>
+      <text x="542" y="281">응원과 구매</text>
+      <text x="487" y="419">공식 없이</text>
+    </g>
+
+    <circle cx="316" cy="46" r="1.2" fill="#FBF7EE" opacity=".22" class="tw"/>
+    <circle cx="600" cy="200" r="1" fill="#FBF7EE" opacity=".2" class="tw2"/>
+    <circle cx="40" cy="245" r="1.1" fill="#FBF7EE" opacity=".22" class="tw"/>
+    <circle cx="320" cy="430" r="1" fill="#FBF7EE" opacity=".2" class="tw2"/>
+  </svg>
+  <div class="caption">씨앗에서 4개의 기둥이 자랍니다</div>
+
+  <div class="pillars">
+    <div class="pill">
+      <div class="pill-t">① 몽롱쓰기 — 검열을 끄는 법</div>
+      <div class="pill-b">가장 두껍고, 유일하게 나만 가진 방법론.</div>
+    </div>
+    <div class="pill">
+      <div class="pill-t">② 내 문체를 찾는 일 — 빌려온 기준을 벗기까지</div>
+      <div class="pill-b">오늘 하루에 재료가 쏟아진 자리.</div>
+    </div>
+    <div class="pill">
+      <div class="pill-t">③ 상처가 이해가 되기까지 — 한 권이 사람을 바꾸는 경로</div>
+      <div class="pill-b">혼자 도달한 것이 아니라 여럿이 만든 자리였다.</div>
+    </div>
+    <div class="pill">
+      <div class="pill-t">④ 공식 없이 짓는 일 — 혼자 차린 출판사의 구조</div>
+      <div class="pill-b">조각은 다 모였고, 아직 묶이지 않았다.</div>
+    </div>
+  </div>
+
+  <div class="now">
+    <div class="now-label">지금 당장 쓰기</div>
+    <div class="now-title">「가장 나다운 문장에 '나'가 없었다」</div>
+    <div class="now-why">
+      오늘 하루 안에서 물음과 답이 한 번에 나온 글감이라 열이 아직 식지 않았습니다.
+      그리고 '나'를 지우는 일이 자기를 지우는 게 아니라는 이 발견은,
+      새벽에 함께 쓰는 사람들에게 곧장 닿습니다 —
+      축의 뒷문장 그대로, 건너간 사람이 건네는 것이 되니까요.
+    </div>
+    <div class="fox">🦊</div>
+  </div>
+
+  <footer>DEEPER 언브랜딩 살롱 · 디퍼 OS · 지형도</footer>
+
+</div>
+</body>
+</html>

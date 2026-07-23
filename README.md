@@ -21,7 +21,7 @@ deeper-haetsal/
 │   ├─ 260702.html         # 「완벽하지 않아도 짓는다」 (2026.06.26–07.02)
 │   ├─ 260710.html         # 「재료는 이미 내 안에 있었다」 (2026.07.03–07.10)
 │   ├─ 260716.html         # 「지우던 손에게, 지울 수 없는 자리를」 (2026.07.11–07.16)
-│   └─ 260723.html         # 「후회 대신, 손댈 수 있는 것」 (2026.07.17–07.23) · 로고 발표 회차
+│   └─ 260723.html         # 「후회 대신, 손댈 수 있는 것」 (2026.07.17–07.23) · 로고 발표 회차 + 지형도·문법 여정 성찰 4항목
 ├─ assignment/
 │   ├─ index.html          # 과제 아카이브 — 완성된 과제로 이어지는 카드 목록
 │   ├─ sunlit-morning.html # 「선릿모닝 — 함께 쓰는 새벽」 — 과제 기록 사본(모집 본체는 별도 레포) · 새벽 팔레트(예외)
@@ -30,6 +30,7 @@ deeper-haetsal/
 │   ├─ 260716-singularity.html # 「몸이 먼저 알던 세 개의 동작」 — 영웅 여정(캠벨) 발굴
 │   ├─ 260716-origin.html  # 「빛나는 돌멩이를 건지는 시간」 — 출발지를 새롭게 정의하기
 │   ├─ 260718-detail.html  # 「스무하루의 빛 — 상세페이지」 — 판매 상세페이지 과제 기록 사본(다이어리 팔레트 · 예외)
+│   ├─ 260723-topography.html # 「햇살의 지식 지형도」 — 씨앗 68개로 그린 하늘(디퍼 OS 밤 팔레트 · 예외)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -59,6 +60,7 @@ deeper-haetsal/
 | 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
 | 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
 | 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
+| 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.github.io/deeper-haetsal/assignment/260723-topography.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -127,6 +129,14 @@ deeper-haetsal/
 - **여기 있는 건 과제 기록 사본입니다.** 정본(고쳐야 할 파일)은 볼트 `클로드 에이전트/나무의 기록/260717 스무하루의 빛 판매판/상세페이지/`에 있고, 카피의 정본은 윤슬 문서입니다. **이 사본에서 문구·디자인을 고치지 않습니다.**
 - 실제 판매는 스마트스토어 상세페이지(업로드용 이미지 9장)로 이뤄집니다. 이 HTML은 그 이미지를 뽑아낸 화면이자 과제 기록입니다.
 - 다른 사본과 같이 상단에 `← 과제 목록`을 달았습니다(밤 배경 위 살구색). 원본에는 없는, 사본 전용 요소입니다.
+
+### 예외 — 지식 지형도 (디퍼 OS 밤 팔레트)
+
+`assignment/260723-topography.html`도 해바라기 팔레트를 쓰지 않습니다. 디퍼 OS의 사막여우 스킬이 생성하는 산출물(딥그린 `#0F2D1F` · 크림 `#FBF7EE` · 골드 `#E2C77B`)이라, 밤하늘·나의 사막과 같은 결을 유지합니다. DEEPER 로고는 base64로 문서 안에 내장돼 인터넷 없이도 뜹니다.
+
+- **정본은 비공개 레포 `deeper-salon`의 `01-Grammar/지형도/topography_2026-07-23.html`입니다.** 여기 있는 건 공개용 사본이라, 사적인 대목 두 곳(방법을 의심하게 된 계기 · 신앙을 찾게 된 사연)을 완곡하게 고쳤습니다. **사본에서 내용을 고치지 않습니다** — 다시 그릴 때는 볼트에서 새로 뽑아 옮깁니다.
+- 지형도는 수료 선물이 아니라 **거울**이라 언제든 다시 그릴 수 있습니다. 날짜별로 쌓이므로 새 회차는 `YYMMDD-topography.html`로 더합니다.
+- 다른 사본과 같이 상단에 `← 과제 목록`을 달았습니다(밤 배경 위 골드).
 
 ## 선릿모닝은 왜 여기 있고, 왜 여기가 본체가 아닌가
 
