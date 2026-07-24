@@ -31,6 +31,7 @@ deeper-haetsal/
 │   ├─ 260716-origin.html  # 「빛나는 돌멩이를 건지는 시간」 — 출발지를 새롭게 정의하기
 │   ├─ 260718-detail.html  # 「스무하루의 빛 — 상세페이지」 — 판매 상세페이지 과제 기록 사본(다이어리 팔레트 · 예외)
 │   ├─ 260723-topography.html # 「햇살의 지식 지형도」 — 씨앗 68개로 그린 하늘(디퍼 OS 밤 팔레트 · 예외)
+│   ├─ 260725-graduation.html # 「내가 지은 이름 안에, 이미 다 들어 있었다」 — 수료식 10분 발표 슬라이드 18장(포근나루 팔레트 · 예외)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -61,6 +62,7 @@ deeper-haetsal/
 | 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
 | 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
 | 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.github.io/deeper-haetsal/assignment/260723-topography.html) |
+| 내가 지은 이름 안에, 이미 다 들어 있었다 (수료식 10분 발표) | [`assignment/260725-graduation.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-graduation.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -129,6 +131,12 @@ deeper-haetsal/
 - **여기 있는 건 과제 기록 사본입니다.** 정본(고쳐야 할 파일)은 볼트 `클로드 에이전트/나무의 기록/260717 스무하루의 빛 판매판/상세페이지/`에 있고, 카피의 정본은 윤슬 문서입니다. **이 사본에서 문구·디자인을 고치지 않습니다.**
 - 실제 판매는 스마트스토어 상세페이지(업로드용 이미지 9장)로 이뤄집니다. 이 HTML은 그 이미지를 뽑아낸 화면이자 과제 기록입니다.
 - 다른 사본과 같이 상단에 `← 과제 목록`을 달았습니다(밤 배경 위 살구색). 원본에는 없는, 사본 전용 요소입니다.
+
+### 예외 — 수료식 발표 슬라이드 (포근나루 팔레트)
+
+`assignment/260725-graduation.html`은 해바라기 팔레트를 쓰지 않습니다. 2026-07-25 수료식에서 실제로 띄운 발표물이라 포근나루 브랜드 색(크림 `#FFFBEF` · 살구 `#FBE7C9` · 테라코타 `#C8845A` · 다크브라운 `#3C2415`)을 그대로 씁니다. 1920×1080 16:9, 방향키·스페이스로 넘기고 `F`로 전체화면. 3번 슬라이드의 일출 사진은 base64로 문서 안에 내장돼 인터넷 없이도 뜹니다.
+
+- **정본은 비공개 레포 `deeper-salon`의 `03-Rhetoric/260725 수료식/`입니다.** 여기 있는 건 슬라이드 사본이고, **낭독 대본은 옮기지 않습니다** — 회복기 이야기가 담겨 있어 발표 자리에서 말하는 것과 웹에 남기는 것은 다르기 때문입니다.
 
 ### 예외 — 지식 지형도 (디퍼 OS 밤 팔레트)
 
