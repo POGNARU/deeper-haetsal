@@ -32,6 +32,7 @@ deeper-haetsal/
 │   ├─ 260718-detail.html  # 「스무하루의 빛 — 상세페이지」 — 판매 상세페이지 과제 기록 사본(다이어리 팔레트 · 예외)
 │   ├─ 260723-topography.html # 「햇살의 지식 지형도」 — 씨앗 68개로 그린 하늘(디퍼 OS 밤 팔레트 · 예외)
 │   ├─ 260725-graduation.html # 「내가 지은 이름 안에, 이미 다 들어 있었다」 — 수료식 10분 발표 슬라이드 18장(포근나루 팔레트 · 예외)
+│   ├─ bookclub.html          # 「독서 토론 준비」 — 나루의 밤 토론 자료 색인 + 개인 독서토론 자리(자료 원본은 각 레포에, 여기선 링크로 모음)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -63,6 +64,7 @@ deeper-haetsal/
 | 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
 | 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.github.io/deeper-haetsal/assignment/260723-topography.html) |
 | 내가 지은 이름 안에, 이미 다 들어 있었다 (수료식 10분 발표) | [`assignment/260725-graduation.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-graduation.html) |
+| 독서 토론 준비 (나루의 밤 토론 자료 색인 + 개인 독서토론 자리) | [`assignment/bookclub.html`](https://pognaru.github.io/deeper-haetsal/assignment/bookclub.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
