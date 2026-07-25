@@ -14,7 +14,7 @@ GitHub Pages로 공개되며, 날짜별 인사이트 리포트와 과제 결과�
 
 ```
 deeper-haetsal/
-├─ index.html              # 랜딩 — 인사이트 · 과제 버튼
+├─ index.html              # 랜딩 — 인사이트 · 과제 · 독서 토론 버튼
 ├─ insight/
 │   ├─ index.html          # 인사이트 목록 (날짜순)
 │   ├─ 260625.html         # 「보이지 않는 문」 (2026.06.19–06.25)
@@ -32,7 +32,8 @@ deeper-haetsal/
 │   ├─ 260718-detail.html  # 「스무하루의 빛 — 상세페이지」 — 판매 상세페이지 과제 기록 사본(다이어리 팔레트 · 예외)
 │   ├─ 260723-topography.html # 「햇살의 지식 지형도」 — 씨앗 68개로 그린 하늘(디퍼 OS 밤 팔레트 · 예외)
 │   ├─ 260725-graduation.html # 「내가 지은 이름 안에, 이미 다 들어 있었다」 — 수료식 10분 발표 슬라이드 18장(포근나루 팔레트 · 예외)
-│   ├─ bookclub.html          # 「독서 토론 준비」 — 나루의 밤 토론 자료 색인 + 개인 독서토론 자리(자료 원본은 각 레포에, 여기선 링크로 모음)
+│   ├─ 260725-growth.html     # 「채우러 왔지만, 내 안에 다 있었다」 — 5~7월 성장 인포그래픽(줌 수료 발표용 · 포근나루 팔레트 · 예외). 정본은 deeper-salon
+│   ├─ bookclub.html          # 「독서 토론 준비」 — 나루의 밤 토론 자료 색인 + 개인 독서토론(랜딩 3번째 버튼에서 진입 · 자료 원본은 각 레포에 링크)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -64,7 +65,8 @@ deeper-haetsal/
 | 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
 | 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.github.io/deeper-haetsal/assignment/260723-topography.html) |
 | 내가 지은 이름 안에, 이미 다 들어 있었다 (수료식 10분 발표) | [`assignment/260725-graduation.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-graduation.html) |
-| 독서 토론 준비 (나루의 밤 토론 자료 색인 + 개인 독서토론 자리) | [`assignment/bookclub.html`](https://pognaru.github.io/deeper-haetsal/assignment/bookclub.html) |
+| 채우러 왔지만, 내 안에 다 있었다 (5~7월 성장 인포그래픽 · 줌 발표용) | [`assignment/260725-growth.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-growth.html) |
+| 독서 토론 준비 (나루의 밤 토론 자료 색인 + 개인 독서토론 · 랜딩 3번째 버튼) | [`assignment/bookclub.html`](https://pognaru.github.io/deeper-haetsal/assignment/bookclub.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
@@ -139,6 +141,12 @@ deeper-haetsal/
 `assignment/260725-graduation.html`은 해바라기 팔레트를 쓰지 않습니다. 2026-07-25 수료식에서 실제로 띄운 발표물이라 포근나루 브랜드 색(크림 `#FFFBEF` · 살구 `#FBE7C9` · 테라코타 `#C8845A` · 다크브라운 `#3C2415`)을 그대로 씁니다. 1920×1080 16:9, 방향키·스페이스로 넘기고 `F`로 전체화면. 3번 슬라이드의 일출 사진은 base64로 문서 안에 내장돼 인터넷 없이도 뜹니다.
 
 - **정본은 비공개 레포 `deeper-salon`의 `03-Rhetoric/260725 수료식/`입니다.** 여기 있는 건 슬라이드 사본이고, **낭독 대본은 옮기지 않습니다** — 회복기 이야기가 담겨 있어 발표 자리에서 말하는 것과 웹에 남기는 것은 다르기 때문입니다.
+
+### 예외 — 5~7월 성장 인포그래픽 (포근나루 팔레트)
+
+`assignment/260725-growth.html`도 해바라기 팔레트를 쓰지 않습니다. 줌 수료 발표(5분)용으로 포근나루 크림 팔레트(크림 `#FFFBEF` · 살구 `#FBE7C9` · 테라코타 `#C8845A` · 다크브라운 `#3C2415`)를 씁니다. 세로 스크롤 한 장에 5~7월 결과물 25개를 월별 타임라인으로 담고, 카운트업 스탯과 스크롤 reveal 애니메이션을 씁니다. 발표할 땐 위→아래로 스크롤하며 짚습니다. 상단에 `← 과제 목록`을 답니다(스크롤하면 사라짐).
+
+- **정본은 비공개 레포 `deeper-salon`의 `03-Rhetoric/줌 수료 발표 (5-7월 성장)/`입니다.** 여기 있는 건 공개용 사본이라, 고칠 때는 정본을 고치고 다시 복사해 옮깁니다.
 
 ### 예외 — 지식 지형도 (디퍼 OS 밤 팔레트)
 
