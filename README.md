@@ -35,6 +35,7 @@ deeper-haetsal/
 │   ├─ 260725-growth.html     # 「채우러 왔지만, 내 안에 다 있었다」 — 5~7월 성장 인포그래픽(줌 수료 발표용 · 포근나루 팔레트 · 예외). 정본은 deeper-salon
 │   ├─ bookclub.html          # 「독서 토론 자료」 — 나루의 밤 토론 자료 색인 + 개인 독서토론(랜딩 3번째 버튼에서 진입 · 자료 원본은 각 레포에 링크)
 │   ├─ 260726-principia.html  # 「자연철학자 뉴턴을 만나는 지도」 — 프린키피아 개인 독서 토론 자료(순독 안내 + 수식·맥락 분업 제안 · 포근나루 팔레트 · 정본은 볼트)
+│   ├─ 260730-jeolchang.html  # 「절창 — 독서 기록」 — 구병모 『절창』 도란도란 독서모임 기록(인물·손의 이동·논점 7 + 개인 감상 접기 · 표지 라벤더 팔레트 · 예외 · 정본은 볼트)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -69,6 +70,7 @@ deeper-haetsal/
 | 채우러 왔지만, 내 안에 다 있었다 (5~7월 성장 인포그래픽 · 줌 발표용) | [`assignment/260725-growth.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-growth.html) |
 | 독서 토론 자료 (나루의 밤 토론 자료 색인 + 개인 독서토론 · 랜딩 3번째 버튼) | [`assignment/bookclub.html`](https://pognaru.github.io/deeper-haetsal/assignment/bookclub.html) |
 | 자연철학자 뉴턴을 만나는 지도 (프린키피아 개인 독서 토론 · 순독 안내 + 수식·맥락 분업) | [`assignment/260726-principia.html`](https://pognaru.github.io/deeper-haetsal/assignment/260726-principia.html) |
+| 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.github.io/deeper-haetsal/assignment/260730-jeolchang.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
