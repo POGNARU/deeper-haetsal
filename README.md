@@ -5,7 +5,7 @@
 포근나루(POGNARU STUDIO)의 햇살(이다현)이 디퍼 언브랜딩 살롱에서 쌓은 성찰과 과제를 한자리에 두는 저장소입니다.
 GitHub Pages로 공개되며, 날짜별 인사이트 리포트와 과제 결과물을 카드/링크로 넘겨볼 수 있는 **액티브 아카이브**입니다.
 
-🌐 https://pognaru.github.io/deeper-haetsal/
+🌐 https://pognaru.com/deeper-haetsal/
 
 > **사이트 전체가 `noindex, nofollow`입니다** (2026-07-17). 검색으로는 찾히지 않고, 링크를 아는 사람만 들어옵니다.
 > 새 페이지를 더할 때도 `<meta name="robots" content="noindex, nofollow">`를 반드시 넣습니다.
@@ -52,30 +52,30 @@ deeper-haetsal/
 
 | 과제 | 링크 |
 |---|---|
-| 포근한 글쓰기 | https://pognaru.github.io/pognaru-writing/ |
-| 아침 글 배달 | https://pognaru.github.io/dawn/ |
-| 가비 플래너 | https://pognaru.github.io/gabi-planner/ |
-| 모닝 페이지 회고 | https://pognaru.github.io/naru-review/ |
-| 선릿모닝 — 함께 쓰는 새벽 (과제 기록 사본 · 카드가 가리키는 곳) | [`assignment/sunlit-morning.html`](https://pognaru.github.io/deeper-haetsal/assignment/sunlit-morning.html) |
-| └ 실제 모집 페이지 (살아 있는 본체 · 매월 갱신 · 공유용) | https://pognaru.github.io/sunlit-morning/ |
-| 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.github.io/bamnaru/ |
-| 어린이 작가와 그림책 협업 일정 | https://pognaru.github.io/irum-picturebook/index.html |
-| 별 — 밤하늘 서고 | https://pognaru.github.io/byeol/ |
-| 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715.html) |
-| 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.github.io/deeper-haetsal/assignment/260715-hands.html) |
-| 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-singularity.html) |
-| 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.github.io/deeper-haetsal/assignment/260716-origin.html) |
-| 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.github.io/deeper-haetsal/assignment/260718-detail.html) |
-| 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.github.io/deeper-haetsal/assignment/260723-topography.html) |
-| 내가 지은 이름 안에, 이미 다 들어 있었다 (수료식 10분 발표) | [`assignment/260725-graduation.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-graduation.html) |
-| 채우러 왔지만, 내 안에 다 있었다 (5~7월 성장 인포그래픽 · 줌 발표용) | [`assignment/260725-growth.html`](https://pognaru.github.io/deeper-haetsal/assignment/260725-growth.html) |
-| 독서 토론 자료 (나루의 밤 토론 자료 색인 + 개인 독서토론 · 랜딩 3번째 버튼) | [`assignment/bookclub.html`](https://pognaru.github.io/deeper-haetsal/assignment/bookclub.html) |
-| 자연철학자 뉴턴을 만나는 지도 (프린키피아 개인 독서 토론 · 순독 안내 + 수식·맥락 분업) | [`assignment/260726-principia.html`](https://pognaru.github.io/deeper-haetsal/assignment/260726-principia.html) |
-| 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.github.io/deeper-haetsal/assignment/260730-jeolchang.html) |
-| 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.github.io/deeper-haetsal/assignment/260710.html) |
-| 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.github.io/deeper-haetsal/assignment/Bookish_DNA.html) |
-| 포근나루 식구 | [`assignment/family.html`](https://pognaru.github.io/deeper-haetsal/assignment/family.html) |
-| 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.github.io/deeper-haetsal/assignment/family-chart.html) |
+| 포근한 글쓰기 | https://pognaru.com/pognaru-writing/ |
+| 아침 글 배달 | https://pognaru.com/dawn/ |
+| 가비 플래너 | https://pognaru.com/gabi-planner/ |
+| 모닝 페이지 회고 | https://pognaru.com/naru-review/ |
+| 선릿모닝 — 함께 쓰는 새벽 (과제 기록 사본 · 카드가 가리키는 곳) | [`assignment/sunlit-morning.html`](https://pognaru.com/deeper-haetsal/assignment/sunlit-morning.html) |
+| └ 실제 모집 페이지 (살아 있는 본체 · 매월 갱신 · 공유용) | https://pognaru.com/sunlit-morning/ |
+| 나루의 밤 고전 클래스 커리큘럼 | https://pognaru.com/bamnaru/ |
+| 어린이 작가와 그림책 협업 일정 | https://pognaru.com/irum-picturebook/index.html |
+| 별 — 밤하늘 서고 | https://pognaru.com/byeol/ |
+| 나의 언어 지문 — 나는 '에세이 쓰는 사람'이 아니다 | [`assignment/260715.html`](https://pognaru.com/deeper-haetsal/assignment/260715.html) |
+| 손이 아는 문법 — 인사 (암묵지 외부화 인터뷰) | [`assignment/260715-hands.html`](https://pognaru.com/deeper-haetsal/assignment/260715-hands.html) |
+| 몸이 먼저 알던 세 개의 동작 (영웅 여정 발굴) | [`assignment/260716-singularity.html`](https://pognaru.com/deeper-haetsal/assignment/260716-singularity.html) |
+| 빛나는 돌멩이를 건지는 시간 (출발지를 새롭게 정의하기) | [`assignment/260716-origin.html`](https://pognaru.com/deeper-haetsal/assignment/260716-origin.html) |
+| 스무하루의 빛 — 상세페이지 (과제 기록 사본 · 정본은 볼트) | [`assignment/260718-detail.html`](https://pognaru.com/deeper-haetsal/assignment/260718-detail.html) |
+| 햇살의 지식 지형도 (씨앗 68개 · 기둥 넷 · 가지 열둘) | [`assignment/260723-topography.html`](https://pognaru.com/deeper-haetsal/assignment/260723-topography.html) |
+| 내가 지은 이름 안에, 이미 다 들어 있었다 (수료식 10분 발표) | [`assignment/260725-graduation.html`](https://pognaru.com/deeper-haetsal/assignment/260725-graduation.html) |
+| 채우러 왔지만, 내 안에 다 있었다 (5~7월 성장 인포그래픽 · 줌 발표용) | [`assignment/260725-growth.html`](https://pognaru.com/deeper-haetsal/assignment/260725-growth.html) |
+| 독서 토론 자료 (나루의 밤 토론 자료 색인 + 개인 독서토론 · 랜딩 3번째 버튼) | [`assignment/bookclub.html`](https://pognaru.com/deeper-haetsal/assignment/bookclub.html) |
+| 자연철학자 뉴턴을 만나는 지도 (프린키피아 개인 독서 토론 · 순독 안내 + 수식·맥락 분업) | [`assignment/260726-principia.html`](https://pognaru.com/deeper-haetsal/assignment/260726-principia.html) |
+| 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.com/deeper-haetsal/assignment/260730-jeolchang.html) |
+| 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
+| 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
+| 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
+| 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/family-chart.html) |
 
 > 독서 DNA와 식구 갤러리 페이지는 2026-07-10에 폐지된 `dh.archive` 레포에서 옮겨온 것입니다.
 > `Bookish_DNA.html`의 숫자를 다시 뽑는 생성 스크립트(`analyze.py` · `build_data.py` · `data/*.json`)는
@@ -111,7 +111,7 @@ deeper-haetsal/
 - 디퍼 언브랜딩-햇살 과정의 **과제 결과물**
 - 공개된 결과물은 리포트 안에서 바로 눌러 볼 수 있도록 링크로 연결
 
-> 디퍼 살롱 자료 별자리 목차는 별도 공개 레포 **[deeper-index](https://github.com/POGNARU/deeper-index)** ( https://pognaru.github.io/deeper-index/ )에 있습니다.
+> 디퍼 살롱 자료 별자리 목차는 별도 공개 레포 **[deeper-index](https://github.com/POGNARU/deeper-index)** ( https://pognaru.com/deeper-index/ )에 있습니다.
 
 ## 브랜드 컬러 — 해바라기 들판
 
@@ -163,7 +163,7 @@ deeper-haetsal/
 
 ## 선릿모닝은 왜 여기 있고, 왜 여기가 본체가 아닌가
 
-2026-07-17에 **모집 페이지 본체를 [독립 레포](https://github.com/POGNARU/sunlit-morning)로 분리**했습니다 ( https://pognaru.github.io/sunlit-morning/ ).
+2026-07-17에 **모집 페이지 본체를 [독립 레포](https://github.com/POGNARU/sunlit-morning)로 분리**했습니다 ( https://pognaru.com/sunlit-morning/ ).
 
 과제로 만들었지만 실제로는 수강생 모집에 쓰는 살아 있는 랜딩이라, 처음 오는 손님에게 공유하는 주소였습니다. 그런데 이 레포 안에 두면 주소가 `.../deeper-haetsal/assignment/sunlit-morning.html`이 되고, 단축 주소로 공유해도 주소창에는 이 긴 주소가 남습니다. **뒷자리를 지우면 `/assignment/` 목록이 열려 디퍼 과제 전부가 노출됩니다.** 모집 페이지가 개인 아카이브 안에 세 들어 사는 구조 자체의 문제라 단축 주소로는 막을 수 없었습니다.
 
