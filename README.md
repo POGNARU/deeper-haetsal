@@ -37,6 +37,7 @@ deeper-haetsal/
 │   ├─ bookclub.html          # 「독서 토론 자료」 — 나루의 밤 토론 자료 색인 + 개인 독서토론(랜딩 3번째 버튼에서 진입 · 자료 원본은 각 레포에 링크)
 │   ├─ 260726-principia.html  # 「자연철학자 뉴턴을 만나는 지도」 — 프린키피아 개인 독서 토론 자료(순독 안내 + 수식·맥락 분업 제안 · 포근나루 팔레트 · 정본은 볼트)
 │   ├─ 260730-jeolchang.html  # 「절창 — 독서 기록」 — 구병모 『절창』 도란도란 독서모임 기록(인물·손의 이동·논점 7 + 개인 감상 접기 · 표지 라벤더 팔레트 · 예외 · 정본은 볼트)
+│   ├─ 260731-haetsalche.html # 「햇살체」 — 몽롱쓰기 141편 44만 자 전수 분석으로 세운 문체 규칙(포근나루 화면판 팔레트 · 예외 · 정본은 deeper-salon · 원문 표본은 미수록)
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
@@ -72,6 +73,7 @@ deeper-haetsal/
 | 독서 토론 자료 (나루의 밤 토론 자료 색인 + 개인 독서토론 · 랜딩 3번째 버튼) | [`assignment/bookclub.html`](https://pognaru.com/deeper-haetsal/assignment/bookclub.html) |
 | 자연철학자 뉴턴을 만나는 지도 (프린키피아 개인 독서 토론 · 순독 안내 + 수식·맥락 분업) | [`assignment/260726-principia.html`](https://pognaru.com/deeper-haetsal/assignment/260726-principia.html) |
 | 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.com/deeper-haetsal/assignment/260730-jeolchang.html) |
+| 햇살체 — 44만 자에서 건져 올린 내 문장의 규칙 (몽롱쓰기 141편 전수 분석) | [`assignment/260731-haetsalche.html`](https://pognaru.com/deeper-haetsal/assignment/260731-haetsalche.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
@@ -152,6 +154,15 @@ deeper-haetsal/
 `assignment/260725-growth.html`도 해바라기 팔레트를 쓰지 않습니다. 줌 수료 발표(5분)용으로 포근나루 크림 팔레트(크림 `#FFFBEF` · 살구 `#FBE7C9` · 테라코타 `#C8845A` · 다크브라운 `#3C2415`)를 씁니다. 세로 스크롤 한 장에 5~7월 결과물 25개를 월별 타임라인으로 담고, 카운트업 스탯과 스크롤 reveal 애니메이션을 씁니다. 발표할 땐 위→아래로 스크롤하며 짚습니다. 상단에 `← 과제 목록`을 답니다(스크롤하면 사라짐).
 
 - **정본은 비공개 레포 `deeper-salon`의 `03-Rhetoric/줌 수료 발표 (5-7월 성장)/`입니다.** 여기 있는 건 공개용 사본이라, 고칠 때는 정본을 고치고 다시 복사해 옮깁니다.
+
+### 예외 — 햇살체 (포근나루 **화면판** 팔레트)
+
+`assignment/260731-haetsalche.html`도 해바라기 팔레트를 쓰지 않습니다. 문체 정의서라 포근나루 본체의 결을 그대로 입히되, **2026-07-31에 갈라진 화면판**을 씁니다 — 크림 `#FFFBEF` · 흰 카드 `#FFFFFF` · 살구 `#FBE7C9` · **호박 `#E9A33A`(선·점·아이콘 전용, 글자에 쓰지 않음)** · **진테라코타 `#A9532A`(강조 글자·링크)** · 다크브라운 `#3C2415`. 인쇄용 테라코타 `#C8845A`는 화면 대비가 3:1에 못 미쳐 쓰지 않습니다. 전체 표는 볼트 `클로드 에이전트/브랜드/260731 포근나루 컬러차트(화면판·인쇄판).md`.
+
+- **정본은 비공개 레포 `deeper-salon`의 `01-Grammar/닉네임체_정의서.md`입니다.** 여기 있는 건 공개용 사본이라, 고칠 때는 정본을 먼저 고치고 다시 옮깁니다.
+- **원문 표본 아홉 문장은 이 페이지에도, 정본에도 없습니다.** 출처가 몽롱쓰기·모닝페이지라 깃허브에 올라가지 않습니다 — 표본은 옵시디언 볼트 `모닝 페이지/_햇살체_표본.md`에만 둡니다(로컬·OneDrive 한정). 공개본에 옮긴 것은 **분석과 수치뿐**입니다.
+- 인용한 원문은 문법 Day 11 답변 한 대목뿐이며, 이는 살롱 과제 답변이라 아카이브의 공개 범위 안입니다.
+- 다른 사본과 같이 상단에 `← 과제`를 답니다.
 
 ### 예외 — 지식 지형도 (디퍼 OS 밤 팔레트)
 
