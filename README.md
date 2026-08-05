@@ -44,6 +44,7 @@ deeper-haetsal/
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
 │   ├─ family.html         # 「포근나루 식구」 — 픽셀 캐릭터 갤러리
 │   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다 아래 네 기둥 + 별채(사막여우)
+│                          #   2026-08-06 식구 정리 반영(14→8) · 화면판 팔레트 적용
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘 · 체질 도해 인물)
     └─ pognaru-symbol.svg  # 포근나루 로고 (260723 리포트에 삽입) · 원본은 볼트 `클로드 에이전트/브랜드/로고/`
 ```
@@ -79,6 +80,11 @@ deeper-haetsal/
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
 | 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/family-chart.html) |
+
+> **2026-08-06 — 식구를 14명에서 8명으로 정리했습니다.** 297개 세션의 실제 호출 기록(총 66회, 다섯 식구는 0회)을 세어
+> "지침이 근본적으로 다른가"를 기준으로 합쳤습니다. 나루→새벽, 나들목→윤슬, 담벼락→김리로 흡수했고 가비·금전수는 없앴습니다.
+> 두 페이지 모두 이 정리를 반영했으며, 조직도는 폐기값이던 옛 크림/살구 색을 **화면판 팔레트**(크림 #FFFBEF · 살구 #FBE7C9 ·
+> 진테라코타 #A9532A 글자 · 호박 #E9A33A 선)로 함께 고쳤습니다.
 
 > 독서 DNA와 식구 갤러리 페이지는 2026-07-10에 폐지된 `dh.archive` 레포에서 옮겨온 것입니다.
 > `Bookish_DNA.html`의 숫자를 다시 뽑는 생성 스크립트(`analyze.py` · `build_data.py` · `data/*.json`)는
