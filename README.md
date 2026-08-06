@@ -15,6 +15,8 @@ GitHub Pages로 공개되며, 날짜별 인사이트 리포트와 과제 결과�
 ```
 deeper-haetsal/
 ├─ index.html              # 랜딩 — 인사이트 · 과제 · 독서 토론 버튼
+├─ archive-prompt.html     # 「내 아카이브 페이지 만들기」 — 디퍼 연구원들에게 건네는 공유용 프롬프트(복사 버튼)
+│                          #   루트에 둔 이유는 아래 '공유용 프롬프트' 절 참고
 ├─ insight/
 │   ├─ index.html          # 인사이트 목록 (날짜순)
 │   ├─ 260625.html         # 「보이지 않는 문」 (2026.06.19–06.25)
@@ -76,6 +78,7 @@ deeper-haetsal/
 | 자연철학자 뉴턴을 만나는 지도 (프린키피아 개인 독서 토론 · 순독 안내 + 수식·맥락 분업) | [`assignment/260726-principia.html`](https://pognaru.com/deeper-haetsal/assignment/260726-principia.html) |
 | 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.com/deeper-haetsal/assignment/260730-jeolchang.html) |
 | 햇살체 — 44만 자에서 건져 올린 내 문장의 규칙 (몽롱쓰기 141편 전수 분석) | [`assignment/260731-haetsalche.html`](https://pognaru.com/deeper-haetsal/assignment/260731-haetsalche.html) |
+| 내 아카이브 페이지 만들기 (디퍼 연구원 공유용 프롬프트 · 복사 버튼) | [`archive-prompt.html`](https://pognaru.com/deeper-haetsal/archive-prompt.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
@@ -113,6 +116,22 @@ deeper-haetsal/
 - **파일명은 `YYMMDD.html`로 통일**한다. 새 회고는 같은 규칙으로 떨어뜨리면 목록에 한 줄씩 쌓인다 (5월 회고분도 같은 형식으로 재작성해 추가 예정).
 - **과제**는 완성되는 대로 카드 하나씩 `assignment/`에 더해 간다. 과제 상세 페이지도 `YYMMDD.html` 규칙을 따른다.
 - 과제 페이지가 **개인의 몸·건강·병력 같은 사적 정보**를 다룰 때는, 개인의 응답·증상은 싣지 않고 **일반 자료(공통 지식)로만** 정리한다. `<meta name="robots" content="noindex, nofollow">`는 이제 사적 정보 여부와 무관하게 **모든 페이지에** 넣는다.
+
+## 공유용 프롬프트 — `archive-prompt.html`
+
+디퍼 연구원 누구나 **자기 인사이트·과제·독서 자료를 모아두는 아카이브**를 직접 지을 수 있게 만든 공유용 페이지입니다 (2026-08-06).
+이 저장소의 구조와 운영 규칙에서 **디자인을 뺀 뼈대와 약속만** 뽑아 프롬프트 한 덩어리로 정리했고, 복사 버튼으로 통째로 가져갑니다.
+
+- **루트에 둡니다.** 다른 과제와 달리 밖으로 주소를 건네는 페이지라 `.../deeper-haetsal/archive-prompt.html`처럼 짧아야 합니다.
+  `assignment/` 안에 두면 뒷자리를 지웠을 때 과제 목록 전체가 열립니다.
+- **과제 목록(`assignment/index.html`)에도 카드로 겁니다** (`SHARE · 공유용 프롬프트`, 같은 탭). 아카이브 안에서도 찾아갈 수 있게.
+- **팔레트는 해바라기 그대로입니다.** 개인이 건네는 것이라 받는 사람이 누가 준 것인지 색으로 알아보게 두었습니다
+  (디퍼 OS 밤 팔레트를 검토했으나 2026-08-06에 해바라기로 정했습니다).
+- **프롬프트 안에 이 저장소의 주소·이름·개인 정보는 하나도 들어가지 않습니다.** 링크 0건 — 받는 사람이 자기 것으로 채웁니다.
+- 프롬프트 본문의 정본은 볼트 `클로드 에이전트/바다의 기록/260806 디퍼 아카이브 페이지 만들기 프롬프트(공유용).md`입니다.
+  **고칠 때는 정본을 먼저 고치고 이 페이지의 `<pre id="prompt">` 안을 다시 옮깁니다.**
+- `<pre>` 안의 HTML 태그는 `&lt;` `&gt;`로 이스케이프해 둡니다. 복사되는 값은 `innerText`라 붙여넣을 때 원래 태그로 돌아옵니다 —
+  **직접 `<`를 넣으면 페이지가 깨지므로 반드시 이스케이프합니다.**
 
 ## 무엇을 담나
 
