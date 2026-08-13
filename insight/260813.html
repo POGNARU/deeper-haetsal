@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>정리했다고 믿었던 것들 · 2026.08.07–08.13 인사이트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FFF7DE; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B; --brown:#3A2A12;
+    --serif:'Nanum Myeongjo',serif; --logo:'Gowun Batang',serif; --gothic:'Gowun Dodum',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--serif); min-height:100vh; padding:3rem 1.25rem 4rem; line-height:1.85;}
+  .wrap{max-width:640px; margin:0 auto;}
+  .home{font-family:var(--gothic); font-size:.82rem; color:var(--terra); text-decoration:none; display:inline-block; margin-bottom:1.8rem;}
+  .home:hover{text-decoration:underline;}
+  .date{font-family:var(--gothic); font-size:.8rem; letter-spacing:.12em; color:var(--leaf); margin-bottom:.6rem;}
+  h1{font-family:var(--logo); font-size:2.3rem; font-weight:700; line-height:1.3; margin-bottom:.8rem;}
+  .summary{color:#6b5536; font-size:1rem; line-height:1.8;}
+  .summary b{color:var(--terra); font-weight:400;}
+  .sun-line{width:54px; height:3px; background:var(--sun); border-radius:3px; margin:2rem 0;}
+  .works{background:#fff; border:1.5px solid rgba(58,42,18,.08); border-radius:16px; padding:1.6rem 1.6rem 1.3rem; margin-bottom:2.4rem;}
+  .works h3{font-family:var(--logo); font-size:1.15rem; font-weight:700; margin-bottom:.4rem;}
+  .works .desc{font-family:var(--gothic); font-size:.84rem; color:#8a7a5e; margin-bottom:1.1rem;}
+  .work{display:flex; align-items:center; gap:.7rem; padding:.7rem 0; border-top:1px solid rgba(58,42,18,.07); text-decoration:none; color:var(--brown);}
+  .work:hover .wt{color:var(--terra);}
+  .work .dot{width:9px; height:9px; border-radius:50%; background:var(--sun); flex:none;}
+  .work .wt{font-family:var(--logo); font-size:1rem; font-weight:700; transition:color .15s ease;}
+  .work .wd{font-family:var(--gothic); font-size:.78rem; color:#8a7a5e;}
+  .work .arrow{margin-left:auto; color:var(--leaf); font-family:var(--gothic); font-size:.8rem; flex:none;}
+  .work.plain{cursor:default;}
+  .work.lead-work .dot{background:var(--terra);}
+
+  .reflect h2{font-family:var(--logo); font-size:1.3rem; font-weight:700; margin-bottom:1rem;}
+  .reflect h3{font-family:var(--logo); font-size:1.05rem; font-weight:700; margin:1.6rem 0 .7rem; color:var(--terra);}
+  .items{list-style:none;}
+  .items li{background:#fff; border-left:4px solid var(--sun); border-radius:0 12px 12px 0; padding:.85rem 1.1rem; margin-bottom:.7rem;}
+  .items .it{font-family:var(--logo); font-weight:700; font-size:.98rem; margin-bottom:.25rem;}
+  .items .id{font-family:var(--gothic); font-size:.84rem; color:#6b5536; line-height:1.65;}
+  .items .id b{color:var(--terra); font-weight:400;}
+
+  .sentence{margin-top:2.6rem;}
+  .sentence h2{font-family:var(--logo); font-size:1.3rem; font-weight:700; margin-bottom:.4rem;}
+  .sentence .lead{font-family:var(--gothic); font-size:.86rem; color:#8a7a5e; line-height:1.7; margin-bottom:1.1rem;}
+  .sentence .lead b{color:var(--terra);}
+  .sentence h3{font-family:var(--logo); font-size:1.05rem; font-weight:700; margin:1.4rem 0 .6rem;}
+  .seed{background:#fff; border:1.5px solid rgba(255,198,30,.5); border-radius:16px; padding:1.4rem 1.5rem;
+    font-family:var(--serif); font-size:1rem; line-height:1.95; margin-bottom:1.2rem;}
+  .seed b{color:var(--terra); font-weight:700;}
+  .seed .tag{display:block; font-family:var(--gothic); font-size:.75rem; color:#a8997d; letter-spacing:.1em; margin-bottom:.7rem;}
+  .items.fix li{border-left-color:var(--leaf);}
+  .items.left li{border-left-color:var(--terra);}
+  .pull{font-family:var(--logo); font-size:1.05rem; color:var(--brown); text-align:center;
+    padding:1.6rem 1rem; border-top:1px solid rgba(58,42,18,.1); border-bottom:1px solid rgba(58,42,18,.1);
+    margin:2.6rem 0 0; line-height:1.9;}
+  .pull .who{display:block; font-family:var(--gothic); font-size:.76rem; color:#a8997d; margin-top:.5rem;}
+
+  /* 공유용 프롬프트 */
+  .share{margin:2.8rem 0 0;}
+  .share h2{font-family:var(--logo); font-size:1.3rem; font-weight:700; margin-bottom:.5rem;}
+  .share .lead{font-family:var(--gothic); font-size:.86rem; color:#8a7a5e; line-height:1.75; margin-bottom:1.2rem;}
+  .share .lead b{color:var(--terra); font-weight:400;}
+  .promptbox{border:2px solid var(--sun); border-radius:16px; overflow:hidden; background:#fff;}
+  .pbar{display:flex; align-items:center; justify-content:space-between; gap:.7rem; flex-wrap:wrap;
+    background:var(--sun); padding:.75rem 1.1rem;}
+  .pbar .lbl{font-family:var(--gothic); font-size:.82rem; color:var(--brown); letter-spacing:.03em; line-height:1.5;}
+  .copybtn{font-family:var(--gothic); font-size:.85rem; color:var(--ivory); background:var(--brown);
+    border:none; border-radius:999px; padding:.5rem 1.35rem; cursor:pointer; transition:background .15s ease, transform .1s ease;}
+  .copybtn:hover{background:var(--terra);}
+  .copybtn:active{transform:scale(.97);}
+  .copybtn.done{background:var(--leaf);}
+  .promptbox details{border-top:1px solid rgba(58,42,18,.08);}
+  .promptbox summary{font-family:var(--gothic); font-size:.83rem; color:var(--terra); cursor:pointer;
+    padding:.8rem 1.2rem; list-style:none; user-select:none;}
+  .promptbox summary::-webkit-details-marker{display:none;}
+  .promptbox summary::before{content:"▸ "; color:var(--leaf);}
+  .promptbox details[open] summary::before{content:"▾ ";}
+  .promptbox summary:hover{text-decoration:underline;}
+  pre{margin:0; padding:1.2rem 1.25rem; max-height:30rem; overflow:auto;
+    font-family:ui-monospace,'SFMono-Regular',Consolas,'D2Coding',monospace;
+    font-size:.78rem; line-height:1.75; color:#4a3a1e; white-space:pre-wrap; word-break:break-word;
+    background:#FFFDF6; border-top:1px solid rgba(58,42,18,.06);}
+  .pfoot{font-family:var(--gothic); font-size:.78rem; color:#a8997d; padding:.75rem 1.2rem; line-height:1.7;
+    border-top:1px solid rgba(58,42,18,.08); background:#fff;}
+  .pfoot b{color:var(--leaf); font-weight:400;}
+  .pfoot ul{margin:.4rem 0 0; padding-left:1.1rem;}
+  .pfoot li{margin-bottom:.2rem;}
+
+  /* 이 리포트를 지은 식구들 */
+  .credits{margin-top:2.8rem; padding-top:1.3rem; border-top:1px solid rgba(58,42,18,.1);
+    font-family:var(--gothic); font-size:.78rem; color:#a8997d; line-height:1.9;}
+  .credits .ct{letter-spacing:.08em; display:block; margin-bottom:.4rem;}
+  .credits ul{list-style:none;}
+  .credits li{display:inline-block; margin:0 .9rem .1rem 0;}
+
+  footer{margin-top:2.2rem; font-family:var(--gothic); font-size:.76rem; color:#a8997d; text-align:center; line-height:1.9;}
+  footer .brand{display:block; letter-spacing:.18em; color:var(--terra); font-size:.72rem; margin-top:.3rem;}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+</head>
+<body>
+  <div class="wrap">
+    <a class="home" href="./">← 인사이트 목록</a>
+    <div class="date">2026.08.07 — 08.13</div>
+    <h1>정리했다고<br>믿었던 것들</h1>
+    <p class="summary">여덟 명의 <b>AI 식구에게 각자 자기 기록</b>을 갖게 하고, 노트북 점검을 <b>회차로 쌓는 저장소</b>를 세웠다. 만들면서 배운 것은 <b>대부분 도구 쪽이 아니라 내 쪽</b>이었다 — 정리했다고 믿었는데 절반만 먹고 있었고, 대신 배워주면 상대가 자라지 않았고, 전체를 설계하면서 나를 빼먹었다.</p>
+    <div class="sun-line"></div>
+
+    <div class="works">
+      <h3>이번 주 손으로 지은 것들</h3>
+      <p class="desc">눌러서 직접 볼 수 있어요.</p>
+
+      <div class="work plain lead-work">
+        <span class="dot"></span>
+        <span><span class="wt">시스템 점검 체계와 기록 저장소</span>
+          <span class="wd">— 노트북 상태를 일곱 갈래로 점검하고, 그 결과를 회차로 쌓아 두는 자리. 바탕화면 바로가기로 부른다</span>
+          <span class="wd">— 이번 주의 중심입니다. 만드는 법을 아래에 프롬프트로 실어 두었어요. 기록에 기기 상태가 담겨 비공개 저장소라 링크는 없습니다</span></span>
+      </div>
+
+      <div class="work plain">
+        <span class="dot"></span>
+        <span><span class="wt">여덟 식구가 각자 자기 기록을 갖게 됨</span>
+          <span class="wd">— 열넷이던 AI 식구를 여덟으로 정리하고, 각자에게 지식 파일·작업 일지·일기 폴더를 줬다</span></span>
+      </div>
+
+      <div class="work plain">
+        <span class="dot"></span>
+        <span><span class="wt">작업 폴더 재편</span>
+          <span class="wd">— 평평하게 늘어선 열여덟 개를 사이트·앱·기록 세 갈래로</span></span>
+      </div>
+
+      <a class="work" href="https://pognaru.github.io/byeol/entries/nightsky_2026-08-11.html" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">밤하늘 — 8월 3–9일</span> <span class="wd">— 한 주의 기록을 별자리 한 장으로</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+
+      <a class="work" href="https://pognaru.com/weekly/260809.html" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">주간 회고 — 「나를 위해서」</span> <span class="wd">— 8/3~8/9 한 주의 새벽 글을 되짚기</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+
+      <a class="work" href="https://pognaru.com/bamnaru/notes/2026/kokoro-2.html" target="_blank" rel="noopener">
+        <span class="dot"></span>
+        <span><span class="wt">나루의 밤 2차 — 나쓰메 소세키 『마음』 중 「부모님과 나」</span> <span class="wd">— 찬반 두 칸을 없애고, 물음이 스스로 서게 고쳐 쓴 회차</span></span>
+        <span class="arrow">열기 ↗</span>
+      </a>
+    </div>
+
+    <div class="share">
+      <h2>점검 체계, 그대로 지어 쓰세요</h2>
+      <p class="lead">위의 <b>시스템 점검 체계</b>를 자기 컴퓨터에도 지을 수 있게 프롬프트 한 덩어리로 정리했습니다. 복사해서 클로드 코드에 그대로 붙여넣으면 됩니다.<br>
+      만들기 전에 <b>인터뷰가 먼저 나옵니다</b> — 윈도우인지 맥인지, 무엇을 점검받고 싶은지, 일부러 그렇게 해둔 설정이 무엇인지를 묻고 답을 받은 뒤에 짓기 시작하므로, 각자 자기 기기에 맞는 체계가 나옵니다.<br>
+      점검 한 번은 사진 한 장이라 값이 크지 않습니다. 같은 기준으로 <b>두 번 세 번 쌓일 때 변화가 보입니다.</b></p>
+
+      <div class="promptbox">
+        <div class="pbar">
+          <span class="lbl">아래 전부를 클로드 코드에 붙여넣으세요</span>
+          <button class="copybtn" id="copy" type="button">복사하기</button>
+        </div>
+        <details>
+          <summary>프롬프트 전문 보기 (약 300줄)</summary>
+          <pre id="prompt">너는 내 컴퓨터를 통틀어 살피는 정비공 역할이야.
+나는 클로드 코드를 쓰는 사용자이고, 내 PC의 소프트웨어·하드웨어 상태를
+**회차마다 같은 기준으로 재서 쌓아두는 점검 체계**를 만들고 싶어.
+
+한 번 점검하고 끝내는 게 아니라, 점검할 때마다 기록이 한 줄씩 쌓이고
+지난 회차와 비교되는 구조를 짓는 게 목적이야. 아래 순서대로 진행해줘.
+
+---
+
+## 1단계 — 먼저 나에게 물어봐 (만들기 전에)
+
+한 번에 다 묻지 말고, 아래 묶음을 순서대로 물어보고 내 답을 받은 뒤 다음으로 넘어가.
+내가 "모르겠다"고 하면 네가 두세 가지 안을 제시하고 고르게 해줘.
+
+**(1) 기기**
+- 윈도우인가 맥인가? 버전은?
+- 노트북인가 데스크톱인가? (노트북이면 배터리 항목이 들어간다)
+- 이 PC를 주로 무엇에 쓰나? (개발 / 문서 / 창작 / 섞임)
+
+**(2) 무엇을 점검받고 싶은가**
+- 아래 일곱 갈래 중 뺄 것이 있나? 없으면 전부 본다.
+  A. 에이전트·도구 환경  B. 백그라운드·자원  C. 동기화·백업
+  D. 낡은 자료  E. 예약 자동화  F. 작업 폴더 무결성  G. 하드웨어
+- 요즘 신경 쓰이는 증상이 있나? (느려짐 / 발열 / 배터리 / 저장공간 / 동기화 안 됨)
+  있으면 그 갈래를 먼저 깊게 본다.
+- 내가 **일부러 그렇게 해둔 설정**이 있나? (예: 절전 시간, 특정 프로그램 자동 실행)
+  → 이건 지금 목록으로 받아 적어두고, 앞으로 어느 회차에서도 이상으로 올리지 마.
+
+**(3) 어디에 남길까**
+- 점검 기록을 둘 폴더의 경로를 알려줘. (이하 `&lt;점검-기록-폴더&gt;`)
+- 깃 저장소로 관리할까, 로컬 폴더로만 둘까?
+  - 깃으로 하면 다른 기기·폰에서도 기록을 읽을 수 있다.
+  - 다만 점검 기록에는 **디스크 구조·저장소 목록·기기 상태**가 들어간다.
+    깃에 둔다면 **비공개 저장소여야 한다.** 공개면 안 된다.
+- 점검 대상이 되는 내 주 작업 폴더는 어디인가? (이하 `&lt;내-작업폴더&gt;`)
+
+**(4) 공개 여부**
+- 이 기록을 누가 보나? 나만 보나?
+- 웹으로 볼 수 있게 할까? (권장: **하지 않음.** 로컬 파일로 열면 충분하다.
+  깃 호스팅의 페이지 기능은 켜지 말고, 저장소도 비공개로 둔다)
+
+답을 다 받으면 **정리해서 보여주고 내 확인을 받은 뒤** 만들기 시작해.
+특히 (2)에서 받은 "일부러 해둔 설정" 목록은 그대로 복창해서 확인받아.
+
+---
+
+## 2단계 — 이 구조로 만들어줘
+
+```
+&lt;점검-기록-폴더&gt;/
+├─ README.md          이 체계의 규칙 (점검할 때마다 먼저 읽는 문서)
+├─ index.html         허브 — 최신 상태 + 회차 아카이브 + 추세 그래프
+├─ checks/
+│  └─ YYMMDD.md       회차 기록 (상세, 텍스트)
+├─ 대시보드/
+│  └─ YYMMDD.html     그 회차의 전체 화면 (index에서 링크)
+└─ 도구/
+   ├─ 점검하기.ps1     바탕화면 바로가기가 부르는 실행 파일
+   └─ 관리자점검.ps1    권한이 필요한 값을 한 번에 재는 스크립트
+```
+
+`index.html`이 입구다. 회차 아카이브에서 그날 대시보드로 들어가고,
+대시보드 `&lt;body&gt;` 바로 아래 돌아가기 줄로 목록에 돌아온다. 이 줄을 빠뜨리면 길이 끊긴다.
+
+```html
+&lt;div class="backbar"&gt;&lt;a href="../index.html"&gt;← 점검 목록으로&lt;/a&gt;&lt;/div&gt;
+```
+
+### 점검하는 일곱 갈래와, 실제로 재는 명령
+
+각 항목은 🟢정상 / 🟡주의 / 🔴위험 / ⚪확인 불가 로 판정한다.
+아래는 윈도우 기준이고, 맥은 괄호 안 명령으로 대체한다.
+
+**A. 에이전트·도구 환경** — 비개발자가 가장 잘 놓치는 자리다
+- 클로드 코드가 **맞는 폴더에서 열렸는가** (엉뚱한 폴더면 설정·스킬이 아예 안 뜬다)
+- 설정 파일이 깨지지 않았는가
+  `Get-Content .claude\settings.json -Raw | ConvertFrom-Json`
+  (맥: `cat .claude/settings.json | python3 -m json.tool`)
+- 설정 안의 경로가 **아직 살아 있는가** — 폴더를 옮긴 뒤 가장 자주 깨지는 자리다
+  `Test-Path &lt;경로&gt;` 로 하나씩 확인한다. 스킬·예약 작업·에디터 설정도 같이 훑는다.
+- 플러그인·확장이 최신인가 — **반드시 `git fetch origin`을 먼저 하고** 비교한다.
+  로컬 캐시만 보면 며칠 묵은 버전을 최신으로 오판한다.
+  `git fetch origin; git rev-parse HEAD origin/main`
+- MCP 서버 연결 상태, 미인증 서버가 있는지
+- 도구 버전: `claude --version` / `node -v` / `git --version` / `gh --version` / `gh auth status`
+- 세션이 너무 커져 느려졌는지 (세션 파일 크기)
+
+**B. 백그라운드·자원**
+- 안 닫힌 헤드리스 브라우저(좀비)
+  `Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '--headless' }`
+  (맥: `ps aux | grep -- --headless`)
+- 메모리·CPU 상위 프로세스
+  `Get-Process | Sort-Object WS -Descending | Select-Object -First 10 Name,WS,CPU`
+  (맥: `ps aux | sort -k4 -r | head`)
+- 메모리 사용률 `Get-CimInstance Win32_OperatingSystem`
+- 디스크 여유 `Get-PSDrive C` (맥: `df -h /`)
+- ⚠️ 사용자가 쓰고 있는 브라우저·에디터는 **건드리지 않는다.** 헤드리스·끊긴 것만 제안한다.
+
+**C. 동기화·백업** — 셋 중 하나는 살아 있어야 한다
+- 클라우드 동기화 프로그램이 실제로 돌고 있는가 (프로세스 존재 + 시작 시각)
+- 충돌본·중복본
+  `Get-ChildItem &lt;내-작업폴더&gt; -Recurse -File | Where-Object { $_.Name -match '충돌|conflict|-사본|\(\d\)$' }`
+- ⚠️ **'온라인 전용' 파일**(구름 아이콘)이 있는지. 그 파일은 클로드가 내용을 못 읽는다
+  `Get-ChildItem -Recurse -File -Force | Where-Object { $_.Attributes -band 0x400000 }`
+  → 있으면 "오프라인 사용 / 항상 이 장치에 보관"으로 받아두라고 안내한다.
+- 깃 백업: 저장소마다 `git status --porcelain`(미커밋), `git log -1 --date=short`(마지막 백업)
+- 사적인 글이 든 저장소는 **공개 여부와 웹페이지 기능을 함께** 본다.
+  페이지를 꺼도 저장소가 공개면 파일은 그대로 읽힌다.
+  `gh api repos/&lt;계정&gt;/&lt;저장소&gt; --jq '{visibility,has_pages}'`
+
+**D. 낡은 자료** — 안전하게만
+- 임시·구버전·빌드 찌꺼기
+  `Get-ChildItem -Recurse -File | Where-Object { $_.Name -match '(_v\d|_old|~\$|\.tmp$)' }`
+  빌드 산출물(`dist`, `build`, `node_modules`), 휴지통 폴더도 함께 센다.
+- ⚠️ **정본·작업본은 절대 건드리지 않는다.** 사본·임시·고아만.
+  정본인지 사본인지 **판단할 수 없으면 목록만 보여주고 내 판단을 기다린다.**
+- 삭제는 반드시 **휴지통(복구 가능)**으로. 지우기 전에 목록을 보여주고 확인받는다.
+
+**E. 예약 자동화**
+- 예약 작업이 아직 도는가, 실패하는가
+  `Get-ScheduledTask | Get-ScheduledTaskInfo | Select TaskName,LastRunTime,NextRunTime,LastTaskResult`
+  (맥: `launchctl list` / `crontab -l`)
+- 자동화가 **가리키는 경로·스크립트가 살아 있는가** — 파일을 옮기면 루프가 조용히 깨진다
+- 안 쓰는 루프는 끄자고 제안하고, 깨진 루프는 경로를 고쳐준다
+- 한글이 든 `.ps1`은 **BOM 붙은 UTF-8**로 저장한다. 아니면 파워셸이 다른 인코딩으로 읽어 경로가 깨진다
+  (첫 3바이트가 `239 187 191`인지 확인)
+
+**F. 작업 폴더 무결성**
+- 깨진 내부 링크(`[[...]]`·상대경로), 중복본(`Get-FileHash` 대조), 빈 폴더
+- 50MB 넘는 파일이 깃 저장소 **안에** 있는지 — 있으면 백업이 무거워진다
+  `Get-ChildItem -Recurse -File | Where-Object Length -gt 50MB` (맥: `find . -size +50M`)
+- 파일 개수를 셀 땐 **갈라 적는다.** `node_modules`·`.git`·`dist`처럼 도구가 만든 것과
+  내가 만든 것을 합쳐 총계만 적으면 폴더가 실제보다 훨씬 커 보인다.
+
+**G. 하드웨어** — 소프트웨어만 보지 않는다
+- 배터리 열화율·충전 사이클
+  `powercfg /batteryreport /output "$env:TEMP\battery.html"` 후 설계용량 대비 완충용량
+  (맥: `system_profiler SPPowerDataType`)
+- 저장장치 수명·온도
+  `Get-PhysicalDisk | Get-StorageReliabilityCounter` (맥: `smartctl -a /dev/disk0`)
+- CPU 온도
+  `Get-CimInstance -Namespace root/wmi MSAcpi_ThermalZoneTemperature`
+  (값은 0.1K 단위 → `(값/10)-273.15` 로 ℃ 환산. 맥: `sudo powermetrics --samplers smc -n 1`)
+- 메모리 총량·슬롯 여유(증설 가능한가)
+  `Get-CimInstance Win32_PhysicalMemory` (맥: `system_profiler SPMemoryDataType`)
+- 문제 있는 장치 `Get-PnpDevice -Status Error` (맥: `system_profiler SPUSBDataType`)
+- 밀린 업데이트·재부팅 대기 (맥: `softwareupdate -l`)
+- 전원 설정 `powercfg /q` — ⚠️ 1단계에서 받은 "일부러 해둔 설정"은 그대로 둔다
+- Wi-Fi 신호·드라이버 절전 옵션 `netsh wlan show interfaces` (맥: `wdutil info`)
+
+### 관리자 권한이 필요한 값은 승격 한 번으로 몰아서 잰다
+
+CPU 온도·저장장치 마모도·전원 요청 목록·무선 절전 옵션은 일반 권한으로 못 읽는다.
+**"확인 불가"로 남기지 말고** 이 넷을 한 스크립트(`도구\관리자점검.ps1`)에 모아
+`Start-Process powershell -Verb RunAs -ArgumentList '-File','&lt;경로&gt;'` 로 한 번에 돌린다.
+권한 확인창 한 번이면 넷이 다 나오고, 결과는 텍스트 파일로 떨어뜨린다.
+(맥은 `sudo`가 필요한 명령을 한 줄로 묶어 한 번만 묻게 한다)
+
+---
+
+## 3단계 — 회차를 쌓는 규칙 (README.md에 그대로 적어둘 것)
+
+이 규칙은 다음에 내가(또는 다른 클로드 세션이) 점검할 때 지켜야 하는 약속이야.
+
+### 점검을 마치면 세 가지를 **다 한다.** 어느 쪽을 할지 판단하지 않는다
+
+**① 회차 기록** `checks/YYMMDD.md`
+frontmatter(`title`·`date`·`tags`)로 시작하고, 아래 순서로 쓴다.
+신호등 요약 → 하드웨어 표(이번 값 · 전회 값 · 판정) → 소프트웨어 →
+주의 → 확인 불가 → 지난 회차 후속 → 고친 것.
+
+**② 대시보드** `대시보드/YYMMDD.html`
+자체 완결(외부 CDN·폰트·이미지 금지), 모바일에서도 읽히게, 맨 위에 돌아가기 줄.
+
+**③ 추세 데이터** `index.html`의 `CHECKS` 배열 **맨 앞에 한 줄만 추가**한다.
+배열 아래 코드는 손대지 않는다. 못 잰 값은 `null`을 넣는다(빼먹지 말고).
+
+```js
+const CHECKS = [
+  {
+    date: "2026-01-15",
+    batteryWear: 0,        // 배터리 열화율 %
+    batteryCycles: 12,     // 충전 사이클 회
+    diskFreePct: 77.1,     // 저장공간 여유 %
+    diskFreeGB: 733.8,
+    memUsedPct: 61,        // 메모리 사용률 %
+    cpuTempC: 43.2,        // CPU 온도 ℃ — 무거운 작업 전에 잰 값
+    ssdWearPct: 0,         // 저장장치 마모도 % (0 = 잔여 수명 100%)
+    ssdTempC: 46,
+    warn: 3, bad: 0,       // 주의·위험 건수
+    note: "한 줄 메모 — 이번 회차에서 달라진 것",
+
+    // 숫자만 두지 않는다. 무엇이 주의였는지 여기 적어야 대시보드를 안 열어도 보인다
+    warnItems: [
+      { t: "짧은 제목", d: "한 줄 설명 — 왜 주의인지, 급한지 아닌지" },
+    ],
+    badItems: [ /* 위험이 있으면. 없으면 통째로 생략 */ ],
+    doneItems: [
+      { t: "같은 날 조치한 것", d: "무엇을 어떻게 했는지" },
+    ],
+    docs: [
+      { label: "대시보드",       href: "대시보드/260115.html", main: true },
+      { label: "회차 기록 (md)", href: "checks/260115.md",     md: true },
+    ],
+  },
+  // …이전 회차들
+];
+```
+
+`warnItems`를 비우면 **숫자만 남고 무엇이었는지 알 수 없게 된다.** 반드시 채운다.
+
+깃으로 관리한다면 여기에 **커밋·푸시·README 갱신**까지가 한 묶음이다.
+파일을 더하거나 이름을 바꿨으면 README의 구조 트리와 회차 표도 같이 고친다.
+
+### 점검할 때 지키는 원칙 — 이게 제일 중요하다
+
+이 아홉 줄은 실제로 오진하면서 얻은 것들이야. 하나씩 지켜줘.
+
+1. **상태는 조회 도구로 읽는다.** 산출물 파일의 유무·수정시각으로 역추적하지 않는다.
+   "결과 파일이 없으니 안 돌았다"는 판정은 거의 틀린다. 예약 작업은 조회 명령에
+   `enabled`·`마지막 실행`·`다음 실행`이 그대로 나온다. 그걸 읽는다.
+   조회 도구가 그 세션에 없으면 **실행 로그**를 읽는다 — 그건 역추적이 아니라 기록 조회다.
+
+2. **하드웨어 온도·메모리는 무거운 작업을 시작하기 전에 먼저 잰다.**
+   디스크 전수 스캔·링크 검사·저장소 조회를 돌린 뒤에 재면 CPU가 십수 도 오른다.
+   그러면 회차 간 비교가 통째로 무의미해진다. **재는 순서가 다르면 숫자가 거짓말을 한다.**
+
+3. **숫자를 대는 설명은 그 숫자를 실제로 재고 적는다.**
+   "파일 1만 개를 훑느라 뜨거워졌다" 같은 문장은 말이 되지만 측정한 값이 아니다.
+   실제로 재보면 목록 열거는 1초도 안 걸린다. **말이 되는 설명과 측정한 설명은 다르다.**
+
+4. **"확인 불가"는 이유를 갈라 적는다.** 값이 나빠서인지, 권한이 없어서인지,
+   읽을 도구가 없어서인지 구분한다. 못 본 것을 못 봤다고 적는 것은 흠이 아니다.
+   짐작으로 메우거나 조용히 건너뛰는 것이 흠이다.
+
+5. **부재는 고장이 아니라 의도적 결정일 수 있다.** 결론이 "없다 / 안 돌았다 / 끊겼다"로
+   나오면 한 번 더 의심한다. 폐지한 것일 수도, 설계상 산출물이 없는 것일 수도 있다.
+   파일 이름의 날짜와 수정시각은 서로 다른 것을 뜻하기도 한다(만든 날 ≠ 정리한 날).
+
+6. **위험 판정은 원자료를 다시 열어 확인한 뒤에만 올린다.** 이 보고는 내가 직접
+   검증하지 않고 믿는 보고다. 이름이 같은 남의 저장소를 내 것으로 착각하는 식의
+   실수가 실제로 난다 — 소유자를 짐작하지 말고 실제 원격 주소를 확인한다.
+
+7. **점검에서는 고치지 않는다.** 발견은 보고하고, 조치는 내 확인을 받은 뒤 따로 한다.
+   되돌리는 법을 먼저 마련해두고 손댄다. 멀쩡한 것을 고치는 게 고장 난 것을
+   그냥 두는 것보다 나쁠 때가 있다.
+
+8. **주의 항목은 숫자만 남기지 말고 무엇이 주의였는지 함께 적는다.**
+   "주의 3건"만 있으면 대시보드를 열어야만 무엇인지 알 수 있다.
+
+9. **지난 회차를 먼저 훑는다.** `checks/`에서 직전 기록을 읽고, 그때 남은 항목이
+   해결됐는지 **매번 다시 잰다.** "그대로겠지"로 넘기면 이미 해결된 일을 두 번
+   걱정하게 만들거나, 조용히 나빠진 것을 놓친다. 비교값도 베끼지 말고 다시 잰다 —
+   점검의 값어치는 한 번의 사진이 아니라 **변화**에 있다.
+
+---
+
+## 4단계 — 실행 통로 만들기 (바탕화면 바로가기)
+
+점검은 **정기 예약 루틴으로 돌리지 않는다. 내가 부를 때만 한다.**
+예약으로 돌리면 진행이 눈에 안 보여 중간에 멈추거나 되물을 수 없고,
+예약 실행은 대화형과 모델·환경이 다를 수 있어 판단의 질이 흔들린다.
+대신 **바탕화면에서 두 번 눌러 여는 통로**를 만들어줘.
+
+**(1) `도구\점검하기.ps1`** — 클로드 코드를 대화형으로 열고 첫 요청을 미리 넣는다.
+
+```powershell
+$ErrorActionPreference = "Stop"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+$work = "&lt;내-작업폴더&gt;"
+$repo = "&lt;점검-기록-폴더&gt;"
+
+if (-not (Test-Path $work)) { Write-Host "작업 폴더를 찾지 못했습니다: $work" -ForegroundColor Red; Read-Host; exit 1 }
+$claude = Get-Command claude -ErrorAction SilentlyContinue
+if (-not $claude) { Write-Host "claude CLI를 찾지 못했습니다. PATH를 확인해 주세요." -ForegroundColor Red; Read-Host; exit 1 }
+
+$prompt = @"
+시스템 점검을 해줘. A~G 일곱 갈래 전부, 하드웨어 포함.
+온도·메모리는 무거운 작업을 시작하기 전에 먼저 재줘.
+
+기록은 세 가지를 다 남긴다 (어느 쪽을 할지 판단하지 말 것):
+1. checks/YYMMDD.md 회차 기록
+2. 대시보드/YYMMDD.html
+3. index.html의 CHECKS 배열 맨 앞에 한 줄 추가 (못 잰 값은 null)
+
+규칙은 $repo\README.md 에 있으니 먼저 읽고 시작해줘.
+지난 회차도 checks/ 폴더에서 훑어보고, 그때 남은 항목이 해결됐는지 다시 재줘.
+"@
+
+Set-Location $work
+&amp; $claude.Source $prompt
+```
+
+⚠️ 한글이 들어 있으므로 이 파일은 **BOM 붙은 UTF-8**로 저장한다.
+
+**(2) 바탕화면 바로가기(.lnk)** — 아래를 파워셸에서 한 번 실행하면 만들어진다.
+
+```powershell
+$ws  = New-Object -ComObject WScript.Shell
+$lnk = $ws.CreateShortcut("$env:USERPROFILE\Desktop\시스템 점검하기.lnk")
+$lnk.TargetPath       = "powershell.exe"
+$lnk.Arguments        = '-NoProfile -ExecutionPolicy Bypass -File "&lt;점검-기록-폴더&gt;\도구\점검하기.ps1"'
+$lnk.WorkingDirectory = "&lt;내-작업폴더&gt;"
+$lnk.IconLocation     = "shell32.dll,23"
+$lnk.Save()
+```
+
+기록을 보기만 할 바로가기도 하나 더 만들어줘 — `TargetPath`를 `&lt;점검-기록-폴더&gt;\index.html`로.
+
+(맥이면 `.command` 파일로 만들고 `chmod +x`를 준 뒤 Dock이나 데스크톱에 둔다.
+`.ps1` 대신 같은 내용의 셸 스크립트를 쓰면 된다.)
+
+---
+
+## 5단계 — 만든 뒤 확인
+
+1. **바로가기를 실제로 눌러본다.** 클로드 코드가 열리고 첫 요청이 들어가는지.
+2. **첫 회차를 실제로 돌려본다.** 일곱 갈래가 다 재지는지, 못 재는 항목이 있으면
+   그 이유가 "권한"인지 "도구 부재"인지 구분해 적히는지.
+3. `index.html`을 브라우저로 열어 **회차 카드 → 대시보드 → 돌아가기**가 다 눌리는지.
+   회차가 하나뿐이면 추세 그래프가 점 하나여도 무너지지 않는지.
+4. 폭 375px(모바일)에서도 표가 가로 스크롤로 읽히는지.
+5. 마지막에 **"다음 점검을 부르는 법"**을 다섯 줄 이내로 정리해줘.
+   다음에 내가 그것만 보고도 혼자 돌릴 수 있게.</pre>
+        </details>
+        <div class="pfoot">
+          <b>쓰는 사람에게 한마디</b>
+          <ul>
+            <li>인터뷰의 (2)번 마지막 질문을 꼭 답해두세요. “내가 일부러 그렇게 해둔 설정”을 미리 적어두지 않으면, 점검할 때마다 그걸 고장으로 짚고 매번 해명하게 됩니다.</li>
+            <li>첫 회차는 초라해도 됩니다. 값 하나가 점 하나입니다. 두 번째 회차부터 화살표가 생기고, 세 번째부터 추세가 보입니다.</li>
+            <li>고치지 않는 점검이 좋은 점검입니다. 발견과 조치를 한 세션에서 섞으면 무엇이 원래 상태였는지 알 수 없게 됩니다.</li>
+            <li>정기 예약으로 돌리고 싶은 마음을 참으세요. 매일 돌면 읽지 않게 되고, 읽지 않는 기록은 없는 기록입니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reflect" style="margin-top:2.8rem;">
+      <h2>이번 주의 씨앗</h2>
+      <ul class="items">
+        <li>
+          <div class="it">강의는 70퍼센트, 나머지는 실습으로</div>
+          <div class="id">“듣는 것으로 완성되는 배움은 없다.” 식구마다 지식 파일을 만들어 준 것까지가 강의였고, 같은 식구를 다시 불러 자기가 쓴 줄을 고치게 한 것이 실습이었다. → <b>고치는 일이 일어나고서야 파일이 살았다.</b></div>
+        </li>
+        <li>
+          <div class="it">만든 사람의 조급함</div>
+          <div class="id">“좋은 것을 쥐여 주어도 어디에 쓰는 물건인지 모르면 무용지물이 된다.” 내가 그 자리에 섰다. 식구에게 자기 폴더를 주면서 폴더를 열어볼 도구는 안 줬다. → <b>무엇을 주기 전에, 그걸 쓰는 데 필요한 것이 다 있는지 먼저 센다.</b></div>
+        </li>
+        <li>
+          <div class="it">도움을 줄 수 있다는 기쁨</div>
+          <div class="id">“받으러 간 자리가 건네는 자리가 되었다.” 나루의 밤 1차는 신청자가 없어 혼자 앉아 있었는데, 자료는 매번 만들어 올리기로 했다. → 사람이 와야 성립하는 자리에서, <b>남는 것이 있으면 성립하는 자리</b>로.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sentence">
+      <h2>이번 주의 매듭</h2>
+      <p class="lead">만들면서 걸린 것 넷. 대부분 도구 쪽이 아니라 <b>내 쪽</b>이었다.</p>
+      <ul class="items left">
+        <li>
+          <div class="it">통합했다고 믿었는데 절반만 먹고 있었다</div>
+          <div class="id">폐지한 옛 식구 파일을 지우지 않고 같은 폴더 안쪽에 넣어 두었더니, 그대로 계속 읽히고 있었다. → 치울 때는 <b>어디로 치우는지까지 정한다.</b> 안 쓰는 것을 안 쓰는 자리에 두는 게 정리다.</div>
+        </li>
+        <li>
+          <div class="it">내가 대신 배워주면 그 식구는 자라지 않는다</div>
+          <div class="id">식구가 틀린 날, 교훈을 내가 대신 적어 넣어 왔다. 친절인 줄 알았는데 그게 백 번을 불러도 백 번째가 첫 번째보다 낫지 않은 이유였다. → <b>틀린 자리는 본인이 자기 기록에 적게 한다.</b></div>
+        </li>
+        <li>
+          <div class="it">전체를 설계하면서 설계자가 빠졌다</div>
+          <div class="id">여덟 집을 다 지어 놓고 내 것을 안 만들었다. 며칠 뒤엔 일기 경로를 다 고쳐 놓고 내 것만 옛 경로에 뒀다. 같은 자리에서 두 번 미끄러졌다. → <b>명단을 만들 때 내 이름부터 적는다.</b></div>
+        </li>
+        <li>
+          <div class="it">숫자만 남긴 기록은 다시 열어봐도 아무것도 안 알려준다</div>
+          <div class="id">점검 기록에 “주의 3건”만 있고 그게 무엇인지가 없었다. 세어 두기만 한 것은 다음에 아무 소용이 없었다. → <b>숫자 옆에 반드시 그 내용 한 줄을 같이 적는다.</b></div>
+        </li>
+      </ul>
+
+      <h2 style="margin-top:2.6rem;">에이전트와 일하며 배운 것</h2>
+      <p class="lead">이번 주 결과물도 <b>AI 식구들과 나눠 일한 것</b>입니다. 걸린 것 넷을 적어 둡니다.</p>
+      <ul class="items fix">
+        <li>
+          <div class="it">“못 했다”고 하면 능력이 아니라 설정부터 본다</div>
+          <div class="id">점검 오진 두 건이 났다. 뿌리는 두 가지였다 — <b>답이 이미 기록에 있는데 넘겨주지 않은 것</b>, 그리고 열어줬어야 할 도구가 반쪽만 열려 있던 것. 둘 다 내 쪽 문제였다.</div>
+        </li>
+        <li>
+          <div class="it">지시하며 쓴 말이 결과물에 그대로 새어 나온다</div>
+          <div class="id">“이 인물을 납작하게 만들지 말 것”이라고 적었더니 ‘납작하다’가 자료의 소제목으로 올라와 있었다. → 지시문에 <b>“이 말은 너에게 하는 말이고 결과물에 쓰지 말 것”</b>을 붙인다.</div>
+        </li>
+        <li>
+          <div class="it">형식을 없앨 때는 그 형식이 하던 일을 무엇이 대신할지 함께 정한다</div>
+          <div class="id">찬반 두 칸이 흑백논리로 보일까 봐 뺐다. 그냥 빼면 “다르게 볼 수도 있다”를 알려줄 게 없어져서, <b>“칸으로 나누지 말고 글 안에서 흔들라”</b>는 조건을 같이 줬다. 결과가 칸이 있을 때보다 깊었다.</div>
+        </li>
+        <li>
+          <div class="it">식구가 내 지시를 고쳐 왔고, 고친 쪽이 맞았다</div>
+          <div class="id">내가 준 문장이 앞뒤 순서상 성립하지 않는 것을 잡아내 다른 재료로 바꿔 왔다. “뼈대는 지침이지 족쇄가 아니다, 바꿨으면 이유를 적어라” 한 줄을 넣어둔 덕이었다. → <b>고칠 권한과 함께 이유를 적을 의무를 준다.</b></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="credits">
+      <span class="ct">이 리포트를 지은 식구들</span>
+      <ul>
+        <li>🌊 바다 — 한 주 정리·구성</li>
+        <li>💧 호수 — 씨앗과 성찰</li>
+        <li>🔨 김리 — 점검 체계와 공유용 프롬프트</li>
+        <li>🌳 나무 — 이 페이지</li>
+      </ul>
+    </div>
+
+    <footer>
+      고요히, 마음에 머무는 글을 전하는 포근나루
+      <span class="brand">POGNARU × DEEPER UNBRANDING</span>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy');
+  var pre = document.getElementById('prompt');
+  btn.addEventListener('click', function(){
+    var text = pre.textContent;
+    function done(){
+      btn.textContent = '복사됐어요';
+      btn.classList.add('done');
+      setTimeout(function(){ btn.textContent = '복사하기'; btn.classList.remove('done'); }, 3000);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch(e){ btn.textContent = '직접 복사해 주세요'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
