@@ -183,7 +183,7 @@
   <strong>고장은 하나도 없었다 — 오늘 문제였던 것은 기계가 아니라 김리의 판정이었다.</strong>
   처음 보고에서 가비플래너 Supabase가 사라졌다고 🔴 위험으로 올렸으나 <strong>오진이었다.</strong>
   프로젝트는 <strong>Status Healthy</strong>로 멀쩡하고, 그때의 조회 실패는 일시적인 DNS 실패였다(아래 「위험(0건)」).<br>
-  아침 루틴 셋이 사흘 쉰 것도 <strong>다현씨가 노트북을 켜지 않으신 사흘</strong>이어서 주의에서 내렸다.
+  아침 루틴 셋이 사흘 쉰 것도 <strong>노트북이 꺼져 있던 사흘</strong>이어서 주의에서 내렸다.
 </p>
 
 <div class="card crit">
@@ -200,7 +200,7 @@
   <tr><td>B. 백그라운드·자원</td><td><span class="sig g">정상</span></td><td>헤드리스 좀비 <strong>0건</strong>, 메모리 56.5%, 디스크 여유 77.8%</td></tr>
   <tr><td>C. 동기화·백업</td><td><span class="sig g">정상</span></td><td>OneDrive·깃 정상, 온라인 전용 0, 사적 글 유출 0. 가비플래너 Supabase도 <strong>정상</strong>(HTTP 401) — 처음 🔴로 올린 것은 오진</td></tr>
   <tr><td>D. 낡은 자료</td><td><span class="sig y">주의</span></td><td>구버전 파일 <strong>2건 그대로</strong>(다현씨 판단 대기). 새로 생긴 것 없음</td></tr>
-  <tr><td>E. 루프·자동화</td><td><span class="sig g">정상</span></td><td>아침 루틴 3개가 사흘 안 돌았으나 <strong>고장이 아니다</strong> — 다현씨가 노트북을 안 켜신 사흘. keep-awake 정상</td></tr>
+  <tr><td>E. 루프·자동화</td><td><span class="sig g">정상</span></td><td>아침 루틴 3개가 사흘 안 돌았으나 <strong>고장이 아니다</strong> — 노트북이 꺼져 있던 사흘. keep-awake 정상</td></tr>
   <tr><td>F. 볼트 무결성</td><td><span class="sig g">정상</span></td><td>깨진 링크 21건 중 9건은 옛 점검 문서 안의 인용. 대용량 21개는 전부 깃 밖</td></tr>
   <tr><td>G. 하드웨어</td><td><span class="sig g">정상</span></td><td>배터리 열화 0%·사이클 9회, CPU 27.1℃, SSD 100%, 장치 오류 0</td></tr>
 </table>
@@ -220,7 +220,7 @@
   <tr><td>SSD 상태</td><td>Healthy</td><td>동일</td><td>🟢</td></tr>
   <tr><td>C: 여유</td><td class="num">740.3GB / 951.6GB (<span class="em">77.8%</span>)<div class="bar"><i style="width:77.8%"></i></div></td><td class="num">744.4GB (78.2%)</td><td>🟢 −4.1GB</td></tr>
   <tr><td>메모리</td><td class="num">31.52GB 중 여유 13.71GB (<span class="em">56.5%</span> 사용)<div class="bar"><i style="width:56.5%"></i></div></td><td class="num">58%</td><td>🟢 −1.5%p</td></tr>
-  <tr><td>Wi-Fi</td><td class="num">신호 <span class="em">93%</span> · 수신 287Mbps · Intel Wi-Fi 7 BE201</td><td class="num">95% / 138Mbps</td><td>🟢</td></tr>
+  <tr><td>Wi-Fi</td><td class="num">신호 <span class="em">93%</span> · 수신 287Mbps · Intel Wi-Fi 7</td><td class="num">95% / 138Mbps</td><td>🟢</td></tr>
   <tr><td>장치 오류</td><td class="num"><span class="em">0건</span></td><td class="num">0건</td><td>🟢</td></tr>
   <tr><td>윈도우 업데이트</td><td>재부팅 대기 <strong>없음</strong> · 최근 KB5123304·KB5121003·KB5120708 (8/13)</td><td>동일</td><td>🟢</td></tr>
   <tr><td>전원</td><td>STANDBYIDLE <strong>0/0</strong> · VIDEOIDLE <strong>0/0</strong></td><td>동일</td><td>🟢 8/5 조치 유지</td></tr>
@@ -382,7 +382,7 @@ Wi-Fi 「절전 끄기 허용 = Enabled」도 8/5에 일부러 안 건드린 설
   <li><strong>사막여우 플러그인 1.4.0 최신</strong> — <code>git fetch origin</code>을 <strong>먼저</strong> 하고 대조: 로컬 <code>9d34579</code> = 원격 <code>9d34579</code>, behind 0.</li>
   <li><strong>도구 버전</strong> — <code>claude</code> CLI <strong>2.1.224</strong>(8/12 2.1.221 → 갱신) / node v24.16.0 / git 2.54.0 / gh 2.95.0. <code>gh</code> 로그인 유효(POGNARU).</li>
   <li><strong>MCP 22개 중 6개 연결</strong> — Slack·Excalidraw·Google Drive·Gmail·Google Calendar·obsidian. 나머지는 쓰지 않는 기본 원격 플러그인이고, 그중 figma만 이월 주의로 잡는다.</li>
-  <li><strong>공개 사고 없음</strong> — 레포 15개의 <code>visibility</code>·<code>has_pages</code>를 함께 조회. 사적인 글이 든 <strong>사적인 글이 든 저장소 네 곳 다 private + Pages off.</strong></li>
+  <li><strong>공개 사고 없음</strong> — 레포 15개의 <code>visibility</code>·<code>has_pages</code>를 함께 조회. 사적인 글이 든 <strong>저장소 네 곳 다 private + Pages off.</strong></li>
   <li><strong>깃 백업 살아있음</strong> — 레포 14개 전부 <code>ahead 0</code>. 미커밋은 <code>pognaru-letter</code> 4건뿐인데 넷리파이→깃 이전 작업 중이라 <strong>정상</strong>이다.</li>
   <li><strong>사적인 새벽 글이 깃으로 새지 않았다</strong> — 걸린 두 파일 다 정상이다. 하나는 깃 레포 <strong>밖</strong>이고, 하나는 살롱에 저장하도록 설계된 <strong>씨앗</strong>이며 그 레포는 private이다.</li>
   <li><strong>좀비 프로세스 0건</strong> — 헤드리스 msedge/chrome 0개.</li>
