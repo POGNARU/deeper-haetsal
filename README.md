@@ -18,6 +18,8 @@ deeper-haetsal/
 │                          #   낭독 노트는 이 레포 밖 lectura(pognaru.com/lectura)로 나갑니다 — 아래 절 참고
 ├─ archive-prompt.html     # 「내 아카이브 페이지 만들기」 — 디퍼 연구원들에게 건네는 공유용 프롬프트(복사 버튼)
 │                          #   루트에 둔 이유는 아래 '공유용 프롬프트' 절 참고
+├─ check-prompt.html       # 「내 PC 점검 체계 만들기」 — 260813 리포트에 실었던 프롬프트의 독립 페이지(2026-08-20)
+│                          #   껍데기·규칙은 archive-prompt.html과 같음. 정본은 볼트
 ├─ insight/
 │   ├─ index.html          # 인사이트 목록 (날짜순)
 │   ├─ 260625.html         # 「보이지 않는 문」 (2026.06.19–06.25)
@@ -28,7 +30,7 @@ deeper-haetsal/
 │   ├─ 260730.html         # 「채우러 왔지만, 내 안에 다 있었다」 (2026.07.24–07.30) · 수료식 회차 + 씨앗 성찰 2항목
 │   ├─ 260806.html         # 「흩어져 있던 것들이, 한 이름 아래로」 (2026.07.31–08.06) · pognaru.com 개설·햇살체 v2.0 + 씨앗 성찰 6항목(2묶음) + 「에이전트와 일하며 배운 것」 4항목(신규 섹션)
 │   ├─ 260813.html         # 「정리했다고 믿었던 것들」 (2026.08.07–08.13) · 식구 8인 기록 체계·시스템 점검 저장소 + 씨앗 3 / 매듭 4 / 에이전트 4
-│   └─ 260820.html         # 「통과했는데도, 다시 골랐다」 (2026.08.14–08.20) · 렉뚜라 개설·낭독 노트 갈래 신설 + 씨앗 3 / 에이전트 4
+│   └─ 260820.html         # 「통과했는데도, 다시 골랐다」 (2026.08.14–08.20) · lectura 개설·낭독 노트 갈래 신설 + 씨앗 3 / 에이전트 4
 │                          #   + 「색을 고른 자리」 팔레트 비교 섹션(신규) — 아래 절 참고
 │                          #   + 「점검 체계, 그대로 지어 쓰세요」 공유용 프롬프트(접힘 + 복사 버튼) · 「이 리포트를 지은 식구들」 크레딧 줄(신규)
 ├─ assignment/
@@ -92,6 +94,7 @@ deeper-haetsal/
 | 절창 — 독서 기록 (구병모 『절창』 · 도란도란 독서모임 · 논점 7 + 개인 감상) | [`assignment/260730-jeolchang.html`](https://pognaru.com/deeper-haetsal/assignment/260730-jeolchang.html) |
 | 햇살체 — 44만 자에서 건져 올린 내 문장의 규칙 (몽롱쓰기 141편 전수 분석) | [`assignment/260731-haetsalche.html`](https://pognaru.com/deeper-haetsal/assignment/260731-haetsalche.html) |
 | 내 아카이브 페이지 만들기 (디퍼 연구원 공유용 프롬프트 · 복사 버튼) | [`archive-prompt.html`](https://pognaru.com/deeper-haetsal/archive-prompt.html) |
+| 내 PC 점검 체계 만들기 (공유용 프롬프트 · 복사 버튼) | [`check-prompt.html`](https://pognaru.com/deeper-haetsal/check-prompt.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
@@ -179,6 +182,16 @@ deeper-haetsal/
   **고칠 때는 정본을 먼저 고치고 이 페이지의 `<pre id="prompt">` 안을 다시 옮깁니다.**
 - `<pre>` 안의 HTML 태그는 `&lt;` `&gt;`로 이스케이프해 둡니다. 복사되는 값은 `innerText`라 붙여넣을 때 원래 태그로 돌아옵니다 —
   **직접 `<`를 넣으면 페이지가 깨지므로 반드시 이스케이프합니다.**
+
+## 공유용 프롬프트를 독립 페이지로 뺄 때 — `check-prompt.html` (2026-08-20)
+
+리포트 안에 실은 프롬프트를 **주소로 건네고 싶어지면** 루트에 한 장짜리 페이지를 따로 냅니다. 리포트 안의 접힌 판은 그 회차의 이야기와 붙어 있어야 읽히고, 독립 페이지는 **그것만 필요한 사람**에게 건네는 자리라 둘 다 둡니다.
+
+- **껍데기는 `archive-prompt.html`을 그대로 물려받습니다** — head·CSS·`.steps`·`.promptbox`·복사 스크립트까지. 새로 디자인하지 않습니다. 받는 사람이 같은 자리에서 온 것임을 색으로 알아보게 하기 위해서입니다.
+- **`archive-prompt.html`과 같은 규칙을 따릅니다** — 루트에 두고, 돌아가기 링크를 넣지 않고, **페이지 안에 링크를 하나도 두지 않습니다**(밖으로 건네는 주소라, 링크가 있으면 받은 사람이 아카이브 안으로 걸어 들어옵니다). 과제 목록에는 `SHARE · 공유용 프롬프트` 카드로 겁니다.
+- **복사는 `textContent`로 읽습니다.** `archive-prompt.html`은 `innerText`인데, 그건 `<pre>`가 펼쳐져 있어서 됩니다. 접거나 숨기는 순간 빈 문자열이 돌아옵니다 — 새로 만드는 페이지는 처음부터 `textContent`로 씁니다.
+- **본문은 회차 리포트의 `<pre>`에서 그대로 옮깁니다.** 이스케이프가 이미 끝나 있어 다시 손댈 일이 없고, 두 곳이 어긋나지 않습니다. **정본은 볼트** `클로드 에이전트/바다의 기록/260814 시스템 점검 체계 만들기 프롬프트(공유용).md` — 고칠 때는 볼트 → 리포트 → 독립 페이지 순서입니다.
+- 회차 리포트에는 **독립 페이지로 가는 한 줄**을 답니다(안으로 거는 링크라 규칙에 어긋나지 않습니다).
 
 ## 무엇을 담나
 
