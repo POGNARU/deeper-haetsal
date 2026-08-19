@@ -24,7 +24,7 @@
   h1{font-family:var(--logo); font-size:3.4rem; font-weight:700; letter-spacing:.18em; margin-bottom:.7rem;}
   .tagline{font-size:1.02rem; color:#6b5536; margin-bottom:.4rem;}
   .sun-line{width:64px; height:3px; background:var(--sun); border-radius:3px; margin:1.8rem auto 2.6rem;}
-  .menu{display:flex; gap:1.1rem; flex-wrap:wrap; justify-content:center; width:100%; max-width:720px;}
+  .menu{display:flex; gap:1.1rem; flex-wrap:wrap; justify-content:center; width:100%; max-width:520px;}
   .card{
     flex:1 1 200px; background:#fff; border:1.5px solid rgba(58,42,18,.08);
     border-radius:20px; padding:1.9rem 1.4rem; text-decoration:none; color:var(--brown);
@@ -39,6 +39,8 @@
   .card.task:hover{border-color:var(--leaf);}
   .card.book .ic{background:var(--terra);}
   .card.book:hover{border-color:var(--terra);}
+  .card.recite .ic{background:var(--brown);}
+  .card.recite:hover{border-color:var(--brown);}
   .card .label{font-family:var(--logo); font-size:1.35rem; font-weight:700;}
   .card .desc{font-family:var(--gothic); font-size:.82rem; color:#8a7a5e; line-height:1.55;}
   footer{margin-top:3rem; font-family:var(--gothic); font-size:.78rem; color:#a8997d; line-height:1.9;}
@@ -68,6 +70,11 @@
       <span class="ic">冊</span>
       <span class="label">독서 자료</span>
       <span class="desc">읽는 동안 곁에 두는<br>안내와 지도</span>
+    </a>
+    <a class="card recite" href="https://pognaru.com/lectura/" target="_blank" rel="noopener">
+      <span class="ic">誦</span>
+      <span class="label">낭독 노트</span>
+      <span class="desc">소리 내어 읽기 위해<br>준비한 것들</span>
     </a>
   </nav>
 
