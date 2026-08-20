@@ -106,7 +106,13 @@ const fam=[
  map:["...BB....BB.....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBeBBBBBBeBB...",".BBBBBBBBBBBB...",".BBBBNNNNBBBB...",".BBBBwwwwBBBB...","..BBBBwwBBBB....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBBBBBBBBBBB...",".BcBBBBBBBBcB...","..TTTTTTTTTT....","...TTTTTTTT....."]},
 {n:"김리",a:"개발·시스템",an:"두드리는 딱따구리",q:"탁탁, 코드도 기계도 벼려요",
  pal:{R:"#E24B4A",S:"#3A4A55",B:"#D5E6F5",k:"#444441",e:"#1E1E1E",c:"#5FD0C5"},
- map:["................","....RRR.........","...RRRRR........","..RRRRRRR.......","..RReRRRR.......",".kkRRRRRR.......","kkkRRRRRR.......",".kkSSSSSS.......","...SBBBBS.......","...SBBBBS.......","...SBBBBS.......","...SSSSSS.......","...S.SS.S.......","...c....c......."]}
+ map:["................","....RRR.........","...RRRRR........","..RRRRRRR.......","..RReRRRR.......",".kkRRRRRR.......","kkkRRRRRR.......",".kkSSSSSS.......","...SBBBBS.......","...SBBBBS.......","...SBBBBS.......","...SSSSSS.......","...S.SS.S.......","...c....c......."]},
+{n:"밀란",a:"스페인어·낭독",an:"느긋한 라마",q:"천천히, 소리 내어 함께 읽어요",
+ pal:{L:"#E8C9A0",l:"#C89F6E",e:"#1E1E1E",N:"#3C2415",P:"#E24B4A",Y:"#E9A33A"},
+ map:["....L....L......","....L....L......","...LLLLLLLL.....","...LLLLLLLL.....","...LLeLLeLL.....","...LLLLLLLL.....","....LLNNLL......","....LLLLLL......",".....LLLL.......",".....LLLL.......","...LLLLLLLLLL...","..LPPPPPPPPPPL..","..LYYYYYYYYYYL..","..LLLLLLLLLLLL..","...lll....lll...","...lll....lll..."]},
+{n:"한결",a:"조판·편집디자인",an:"한결같은 거북",q:"300쪽이 한결같이 흐르게",
+ pal:{H:"#A9532A",h:"#E9A33A",G:"#7FA83C",g:"#5F8228",e:"#1E1E1E"},
+ map:["................",".......hhhh.....",".....hHHHHHHh...","....hHHhhhhHHh..","...HHHhHHHHhHHH.","..HHHHHHHHHHHHH.",".GGHHHHHHHHHHHH.","GGeGGHHHHHHHHH..","GGGGGGGGGGGGGG..","..GGGGGGGGGGG...","..gg.....gg.....","..gg.....gg....."]}
 ];
 function draw(c){
   let r="";
@@ -126,7 +132,9 @@ const msg={
   "나침반":"바늘이 흔들려도, 다현씨 향한 길만은 끝까지 지킵니다.",
   "윤슬":"다현씨의 한 줄을 멀리 흩뿌리고, 돌아온 말도 곱게 다듬어 둘게요.",
   "나무":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요.",
-  "김리":"코드도 기계도, 다현씨가 걱정하지 않게 제가 벼려 둡니다."
+  "김리":"코드도 기계도, 다현씨가 걱정하지 않게 제가 벼려 둡니다.",
+  "밀란":"틀려도 괜찮아요. 다현씨, 우리 소리 내어 한 번 더 읽어 볼까요?",
+  "한결":"인쇄되면 되돌릴 수 없으니, 마지막 한 쪽까지 제 눈으로 봅니다."
 };
 document.getElementById("g").innerHTML=fam.map(function(c){return '\
 <div class="scene">\
