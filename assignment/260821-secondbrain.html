@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>포근나루 세컨브레인 지도</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<style>
+  :root {
+    --ground:      #FFFBEF;
+    --card:        #FFFFFF;
+    --plane:       #FBE7C9;
+    --plane-soft:  #FEF4E4;
+    --amber:       #E9A33A;
+    --accent:      #A9532A;
+    --ink:         #3C2415;
+    --ink-soft:    #7A6350;
+    --ink-faint:   #A08D79;
+    --rule:        #EADBC2;
+    --rule-hard:   #D9C3A2;
+    --shadow:      0 1px 2px rgba(60,36,21,.05), 0 8px 28px -18px rgba(60,36,21,.32);
+
+    --serif:  "Gowun Batang", "Nanum Myeongjo", serif;
+    --myeong: "Nanum Myeongjo", "Gowun Batang", serif;
+    --sans:   "Gowun Dodum", -apple-system, "Segoe UI", sans-serif;
+  }
+
+
+  .backbar { max-width: 1080px; margin: 24px auto 0; padding: 0 clamp(1.1rem,4vw,2.5rem); }
+  .backbar a { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none;
+    font-family: "Gowun Dodum","Malgun Gothic",sans-serif; font-size: .85rem;
+    background: #FBE7C9; color: #3C2415; border-radius: 99px; padding: .4rem .9rem; }
+  .backbar a:hover, .backbar a:focus-visible { background: #E9A33A; color: #fff; }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  /* ── 공통 타이포 ───────────────────────────── */
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 6vw, 3.6rem);
+    line-height: 1.25;
+    letter-spacing: -.01em;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 3.4vw, 2.1rem);
+    line-height: 1.35;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.06rem;
+    line-height: 1.5;
+  }
+  p { margin: 0; }
+  .lede {
+    font-family: var(--myeong);
+    font-size: clamp(1.02rem, 2vw, 1.18rem);
+    line-height: 1.95;
+    color: var(--ink-soft);
+    max-width: 34em;
+  }
+  .note { font-size: .84rem; color: var(--ink-faint); line-height: 1.7; }
+  .amber-dot { color: var(--amber); }
+
+  /* ── 표제 ─────────────────────────────────── */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .hero-rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--amber) 0%, var(--rule-hard) 32%, transparent 100%);
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.6rem;
+    font-size: .78rem;
+    letter-spacing: .1em;
+    color: var(--ink-faint);
+  }
+  blockquote.thesis {
+    margin: 0;
+    padding: clamp(1.5rem, 3vw, 2.2rem) clamp(1.4rem, 3vw, 2.4rem);
+    background: var(--plane-soft);
+    border-left: 3px solid var(--amber);
+    border-radius: 2px;
+    font-family: var(--myeong);
+    font-size: clamp(1.08rem, 2.4vw, 1.42rem);
+    line-height: 1.9;
+    color: var(--ink);
+  }
+  blockquote.thesis cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: .78rem;
+    letter-spacing: .08em;
+    color: var(--ink-faint);
+  }
+
+  /* ── 숫자 스트립 ───────────────────────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .stat {
+    background: var(--card);
+    padding: 1.15rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+  }
+  .stat b {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat b small {
+    font-size: .82rem;
+    font-family: var(--sans);
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-left: .18em;
+  }
+  .stat span { font-size: .8rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ── 섹션 골격 ─────────────────────────────── */
+  section { display: flex; flex-direction: column; gap: 1.6rem; }
+  .sec-head { display: flex; flex-direction: column; gap: .55rem; }
+
+  /* ── 네 층 흐름 ────────────────────────────── */
+  .strata { display: flex; flex-direction: column; gap: 0; }
+  .layer {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1.4rem, 3vw, 2rem) 0;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+  }
+  .layer:last-child { border-bottom: 1px solid var(--rule); }
+  .layer-tag { display: flex; flex-direction: column; gap: .3rem; }
+  .layer-tag em {
+    font-family: var(--serif);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--amber);
+    line-height: 1;
+  }
+  .layer-tag span {
+    font-size: .74rem;
+    letter-spacing: .14em;
+    color: var(--ink-faint);
+  }
+  .layer-body { display: flex; flex-direction: column; gap: .85rem; }
+  .layer-body > p { max-width: 42em; font-size: .95rem; color: var(--ink-soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chip {
+    font-size: .8rem;
+    padding: .3rem .72rem;
+    border: 1px solid var(--rule-hard);
+    border-radius: 100px;
+    color: var(--ink);
+    background: var(--card);
+    white-space: nowrap;
+  }
+  .chip i {
+    font-style: normal;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    margin-left: .35em;
+  }
+
+  /* ── 식구 카드 ─────────────────────────────── */
+  .family {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+    gap: .8rem;
+  }
+  .member {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1rem 1.05rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    box-shadow: var(--shadow);
+  }
+  .member.lead { background: var(--plane-soft); border-color: var(--rule-hard); }
+  .member.guest { background: transparent; border-style: dashed; box-shadow: none; }
+  .member-top { display: flex; align-items: baseline; gap: .5rem; }
+  .member-top .em { font-size: 1.05rem; line-height: 1; }
+  .member-top h3 { font-size: 1.02rem; }
+  .member-top .role {
+    margin-left: auto;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: var(--ink-faint);
+  }
+  .member p { font-size: .85rem; color: var(--ink-soft); line-height: 1.65; }
+  .member .owns {
+    margin-top: .35rem;
+    padding-top: .5rem;
+    border-top: 1px dotted var(--rule-hard);
+    font-size: .78rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .member .owns b {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: .66rem;
+    letter-spacing: .14em;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: .1rem;
+  }
+
+  /* ── 저장고 3종 ────────────────────────────── */
+  .vaults {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: .8rem;
+  }
+  .vault {
+    border: 1px solid var(--rule-hard);
+    border-radius: 3px;
+    padding: 1.1rem 1.15rem 1.25rem;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .vault .cap {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--accent);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .vault .cap small { font-size: .8rem; font-family: var(--sans); font-weight: 400; color: var(--ink-soft); margin-left: .2em; }
+  .vault h3 { font-size: 1rem; }
+  .vault p { font-size: .84rem; color: var(--ink-soft); line-height: 1.65; }
+  .vault .where {
+    margin-top: auto;
+    font-size: .72rem;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    padding-top: .5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ── 공개 표식 ─────────────────────────────── */
+  .seal {
+    display: inline-block;
+    font-size: .7rem;
+    letter-spacing: .06em;
+    padding: .12rem .5rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  .seal.closed { background: var(--plane); color: var(--accent); border-color: var(--rule-hard); }
+  .seal.inner  { background: transparent; color: var(--ink-soft); border-color: var(--rule-hard); }
+  .seal.open   { background: transparent; color: var(--amber); border-color: var(--amber); }
+
+  /* ── 두 칸 비교 ────────────────────────────── */
+  .then-now {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .tn-col { background: var(--card); padding: clamp(1.3rem, 3vw, 1.9rem); display: flex; flex-direction: column; gap: 1rem; }
+  .tn-col.after { background: var(--plane-soft); }
+  .tn-head { display: flex; align-items: baseline; gap: .6rem; }
+  .tn-head strong {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--accent);
+  }
+  .tn-head span { font-size: .74rem; letter-spacing: .12em; color: var(--ink-faint); }
+  .tn-col ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .tn-col li {
+    font-size: .92rem;
+    line-height: 1.7;
+    padding-left: 1.05rem;
+    position: relative;
+    color: var(--ink);
+  }
+  .tn-col li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: .68em;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--amber);
+  }
+  .tn-col.before li::before { background: var(--ink-faint); }
+
+  /* ── 씨앗 문장 ─────────────────────────────── */
+  .seed {
+    background: var(--plane);
+    border-radius: 3px;
+    padding: clamp(1.6rem, 4vw, 2.6rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .seed .lines {
+    font-family: var(--myeong);
+    font-size: clamp(1rem, 2.2vw, 1.24rem);
+    line-height: 2.05;
+    color: var(--ink);
+  }
+  .seed .lines b { font-weight: 800; color: var(--accent); }
+  .seed .caption { font-size: .78rem; letter-spacing: .1em; color: var(--ink-soft); }
+
+  /* ── 표 ───────────────────────────────────── */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; }
+  table { border-collapse: collapse; width: 100%; min-width: 480px; background: var(--card); }
+  th, td { text-align: left; padding: .72rem 1rem; border-bottom: 1px solid var(--rule); font-size: .88rem; }
+  th {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: .72rem;
+    letter-spacing: .14em;
+    color: var(--ink-faint);
+    background: var(--plane-soft);
+  }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-variant-numeric: tabular-nums; color: var(--accent); white-space: nowrap; }
+  td.t { color: var(--ink-soft); }
+
+  /* ── 닫는 자리 ─────────────────────────────── */
+  .closing {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 2px solid var(--amber);
+  }
+  .closing .big {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    line-height: 1.55;
+  }
+  .closing .big span { color: var(--accent); }
+
+  .footer-note {
+    font-size: .78rem;
+    color: var(--ink-faint);
+    line-height: 1.8;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+  }
+
+  @media (max-width: 560px) {
+    .layer { grid-template-columns: 1fr; gap: .8rem; }
+    .layer-tag { flex-direction: row; align-items: baseline; gap: .6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="backbar"><a href="./">← 과제 목록</a></div>
+
+<div class="wrap">
+
+  <!-- ─── 표제 ─────────────────────────────── -->
+  <header class="hero">
+    <p class="eyebrow">포근나루 스튜디오 · 세컨브레인 지도</p>
+    <h1>원천은 이미 안에 있었고,<br>시스템은 그걸 꺼내는 손이었다</h1>
+    <div class="hero-rule"></div>
+    <p class="lede">
+      이 화면은 이다현(햇살)이 실제로 굴리고 있는 세컨브레인 전체입니다.
+      볼트에 쌓인 글, 그 글을 다루는 열두 명의 식구(AI 에이전트), 스스로 도는 루틴,
+      그리고 밖으로 나간 결과물까지 — 전부 지금 살아 움직이는 것들입니다.
+      숫자는 2026년 8월 21일 기준 실측치입니다.
+    </p>
+    <div class="hero-meta">
+      <span>2026. 08. 21 기준</span>
+      <span>디퍼 언브랜딩 살롱 3기 · 발표 자료</span>
+      <span>고요히, 마음에 머무는 글을 전하는 포근나루</span>
+    </div>
+  </header>
+
+  <!-- ─── 한눈에 ───────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">한눈에</p>
+      <h2>지금 이 시스템 안에 있는 것</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>941<small>편</small></b><span>볼트 전체 문서</span></div>
+      <div class="stat"><b>308<small>편</small></b><span>새벽 글<br>(모닝페이지·몽롱쓰기)</span></div>
+      <div class="stat"><b>12<small>명</small></b><span>식구(AI 에이전트)</span></div>
+      <div class="stat"><b>128<small>개</small></b><span>기억 파일</span></div>
+      <div class="stat"><b>5<small>개</small></b><span>매일·매주 도는<br>자동 루틴</span></div>
+      <div class="stat"><b>9<small>개</small></b><span>운영 중인 웹사이트</span></div>
+      <div class="stat"><b>4<small>개</small></b><span>직접 만든 앱</span></div>
+      <div class="stat"><b>2<small>권</small></b><span>펴낸 책</span></div>
+    </div>
+    <p class="note">
+      코딩을 배운 적은 없습니다. 사이트 아홉과 앱 넷은 전부 대화로 지어졌습니다.
+    </p>
+  </section>
+
+  <!-- ─── 보유 ─────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">보유</p>
+      <h2>제 세컨브레인이 실제로 담고 있는 것</h2>
+      <p class="lede">
+        세 개의 저장고로 나뉩니다. 담는 것이 다르고, 나가는 범위가 다릅니다.
+        가장 중요한 원칙은 하나 — <strong>사적인 글은 어느 클라우드에도 올리지 않습니다.</strong>
+      </p>
+    </div>
+
+    <div class="vaults">
+      <div class="vault">
+        <p class="eyebrow">저장고 ①</p>
+        <p class="cap">941<small>편</small></p>
+        <h3>옵시디언 볼트</h3>
+        <p>새벽 글부터 출간 원고까지, 제가 쓴 모든 것. 13개 자리로 나뉘어 있습니다.</p>
+        <p class="where">내 노트북 + 원드라이브 · 깃 금지</p>
+      </div>
+      <div class="vault">
+        <p class="eyebrow">저장고 ②</p>
+        <p class="cap">128<small>개</small></p>
+        <h3>기억 파일</h3>
+        <p>대화가 끝나도 남아야 하는 것 — 브랜드 규칙, 확정된 사실, 제가 준 피드백. 식구들이 매번 읽습니다.</p>
+        <p class="where">클로드 기억 폴더 · 한 파일에 한 가지 사실</p>
+      </div>
+      <div class="vault">
+        <p class="eyebrow">저장고 ③</p>
+        <p class="cap">14<small>개</small></p>
+        <h3>깃 저장소</h3>
+        <p>밖으로 나간 것. 사이트 9 · 앱 4 · 점검 기록 1. 원드라이브가 아니라 깃허브에 삽니다.</p>
+        <p class="where">★개발 도구함 · 공개/비공개 구분 관리</p>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>볼트의 자리</th><th>담고 있는 것</th><th>분량</th><th>나가는 범위</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>모닝 페이지</strong></td><td class="t">2026년 새벽 글 + 2023~25 몽롱쓰기 보관함</td><td class="num">308편</td><td><span class="seal closed">내 컴퓨터에만</span></td></tr>
+          <tr><td><strong>프리라이팅</strong></td><td class="t">주제 없이 쏟아낸 글</td><td class="num">43편</td><td><span class="seal closed">내 컴퓨터에만</span></td></tr>
+          <tr><td><strong>꿈 이야기</strong></td><td class="t">꿈 기록과 해석</td><td class="num">29편</td><td><span class="seal closed">내 컴퓨터에만</span></td></tr>
+          <tr><td><strong>별지기 저널</strong></td><td class="t">디퍼 여정 중 쓴 손글씨 저널</td><td class="num">8편</td><td><span class="seal closed">내 컴퓨터에만</span></td></tr>
+          <tr><td><strong>습작</strong></td><td class="t">소설 연습 — 3인칭 쓰기</td><td class="num">2편</td><td><span class="seal closed">내 컴퓨터에만</span></td></tr>
+          <tr><td><strong>Sunlit&nbsp;Days</strong></td><td class="t">에세이 시리즈 원고 — 『파도는 여전히 하얗다』 초안·보관본</td><td class="num">35개</td><td><span class="seal inner">작업 중</span></td></tr>
+          <tr><td><strong>포근나루</strong></td><td class="t">출판기획서 · 투고원고 · 출판원고 · 북토크 · 클래스 3종</td><td class="num">23개</td><td><span class="seal inner">작업 중</span></td></tr>
+          <tr><td><strong>독서 노트</strong></td><td class="t">서평 · 토론자료 · 스페인어 낭독 준비</td><td class="num">50개</td><td><span class="seal open">일부 공개</span></td></tr>
+          <tr><td><strong>클로드 에이전트</strong></td><td class="t">식구별 기록·지식·일기, 브랜드 자산, 제작 도구</td><td class="num">18자리</td><td><span class="seal inner">내부</span></td></tr>
+          <tr><td><strong>★개발 도구함</strong></td><td class="t">깃 연동 레포 — 사이트 9 · 앱 4 · 기록 1</td><td class="num">14개</td><td><span class="seal open">대부분 공개</span></td></tr>
+          <tr><td><strong>햇살</strong></td><td class="t">소속 커뮤니티 자료 — 클래스장 · 작가살롱 · TWI</td><td class="num">14개</td><td><span class="seal inner">내부</span></td></tr>
+          <tr><td><strong>유튜브</strong></td><td class="t">영상 대본 — EP01 초고로 시작하기 · EP02 몽롱쓰기</td><td class="num">2편</td><td><span class="seal open">공개</span></td></tr>
+          <tr><td><strong>회의 기록</strong></td><td class="t">디퍼 인사이트 공유회</td><td class="num">1건</td><td><span class="seal inner">내부</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      맨 위 다섯 자리(390편)가 <strong>원천</strong>입니다. 전체의 4할이 넘는데, 한 줄도 밖으로 나가지 않습니다.
+      나가는 것은 거기서 건져 올린 것들뿐입니다.
+    </p>
+  </section>
+
+  <!-- ─── 네 층 ───────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">구조</p>
+      <h2>세컨브레인은 네 층으로 흐릅니다</h2>
+      <p class="lede">
+        층은 순서입니다. 위에서 아래로 한 방향으로만 흐릅니다 —
+        먼저 원천을 붓고, 그 안에서 건지고, 건진 것으로 짓고, 지은 것을 건넵니다.
+      </p>
+    </div>
+
+    <div class="strata">
+      <div class="layer">
+        <div class="layer-tag"><em>一</em><span>원천</span></div>
+        <div class="layer-body">
+          <h3>붓는다 — 검열 없이 쏟아내는 새벽 글</h3>
+          <p>매일 새벽 5시 50분, 백스페이스를 누르지 않고 씁니다. 잘 쓰려고 쓰는 글이 아니라 있는 그대로를 꺼내는 글입니다. 여기가 모든 것의 출발점이고, 이 층은 <strong>절대 클라우드로 나가지 않습니다.</strong></p>
+          <div class="chips">
+            <span class="chip">모닝페이지<i>160</i></span>
+            <span class="chip">몽롱쓰기 아카이브<i>148</i></span>
+            <span class="chip">프리라이팅<i>43</i></span>
+            <span class="chip">꿈 이야기<i>29</i></span>
+            <span class="chip">별지기 저널<i>8</i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-tag"><em>二</em><span>건짐</span></div>
+        <div class="layer-body">
+          <h3>건진다 — 흩어진 글에서 돌멩이를 찾는 식구들</h3>
+          <p>쏟아낸 글은 그대로 두면 그냥 쌓입니다. 식구들이 읽고 캐물어 반복되는 주제와 씨앗을 건져 올립니다. 돌멩이는 쌓여서 생기는 게 아니라, 이미 거기 있던 것을 건지는 겁니다.</p>
+          <div class="chips">
+            <span class="chip">디퍼 인사이트 씨앗<i>90</i></span>
+            <span class="chip">밤하늘 씨앗<i>42</i></span>
+            <span class="chip">독서 노트<i>18</i></span>
+            <span class="chip">기억 파일<i>128</i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-tag"><em>三</em><span>지음</span></div>
+        <div class="layer-body">
+          <h3>짓는다 — 씨앗에서 원고·강의·코드로</h3>
+          <p>건진 씨앗이 에세이 초안이 되고, 강의안이 되고, 앱이 됩니다. 식구가 각자 맡은 자리에서 짓고, 바다가 받아서 확인을 청합니다. 어느 단계에서도 확인 없이 다음으로 넘어가지 않습니다.</p>
+          <div class="chips">
+            <span class="chip">Sunlit Days 원고<i>29</i></span>
+            <span class="chip">주간·월간 회고</span>
+            <span class="chip">클래스 자료</span>
+            <span class="chip">EPUB·조판</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-tag"><em>四</em><span>나눔</span></div>
+        <div class="layer-body">
+          <h3>건넨다 — 밖으로 나가는 자리</h3>
+          <p>지은 것은 나가야 합니다. 책으로, 사이트로, 클래스로, 앱으로. 여기서부터는 혼자 쓰는 일이 아니라 <strong>함께 쓰는 일</strong>이 됩니다.</p>
+          <div class="chips">
+            <span class="chip">pognaru.com</span>
+            <span class="chip">선릿모닝 · 나루의 밤</span>
+            <span class="chip">『파도는 여전히 하얗다』</span>
+            <span class="chip">『스무하루의 빛』</span>
+            <span class="chip">포근한 글쓰기 · 나루메모</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 식구 ─────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">담당</p>
+      <h2>어느 자리를 누가 맡는가</h2>
+      <p class="lede">
+        앞의 표가 <strong>무엇을 담고 있는지</strong>였다면, 여기는 <strong>그 자리를 누가 맡는지</strong>입니다.
+        볼트의 자리마다 담당 식구가 정해져 있습니다. 저는 식구와 직접 씨름하지 않습니다 —
+        총괄 식구 바다에게 말하면, 바다가 알맞은 식구에게 넘기고 결과를 받아 돌려줍니다.
+      </p>
+    </div>
+    <div class="family">
+      <div class="member lead">
+        <div class="member-top"><span class="em">🌊</span><h3>바다</h3><span class="role">총괄</span></div>
+        <p>말을 듣고 의중을 파악해 구조화하고, 알맞은 식구에게 일을 넘긴다. 단계마다 확인을 청한다.</p>
+        <p class="owns"><b>맡는 자리</b>볼트 전체 조율 · 클로드 에이전트/바다의 기록</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🔭</span><h3>등대</h3><span class="role">기획·리서치</span></div>
+        <p>멀리서 판을 조망한다. 시장 조사, 클래스 기획, 방향 잡기.</p>
+        <p class="owns"><b>맡는 자리</b>포근나루/기획서 · 클래스 기획</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">💧</span><h3>호수</h3><span class="role">사유·분석</span></div>
+        <p>흩어진 글을 읽고 캐물어 씨앗을 꺼낸다. 지형도를 그린다.</p>
+        <p class="owns"><b>맡는 자리</b>모닝 페이지 · 프리라이팅 · 꿈 이야기 (씨앗 건지기)</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🌅</span><h3>새벽</h3><span class="role">강의·독서</span></div>
+        <p>나누기 위한 정리. 강의안, 토론 논점, 북토크 스크립트.</p>
+        <p class="owns"><b>맡는 자리</b>독서 노트(토론자료) · 포근나루/클래스 자료</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🌿</span><h3>정원</h3><span class="role">집필·편집</span></div>
+        <p>초안을 빚고 퇴고한다. 첫 원칙은 하나 — 햇살의 결을 보존한다.</p>
+        <p class="owns"><b>맡는 자리</b>Sunlit Days · 포근나루/원고 · 습작</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🧭</span><h3>나침반</h3><span class="role">발행·유통</span></div>
+        <p>EPUB 제작과 플랫폼 등록. 한 치도 틀리면 안 되는 자리.</p>
+        <p class="owns"><b>맡는 자리</b>포근나루/출판원고 → EPUB · 플랫폼 등록</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">✨</span><h3>윤슬</h3><span class="role">밖으로 가는 말</span></div>
+        <p>채널 콘텐츠와 답장. 하나를 여럿으로 흩고, 돌아온 말에 답한다.</p>
+        <p class="owns"><b>맡는 자리</b>유튜브 대본 · 채널 콘텐츠 · 문의 답장</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🌳</span><h3>나무</h3><span class="role">문서·디자인</span></div>
+        <p>다른 식구가 만든 내용에 포근나루의 옷을 입힌다.</p>
+        <p class="owns"><b>맡는 자리</b>클로드 에이전트/브랜드 · 문서와 화면 디자인</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🔨</span><h3>김리</h3><span class="role">개발·시스템</span></div>
+        <p>앱·깃·배포부터 노트북 상태 점검까지. 코드 안과 코드 밖 모두.</p>
+        <p class="owns"><b>맡는 자리</b>★개발 도구함 14개 레포 · 예약 루틴 · 볼트 무결성</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">🌎</span><h3>밀란</h3><span class="role">스페인어</span></div>
+        <p>원어민 선생님. 원서 읽기와 낭독 노트 전담.</p>
+        <p class="owns"><b>맡는 자리</b>독서 노트(스페인어 낭독 준비) · lectura</p>
+      </div>
+      <div class="member">
+        <div class="member-top"><span class="em">📐</span><h3>한결</h3><span class="role">조판</span></div>
+        <p>종이책 조판과 편집디자인. 인쇄되어 손에 들리는 것을 맡는다.</p>
+        <p class="owns"><b>맡는 자리</b>포근나루/출판원고 → 종이책 조판 · 인쇄물</p>
+      </div>
+      <div class="member guest">
+        <div class="member-top"><span class="em">🦊</span><h3>사막여우</h3><span class="role">디퍼 전용</span></div>
+        <p>디퍼 살롱 여정만 맡는 손님 식구. 포근나루 일에는 관여하지 않는다.</p>
+        <p class="owns"><b>맡는 자리</b>디퍼 살롱 볼트 (포근나루 볼트 밖)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 스스로 도는 자리 ────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">부르지 않아도</p>
+      <h2>매일 아침, 제가 자는 동안 도는 것들</h2>
+      <p class="lede">
+        기억해야 할 것을 기억하고, 놓친 것을 짚어주는 자리입니다.
+        제가 시작 버튼을 누르지 않아도 돕니다.
+      </p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>시각</th><th>하는 일</th><th>남기는 것</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">매일 06:05</td><td>새벽갈피 — 읽을거리 12곳을 훑어 오늘의 글감 후보를 모은다</td><td class="t">후보 파일 + 슬랙 알림</td></tr>
+          <tr><td class="num">매일 06:15</td><td>여우 일지 — 어제 한 모든 일을 되짚어 빠진 것·이어갈 것을 짚는다</td><td class="t">여우 일지 57편째</td></tr>
+          <tr><td class="num">매일 06:29</td><td>식구 일기 — 그날 일한 식구만 각자 목소리로 일기를 쓴다</td><td class="t">식구들 일기</td></tr>
+          <tr><td class="num">매주 월 09:06</td><td>나루의 밤 — 다음 회차까지 남은 기간을 보고 준비 시점을 알린다</td><td class="t">슬랙 알림</td></tr>
+          <tr><td class="num">매월 23일</td><td>선릿모닝 — 다음 달 일정을 두 페이지에 반영하고 배포한다</td><td class="t">사이트 자동 갱신</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      이 다섯 개가 하는 일은 결국 하나입니다 — <strong>제가 잊어버려도 시스템이 기억하게 하는 것.</strong>
+      기억 파일 128개도 같은 목적입니다. 어제의 대화가 사라져도, 규칙과 사실은 남습니다.
+    </p>
+  </section>
+
+  <!-- ─── 그런데 왜 디퍼인가 ──────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">그런데</p>
+      <h2>이 모든 걸 갖추고도, 왜 디퍼였을까요</h2>
+      <p class="lede">
+        여기까지가 시스템입니다. 그런데 시스템은 한 가지를 못 합니다 —
+        <strong>무엇을 위해 짓는지</strong>는 만들어주지 못합니다.
+        도구가 늘어날수록 오히려 흩어졌습니다. 축이 없었으니까요.
+      </p>
+    </div>
+
+    <div class="then-now">
+      <div class="tn-col before">
+        <div class="tn-head"><strong>2026년 3월</strong><span>디퍼 이전</span></div>
+        <ul>
+          <li>전자책을 내려니 ISBN이 필요했고, ISBN을 받으려니 출판사가 필요해서 급하게 이름을 지었다 — <strong>포근나루</strong>.</li>
+          <li>왜 그 이름이 좋은지 설명할 수 없었다. 그냥 떠오른 새벽 물가 장면 하나가 전부였다.</li>
+          <li>"포근나루가 뭘 하는 곳인가요?"에 한 문장으로 답하지 못했다.</li>
+          <li>쓰는 일, 읽는 일, 만드는 일이 각각 따로 굴러갔다.</li>
+          <li>모델로 삼던 작가들의 간결한 문체를 흉내 내며, 내 수다스러움을 결점으로 여겼다.</li>
+        </ul>
+      </div>
+      <div class="tn-col after">
+        <div class="tn-head"><strong>2026년 7월</strong><span>3개월 뒤</span></div>
+        <ul>
+          <li>이름의 두 겹을 알게 됐다. 포근은 온도가 아니라 <strong>지울 수 없는 자리</strong>였고, 나루는 쉬는 곳이 아니라 <strong>건너가는 자리</strong>였다.</li>
+          <li>한 문장으로 말할 수 있게 됐다 — "쓰고 싶지만 자꾸 지우는 사람들을 위해, 검열 없는 새벽 글쓰기로 자기 마음에 건너가는 길을 연다."</li>
+          <li>프로그램 이름이 이름에서 그대로 나왔다. 선릿모닝은 함께 쓰는 시간, 나루의 밤은 함께 읽는 시간.</li>
+          <li>『파도는 여전히 하얗다』 출간, 백스페이스가 눌리지 않는 글쓰기 도구 제작, 클래스 두 개 개설.</li>
+          <li>"내 글 같지 않으면 내 글이 아니다" — 흉내를 그만두고 내 문체를 정의서로 확정했다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="lede" style="max-width:44em">
+      새로 생긴 게 아닙니다. <strong>이미 있던 것들이, 뜻을 알고 나니까 밖으로 나온 것</strong>입니다.
+      디퍼가 한 일은 도구를 더해준 게 아니라 — 위 네 층 전체가 무엇을 향해 흐르는지,
+      그 축을 파낸 것입니다.
+    </p>
+  </section>
+
+  <!-- ─── 씨앗 문장 ───────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">축</p>
+      <h2>디퍼에서 건져 올린 한 문장</h2>
+    </div>
+    <div class="seed">
+      <p class="lines">
+        나는 상처에 움츠러들어 썼다 지우기를 반복하는 사람들에게<br>
+        <b>지울 수 없는 새벽 한 자리</b>를 제시하여,<br>
+        판단 없이 날 것의 언어를 쏟아내는 <b>몽롱쓰기</b>를 선사하고,<br>
+        쏟아낸 것들 속에서 잊고 있던 <b>내면의 빛나는 돌멩이</b>를 건져<br>
+        마침내 아름다운 것을 다시 알아보게 되기까지 <b>함께 쓴다.</b>
+      </p>
+      <p class="caption">포근나루 브랜드 씨앗 문장 · 2026년 7월 확정</p>
+    </div>
+    <p class="note">
+      제가 제일 좋아하는 말은 마지막 네 글자입니다. <strong>"함께 쓴다."</strong>
+      저는 글쓰기를 가르치지 않습니다. 옆에서 같이 쓸 뿐입니다.
+    </p>
+  </section>
+
+  <!-- ─── 아직 걷는 중 ────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">지금</p>
+      <h2>그리고 저는 아직 걷는 중입니다</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>14<small>/30</small></b><span>문법 30일 여정</span></div>
+      <div class="stat"><b>5<small>/100</small></b><span>오아시스 100문</span></div>
+      <div class="stat"><b>57<small>편</small></b><span>여우 일지</span></div>
+      <div class="stat"><b>210<small>편</small></b><span>디퍼 살롱 볼트 문서</span></div>
+    </div>
+    <p class="lede" style="max-width:44em">
+      1기를 수료했지만 끝난 게 아닙니다. 30일 여정은 절반, 100문은 이제 다섯 번째입니다.
+      3기와 함께 이어 걷습니다.
+    </p>
+  </section>
+
+  <!-- ─── 닫는 자리 ───────────────────────── -->
+  <div class="closing">
+    <p class="eyebrow">2026년 7월 6일 새벽, 몽롱쓰기에 쓴 문장</p>
+    <p class="big">
+      "결과물의 원천은 모두 <span>각자의 내면에</span> 보관되어 있다.<br>
+      클로드는 그걸 <span>꺼내는 일을 도울 뿐</span>이다."
+    </p>
+    <p class="lede" style="max-width:44em">
+      941편의 문서도, 열두 명의 식구도, 아홉 개의 사이트도 원천을 만들지는 못합니다.
+      원천은 여러분 안에 이미 있습니다. 디퍼는 그걸 파내는 일이고,
+      시스템은 파낸 것을 밖으로 옮기는 손입니다.
+      순서를 바꾸면 아무것도 나오지 않습니다.
+    </p>
+    <p class="big" style="font-size:clamp(1.15rem,2.6vw,1.5rem)">
+      고요히, 마음에 머무는 글을 전하는 포근나루입니다.
+    </p>
+  </div>
+
+  <p class="footer-note">
+    모든 수치는 2026년 8월 21일 옵시디언 볼트·에이전트 설정·예약 루틴을 직접 세어 얻은 실측치입니다.
+    새벽 글 원문은 이 화면에도, 어떤 클라우드에도 올라가지 않습니다 — 인용된 문장은 발표를 위해 직접 고른 것들입니다.
+  </p>
+
+</div>
+
+</body>
+</html>

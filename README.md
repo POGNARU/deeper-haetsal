@@ -49,6 +49,9 @@ deeper-haetsal/
 │   ├─ 260726-principia.html  # 「자연철학자 뉴턴을 만나는 지도」 — 프린키피아 개인 독서 토론 자료(순독 안내 + 수식·맥락 분업 제안 · 포근나루 팔레트 · 정본은 볼트)
 │   ├─ 260730-jeolchang.html  # 「절창 — 독서 기록」 — 구병모 『절창』 도란도란 독서모임 기록(인물·손의 이동·논점 7 + 개인 감상 접기 · 표지 라벤더 팔레트 · 예외 · 정본은 볼트)
 │   ├─ 260731-haetsalche.html # 「햇살체」 — 몽롱쓰기 141편 44만 자 전수 분석으로 세운 문체 규칙(포근나루 화면판 팔레트 · 예외 · 정본은 deeper-salon · 원문 표본은 미수록)
+│   ├─ 260821-secondbrain.html # 「원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다」 — 세컨브레인 전체 지도(3기 발표용)
+│                          #   보유(저장고 3 + 볼트 13자리 표) · 담당(식구 12인별 맡는 자리) · 네 층 흐름 · 3월/7월 대비
+│                          #   포근나루 화면판 팔레트(예외) · 이 레포에서 처음 지음 — 정본 없음
 │   ├─ 260821-laptop.html  # 「디퍼를 시작하는 노트북」 — 3기 시작하는 분께 건네는 구매 안내(최적 사양 1 + 예산 4구간 · 포근나루 화면판 팔레트 · 예외)
 │                          #   이 레포에서 처음 지은 페이지라 정본이 따로 없습니다 — 고칠 일이 생기면 여기를 직접 고칩니다
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
@@ -104,6 +107,7 @@ deeper-haetsal/
 | 내 아카이브 페이지 만들기 (디퍼 연구원 공유용 프롬프트 · 복사 버튼) | [`archive-prompt.html`](https://pognaru.com/deeper-haetsal/archive-prompt.html) |
 | 내 PC 점검 체계 만들기 (공유용 프롬프트 · 복사 버튼) | [`check-prompt.html`](https://pognaru.com/deeper-haetsal/check-prompt.html) |
 | 노트북 점검 — 260817 회차 결과 (위 프롬프트로 실제 돌린 결과 · 공개 사본) | [`assignment/260817-check.html`](https://pognaru.com/deeper-haetsal/assignment/260817-check.html) |
+| 원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다 (세컨브레인 전체 지도 · 3기 발표용 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-secondbrain.html`](https://pognaru.com/deeper-haetsal/assignment/260821-secondbrain.html) |
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
