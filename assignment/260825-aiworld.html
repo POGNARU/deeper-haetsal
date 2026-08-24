@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<title>햇살'S AI WORLD</title>
+<style>
+:root{
+  --bg:#0D1712; --panel:#152219; --ground:#101B14; --grid:#1B2A21;
+  --top:#31473A; --lft:#22332A; --rgt:#18251E; --edge:#425A4A;
+  --ink:#EAE4D2; --ink-2:#B5AE99; --acc:#8FB89F; --gold:#D2B269;
+  --star:#E2C77B; --acc-top:#3E6B51;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg); color:var(--ink); overflow:hidden;
+  font-family:"Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:13px; line-height:1.6;
+}
+.mono{font-family:Consolas,"D2Coding","Courier New",monospace;font-variant-numeric:tabular-nums}
+
+/* ── 뼈대 ── */
+.back{color:var(--acc);text-decoration:none;font-size:12px;letter-spacing:.02em;
+  padding:5px 11px;border:1px solid var(--edge);border-radius:999px;white-space:nowrap;
+  transition:background .15s,color .15s}
+.back:hover{background:var(--acc-top);color:var(--ink)}
+#app{display:grid;grid-template-columns:246px 1fr;grid-template-rows:52px 1fr 46px;height:100vh}
+#top{grid-column:1/3;display:flex;align-items:center;gap:22px;padding:0 22px;
+     background:var(--panel);border-bottom:1px solid var(--grid)}
+#rail{grid-row:2/4;background:var(--panel);border-right:1px solid var(--grid);
+      overflow-y:auto;padding:16px 0 24px}
+#stage{position:relative;overflow:hidden;background:var(--ground)}
+#foot{background:var(--panel);border-top:1px solid var(--grid);
+      display:flex;align-items:center;gap:20px;padding:0 22px;color:var(--ink-2);font-size:11.5px}
+
+/* ── 상단 ── */
+.brand{font-size:15px;letter-spacing:.14em;color:var(--ink)}
+.brand b{color:var(--gold);font-weight:600}
+.stat{display:flex;flex-direction:column;line-height:1.25}
+.stat .n{font-size:15px;color:var(--acc)}
+.stat .k{font-size:10px;color:var(--ink-2);letter-spacing:.08em}
+.sel{margin-left:auto;color:var(--ink-2);font-size:11.5px;max-width:38%;text-align:right;
+     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sel b{color:var(--ink);font-weight:500}
+
+/* ── 좌측 레일 ── */
+.rail-h{padding:0 16px 8px;font-size:10px;letter-spacing:.18em;color:var(--ink-2)}
+.rail-h.sep{margin-top:22px;padding-top:16px;border-top:1px solid var(--grid)}
+.row{display:flex;align-items:baseline;gap:9px;padding:5px 16px;cursor:pointer;
+     border-left:2px solid transparent}
+.row:hover{background:#1a2a20}
+.row.on{background:#1a2a20;border-left-color:var(--gold)}
+.row .c{font-size:10.5px;color:var(--acc);letter-spacing:.06em;width:20px;flex:none}
+.row .nm{flex:1;color:var(--ink);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .n{font-size:11px;color:var(--ink-2)}
+.flow{padding:7px 16px;cursor:pointer;border-left:2px solid transparent}
+.flow:hover{background:#1a2a20}
+.flow.on{background:#1a2a20;border-left-color:var(--gold)}
+.flow .t{color:var(--ink);font-size:12.5px}
+.flow.on .t{color:var(--gold)}
+.flow .l{color:var(--ink-2);font-size:11px;line-height:1.5;margin-top:2px}
+
+/* ── 지도 ── */
+#cv{display:block;cursor:grab}
+#cv.drag{cursor:grabbing}
+#card{position:absolute;left:20px;bottom:20px;width:284px;background:rgba(21,34,25,.94);
+      border:1px solid var(--edge);border-radius:3px;padding:14px 16px;
+      opacity:0;transform:translateY(6px);transition:.22s;pointer-events:none}
+#card.on{opacity:1;transform:none}
+#card .cc{font-size:10px;letter-spacing:.14em;color:var(--acc)}
+#card .ct{font-size:15px;margin:3px 0 7px}
+#card .cd{color:var(--ink-2);font-size:12px}
+#card .cm{margin-top:10px;padding-top:9px;border-top:1px solid var(--grid);
+          color:var(--ink-2);font-size:11px}
+#zoom{position:absolute;right:18px;bottom:18px;display:flex;flex-direction:column;gap:5px}
+#zoom button{width:29px;height:29px;background:var(--panel);color:var(--ink-2);
+             border:1px solid var(--edge);border-radius:3px;cursor:pointer;font-size:13px;
+             font-family:inherit;line-height:1}
+#zoom button:hover{color:var(--gold);border-color:var(--gold)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;vertical-align:1px;margin-right:5px}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="top">
+    <a class="back" href="index.html">← 과제 목록</a>
+    <div class="brand">햇살<b>'S</b> AI WORLD</div>
+    <div class="stat"><span class="n mono" id="s-files">—</span><span class="k">파일</span></div>
+    <div class="stat"><span class="n mono" id="s-dist">—</span><span class="k">구역</span></div>
+    <div class="stat"><span class="n mono" id="s-bld">—</span><span class="k">건물</span></div>
+    <div class="sel" id="s-sel">건물을 누르면 그 구역이 열립니다</div>
+  </div>
+
+  <div id="rail">
+    <div class="rail-h">구역</div>
+    <div id="rail-d"></div>
+    <div class="rail-h sep">흐름</div>
+    <div id="rail-f"></div>
+  </div>
+
+  <div id="stage">
+    <canvas id="cv"></canvas>
+    <div id="card">
+      <div class="cc mono" id="card-c"></div>
+      <div class="ct" id="card-t"></div>
+      <div class="cd" id="card-d"></div>
+      <div class="cm mono" id="card-m"></div>
+    </div>
+    <div id="zoom">
+      <button id="z-in" title="확대">+</button>
+      <button id="z-out" title="축소">−</button>
+      <button id="z-home" title="처음으로">⌂</button>
+    </div>
+  </div>
+
+  <div id="foot">
+    <span><span class="dot" style="background:var(--top)"></span>건물 높이 = 파일 수</span>
+    <span><span class="dot" style="background:var(--acc)"></span>기둥 하나 = 파일의 밀도</span>
+    <span><span class="dot" style="background:var(--gold)"></span>금빛 = 흐르는 것</span>
+    <span>🔒 열어보지 않은 구역</span>
+    <span style="margin-left:auto">휠 확대 · 드래그 이동 · 건물 클릭</span>
+  </div>
+</div>
+
+<script>
+/* ═══ 데이터 — 이름과 개수만. 본문은 열지 않았다 ═══ */
+/* ★★★ 여기부터 교체 ① — 실측한 폴더로 DATA를 다시 채운다 ★★★
+   c=구역 코드(두 글자) · n=구역 이름 · f=실제 폴더 경로 · d=한 줄 소개
+   b=[["건물(하위폴더) 이름", 파일 수], ...] — 흩어진 낱개 파일은 ["광장", n]으로
+   잠근 폴더는 세 번째 값 1: ["잠근폴더이름", 0, 1] — 개수를 세지 않고 🔒로만 선다
+   아래는 형태를 보여주는 견본이다. 그대로 내보내지 말 것. */
+const DATA=[
+{c:"DS",n:"디퍼 살롱",f:"OneDrive/deeper-salon",d:"문법·논리·수사 — 30일 여정이 걸어온 구역. 여우가 사는 자리.",b:[
+  ["01-Grammar",137],["여우 일지",59],["밤하늘 씨앗",42],["00-Daily",18],["참고 자료",8],["02-Logic",7],["03-Rhetoric",6],["광장",4]]},
+{c:"PN",n:"포근나루",f:"OneDrive/Obsidian Vault",d:"새벽에 쓰고, 다듬고, 세상으로 내보내는 본섬. 가장 오래 자란 구역.",b:[
+  ["모닝 페이지",428],["햇살",403],["클로드 에이전트",591],["★개발 도구함",392],["프리라이팅",64],["독서 노트",52],["Sunlit Days",35],["유튜브",32],["꿈 이야기",29],["포근나루",23],["별지기 저널",10],["회의 기록",4],["습작",2],["광장",1]]},
+{c:"BD",n:"바다의 집",f:"OneDrive/포근나루-바다",d:"식구들이 사는 자리. 기억과 정의와 스킬이 여기 산다.",b:[
+  ["memory",135],["_보관_260806-옛식구",14],["agents",10],["skills",9],["광장",5]]}
+];
+/* ★★★ 교체 ① 끝 ★★★ */
+
+/* ★★★ 교체 ② — 흐름. 「도시 한 바퀴」는 그대로 두고,
+   볼트가 있으면 「씨앗의 길」, 일터가 있으면 사용자께 하루의 길을 여쭤 하나 더 짓는다.
+   path 항목: ["구역코드"] 또는 ["구역코드","건물이름"] ★★★ */
+const FLOWS=[
+ {t:"씨앗의 길", cargo:"오늘의 씨앗",
+  lead:"새벽에 쓴 글이 여우에게 건너와 씨앗이 되고, 밤하늘의 별이 된다.",
+  path:[["PN","모닝 페이지"],["DS","00-Daily"],["DS","01-Grammar"],["DS","밤하늘 씨앗"]]},
+ {t:"새벽나루의 길", cargo:"한 편의 글",
+  lead:"쓴다 · 다듬는다 · 짓는다 · 내보낸다 — 하루가 흐르는 방향.",
+  path:[["PN","모닝 페이지"],["PN","햇살"],["PN","클로드 에이전트"],["PN","★개발 도구함"],["PN","포근나루"]]},
+ {t:"도시 한 바퀴", cargo:"오늘의 기록",
+  lead:"모든 구역을 차례로 지난다.",
+  path:DATA.map(d=>[d.c])}
+];
+/* ★★★ 교체 ② 끝 ★★★ */
+
+/* ═══ 배치 ═══ */
+const TW=36, TH=18;                 // 등각 타일
+const iso=(gx,gy)=>({x:(gx-gy)*TW/2, y:(gx+gy)*TH/2});
+const hash=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)/4294967296};
+
+let MAXN=1, TOTAL=0, NB=0;
+DATA.forEach(d=>{d.total=0;d.b.forEach(b=>{d.total+=b[1];MAXN=Math.max(MAXN,b[1]);NB++});TOTAL+=d.total});
+
+const hgt=n=>12+62*Math.pow(n/MAXN,0.5);
+const pillars=n=>Math.max(1,Math.min(16,Math.round(Math.sqrt(n)*1.15)));
+
+const PER_ROW=4;
+let gy=1, gridW=0, gridH=0;
+for(let i=0;i<DATA.length;i+=PER_ROW){
+  const row=DATA.slice(i,i+PER_ROW);
+  let gx=1, depth=0;
+  row.forEach(d=>{
+    const cols=Math.ceil(Math.sqrt(d.b.length));
+    const rows=Math.ceil(d.b.length/cols);
+    d.gx=gx; d.gy=gy; d.cols=cols; d.rows=rows;
+    d.b.forEach((b,k)=>{
+      const cx=gx+(k%cols), cy=gy+Math.floor(k/cols);
+      const p=iso(cx,cy);
+      b.gx=cx; b.gy=cy; b.wx=p.x; b.wy=p.y;
+      b.h = b[2] ? 34 : hgt(b[1]);
+      b.k = b[2] ? 6 : pillars(b[1]);
+      b.dist=d;
+    });
+    gx+=cols+2; depth=Math.max(depth,rows);
+    gridW=Math.max(gridW,gx);
+  });
+  gy+=depth+2;
+}
+const ALL=[]; DATA.forEach(d=>d.b.forEach(b=>ALL.push(b)));
+gridW=Math.max(...ALL.map(b=>b.gx))+2;      // 지면은 도시가 앉은 만큼만
+gridH=Math.max(...ALL.map(b=>b.gy))+2;
+ALL.sort((a,b)=>(a.gx+a.gy)-(b.gx+b.gy)||a.gy-b.gy);
+const HIT=ALL.slice().reverse();
+
+/* ═══ 캔버스 ═══ */
+const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
+const stage=document.getElementById('stage');
+let W=0,H=0,dpr=1, zoom=1, panX=0, panY=0;
+
+function fit(){
+  dpr=Math.min(2,window.devicePixelRatio||1);
+  W=stage.clientWidth; H=stage.clientHeight;
+  cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px';
+}
+function home(){                       // 그려지는 것의 실제 범위에 맞춘다
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  ALL.forEach(b=>{
+    x0=Math.min(x0,b.wx-TW/2); x1=Math.max(x1,b.wx+TW/2);
+    y0=Math.min(y0,b.wy-b.h-38); y1=Math.max(y1,b.wy+TH/2);   // -38 = 이름표 자리
+  });
+  zoom=Math.min(W/(x1-x0+70), H/(y1-y0+70), 2.2);
+  panX=W/2-(x0+x1)/2*zoom; panY=H/2-(y0+y1)/2*zoom;
+}
+const S=(wx,wy)=>({x:panX+wx*zoom, y:panY+wy*zoom});
+
+/* 별 — 하늘에만, 은은하게 */
+const rng=(()=>{let s=0x9E3779B9;return()=>{s|=0;s=s+0x6D2B79F5|0;
+  let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;
+  return((t^t>>>14)>>>0)/4294967296;};})();
+const STARS=[]; for(let i=0;i<76;i++)
+  STARS.push({x:rng(), y:rng()*0.44, s:0.5+rng()*1.2, a:0.18+rng()*0.5});
+
+function box(x,y,hw,hd,h,ct,cl,cr){
+  ctx.fillStyle=ct;
+  ctx.beginPath();ctx.moveTo(x,y-h-hd);ctx.lineTo(x+hw,y-h);ctx.lineTo(x,y-h+hd);ctx.lineTo(x-hw,y-h);ctx.closePath();ctx.fill();
+  ctx.fillStyle=cl;
+  ctx.beginPath();ctx.moveTo(x-hw,y-h);ctx.lineTo(x,y-h+hd);ctx.lineTo(x,y+hd);ctx.lineTo(x-hw,y);ctx.closePath();ctx.fill();
+  ctx.fillStyle=cr;
+  ctx.beginPath();ctx.moveTo(x,y-h+hd);ctx.lineTo(x+hw,y-h);ctx.lineTo(x+hw,y);ctx.lineTo(x,y+hd);ctx.closePath();ctx.fill();
+}
+
+let selD=null, selB=null, flowI=1;
+
+function draw(now){
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.fillStyle='#0D1712'; ctx.fillRect(0,0,W,H);
+
+  /* 별 */
+  STARS.forEach(s=>{
+    const x=s.x*W, y=s.y*H;
+    ctx.globalAlpha=s.a*0.35*4; ctx.fillStyle='#E2C77B';
+    ctx.beginPath();ctx.arc(x,y,s.s,0,7);ctx.fill();
+    ctx.globalAlpha=s.a*0.35*0.5;
+    ctx.beginPath();ctx.arc(x,y,s.s*3.4,0,7);ctx.fill();
+  });
+  ctx.globalAlpha=1;
+
+  /* 지면 */
+  const gp=[iso(0,0),iso(gridW,0),iso(gridW,gridH),iso(0,gridH)].map(p=>S(p.x,p.y));
+  ctx.fillStyle='#101B14';
+  ctx.beginPath();ctx.moveTo(gp[0].x,gp[0].y);gp.slice(1).forEach(p=>ctx.lineTo(p.x,p.y));ctx.closePath();ctx.fill();
+
+  ctx.lineWidth=1;
+  for(let i=0;i<=gridW;i++){
+    const a=S(iso(i,0).x,iso(i,0).y), b=S(iso(i,gridH).x,iso(i,gridH).y);
+    ctx.strokeStyle=(i%4===0)?'#22332A':'#1B2A21';
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+  }
+  for(let j=0;j<=gridH;j++){
+    const a=S(iso(0,j).x,iso(0,j).y), b=S(iso(gridW,j).x,iso(gridW,j).y);
+    ctx.strokeStyle=(j%4===0)?'#22332A':'#1B2A21';
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+  }
+
+  /* 건물 */
+  const hw=TW*0.40*zoom, hd=TH*0.40*zoom;
+  ALL.forEach(b=>{
+    const base=S(b.wx,b.wy);
+    if(base.x<-160||base.x>W+160||base.y<-260||base.y>H+160) return;
+    const on = selD===b.dist;
+    // 바닥 그림자
+    ctx.fillStyle='rgba(0,0,0,.28)';
+    ctx.beginPath();ctx.moveTo(base.x,base.y-hd);ctx.lineTo(base.x+hw,base.y);
+    ctx.lineTo(base.x,base.y+hd);ctx.lineTo(base.x-hw,base.y);ctx.closePath();ctx.fill();
+
+    const k=b.k, cols=Math.ceil(Math.sqrt(k)), rows=Math.ceil(k/cols);
+    const P=[];
+    for(let i=0;i<k;i++){
+      const ox=(cols===1?0:(-0.28+0.56*(i%cols)/(cols-1)));
+      const oy=(rows===1?0:(-0.28+0.56*Math.floor(i/cols)/(rows-1)));
+      const p=iso(b.gx+ox,b.gy+oy);
+      const jitter=0.74+hash(b.dist.c+b[0]+i)*0.42;
+      P.push({...S(p.x,p.y), h:b.h*jitter*zoom, i});
+    }
+    P.sort((m,n)=>(m.y-n.y));
+    const pw=Math.max(1.1,4.4*zoom), pd=Math.max(0.6,2.2*zoom);
+    P.forEach(p=>{
+      if(b[2]) box(p.x,p.y,pw,pd,p.h,'#2A3B31','#1E2C24','#16211B');
+      else if(on) box(p.x,p.y,pw,pd,p.h,'#3E6B51','#2A4436','#1D3025');
+      else box(p.x,p.y,pw,pd,p.h,'#31473A','#22332A','#18251E');
+    });
+    // 마루 선
+    ctx.strokeStyle=on?'#8FB89F':'#425A4A'; ctx.globalAlpha=on?0.75:0.4; ctx.lineWidth=1;
+    const topY=base.y-b.h*zoom;
+    ctx.beginPath();ctx.moveTo(base.x-hw*0.8,topY);ctx.lineTo(base.x,topY+hd*0.8);ctx.lineTo(base.x+hw*0.8,topY);ctx.stroke();
+    ctx.globalAlpha=1;
+    if(b[2]){
+      ctx.fillStyle='#D2B269'; ctx.font=(9*Math.min(zoom,1.4)+2)+'px sans-serif';
+      ctx.textAlign='center'; ctx.fillText('🔒',base.x,topY-6);
+    }
+  });
+
+  /* 구역 이름표 */
+  DATA.forEach(d=>{
+    let mx=0,my=1e9,mh=0;
+    d.b.forEach(b=>{const p=S(b.wx,b.wy); mx+=p.x; my=Math.min(my,p.y-b.h*zoom); mh=Math.max(mh,b.h)});
+    mx/=d.b.length;
+    const y=my-26;
+    if(mx<-120||mx>W+120||y<-40||y>H+40) return;
+    const on=selD===d;
+    const label=d.c+' · '+d.n;
+    ctx.font='11.5px "Malgun Gothic","맑은 고딕",sans-serif';
+    const tw=ctx.measureText(label).width+20;
+    ctx.fillStyle=on?'rgba(210,178,105,.16)':'rgba(21,34,25,.86)';
+    ctx.strokeStyle=on?'#D2B269':'#425A4A'; ctx.lineWidth=1;
+    const rx=mx-tw/2, ry=y-9, rr=9;
+    ctx.beginPath();
+    ctx.moveTo(rx+rr,ry);ctx.lineTo(rx+tw-rr,ry);ctx.quadraticCurveTo(rx+tw,ry,rx+tw,ry+rr);
+    ctx.lineTo(rx+tw,ry+18-rr);ctx.quadraticCurveTo(rx+tw,ry+18,rx+tw-rr,ry+18);
+    ctx.lineTo(rx+rr,ry+18);ctx.quadraticCurveTo(rx,ry+18,rx,ry+18-rr);
+    ctx.lineTo(rx,ry+rr);ctx.quadraticCurveTo(rx,ry,rx+rr,ry);ctx.closePath();
+    ctx.fill();ctx.stroke();
+    ctx.fillStyle=on?'#D2B269':'#B5AE99'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(label,mx,ry+9.5);
+    ctx.textBaseline='alphabetic';
+  });
+
+  drawFlow(now);
+  requestAnimationFrame(draw);
+}
+
+/* ═══ 흐름 ═══ */
+const MOVE=1150, HOLD=560;
+function nodeOf(ref){
+  const d=DATA.find(x=>x.c===ref[0]); if(!d) return null;
+  if(ref[1]){const b=d.b.find(x=>x[0]===ref[1]); if(b) return {wx:b.wx,wy:b.wy-b.h-9};}
+  let mx=0,my=1e9; d.b.forEach(b=>{mx+=b.wx;my=Math.min(my,b.wy-b.h)});
+  return {wx:mx/d.b.length, wy:my-9};
+}
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+
+function drawFlow(now){
+  const F=FLOWS[flowI]; if(!F) return;
+  const raw=F.path.map(nodeOf).filter(Boolean);
+  if(raw.length<2) return;
+  const seq=raw.concat(raw.slice(0,-1).reverse());   // 왕복 — 온 길을 되돌아온다
+  const cycle=seq.length*HOLD+(seq.length-1)*MOVE;
+  let t=(now||0)%cycle, idx=0, pos=null, bob=0;
+  for(let i=0;i<seq.length;i++){
+    if(t<HOLD){ pos={...seq[i]}; bob=Math.sin(now/380)*3; idx=i; break; }
+    t-=HOLD;
+    if(i<seq.length-1){
+      if(t<MOVE){
+        const p=ease(t/MOVE), A=seq[i], B=seq[i+1];
+        const cxw=(A.wx+B.wx)/2, cyw=(A.wy+B.wy)/2-Math.hypot(B.wx-A.wx,B.wy-A.wy)*0.24;
+        const q=1-p;
+        pos={wx:q*q*A.wx+2*q*p*cxw+p*p*B.wx, wy:q*q*A.wy+2*q*p*cyw+p*p*B.wy};
+        idx=i; break;
+      }
+      t-=MOVE;
+    }
+  }
+  if(!pos) pos={...seq[0]};
+
+  /* 지나갈 길 — 얇은 호 */
+  ctx.strokeStyle='rgba(210,178,105,.17)'; ctx.lineWidth=1;
+  for(let i=0;i<raw.length-1;i++){
+    const A=S(raw[i].wx,raw[i].wy), B=S(raw[i+1].wx,raw[i+1].wy);
+    const cx=(A.x+B.x)/2, cy=(A.y+B.y)/2-Math.hypot(B.x-A.x,B.y-A.y)*0.24;
+    ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.quadraticCurveTo(cx,cy,B.x,B.y);ctx.stroke();
+  }
+  /* 들르는 자리 */
+  raw.forEach(n=>{const p=S(n.wx,n.wy);
+    ctx.fillStyle='rgba(210,178,105,.34)';ctx.beginPath();ctx.arc(p.x,p.y,2.4,0,7);ctx.fill();});
+
+  /* 짐 */
+  const p=S(pos.wx,pos.wy); p.y+=bob;
+  ctx.globalAlpha=.35; ctx.fillStyle='#D2B269';
+  ctx.beginPath();ctx.arc(p.x,p.y,13,0,7);ctx.fill();
+  ctx.globalAlpha=.55; ctx.beginPath();ctx.arc(p.x,p.y,7,0,7);ctx.fill();
+  ctx.globalAlpha=1;  ctx.fillStyle='#E2C77B';
+  ctx.beginPath();ctx.arc(p.x,p.y,3.4,0,7);ctx.fill();
+  ctx.font='11px "Malgun Gothic",sans-serif'; ctx.textAlign='left';
+  ctx.fillStyle='rgba(226,199,123,.82)';
+  ctx.fillText(F.cargo,p.x+13,p.y+4);           // 이름표와 겹치지 않게 옆으로
+}
+
+/* ═══ 레일 ═══ */
+const railD=document.getElementById('rail-d'), railF=document.getElementById('rail-f');
+DATA.forEach(d=>{
+  const el=document.createElement('div'); el.className='row'; d.el=el;
+  el.innerHTML=`<span class="c mono">${d.c}</span><span class="nm">${d.n}</span><span class="n mono">${d.total.toLocaleString()}</span>`;
+  el.onclick=()=>select(d,null);
+  railD.appendChild(el);
+});
+FLOWS.forEach((f,i)=>{
+  const el=document.createElement('div'); el.className='flow'+(i===flowI?' on':''); f.el=el;
+  el.innerHTML=`<div class="t">${f.t}</div><div class="l">${f.lead}</div>`;
+  el.onclick=()=>{flowI=(flowI===i?-1:i);FLOWS.forEach((g,j)=>g.el.classList.toggle('on',j===flowI));};
+  railF.appendChild(el);
+});
+
+/* ═══ 선택 ═══ */
+const card=document.getElementById('card');
+function select(d,b){
+  selD=d; selB=b;
+  DATA.forEach(x=>x.el.classList.toggle('on',x===d));
+  if(!d){card.classList.remove('on');document.getElementById('s-sel').textContent='건물을 누르면 그 구역이 열립니다';return;}
+  card.classList.add('on');
+  document.getElementById('card-c').textContent=d.c+' — '+d.f;
+  document.getElementById('card-t').textContent=d.n;
+  document.getElementById('card-d').textContent=d.d;
+  const locked=d.b.filter(x=>x[2]).length;
+  document.getElementById('card-m').textContent=
+    `건물 ${d.b.length}채 · 파일 ${d.total.toLocaleString()}개`+
+    (locked?` · 잠긴 구역 ${locked}`:'')+
+    (b? `
+선택 — ${b[0]} (${b[2]?'열어보지 않았어요':b[1].toLocaleString()+'개'})`:'');
+  document.getElementById('s-sel').innerHTML=b
+    ? `<b>${d.n}</b> / ${b[0]} · ${b[2]?'🔒':b[1].toLocaleString()+'개'}`
+    : `<b>${d.n}</b> · ${d.total.toLocaleString()}개`;
+}
+
+/* ═══ 조작 ═══ */
+function hit(mx,my){
+  const hw=TW*0.44*zoom, hd=TH*0.44*zoom;
+  for(const b of HIT){
+    const p=S(b.wx,b.wy), h=b.h*zoom;
+    const dx=Math.abs(mx-p.x); if(dx>hw) continue;
+    const off=hd*(1-dx/hw);
+    if(my>=p.y-h-off && my<=p.y+off) return b;
+  }
+  return null;
+}
+let drag=false, lx=0, ly=0, moved=0;
+cv.addEventListener('pointerdown',e=>{drag=true;moved=0;lx=e.offsetX;ly=e.offsetY;cv.classList.add('drag');cv.setPointerCapture(e.pointerId)});
+cv.addEventListener('pointermove',e=>{
+  if(!drag) return;
+  panX+=e.offsetX-lx; panY+=e.offsetY-ly; moved+=Math.abs(e.offsetX-lx)+Math.abs(e.offsetY-ly);
+  lx=e.offsetX; ly=e.offsetY;
+});
+cv.addEventListener('pointerup',e=>{
+  drag=false; cv.classList.remove('drag');
+  if(moved<4){const b=hit(e.offsetX,e.offsetY); b?select(b.dist,b):select(null,null);}
+});
+cv.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const f=e.deltaY<0?1.12:1/1.12, nz=Math.max(0.28,Math.min(3.2,zoom*f));
+  const k=nz/zoom; panX=e.offsetX-(e.offsetX-panX)*k; panY=e.offsetY-(e.offsetY-panY)*k; zoom=nz;
+},{passive:false});
+const zoomAt=f=>{const nz=Math.max(0.28,Math.min(3.2,zoom*f)),k=nz/zoom;
+  panX=W/2-(W/2-panX)*k; panY=H/2-(H/2-panY)*k; zoom=nz;};
+document.getElementById('z-in').onclick=()=>zoomAt(1.2);
+document.getElementById('z-out').onclick=()=>zoomAt(1/1.2);
+document.getElementById('z-home').onclick=()=>{home();select(null,null)};
+let lastW=0,lastH=0;
+function remeasure(){
+  if(stage.clientWidth<2||stage.clientHeight<2) return;      // 아직 자리를 못 잡았다
+  if(stage.clientWidth===lastW&&stage.clientHeight===lastH) return;
+  lastW=stage.clientWidth; lastH=stage.clientHeight;
+  fit(); home();
+}
+new ResizeObserver(remeasure).observe(stage);
+window.addEventListener('resize',remeasure);
+
+/* ═══ 시작 ═══ */
+document.getElementById('s-files').textContent=TOTAL.toLocaleString();
+document.getElementById('s-dist').textContent=DATA.length;
+document.getElementById('s-bld').textContent=NB;
+fit(); home(); requestAnimationFrame(draw);
+</script>
+</body>
+</html>

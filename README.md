@@ -49,6 +49,8 @@ deeper-haetsal/
 │   ├─ 260726-principia.html  # 「자연철학자 뉴턴을 만나는 지도」 — 프린키피아 개인 독서 토론 자료(순독 안내 + 수식·맥락 분업 제안 · 포근나루 팔레트 · 정본은 볼트)
 │   ├─ 260730-jeolchang.html  # 「절창 — 독서 기록」 — 구병모 『절창』 도란도란 독서모임 기록(인물·손의 이동·논점 7 + 개인 감상 접기 · 표지 라벤더 팔레트 · 예외 · 정본은 볼트)
 │   ├─ 260731-haetsalche.html # 「햇살체」 — 몽롱쓰기 141편 44만 자 전수 분석으로 세운 문체 규칙(포근나루 화면판 팔레트 · 예외 · 정본은 deeper-salon · 원문 표본은 미수록)
+│   ├─ 260825-aiworld.html   # 「햇살'S AI WORLD」 — 볼트 셋을 한 도시로 합친 등각 밤 지도(3구역 27건물 2,520파일)
+│                          #   디퍼 OS 밤 팔레트(예외) · 정본은 deeper-salon · 폴더 이름과 개수만 수록
 │   ├─ 260821-secondbrain.html # 「원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다」 — 세컨브레인 전체 지도(3기 발표용)
 │                          #   보유(저장고 3 + 볼트 13자리 표) · 담당(식구 12인별 맡는 자리) · 네 층 흐름 · 3월/7월 대비
 │                          #   포근나루 화면판 팔레트(예외) · 이 레포에서 처음 지음 — 정본 없음
@@ -107,6 +109,7 @@ deeper-haetsal/
 | 내 아카이브 페이지 만들기 (디퍼 연구원 공유용 프롬프트 · 복사 버튼) | [`archive-prompt.html`](https://pognaru.com/deeper-haetsal/archive-prompt.html) |
 | 내 PC 점검 체계 만들기 (공유용 프롬프트 · 복사 버튼) | [`check-prompt.html`](https://pognaru.com/deeper-haetsal/check-prompt.html) |
 | 노트북 점검 — 260817 회차 결과 (위 프롬프트로 실제 돌린 결과 · 공개 사본) | [`assignment/260817-check.html`](https://pognaru.com/deeper-haetsal/assignment/260817-check.html) |
+| 햇살'S AI WORLD — 내 세계를 밤 도시 한 장으로 (볼트 셋 · 3구역 27건물 · 정본은 deeper-salon) | [`assignment/260825-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260825-aiworld.html) |
 | 원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다 (세컨브레인 전체 지도 · 3기 발표용 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-secondbrain.html`](https://pognaru.com/deeper-haetsal/assignment/260821-secondbrain.html) |
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
@@ -197,6 +200,16 @@ deeper-haetsal/
   **고칠 때는 정본을 먼저 고치고 이 페이지의 `<pre id="prompt">` 안을 다시 옮깁니다.**
 - `<pre>` 안의 HTML 태그는 `&lt;` `&gt;`로 이스케이프해 둡니다. 복사되는 값은 `innerText`라 붙여넣을 때 원래 태그로 돌아옵니다 —
   **직접 `<`를 넣으면 페이지가 깨지므로 반드시 이스케이프합니다.**
+
+### 예외 — 햇살'S AI WORLD (디퍼 OS 밤 팔레트) `assignment/260825-aiworld.html`
+
+사막여우🦊의 `aiworld` 스킬로 지은 **작업 세계 지도**입니다 (2026-08-25). 해바라기가 아니라 **디퍼 OS 밤 팔레트**(짙은 초록 `#0D1712` 바탕 · 금빛 `#D2B269`)를 그대로 씁니다 — 등각 밤 도시라는 형식 자체가 그 색을 전제로 하고, `260723-topography.html`과 같은 계열이라 둘이 나란히 놓여야 맞습니다.
+
+- **정본은 `deeper-salon`의 `00-Daily/AI월드/aiworld_2026-08-25.html`입니다.** 여기 있는 건 공개 사본이라, 고칠 때는 정본을 먼저 고치고 다시 옮깁니다.
+- **폴더 이름과 파일 개수만 실려 있습니다.** 스킬 규칙상 파일 본문은 열지 않고 세었고, 사본에도 원문은 한 줄도 없습니다.
+- **담은 것** — 세 볼트를 한 도시로: DS 디퍼 살롱(8건물 281) · PN 포근나루(14건물 2,066) · BD 바다의 집(5건물 173). 흐름 셋(씨앗의 길 · 새벽나루의 길 · 도시 한 바퀴).
+- **`node_modules`와 `.git`은 세지 않았습니다.** ★개발 도구함이 7,072 → 392로 줄어듭니다 — 기계가 만든 파일이 다현씨가 지은 것을 가리지 않도록.
+- 원본에 없던 `<meta name="robots" content="noindex, nofollow">`·파비콘·`← 과제 목록` 줄을 사본에만 더했습니다. 절대경로·계정명은 원본에 애초에 없습니다.
 
 ### 예외 — 디퍼를 시작하는 노트북 (포근나루 화면판 팔레트) `assignment/260821-laptop.html`
 
