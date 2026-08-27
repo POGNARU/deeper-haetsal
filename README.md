@@ -52,6 +52,8 @@ deeper-haetsal/
 │   ├─ 260731-haetsalche.html # 「햇살체」 — 몽롱쓰기 141편 44만 자 전수 분석으로 세운 문체 규칙(포근나루 화면판 팔레트 · 예외 · 정본은 deeper-salon · 원문 표본은 미수록)
 │   ├─ 260825-aiworld.html   # 「햇살'S AI WORLD」 — 볼트 셋을 한 도시로 합친 등각 밤 지도(3구역 27건물 2,520파일)
 │                          #   디퍼 OS 밤 팔레트(예외) · 정본은 deeper-salon · 폴더 이름과 개수만 수록
+│   ├─ 260827-aiworld.html   # 「햇살'S AI WORLD — 새벽 나루」 — 같은 데이터를 새로 그린 판(섬·물길·나룻배 · 새벽 팔레트)
+│                          #   위 밤 도시 판과 나란히 산다(덮어쓰지 않음) · 서로 상단 링크로 오감 · 정본은 deeper-salon
 │   ├─ 260821-secondbrain.html # 「원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다」 — 세컨브레인 전체 지도(3기 발표용)
 │                          #   보유(저장고 3 + 볼트 13자리 표) · 담당(식구 12인별 맡는 자리) · 네 층 흐름 · 3월/7월 대비
 │                          #   포근나루 화면판 팔레트(예외) · 이 레포에서 처음 지음 — 정본 없음
@@ -111,6 +113,7 @@ deeper-haetsal/
 | 내 PC 점검 체계 만들기 (공유용 프롬프트 · 복사 버튼) | [`check-prompt.html`](https://pognaru.com/deeper-haetsal/check-prompt.html) |
 | 노트북 점검 — 260817 회차 결과 (위 프롬프트로 실제 돌린 결과 · 공개 사본) | [`assignment/260817-check.html`](https://pognaru.com/deeper-haetsal/assignment/260817-check.html) |
 | 햇살'S AI WORLD — 내 세계를 밤 도시 한 장으로 (볼트 셋 · 3구역 27건물 · 정본은 deeper-salon) | [`assignment/260825-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260825-aiworld.html) |
+| 햇살'S AI WORLD — 새벽 나루 (같은 데이터를 다시 그린 판 · 섬·물길·나룻배 · 정본은 deeper-salon) | [`assignment/260827-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260827-aiworld.html) |
 | 원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다 (세컨브레인 전체 지도 · 3기 발표용 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-secondbrain.html`](https://pognaru.com/deeper-haetsal/assignment/260821-secondbrain.html) |
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
@@ -220,7 +223,7 @@ deeper-haetsal/
 - `<pre>` 안의 HTML 태그는 `&lt;` `&gt;`로 이스케이프해 둡니다. 복사되는 값은 `innerText`라 붙여넣을 때 원래 태그로 돌아옵니다 —
   **직접 `<`를 넣으면 페이지가 깨지므로 반드시 이스케이프합니다.**
 
-### 예외 — 햇살'S AI WORLD (디퍼 OS 밤 팔레트) `assignment/260825-aiworld.html`
+### 예외 — 햇살'S AI WORLD (두 판이 나란히 산다)
 
 사막여우🦊의 `aiworld` 스킬로 지은 **작업 세계 지도**입니다 (2026-08-25). 해바라기가 아니라 **디퍼 OS 밤 팔레트**(짙은 초록 `#0D1712` 바탕 · 금빛 `#D2B269`)를 그대로 씁니다 — 등각 밤 도시라는 형식 자체가 그 색을 전제로 하고, `260723-topography.html`과 같은 계열이라 둘이 나란히 놓여야 맞습니다.
 
@@ -229,6 +232,18 @@ deeper-haetsal/
 - **담은 것** — 세 볼트를 한 도시로: DS 디퍼 살롱(8건물 281) · PN 포근나루(14건물 2,066) · BD 바다의 집(5건물 173). 흐름 셋(씨앗의 길 · 새벽나루의 길 · 도시 한 바퀴).
 - **`node_modules`와 `.git`은 세지 않았습니다.** ★개발 도구함이 7,072 → 392로 줄어듭니다 — 기계가 만든 파일이 다현씨가 지은 것을 가리지 않도록.
 - 원본에 없던 `<meta name="robots" content="noindex, nofollow">`·파비콘·`← 과제 목록` 줄을 사본에만 더했습니다. 절대경로·계정명은 원본에 애초에 없습니다.
+
+#### 새벽 나루 판 `assignment/260827-aiworld.html` (2026-08-27)
+
+같은 DATA를 **다시 그린 판**입니다. 살롱 연구원들의 도시가 스킬 한 벌에서 나와 서로 비슷해 보인다는 다현씨 말씀에서 시작했고, 나무🌳가 지었습니다.
+
+- **밤 도시 판을 덮어쓰지 않습니다.** 둘이 나란히 살고, 서로 상단 링크(`밤 도시 판 보기` / `새벽 나루 판 보기`)로 오갑니다 — 다현씨가 병행해서 보시겠다고 하셨습니다.
+- **팔레트가 다릅니다.** 밤 초록이 아니라 해 뜨기 직전의 **새벽**(바탕 `#171426` · 등불 `#F0B865`). 본문 대비 14.6:1.
+- **지형이 다릅니다.** 격자를 버리고 섬 셋을 물 위에 띄웠습니다. 섬마다 나루터가 있고 나룻배 세 척이 상시 오갑니다 — '나루'를 형태 언어로 옮긴 것입니다.
+- **건물 실루엣이 구역마다 다릅니다.** DS 천막 · PN 박공지붕 집 · BD 원통탑(지붕 없음 · 상단 랜턴 밴드). 벽에 **박힌** 창불 164개가 파일 밀도입니다.
+- **흐름은 한 번에 한 갈래만** 흐릅니다. 세 갈래 동시 운행을 만들었다가 "정신없다"는 다현씨 판단으로 되돌렸습니다. 갈래별 색은 남겨 두어 전환하면 빛깔이 달라집니다.
+- **정본은 `deeper-salon`의 `00-Daily/AI월드/aiworld_2026-08-27.html`입니다.** 밤 도시 판과 마찬가지로 정본을 먼저 고치고 옮깁니다.
+- 하단에 식구 크레딧이 붙습니다 — 🦊 사막여우 도시 원본 · 🌳 나무 새벽 나루 · 🌊 바다 갈무리·발행.
 
 ### 예외 — 디퍼를 시작하는 노트북 (포근나루 화면판 팔레트) `assignment/260821-laptop.html`
 
