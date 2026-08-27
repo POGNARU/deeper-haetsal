@@ -201,7 +201,7 @@ const hgt=n=>12+58*Math.pow(n/MAXN,0.5);
 const wins=n=>Math.max(1,Math.min(13,Math.round(Math.sqrt(n)*1.05)));
 
 /* 섬을 지그재그로 놓아 사이에 물길이 굽이치게 한다 */
-const OFF=[{dx:0,dy:0},{dx:3,dy:5},{dx:6,dy:-1}];
+const OFF=[{dx:0,dy:0},{dx:3,dy:5},{dx:0,dy:3}];
 let cur=1;
 DATA.forEach((d,di)=>{
   const cols=Math.ceil(Math.sqrt(d.b.length));
