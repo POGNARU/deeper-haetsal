@@ -41,6 +41,7 @@ body{
 #foot>span{white-space:nowrap}
 .credit{margin-left:auto;color:var(--ink-2);font-size:10.5px;opacity:.85}
 .credit b{color:var(--ink);font-weight:600}
+.credit .ci{white-space:nowrap}
 @media (max-width:1280px){#foot .hide-m{display:none}}
 
 .back,.alt{color:var(--acc);text-decoration:none;font-size:12px;letter-spacing:.02em;
@@ -127,6 +128,11 @@ body{
   .flow .t{font-size:12px}
   #foot{flex-wrap:wrap;gap:6px 12px;padding:7px 12px;font-size:10.5px;line-height:1.3}
   #foot .hide-s{display:none}
+  #top .sel{display:none}                 /* 카드가 같은 걸 보여준다 */
+  #top .hide-p{display:none}              /* 섬·건물 수는 레일에 있다 */
+  .back,.alt{font-size:11px;padding:4px 9px}
+  #foot>span{white-space:normal}
+  #foot .credit{margin-left:0;flex-basis:100%;order:9}
   #card{left:10px;bottom:10px;width:auto;right:62px;padding:11px 13px}
   #zoom{right:10px;bottom:10px}
 }
@@ -136,11 +142,11 @@ body{
 <div id="app">
   <div id="top">
     <a class="back" href="index.html">← 과제 목록</a>
-    <a class="alt hide-s" href="260825-aiworld.html">밤 도시 판 보기</a>
+    <a class="alt" href="260825-aiworld.html">밤 도시 판</a>
     <div class="brand">햇살<b>'S</b> AI WORLD<i>새벽 나루</i></div>
     <div class="stat"><span class="n mono" id="s-files">—</span><span class="k">파일</span></div>
-    <div class="stat"><span class="n mono" id="s-dist">—</span><span class="k">섬</span></div>
-    <div class="stat"><span class="n mono" id="s-bld">—</span><span class="k">건물</span></div>
+    <div class="stat hide-p"><span class="n mono" id="s-dist">—</span><span class="k">섬</span></div>
+    <div class="stat hide-p"><span class="n mono" id="s-bld">—</span><span class="k">건물</span></div>
     <div class="sel" id="s-sel">건물을 누르면 그 섬이 열립니다</div>
   </div>
 
@@ -173,7 +179,7 @@ body{
     <span><span class="dot" style="background:#FFD79A"></span>나룻배 = 흐르는 것</span>
     <span>🔒 열어보지 않은 자리</span>
     <span class="hide-s hide-m">휠 확대 · 드래그 이동 · 건물 클릭</span>
-    <span class="credit">이 페이지를 지은 식구 — 🦊 <b>사막여우</b> 도시 원본 · 🌳 <b>나무</b> 새벽 나루 · 🌊 <b>바다</b> 갈무리·발행</span>
+    <span class="credit">이 페이지를 지은 식구 — <span class="ci">🦊 <b>사막여우</b> 도시 원본</span> · <span class="ci">🌳 <b>나무</b> 새벽 나루</span> · <span class="ci">🌊 <b>바다</b> 갈무리·발행</span></span>
   </div>
 </div>
 
@@ -288,7 +294,8 @@ function home(){
     d.b.forEach(b=>{ y0=Math.min(y0,b.wy-b.h*1.55-42); });
     y1=Math.max(y1,d.dock.wy+18);            /* 나루터까지 화면에 담는다 */
   });
-  zoom=Math.min(W/(x1-x0+90), H/(y1-y0+90), 2.2);
+  const pad=W<760?115:90;                 /* 좁은 화면은 이름표가 옆으로 삐져나온다 */
+  zoom=Math.min(W/(x1-x0+pad), H/(y1-y0+pad), 2.2);
   panX=W/2-(x0+x1)/2*zoom; panY=H*0.53-(y0+y1)/2*zoom;
 }
 const S=(wx,wy)=>({x:panX+wx*zoom, y:panY+wy*zoom});
