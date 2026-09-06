@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>규칙 지형도</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap">
+<style>
+  :root{
+    --ivory:#FFF7DE;
+    --card:#FFFFFF;
+    --sun:#FFC61E;
+    --leaf:#6FA52E;
+    --terra:#D55A2B;
+    --brown:#3A2A12;
+    --ink-soft:#6B5536;
+    --ink-faint:#96855F;
+    --rule:#E8DCB8;
+    --rule-soft:#F0E7CC;
+    --logo:'Gowun Batang',serif;
+    --serif:'Nanum Myeongjo',serif;
+    --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  body{
+    background:var(--ivory); color:var(--brown);
+    font-family:var(--sans); line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .backbar{max-width:960px; margin:22px auto 0; padding:0 clamp(1.05rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none;
+    font-family:var(--sans); font-size:.85rem; background:#fff; border:1.5px solid var(--rule);
+    color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover,.backbar a:focus-visible{background:var(--sun); border-color:var(--sun);}
+
+  .wrap{max-width:960px; margin:0 auto;
+    padding:clamp(2rem,5vw,3.4rem) clamp(1.05rem,4vw,2rem) 5rem;
+    display:flex; flex-direction:column; gap:clamp(2.6rem,6vw,4.2rem);}
+
+  /* ── 표제 ───────────────────────── */
+  .eyebrow{font-family:var(--sans); font-size:.72rem; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--terra);}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.2;
+    font-size:clamp(2rem,6vw,3.2rem); margin:.5rem 0 .7rem; letter-spacing:-.01em;}
+  .lede{font-family:var(--serif); color:var(--ink-soft); max-width:32em;
+    font-size:clamp(.98rem,2vw,1.08rem); line-height:1.9;}
+  .hero-rule{height:3px; border-radius:3px; margin-top:1.4rem;
+    background:linear-gradient(90deg,var(--sun) 0%,var(--leaf) 34%,var(--rule) 72%,transparent 100%);}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin-top:1rem;
+    font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint);}
+
+  /* ── 섹션 머리 ───────────────────── */
+  section{display:flex; flex-direction:column; gap:1.3rem;}
+  /* 번호 뱃지가 제목과 갈라져 홀로 한 줄에 서지 않도록 grid로 묶는다 */
+  .shead{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.7rem;
+    align-items:center;}
+  .snum{font-family:var(--logo); font-weight:700; font-size:.9rem; color:#fff;
+    background:var(--leaf); width:26px; height:26px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; flex:none;
+    line-height:1;}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35;
+    font-size:clamp(1.3rem,3.2vw,1.75rem);}
+  .sdesc{font-size:.85rem; color:var(--ink-faint); line-height:1.65;}
+
+  /* ── 카드 공통 ───────────────────── */
+  .card{background:var(--card); border:1.5px solid var(--rule-soft);
+    border-radius:14px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+
+  /* ── ① 네 층 ─────────────────────── */
+  .layers{display:flex; flex-direction:column; gap:.7rem;}
+  .layer{display:grid; grid-template-columns:1fr auto; gap:.5rem 1rem;
+    align-items:center; border-left:5px solid var(--leaf);}
+  .layer.ghost{border-left-color:var(--rule); border-style:dashed;
+    background:rgba(255,255,255,.5);}
+  .layer .lname{font-family:var(--logo); font-weight:700; font-size:1.05rem; line-height:1.4;}
+  .layer .lmeta{font-size:.8rem; color:var(--ink-faint); margin-top:.15rem;}
+  .layer .lsize{font-family:var(--logo); font-weight:700; font-size:1.5rem;
+    color:var(--brown); white-space:nowrap; line-height:1.2;}
+  .layer .lsize small{font-family:var(--sans); font-weight:400; font-size:.72rem;
+    color:var(--ink-faint); margin-left:.15rem;}
+  .layer.ghost .lsize{color:var(--ink-faint); font-size:1.15rem;}
+  .pill{display:inline-block; font-size:.72rem; letter-spacing:.04em;
+    border-radius:99px; padding:.12rem .6rem; vertical-align:middle;}
+  .pill.yes{background:rgba(111,165,46,.16); color:#3E6416;}
+  .pill.no{background:rgba(58,42,18,.07); color:var(--ink-soft);}
+
+  /* ── ② 도넛 ─────────────────────── */
+  .donutbox{display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr);
+    gap:1.4rem 1.8rem; align-items:center;}
+  .donutbox svg{width:100%; height:auto; display:block; max-width:190px; margin:0 auto;}
+  .legend{display:flex; flex-direction:column; gap:.55rem; min-width:0;}
+  .lrow{display:grid; grid-template-columns:14px minmax(0,1fr) auto; gap:.6rem;
+    align-items:center;}
+  .swatch{width:14px; height:14px; border-radius:4px;}
+  .lrow .lb{font-size:.92rem; line-height:1.4;}
+  .lrow .lv{font-family:var(--logo); font-weight:700; font-size:1.05rem; white-space:nowrap;}
+  .lrow .lv small{font-family:var(--sans); font-weight:400; font-size:.74rem;
+    color:var(--ink-faint); margin-left:.3rem;}
+  .lbar{grid-column:1 / -1; height:6px; border-radius:6px;
+    background:rgba(58,42,18,.06); overflow:hidden;}
+  .lbar i{display:block; height:100%; border-radius:6px;}
+  .donut-total{text-align:center; font-size:.78rem; color:var(--ink-faint); margin-top:.4rem;}
+
+  /* ── ③ 어긋난 20 ─────────────────── */
+  .gap-card{background:var(--brown); color:var(--ivory); border:none;
+    display:grid; grid-template-columns:auto minmax(0,1fr); gap:1.2rem 1.5rem;
+    align-items:center; padding:1.5rem 1.4rem;}
+  .gap-num{font-family:var(--logo); font-weight:700; line-height:.95;
+    font-size:clamp(3.4rem,12vw,4.6rem); color:var(--sun);}
+  .gap-num small{display:block; font-family:var(--sans); font-weight:400;
+    font-size:.78rem; letter-spacing:.1em; color:rgba(255,247,222,.72);
+    margin-top:.5rem; line-height:1.5;}
+  .gap-body{min-width:0;}
+  .gap-body .gt{font-family:var(--serif); font-size:1rem; line-height:1.85;
+    color:rgba(255,247,222,.94);}
+  .gap-body .gt b{color:var(--sun); font-weight:700;}
+  .cmp{display:flex; flex-direction:column; gap:.55rem; margin-top:1rem;}
+  .cmprow{display:grid; grid-template-columns:minmax(0,5.6em) minmax(0,1fr) auto;
+    gap:.55rem; align-items:center; font-size:.8rem;}
+  .cmprow .ck{color:rgba(255,247,222,.66);}
+  .cmprow .cbar{height:12px; border-radius:12px; background:rgba(255,247,222,.12); overflow:hidden;}
+  .cmprow .cbar i{display:block; height:100%; border-radius:12px;}
+  .cmprow .cv{font-family:var(--logo); font-weight:700; font-size:.95rem; white-space:nowrap;}
+
+  /* ── ④ 함께 사는 식구 ─────────────── */
+  /* 카드가 셋이라 2열이 되면 셋째가 고아가 된다 — 190px으로 잡아 375px에선 1열, 넓은 화면에선 3열 */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.9rem;}
+  .stat{text-align:center; border-top:5px solid var(--sun);}
+  .stat b{display:block; font-family:var(--logo); font-weight:700;
+    font-size:clamp(2rem,7vw,2.6rem); line-height:1.15;}
+  .stat b small{font-family:var(--sans); font-weight:400; font-size:.8rem;
+    color:var(--ink-faint); margin-left:.15rem;}
+  .stat span{display:block; font-size:.82rem; color:var(--ink-soft); margin-top:.25rem;}
+
+  /* ── ⑤ 오늘 한 일 ─────────────────── */
+  .flow{display:flex; flex-direction:column; gap:.75rem;}
+  .frow{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.9rem;
+    align-items:start;}
+  .fmark{width:26px; height:26px; border-radius:50%; flex:none; margin-top:.15rem;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:.85rem; line-height:1; color:#fff; background:var(--leaf);}
+  .frow.hold .fmark{background:#fff; color:var(--ink-faint);
+    border:1.5px dashed var(--rule); }
+  .fbody{min-width:0;}
+  .fbody .ft{font-family:var(--logo); font-weight:700; font-size:1.02rem; line-height:1.5;}
+  .fbody .fd{font-size:.85rem; color:var(--ink-soft); line-height:1.7; margin-top:.15rem;}
+  .arrowline{display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+    font-size:.84rem; color:var(--ink-soft); margin-bottom:.2rem;}
+  .arrowline .st{background:#fff; border:1.5px solid var(--rule-soft);
+    border-radius:99px; padding:.28rem .8rem; white-space:nowrap;}
+  .arrowline .st.after{background:var(--sun); border-color:var(--sun);
+    color:var(--brown); font-weight:700;}
+  .arrowline .ar{color:var(--terra);}
+  .holdnote{font-size:.8rem; color:var(--ink-faint); line-height:1.7; margin-top:.2rem;}
+
+  /* ── 맺음 ───────────────────────── */
+  .closing{border-top:1px solid var(--rule); padding-top:2.2rem;
+    display:flex; flex-direction:column; gap:1rem;}
+  .closing .big{font-family:var(--logo); font-weight:700; line-height:1.6;
+    font-size:clamp(1.25rem,4vw,2rem); text-wrap:balance;}
+  .closing .big span{color:var(--terra);}
+  .footer-note{font-size:.78rem; color:var(--ink-faint); line-height:1.85;
+    border-top:1px solid var(--rule); padding-top:1.2rem;}
+  .footer-note .brand{display:block; letter-spacing:.16em; color:var(--terra);
+    font-size:.72rem; margin-top:.5rem;}
+  .footer-note .fam{display:block; margin-top:.35rem; color:var(--ink-soft);}
+
+  @media (max-width:600px){
+    .layer{grid-template-columns:1fr; gap:.35rem;}
+    .layer .lsize{font-size:1.35rem;}
+    .donutbox{grid-template-columns:minmax(0,1fr);}
+    .gap-card{grid-template-columns:minmax(0,1fr); gap:.9rem; text-align:left;}
+    .cmprow{grid-template-columns:minmax(0,4.6em) minmax(0,1fr) auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backbar"><a href="./">← 과제 목록</a></div>
+
+<div class="wrap">
+
+  <!-- 표제 -->
+  <header>
+    <p class="eyebrow">Rules · 규칙 전수조사</p>
+    <h1>규칙 지형도</h1>
+    <p class="lede">
+      AI 파트너에게 심어둔 규칙이 지금 몇 개이고 어디서 오는가.
+      하루 동안 전부 세어 한 장의 숫자판으로 폈습니다.
+    </p>
+    <div class="hero-rule"></div>
+    <div class="hero-meta">
+      <span>2026 · 09 · 06</span>
+      <span>전수조사 1회</span>
+      <span>숫자는 모두 실측</span>
+    </div>
+  </header>
+
+  <!-- ① 네 층 -->
+  <section>
+    <div class="shead"><span class="snum">1</span><h2>규칙이 사는 네 층</h2></div>
+    <p class="sdesc">두 층은 파일이라 줄번호로 짚을 수 있고, 두 층은 열어볼 수 없습니다.</p>
+    <div class="layers">
+
+      <div class="card layer">
+        <div>
+          <div class="lname">개인 지침서</div>
+          <div class="lmeta"><span class="pill yes">파일 ○</span> 줄번호로 짚을 수 있다</div>
+        </div>
+        <div class="lsize">229<small>줄</small></div>
+      </div>
+
+      <div class="card layer">
+        <div>
+          <div class="lname">기억 파일</div>
+          <div class="lmeta"><span class="pill yes">파일 ○</span> 색인 152줄</div>
+        </div>
+        <div class="lsize">153<small>개</small></div>
+      </div>
+
+      <div class="card layer ghost">
+        <div>
+          <div class="lname">시스템 프롬프트</div>
+          <div class="lmeta"><span class="pill no">파일 ✕</span> 열어볼 수 없다</div>
+        </div>
+        <div class="lsize">—</div>
+      </div>
+
+      <div class="card layer ghost">
+        <div>
+          <div class="lname">세션 한정 지시</div>
+          <div class="lmeta"><span class="pill no">파일 ✕</span> 그 대화에서만 산다</div>
+        </div>
+        <div class="lsize">—</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ② 유형 분포 -->
+  <section>
+    <div class="shead"><span class="snum">2</span><h2>기억 153개는 무엇으로 이루어져 있나</h2></div>
+    <p class="sdesc">안에 적힌 유형으로 갈랐습니다. 넷을 더하면 152 — 색인에 오른 수와 같습니다.</p>
+
+    <div class="card donutbox">
+      <div>
+        <svg viewBox="0 0 160 160" role="img" aria-label="유형 분포 도넛 — 프로젝트 79, 피드백 58, 참고 12, 사용자 3">
+          <g transform="rotate(-90 80 80)" fill="none" stroke-width="26">
+            <!-- 둘레 376.99 -->
+            <circle cx="80" cy="80" r="60" stroke="#3A2A12"
+              stroke-dasharray="195.9 181.1" stroke-dashoffset="0"></circle>
+            <circle cx="80" cy="80" r="60" stroke="#D55A2B"
+              stroke-dasharray="143.9 233.1" stroke-dashoffset="-195.9"></circle>
+            <circle cx="80" cy="80" r="60" stroke="#6FA52E"
+              stroke-dasharray="29.8 347.2" stroke-dashoffset="-339.8"></circle>
+            <circle cx="80" cy="80" r="60" stroke="#FFC61E"
+              stroke-dasharray="7.4 369.6" stroke-dashoffset="-369.6"></circle>
+          </g>
+          <text x="80" y="74" text-anchor="middle" font-family="Gowun Batang, serif"
+            font-size="30" font-weight="700" fill="#3A2A12">152</text>
+          <text x="80" y="94" text-anchor="middle" font-family="Gowun Dodum, sans-serif"
+            font-size="10" letter-spacing="1.5" fill="#96855F">색인에 오른 줄</text>
+        </svg>
+        <p class="donut-total">기억 파일 자체는 153개</p>
+      </div>
+
+      <div class="legend">
+        <div class="lrow">
+          <span class="swatch" style="background:#3A2A12"></span>
+          <span class="lb">프로젝트</span>
+          <span class="lv">79<small>52.0%</small></span>
+          <span class="lbar"><i style="width:52%;background:#3A2A12"></i></span>
+        </div>
+        <div class="lrow">
+          <span class="swatch" style="background:#D55A2B"></span>
+          <span class="lb">피드백</span>
+          <span class="lv">58<small>38.2%</small></span>
+          <span class="lbar"><i style="width:38.2%;background:#D55A2B"></i></span>
+        </div>
+        <div class="lrow">
+          <span class="swatch" style="background:#6FA52E"></span>
+          <span class="lb">참고</span>
+          <span class="lv">12<small>7.9%</small></span>
+          <span class="lbar"><i style="width:7.9%;background:#6FA52E"></i></span>
+        </div>
+        <div class="lrow">
+          <span class="swatch" style="background:#FFC61E"></span>
+          <span class="lb">사용자</span>
+          <span class="lv">3<small>2.0%</small></span>
+          <span class="lbar"><i style="width:2%;background:#FFC61E"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 오늘의 발견 -->
+  <section>
+    <div class="shead"><span class="snum">3</span><h2>오늘의 발견 — 겉이름과 속이 어긋난 자리</h2></div>
+    <p class="sdesc">파일 이름으로 세는 것과 안을 열어 세는 것은 다른 일이었습니다.</p>
+
+    <div class="card gap-card">
+      <div class="gap-num">20<small>어긋난 건수</small></div>
+      <div class="gap-body">
+        <p class="gt">
+          이름이 <b>feedback_</b>으로 시작하는 것은 <b>38개</b>인데,
+          안에 적힌 유형이 <b>feedback</b>인 것은 <b>58개</b>입니다.
+          이름으로만 세면 피드백의 <b>3분의 1</b>을 놓칩니다.
+        </p>
+        <p class="gt" style="opacity:.72;font-size:.9em;margin-top:.55rem">어긋난 20건은 <b>주제 이름</b>으로 저장해 둔 것들이었습니다 &mdash; 저장할 때는 사실 한 조각으로 보였는데, 열어 보니 안은 지시였습니다.</p>
+
+        <div class="cmp">
+          <div class="cmprow">
+            <span class="ck">겉이름</span>
+            <span class="cbar"><i style="width:65.5%;background:rgba(255,247,222,.45)"></i></span>
+            <span class="cv" style="color:rgba(255,247,222,.8)">38</span>
+          </div>
+          <div class="cmprow">
+            <span class="ck">속유형</span>
+            <span class="cbar"><i style="width:100%;background:#FFC61E"></i></span>
+            <span class="cv" style="color:#FFC61E">58</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 함께 사는 식구 -->
+  <section>
+    <div class="shead"><span class="snum">4</span><h2>규칙과 함께 사는 것들</h2></div>
+    <p class="sdesc">규칙만 있는 것이 아닙니다. 규칙을 읽고 움직이는 쪽도 함께 셌습니다.</p>
+    <div class="stats">
+      <div class="card stat"><b>10<small>명</small></b><span>포근나루 식구</span></div>
+      <div class="card stat"><b>1<small>명</small></b><span>총괄</span></div>
+      <div class="card stat"><b>9<small>개</small></b><span>프로젝트 전용 스킬</span></div>
+    </div>
+  </section>
+
+  <!-- ⑤ 오늘 한 일 -->
+  <section>
+    <div class="shead"><span class="snum">5</span><h2>오늘 실제로 한 일</h2></div>
+    <div class="arrowline">
+      <span class="st">어디에 있는지 모르는 규칙</span>
+      <span class="ar">→</span>
+      <span class="st after">줄번호로 짚히는 규칙</span>
+    </div>
+
+    <div class="flow">
+      <div class="frow">
+        <span class="fmark">✓</span>
+        <div class="fbody">
+          <div class="ft">출처와 줄번호를 붙였다</div>
+          <div class="fd">규칙 전체에. 어느 규칙이 어느 파일 몇 줄에 있는지 짚을 수 있게 됐습니다.</div>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="fmark">✓</span>
+        <div class="fbody">
+          <div class="ft">낡은 규칙 1건을 지웠다</div>
+          <div class="fd">살아 있는 자리 2곳에서.</div>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="fmark">✓</span>
+        <div class="fbody">
+          <div class="ft">규칙 1건을 현재 상태에 맞게 고쳤다</div>
+        </div>
+      </div>
+      <div class="frow hold">
+        <span class="fmark">·</span>
+        <div class="fbody">
+          <div class="ft">일부러 손대지 않은 자리 2곳</div>
+          <div class="fd">
+            ⓐ 과거에 잘못했던 일의 기록 — 지우면 교훈이 사라집니다.<br>
+            ⓑ 되돌리기용 스냅샷 — 고치면 그날로 못 돌아갑니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="holdnote">손대지 않은 것도 판단입니다. 무엇을 남겼는지 적어두지 않으면 다음에 지우게 됩니다.</p>
+  </section>
+
+  <!-- 맺음 -->
+  <div class="closing">
+    <p class="big">규칙은 늘어나는 게 아니라 <span>낡습니다</span>.<br>지형도가 없으면 낡은 줄도 모릅니다.</p>
+    <p class="footer-note">
+      숫자는 2026년 9월 6일 하루 동안 규칙 전체를 열어 직접 센 실측치입니다.
+      규칙의 내용 자체는 이 화면에 싣지 않았습니다 — 여기 있는 것은 개수와 구조뿐입니다.
+      <span class="brand">POGNARU × DEEPER UNBRANDING</span>
+      <span class="fam">🌊 바다 · 🌳 나무</span>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
