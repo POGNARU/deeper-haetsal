@@ -54,6 +54,9 @@ deeper-haetsal/
 │                          #   디퍼 OS 밤 팔레트(예외) · 정본은 deeper-salon · 폴더 이름과 개수만 수록
 │   ├─ 260827-aiworld.html   # 「햇살'S AI WORLD — 새벽 나루」 — 같은 데이터를 새로 그린 판(섬·물길·나룻배 · 새벽 팔레트)
 │                          #   위 밤 도시 판과 나란히 산다(덮어쓰지 않음) · 서로 상단 링크로 오감 · 정본은 deeper-salon
+│   ├─ 260907-playstore.html # 「매대에 서기 전에」 — 레지오 활동보고 앱 플레이스토어 출시 조사(무료/유료 · 광고 모델 · 값의 자리)
+│                          #   해바라기 들판 팔레트 · 라이브러리 0개(인라인 CSS) · 좁은 화면에선 가격 눈금이 세로로 풀림
+│                          #   근거 정본은 볼트 `클로드 에이전트/등대의 기록/260906-레지오앱 스토어 시장조사.md`
 │   ├─ 260906-rules.html     # 「규칙 지형도」 — AI 파트너에게 심어둔 규칙 전수조사(네 층 · 기억 153개 유형 분포 · 겉이름과 속이 어긋난 20건)
 │                          #   해바라기 들판 팔레트 · 라이브러리 0개(인라인 SVG·CSS) · 규칙 문구와 개인 정보는 미수록 — 개수와 구조만
 │   ├─ 260821-secondbrain.html # 「원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다」 — 세컨브레인 전체 지도(3기 발표용)
@@ -117,6 +120,7 @@ deeper-haetsal/
 | 햇살'S AI WORLD — 내 세계를 밤 도시 한 장으로 (볼트 셋 · 3구역 27건물 · 정본은 deeper-salon) | [`assignment/260825-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260825-aiworld.html) |
 | 햇살'S AI WORLD — 새벽 나루 (같은 데이터를 다시 그린 판 · 섬·물길·나룻배 · 정본은 deeper-salon) | [`assignment/260827-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260827-aiworld.html) |
 | 원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다 (세컨브레인 전체 지도 · 3기 발표용 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-secondbrain.html`](https://pognaru.com/deeper-haetsal/assignment/260821-secondbrain.html) |
+| 매대에 서기 전에 (레지오 활동보고 앱 플레이스토어 출시 조사 · 유사 앱 11종 전부 ₩0 · 광고 모델 검토 · 최소가·적정가 제안 · 근거 정본은 볼트 등대의 기록) | [`assignment/260907-playstore.html`](https://pognaru.com/deeper-haetsal/assignment/260907-playstore.html) |
 | 규칙 지형도 (AI 파트너 규칙 전수조사 · 네 층 · 기억 153개 · 어긋난 20건 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260906-rules.html`](https://pognaru.com/deeper-haetsal/assignment/260906-rules.html) |
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
