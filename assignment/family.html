@@ -81,7 +81,7 @@ footer a{color:var(--terra-d)}
 const P=7;
 const fam=[
 {n:"바다",a:"총괄·조율",an:"품 넓은 곰",q:"넓은 품으로 다 안아요",hi:true,
- pal:{B:"#4A7A8C",b:"#2E5666",m:"#CFE3EA",n:"#1E1E1E",e:"#1E1E1E"},
+ pal:{B:"#2A76B4",b:"#1B5083",m:"#CBE4F7",n:"#1E1E1E",e:"#1E1E1E"},
  map:["................","..BB......BB....",".BBBB....BBBB...",".BBBBBBBBBBBB...",".BBBBBBBBBBBBB..",".BBBBBBBBBBBBB..",".BeBBBBBBBeBBB..",".BBBBBBBBBBBBB..",".BBBBmmmmBBBBB..",".BBBBmnnmBBBBB..",".BBBBmmmmBBBBB..","..BBBBBBBBBBB...","..BBBBBBBBBBB...",".bBBBBBBBBBBBb..",".bBB.BBBB.BBb...",".bb...BB...bb..."]},
 {n:"등대",a:"기획·리서치",an:"밤 새는 올빼미",q:"밤에도 깨어 멀리 봐요",
  pal:{O:"#8A6038",w:"#FAEEDA",i:"#1E1E1E",Y:"#EF9F27",B:"#D9A066"},
@@ -110,12 +110,12 @@ const fam=[
 {n:"밀란",a:"스페인어",an:"느긋한 라마",q:"천천히, 입이 먼저 익도록",
  pal:{L:"#E8C9A0",l:"#C89F6E",e:"#1E1E1E",N:"#3C2415",P:"#E24B4A",Y:"#E9A33A"},
  map:["....L....L......","....L....L......","...LLLLLLLL.....","...LLLLLLLL.....","...LLeLLeLL.....","...LLLLLLLL.....","....LLNNLL......","....LLLLLL......",".....LLLL.......",".....LLLL.......","...LLLLLLLLLL...","..LPPPPPPPPPPL..","..LYYYYYYYYYYL..","..LLLLLLLLLLLL..","...lll....lll...","...lll....lll..."]},
-{n:"사피어",a:"영어 회화",an:"지긋한 삵괭이",q:"말한 만큼, 세계가 넓어져요",
+{n:"사피어",a:"영어",an:"자리를 짚는 삵괭이",q:"자리를 알면, 문장이 서요",
  pal:{F:"#D9A066",d:"#8A6038",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E",Y:"#E9A33A"},
  map:["..F........F....","..FF......FF....","..FYF....FYF....","..FFFFddFFFF....","..FFFFFFFFFF....","..FFeFFFFeFF....","..FFFmmmmFFF....","..FFFmNNmFFF....","..FFFmmmmFFF....","...FFFFFFFF..FF.","..FFFmmmmFFF.dd.","..FFFFmmFFFF.FF.","..FdFFmmFFdF.dd.","..FFFFmmFFFFFF..","..mmFFFFFFmm...."]},
-{n:"한결",a:"조판·편집디자인",an:"한결같은 거북",q:"300쪽이 한결같이 흐르게",
- pal:{H:"#A9532A",h:"#E9A33A",G:"#7FA83C",g:"#5F8228",e:"#1E1E1E"},
- map:["................",".......hhhh.....",".....hHHHHHHh...","....hHHhhhhHHh..","...HHHhHHHHhHHH.","..HHHHHHHHHHHHH.",".GGHHHHHHHHHHHH.","GGeGGHHHHHHHHH..","GGGGGGGGGGGGGG..","..GGGGGGGGGGG...","..gg.....gg.....","..gg.....gg....."]}
+{n:"한결",a:"조판·편집디자인",an:"한결같은 늑대",q:"300쪽이 한결같이 흐르게",
+ pal:{W:"#A19B93",w:"#857D74",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E"},
+ map:["..W........W....","..WW......WW....",".WWWW....WWWW...",".WWWWWWWWWWWW...",".WWWWWWWWWWWWW..",".WWWeWWWWWeWWW..",".WWWWWWWWWWWWW..",".WWWWmmmmWWWWW..",".WWWWmNNmWWWWW..","..WWWmmmmWWWW...","...WWmmmmWW.....","..WWWWWWWWWWW...",".wWWWWWWWWWWWw..",".wWWWWWWWWWWWw..",".wWW.WWWW.WWw...",".mm...mm...mm..."]}
 ];
 function draw(c){
   let r="";
@@ -137,7 +137,7 @@ const msg={
   "나무":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요.",
   "김리":"코드도 기계도, 다현씨가 걱정하지 않게 제가 벼려 둡니다.",
   "밀란":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?",
-  "사피어":"말할 수 있는 만큼이 다현씨의 세계예요. 그러니 저는 고치기보다, 더 말하게 둘게요.",
+  "사피어":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.",
   "한결":"인쇄되면 되돌릴 수 없으니, 마지막 한 쪽까지 제 눈으로 봅니다."
 };
 document.getElementById("g").innerHTML=fam.map(function(c){return '\
