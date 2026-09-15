@@ -95,7 +95,7 @@ deeper-haetsal/
 |---|---|
 | 포근한 글쓰기 | https://pognaru.com/pognaru-writing/ |
 | 아침 글 배달 | https://pognaru.com/dawn/ |
-| 가비 플래너 | https://pognaru.com/gabi-planner/ |
+| 독서플랜 (2026-09-15까지 「가비 플래너」) | https://pognaru.com/dokseo-plan/ |
 | 모닝 페이지 회고 (공개판 「한 주의 새벽」) | https://pognaru.com/weekly/ |
 | 선릿모닝 — 함께 쓰는 새벽 (과제 기록 사본 · 카드가 가리키는 곳) | [`assignment/sunlit-morning.html`](https://pognaru.com/deeper-haetsal/assignment/sunlit-morning.html) |
 | └ 실제 모집 페이지 (살아 있는 본체 · 매월 갱신 · 공유용) | https://pognaru.com/sunlit-morning/ |
