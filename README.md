@@ -67,6 +67,11 @@ deeper-haetsal/
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
+│   ├─ 260916-family.html   # 「함께 짓는 열일곱」 — 세 팀 17명 상징 픽셀아트·뒤집는 메시지 카드
+│   ├─ 260916-family-chart.html # 「햇살의 세 작업실」 — 세 팀 전체 조직도·디자인 협업선
+│   ├─ 260916-family.css    # 두 발표 페이지 전용 스타일
+│   ├─ 260916-family-data.js # 17명 명단·상징·역할·메시지 정본
+│   ├─ 260916-family.js     # 24×24 픽셀 SVG·카드·필터·조직도 동작
 │   ├─ family.html         # 「포근나루 식구」 — 픽셀 캐릭터 갤러리 (2026-09-13 사피어🪶 합류로 12장)
 │   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다 아래 네 기둥 + 별채(사막여우) · 2026-09-13 기준 열한 식구
 │                          #   2026-08-06 식구 정리 반영(14→8) · 화면판 팔레트 적용
@@ -125,6 +130,8 @@ deeper-haetsal/
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
+| 함께 짓는 열일곱 (포근나루14 · Astra2 · 디퍼1, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
+| 햇살의 세 작업실 (전체17명 조직도·디자인 협업, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
 | 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/family-chart.html) |
 
@@ -389,3 +396,16 @@ favicon-180.png   애플 터치 아이콘
 레포 루트에 두고, 모든 HTML의 `<head>`에 상대경로로 링크한다. 하위 폴더 문서는 `../favicon-32.png`처럼 앞에 `../`를 붙인다 — GitHub Pages 프로젝트 사이트는 `/레포명/` 아래로 서빙되므로 `/favicon-32.png` 같은 루트 절대경로를 쓰면 안 된다.
 
 원본은 볼트 `클로드 에이전트/브랜드/로고/`에 있다. 심볼을 바꾸면 거기서 다시 뽑아 이 레포의 두 파일을 교체한다.
+
+## 2026-09-16 · 세 팀 전체 식구 발표 페이지
+
+- 새 페이지 두 개를 추가했습니다. 기존 `family.html`·`family-chart.html`과 옛 링크는 그대로 보존합니다.
+- 현재 명단은 포근나루 14명(바다와 전문 식구13), Astra 2명(솔·루나), 디퍼 살롱 1명(사막여우)입니다. 사피어·브리·단테를 포함합니다.
+- 햇살 아래 세 팀을 평행하게 놓고, Astra의 디자인 협업은 운영·조율선과 구분합니다. 어학실은 햇살 자신의 배움을 맡습니다.
+- 카드 클릭·Enter·Space로 앞뒤 전환, 팀 필터, 전체 앞면, 발표 모드를 제공합니다. 기존 인사12개를 보존하고 새5개는 역할을 바탕으로 쓴 소개 메시지임을 명시했습니다.
+- **정본**: 이 저장소에서 처음 지은 신규 결과물입니다. 별도 볼트 사본을 정본으로 두지 않습니다. 명단·메시지는 `assignment/260916-family-data.js`, 픽셀과 동작은 `260916-family.js`를 수정합니다.
+- **실제 기여**: 솔☀️ 구성·검증·발행 / 루나🌙 디자인·제작. 세션에서 루나의 설치 정의를 읽힌 에이전트로 실제 제작했습니다.
+
+### 팔레트 예외 — 세 팀 발표 자료
+
+세 볼트의 독립성과 협업을 함께 보여주는 발표물이라 단일 브랜드의 전면색 대신 밝은 배경(`#F5F8FA`)과 짙은 본문(`#263748`)을 사용했습니다. 포근나루의 표식에는 화면판 진테라코타(`#A9532A`)와 크림(`#FFFBEF`), Astra에는 보라, 디퍼에는 초록을 써 세 팀을 구분합니다. 원래 이모지 상징은 정수 격자 SVG 픽셀로 직접 그렸습니다. 본문 대비와 데스크톱 전체17명 표시, 모바일 가로 넘침 및 카드 동작을 확인한 뒤 게시합니다.
