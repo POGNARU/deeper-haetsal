@@ -9,3 +9,40 @@
 @media(min-width:1650px){.chart-page{padding-top:23px}.chart-page .hero{padding:22px 0 18px}.chart-page .team-panel{padding:18px}.chart-page .person{min-height:75px;padding:10px}.chart-page .person.leader{min-height:78px}.chart-page .language-group .person{min-height:72px}.chart-page .role-groups{margin-top:22px}.chart-page .role-groups:before{height:22px;top:-22px}.chart-page .group-title{margin-bottom:10px}.chart-page .group-people{gap:8px}.chart-page .team-heading{margin-bottom:8px}.chart-page .team-purpose{margin-bottom:13px}.chart-page .collaboration{margin-top:17px}}
 @media(prefers-reduced-motion:reduce){.card-turn{transition:none}}
 @media print{.topbar,.toolbar{display:none}.page{padding:10px}.family-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.family-card{height:240px;break-inside:avoid}.teams{grid-template-columns:3.25fr 1fr 1fr}.team-panel.pognaru{grid-column:auto}.page-footer{font-size:9px}.card-turn{transform:none!important}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* Append after existing responsive rules. Share row sizes across sibling departments. */
+.chart-page .role-groups {
+  --person-row-min: 74px;
+  row-gap: 8px;
+}
+.chart-page .role-group {
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+}
+.chart-page .role-group .group-title {
+  grid-row: 1;
+  margin-bottom: 0;
+}
+.chart-page .role-group .group-people {
+  display: grid;
+  grid-row: 2 / span 4;
+  grid-template-rows: subgrid;
+  gap: inherit;
+}
+.chart-page .role-group .person {
+  min-height: var(--person-row-min);
+}
+.chart-page .role-group .group-note {
+  grid-row: 6;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .chart-page .role-groups { --person-row-min: 76px; }
+}
+@media (min-width: 961px) {
+  .chart-page .role-groups { --person-row-min: 58px; row-gap: 6px; }
+}
+@media (min-width: 1650px) {
+  .chart-page .role-groups { --person-row-min: 75px; row-gap: 8px; }
+}
