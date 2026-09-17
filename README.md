@@ -296,7 +296,7 @@ deeper-haetsal/
 - 디퍼 언브랜딩-햇살 과정의 **과제 결과물**
 - 공개된 결과물은 리포트 안에서 바로 눌러 볼 수 있도록 링크로 연결
 
-> 디퍼 살롱 자료 별자리 목차는 별도 공개 레포 **[deeper-index](https://github.com/POGNARU/deeper-index)** ( https://pognaru.com/deeper-index/ )에 있습니다.
+> 디퍼 살롱 자료 별자리 목차 **「우리가 지나온 별들」**은 2026-09-17에 비공개로 옮겨졌습니다.
 
 ## 브랜드 컬러 — 해바라기 들판
 
