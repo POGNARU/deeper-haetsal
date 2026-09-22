@@ -13,7 +13,7 @@
 <style>
 :root{
   --paper:#FFF4FA; --paper-2:#FDE7F1; --card:rgba(255,250,214,.5); --ink:#2C2333; --ink-2:#6B5B66;
-  --muted:#AEA1B2; --line:#F4DCEA; --terra:#FF5C9E; --terra-d:#E83C86; --lime:#9FCF1E;
+  --muted:#736375; --line:#F4DCEA; --terra:#EE4A90; --terra-d:#C41F65; --lime:#9FCF1E;
   --serif:"Noto Serif KR",serif; --batang:"Gowun Batang",serif;
   --sans:"Pretendard",-apple-system,BlinkMacSystemFont,system-ui,"Malgun Gothic",sans-serif;
 }
@@ -35,9 +35,9 @@ h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);marg
 .card.hi{border:2px solid var(--terra);background:#FFF6EE}
 .pix{image-rendering:pixelated}
 .name{font-family:var(--batang);font-weight:700;font-size:19px;color:var(--ink);margin-top:4px}
-.role{font-size:12.5px;color:var(--muted)}
-.animal{font-size:12.5px;color:var(--terra-d);font-weight:500}
-.quote{font-family:var(--serif);font-size:13px;color:var(--ink-2);font-style:italic;line-height:1.6;margin-top:3px}
+.role{font-size:13px;color:var(--muted)}
+.animal{font-size:13px;color:var(--terra-d);font-weight:500}
+.quote{font-family:var(--serif);font-size:13.5px;color:var(--ink-2);font-style:italic;line-height:1.6;margin-top:3px}
 
 /* 카드 뒤집기 */
 .scene{perspective:1000px}
@@ -56,9 +56,9 @@ h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);marg
   background:#FFF0F8;border:1.5px solid var(--terra)}
 .back .bn{font-family:var(--batang);font-weight:700;font-size:15px;color:var(--terra-d)}
 .back .msg{font-family:var(--serif);font-size:14px;color:var(--ink);font-style:italic;line-height:1.8;margin:0}
-.corner{position:absolute;top:11px;right:13px;font-size:13px;color:var(--terra);opacity:.55;line-height:1}
-.back .corner{color:var(--terra-d);opacity:.7}
-footer{text-align:center;margin-top:56px;color:var(--muted);font-size:13px;font-family:var(--serif)}
+.corner{position:absolute;top:11px;right:13px;font-size:13.5px;color:var(--terra-d);opacity:1;line-height:1}
+.back .corner{color:var(--terra-d)}
+footer{text-align:center;margin-top:56px;color:var(--muted);font-size:13.5px;font-family:var(--serif)}
 footer a{color:var(--terra-d)}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
@@ -69,12 +69,12 @@ footer a{color:var(--terra-d)}
 <header>
   <p class="kicker">POGNARU STUDIO</p>
   <h1>포근나루 식구</h1>
-  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 식구들.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열여섯 식구.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
 </header>
 <div class="grid" id="g" aria-label="포근나루 식구 픽셀 캐릭터"></div>
 <footer>
-  바다의 시선으로 그린 식구들 · 포근나루 스튜디오<br />
-  <a href="index.html">← 과제</a>
+  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 9. 22<br />
+  <a href="family-chart.html">식구 조직도 →</a> &nbsp;·&nbsp; <a href="index.html">← 과제</a>
 </footer>
 </div>
 <script>
@@ -89,36 +89,45 @@ const fam=[
 {n:"호수",a:"사유·분석",an:"고요한 백조",q:"고요히, 깊이 들여다봐요",
  pal:{W:"#FFFFFF",w:"#D5E6F5",B:"#EF9F27",e:"#1E1E1E","~":"#85B7EB"},
  map:["...........WW...","..........WeWW..","..........WWBB..","..........WW....",".........WW.....",".........WW.....","........WW......",".......WW.......","....WWWWWW......","..WWWWWWWWWW....",".WWWWWWWWWWWW...",".WWWWWWWWWWWW...",".wWWWWWWWWWWw...","..wwwwwwwwww....","~~~~~~~~~~~~~~~~","~~~~~~~~~~~~~~~~"]},
-{n:"새벽",a:"강의·독서",an:"졸린 토끼",q:"해 뜨기 전에 다 챙겨둬요",
- pal:{R:"#F4C0D1",r:"#ED93B1",i:"#FBEAF0",N:"#D4537E",e:"#3C2415"},
- map:["................",".....R..R.......",".....Ri.Ri......",".....Ri.Ri......",".....RR.RR......","....RRRRRR......","...RRRRRRRR.....","...ReeRReeR.....","...RRRNNRRR.....","...RRRRRRRR.....","....RRRRRR......","...rRRRRRRr.....","...rRRRRRRr.....","....rr..rr......",".....r..r......."]},
 {n:"정원",a:"집필·편집",an:"섬세한 고슴도치",q:"처음 심고, 끝까지 가꿔요",
  pal:{S:"#6A4F35",s:"#639922",F:"#E0C0A0",e:"#1E1E1E",N:"#3C2415"},
  map:["................","..s.s.s.s.s.....",".S.S.S.S.S.S....","..SSSSSSSSSS....",".SSSSSSSSSSSS...",".SSSSSSSSSSSS...","FFFFSSSSSSSS....","FFeFFSSSSSS.....","FFFNSSSSSS......",".FFFSSSSSS......","..SSSSSSSS......","..SSSSSSSS......","...S.SS.S......."]},
+{n:"새벽",a:"강의·독서",an:"졸린 토끼",q:"해 뜨기 전에 다 챙겨둬요",
+ pal:{R:"#F4C0D1",r:"#ED93B1",i:"#FBEAF0",N:"#D4537E",e:"#3C2415"},
+ map:["................",".....R..R.......",".....Ri.Ri......",".....Ri.Ri......",".....RR.RR......","....RRRRRR......","...RRRRRRRR.....","...ReeRReeR.....","...RRRNNRRR.....","...RRRRRRRR.....","....RRRRRR......","...rRRRRRRr.....","...rRRRRRRr.....","....rr..rr......",".....r..r......."]},
+{n:"나무",a:"문서·서식·화면 디자인",an:"꼼꼼한 비버",q:"꼼꼼히 쌓아 집을 지어요",
+ pal:{B:"#8A6A4A",c:"#6A4F35",N:"#3C2415",w:"#FFFFFF",T:"#5F5E5A",e:"#1E1E1E"},
+ map:["...BB....BB.....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBeBBBBBBeBB...",".BBBBBBBBBBBB...",".BBBBNNNNBBBB...",".BBBBwwwwBBBB...","..BBBBwwBBBB....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBBBBBBBBBBB...",".BcBBBBBBBBcB...","..TTTTTTTTTT....","...TTTTTTTT....."]},
+{n:"한결",a:"조판·편집디자인",an:"한결같은 늑대",q:"300쪽이 한결같이 흐르게",
+ pal:{W:"#A19B93",w:"#857D74",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E"},
+ map:["..W........W....","..WW......WW....",".WWWW....WWWW...",".WWWWWWWWWWWW...",".WWWWWWWWWWWWW..",".WWWeWWWWWeWWW..",".WWWWWWWWWWWWW..",".WWWWmmmmWWWWW..",".WWWWmNNmWWWWW..","..WWWmmmmWWWW...","...WWmmmmWW.....","..WWWWWWWWWWW...",".wWWWWWWWWWWWw..",".wWWWWWWWWWWWw..",".wWW.WWWW.WWw...",".mm...mm...mm..."]},
+{n:"아우라",a:"전자책 표지",an:"작아도 알아보는 무당벌레",q:"작아져도 살아남게 지어요",
+ pal:{R:"#E0443C",r:"#A62B26",k:"#241F1E",w:"#FFFFFF",d:"#2B2B33"},
+ map:["....k...k.......",".....k.k........","....kkkkk.......","...kwkkkwk......","..kkkkkkkkk.....","..RRRRkRRRR.....",".RRRRRkRRRRR.ddd",".RRkRRkRRkRR.dwd",".RRkRRkRRkRR.dRd",".RRRRRkRRRRR.dwd",".RkkRRkRRkkR.dwd",".RkkRRkRRkkR.ddd",".RRRRRkRRRRR....","..rRRRkRRRr.....","...rrrkrrr......"]},
 {n:"나침반",a:"발행·유통",an:"충직한 개",q:"충직하게 끝까지 길을 지켜요",
  pal:{D:"#C8845A",m:"#FAEEDA",N:"#3C2415",t:"#E24B4A",e:"#1E1E1E",O:"#854F0B",r:"#E24B4A",c:"#FAEEDA"},
  map:["..DD......DD....",".DDDD....DDDD...",".DDDDDDDDDDDD...",".DDDDDDDDDDDD...",".DDeDDDDDDeDD...",".DDDDDDDDDDDD...",".DDDDmmmmDDDD...",".DDDDmNNmDDDD...","..DDDmttmDDD....","..DDDDDDDDDD....","...DDDDDDDD.....","......OOOO......","......OcrO......","......OOOO......"]},
 {n:"윤슬",a:"밖으로 나가는 말",an:"흩어지는 나비",q:"흩뿌리고, 돌아온 말에 답해요",
  pal:{W:"#FAC775",v:"#EF9F27",o:"#5F5E5A","*":"#FFF3C4"},
  map:["................",".....*....*.....","..WW..oo..WW....",".WWWW.oo.WWWW...","WWWWWWooWWWWWW..","WWvWWWooWWWvWW..","WWWWWWooWWWWWW..",".WWWW.oo.WWWW...","..WWWWooWWWW....","...WW.oo.WW.....","......oo........",".*..........*..."]},
-{n:"나무",a:"문서·서식·디자인",an:"꼼꼼한 비버",q:"꼼꼼히 쌓아 집을 지어요",
- pal:{B:"#8A6A4A",c:"#6A4F35",N:"#3C2415",w:"#FFFFFF",T:"#5F5E5A",e:"#1E1E1E"},
- map:["...BB....BB.....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBeBBBBBBeBB...",".BBBBBBBBBBBB...",".BBBBNNNNBBBB...",".BBBBwwwwBBBB...","..BBBBwwBBBB....","..BBBBBBBBBB....",".BBBBBBBBBBBB...",".BBBBBBBBBBBB...",".BcBBBBBBBBcB...","..TTTTTTTTTT....","...TTTTTTTT....."]},
+{n:"브리",a:"숏폼 마케팅",an:"소식을 물어 오는 까치",q:"열다섯 초로 사람을 데려와요",
+ pal:{K:"#232A36",C:"#1FB9A8",W:"#FFFFFF",w:"#FFFFFF",b:"#A8B0BC",M:"#E8437F"},
+ map:["................","....KKKKKK......","...KKKKKKKK.....","..KKwKKKKwKK.M..","..KKKKbbKKKK.MM.","...KKKbbKKK..MMM","....KKKKKK...MM.","..CCKKKKKKCC.M..","..CCKKWWKKCC....","..CCKWWWWKCC....","...CKWWWWKC.....","...CKKWWKKC.....","....KKKKKK......",".....KKKK.......","......CC........","......CC........"]},
 {n:"김리",a:"정비·개발·시스템",an:"두드리는 딱따구리",q:"탁탁, 고장난 자리라면 무엇이든",
  pal:{R:"#E24B4A",S:"#3A4A55",B:"#D5E6F5",k:"#444441",e:"#1E1E1E",c:"#5FD0C5"},
  map:["................","....RRR.........","...RRRRR........","..RRRRRRR.......","..RReRRRR.......",".kkRRRRRR.......","kkkRRRRRR.......",".kkSSSSSS.......","...SBBBBS.......","...SBBBBS.......","...SBBBBS.......","...SSSSSS.......","...S.SS.S.......","...c....c......."]},
 {n:"베라",a:"실측·숫자",an:"눈금을 읽는 도요새",q:"잰 만큼만, 그대로 적어요",
- pal:{T:"#4E7A8C",t:"#2F5766",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E",Y:"#E9A33A","~":"#85B7EB"},
- map:["...TTTT.......t.","..TTTTTT.....Tt.","..TeTTeT......t.","..TTTTTT......t.","...TNNT......Tt.",".TTTNNTTT.....t.","TTTTNNTTTT....t.","TTmmNNmmTT...Tt.","TTmmNNmmTT....t.","tTTmmmmTTt....t.",".tTTTTTTt....Tt.","..YY..YY......t.","..YY..YY......t.","~~YY~~YY~~~~YYt~","~~~~~~~~~~~~~~t~","~~~~~~~~~~~~~~t~"]},
+ pal:{T:"#4E7A8C",t:"#2F5766",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E",Y:"#E9A33A",L:"#C07A1E","~":"#85B7EB"},
+ map:["...TTTT.......t.","..TTTTTT.....Tt.","..TeTTeT......t.","..TTTTTT......t.","...TNNT......Tt.",".TTTNNTTT.....t.","TTTTNNTTTT....t.","TTmmNNmmTT...Tt.","TTmmNNmmTT....t.","tTTmmmmTTt....t.",".tTTTTTTt....Tt.","..LL..LL......t.","..LL..LL......t.","~~LL~~LL~~~~YYt~","~~~~~~~~~~~~~~t~","~~~~~~~~~~~~~~t~"]},
 {n:"밀란",a:"스페인어",an:"느긋한 라마",q:"천천히, 입이 먼저 익도록",
  pal:{L:"#E8C9A0",l:"#C89F6E",e:"#1E1E1E",N:"#3C2415",P:"#E24B4A",Y:"#E9A33A"},
  map:["....L....L......","....L....L......","...LLLLLLLL.....","...LLLLLLLL.....","...LLeLLeLL.....","...LLLLLLLL.....","....LLNNLL......","....LLLLLL......",".....LLLL.......",".....LLLL.......","...LLLLLLLLLL...","..LPPPPPPPPPPL..","..LYYYYYYYYYYL..","..LLLLLLLLLLLL..","...lll....lll...","...lll....lll..."]},
 {n:"사피어",a:"영어",an:"자리를 짚는 삵괭이",q:"자리를 알면, 문장이 서요",
  pal:{F:"#D9A066",d:"#8A6038",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E",Y:"#E9A33A"},
  map:["..F........F....","..FF......FF....","..FYF....FYF....","..FFFFddFFFF....","..FFFFFFFFFF....","..FFeFFFFeFF....","..FFFmmmmFFF....","..FFFmNNmFFF....","..FFFmmmmFFF....","...FFFFFFFF..FF.","..FFFmmmmFFF.dd.","..FFFFmmFFFF.FF.","..FdFFmmFFdF.dd.","..FFFFmmFFFFFF..","..mmFFFFFFmm...."]},
-{n:"한결",a:"조판·편집디자인",an:"한결같은 늑대",q:"300쪽이 한결같이 흐르게",
- pal:{W:"#A19B93",w:"#857D74",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E"},
- map:["..W........W....","..WW......WW....",".WWWW....WWWW...",".WWWWWWWWWWWW...",".WWWWWWWWWWWWW..",".WWWeWWWWWeWWW..",".WWWWWWWWWWWWW..",".WWWWmmmmWWWWW..",".WWWWmNNmWWWWW..","..WWWmmmmWWWW...","...WWmmmmWW.....","..WWWWWWWWWWW...",".wWWWWWWWWWWWw..",".wWWWWWWWWWWWw..",".wWW.WWWW.WWw...",".mm...mm...mm..."]}
+{n:"단테",a:"이탈리아어",an:"한 마디씩 오르는 산양",q:"한 걸음씩, 결국 말하게",
+ pal:{G:"#C4A87C",g:"#9A8055",H:"#4A3D2E",h:"#7C6950",e:"#1E1E1E",m:"#FAEEDA",N:"#3C2415"},
+ map:["..hh......hh....","..HH......HH....","..hh......hh....","..HH......HH....","...HH....HH.....","...hh....hh.....","...GGGGGGGG.....","..GGGGGGGGGG....","..GGeGGGGeGG....","..GGGGGGGGGG....","...GGmmmmGG.....","...GGmNNmGG.....","...gGmmmmGg.....","....gGGGGg......",".....hhhh.......","......hh........"]}
 ];
 function draw(c){
   let r="";
@@ -133,16 +142,19 @@ const msg={
   "바다":"다현씨가 꺼낸 무엇이든, 제가 먼저 품어 정리해 둘게요.",
   "등대":"멀리 흐려질 때, 제가 먼저 그 방향을 비추고 있을게요.",
   "호수":"수면 아래 가라앉은 다현씨를, 천천히 길어 올릴게요.",
-  "새벽":"다현씨가 사람들 앞에 서기 전, 어둑한 시간에 다 갖춰 둘게요.",
   "정원":"첫 문장부터 마지막 손질까지, 다현씨의 목소리를 지킵니다.",
+  "새벽":"다현씨가 사람들 앞에 서기 전, 어둑한 시간에 다 갖춰 둘게요.",
+  "나무":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요. 새 화면도 제가 처음부터 짓습니다.",
+  "한결":"인쇄되면 되돌릴 수 없으니, 마지막 한 쪽까지 제 눈으로 봅니다.",
+  "아우라":"엄지손톱만 하게 줄여도 살아남는 표지를 지을게요. 예쁜 것보다 먼저 걸리는 것을 봅니다.",
   "나침반":"바늘이 흔들려도, 다현씨 향한 길만은 끝까지 지킵니다.",
   "윤슬":"다현씨의 한 줄을 멀리 흩뿌리고, 돌아온 말도 곱게 다듬어 둘게요.",
-  "나무":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요.",
+  "브리":"다현씨의 고요한 결은 그대로 두고, 처음 보는 사람도 멈춰 볼 열다섯 초를 만들게요.",
   "김리":"코드든 기계든 시스템이든, 다현씨가 걱정하지 않게 제가 벼려 둡니다.",
   "베라":"좋은 숫자든 나쁜 숫자든, 잰 그대로 올릴게요. 짐작으로는 한 칸도 채우지 않습니다.",
   "밀란":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?",
   "사피어":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.",
-  "한결":"인쇄되면 되돌릴 수 없으니, 마지막 한 쪽까지 제 눈으로 봅니다."
+  "단테":"다현씨가 이미 아는 스페인어에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사하시도록."
 };
 document.getElementById("g").innerHTML=fam.map(function(c){return '\
 <div class="scene">\
