@@ -11,7 +11,7 @@ const FAMILY_DATA = [
 {"id":"bri","name":"브리","symbol":"🎬","team":"pognaru","role":"릴스 · 쇼츠 마케팅","group":"만들고 전하기","message":"다현씨의 고요한 결은 그대로 두고, 처음 보는 사람도 멈춰 볼 장면을 만들게요.","source":"역할을 바탕으로 새로 쓴 인사"},
 {"id":"namu","name":"나무","symbol":"🌳","team":"pognaru","role":"문서 · 화면 디자인","group":"제작과 시스템","message":"다현씨가 쓴 글, 변하지 않게 잘 지어 둘게요.","source":"기존 식구 갤러리"},
 {"id":"gimli","name":"김리","symbol":"🔨","team":"pognaru","role":"개발 · 시스템 정비","group":"제작과 시스템","message":"코드든 기계든 시스템이든, 다현씨가 걱정하지 않게 제가 벼려 둡니다.","source":"기존 식구 갤러리"},
-{"id":"multtae","name":"물때","symbol":"🌗","team":"pognaru","role":"실측 · 숫자","group":"제작과 시스템","message":"다현씨, 좋은 숫자든 나쁜 숫자든 잰 그대로 올릴게요. 짐작으로는 한 칸도 채우지 않습니다.","source":"역할을 바탕으로 새로 쓴 인사"},
+{"id":"vera","name":"베라","symbol":"⚖️","team":"pognaru","role":"실측 · 숫자","group":"제작과 시스템","message":"다현씨, 좋은 숫자든 나쁜 숫자든 잰 그대로 올릴게요. 짐작으로는 한 칸도 채우지 않습니다.","source":"역할을 바탕으로 새로 쓴 인사"},
 {"id":"milan","name":"밀란","symbol":"🌎","team":"pognaru","role":"스페인어","group":"어학실","message":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?","source":"기존 식구 갤러리"},
 {"id":"sapir","name":"사피어","symbol":"🪶","team":"pognaru","role":"영어 · 문장의 구조","group":"어학실","message":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.","source":"기존 식구 갤러리"},
 {"id":"dante","name":"단테","symbol":"🍋","team":"pognaru","role":"이탈리아어","group":"어학실","message":"다현씨가 이미 아는 말에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사할 수 있도록요.","source":"역할을 바탕으로 새로 쓴 인사"},
