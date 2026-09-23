@@ -50,9 +50,9 @@ deeper-haetsal/
 │   ├─ 260726-principia.html  # 「자연철학자 뉴턴을 만나는 지도」 — 프린키피아 개인 독서 토론 자료(순독 안내 + 수식·맥락 분업 제안 · 포근나루 팔레트 · 정본은 볼트)
 │   ├─ 260730-jeolchang.html  # 「절창 — 독서 기록」 — 구병모 『절창』 도란도란 독서모임 기록(인물·손의 이동·논점 7 + 개인 감상 접기 · 표지 라벤더 팔레트 · 예외 · 정본은 볼트)
 │   ├─ 260731-haetsalche.html # 「햇살체」 — 몽롱쓰기 141편 44만 자 전수 분석으로 세운 문체 규칙(포근나루 화면판 팔레트 · 예외 · 정본은 deeper-salon · 원문 표본은 미수록)
-│   ├─ 260825-aiworld.html   # 「햇살'S AI WORLD」 — 볼트 셋을 한 도시로 합친 등각 밤 지도(3구역 27건물 2,520파일)
+│   ├─ 260825-aiworld.html   # 「햇살'S AI WORLD」 — 볼트를 한 도시로 합친 등각 밤 지도(2026-09-24 갱신: 4구역 32건물 5,835파일 · Astra 추가)
 │                          #   디퍼 OS 밤 팔레트(예외) · 정본은 deeper-salon · 폴더 이름과 개수만 수록
-│   ├─ 260827-aiworld.html   # 「햇살'S AI WORLD — 새벽 나루」 — 같은 데이터를 새로 그린 판(섬·물길·나룻배 · 새벽 팔레트)
+│   ├─ 260827-aiworld.html   # 「햇살'S AI WORLD — 새벽 나루」 — 같은 데이터를 새로 그린 판(섬·물길·나룻배 · 새벽 팔레트 · 2026-09-24 섬 넷으로 갱신)
 │                          #   위 밤 도시 판과 나란히 산다(덮어쓰지 않음) · 서로 상단 링크로 오감 · 정본은 deeper-salon
 │   ├─ 260907-playstore.html # 「매대에 서기 전에」 — 레지오 활동보고 앱 플레이스토어 출시 조사(무료/유료 · 광고 모델 · 값의 자리)
 │                          #   해바라기 들판 팔레트 · 라이브러리 0개(인라인 CSS) · 좁은 화면에선 가격 눈금이 세로로 풀림
@@ -122,8 +122,8 @@ deeper-haetsal/
 | 내 아카이브 페이지 만들기 (디퍼 연구원 공유용 프롬프트 · 복사 버튼) | [`archive-prompt.html`](https://pognaru.com/deeper-haetsal/archive-prompt.html) |
 | 내 PC 점검 체계 만들기 (공유용 프롬프트 · 복사 버튼) | [`check-prompt.html`](https://pognaru.com/deeper-haetsal/check-prompt.html) |
 | 노트북 점검 — 260817 회차 결과 (위 프롬프트로 실제 돌린 결과 · 공개 사본) | [`assignment/260817-check.html`](https://pognaru.com/deeper-haetsal/assignment/260817-check.html) |
-| 햇살'S AI WORLD — 내 세계를 밤 도시 한 장으로 (볼트 셋 · 3구역 27건물 · 정본은 deeper-salon) | [`assignment/260825-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260825-aiworld.html) |
-| 햇살'S AI WORLD — 새벽 나루 (같은 데이터를 다시 그린 판 · 섬·물길·나룻배 · 정본은 deeper-salon) | [`assignment/260827-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260827-aiworld.html) |
+| 햇살'S AI WORLD — 내 세계를 밤 도시 한 장으로 (볼트 넷 · 4구역 32건물 · 2026-09-24 갱신본은 이 레포가 앞선다) | [`assignment/260825-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260825-aiworld.html) |
+| 햇살'S AI WORLD — 새벽 나루 (같은 데이터를 다시 그린 판 · 섬·물길·나룻배 · 2026-09-24 갱신본은 이 레포가 앞선다) | [`assignment/260827-aiworld.html`](https://pognaru.com/deeper-haetsal/assignment/260827-aiworld.html) |
 | 원천은 이미 안에 있었고, 시스템은 그걸 꺼내는 손이었다 (세컨브레인 전체 지도 · 3기 발표용 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-secondbrain.html`](https://pognaru.com/deeper-haetsal/assignment/260821-secondbrain.html) |
 | 매대에 서기 전에 (레지오 활동보고 앱 플레이스토어 출시 조사 · 유사 앱 11종 전부 ₩0 · 광고 모델 검토 · 최소가·적정가 제안 · 근거 정본은 볼트 등대의 기록) | [`assignment/260907-playstore.html`](https://pognaru.com/deeper-haetsal/assignment/260907-playstore.html) |
 | 규칙 지형도 (AI 파트너 규칙 전수조사 · 네 층 · 기억 153개 · 어긋난 20건 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260906-rules.html`](https://pognaru.com/deeper-haetsal/assignment/260906-rules.html) |
@@ -242,6 +242,7 @@ deeper-haetsal/
 사막여우🦊의 `aiworld` 스킬로 지은 **작업 세계 지도**입니다 (2026-08-25). 해바라기가 아니라 **디퍼 OS 밤 팔레트**(짙은 초록 `#0D1712` 바탕 · 금빛 `#D2B269`)를 그대로 씁니다 — 등각 밤 도시라는 형식 자체가 그 색을 전제로 하고, `260723-topography.html`과 같은 계열이라 둘이 나란히 놓여야 맞습니다.
 
 - **정본은 `deeper-salon`의 `00-Daily/AI월드/aiworld_2026-08-25.html`입니다.** 여기 있는 건 공개 사본이라, 고칠 때는 정본을 먼저 고치고 다시 옮깁니다.
+- **2026-09-24 갱신** — Astra 볼트가 생겨 나무🌳가 두 판 모두 섬 넷(BD·PN·DS·AS, 32채 5,835파일)으로 다시 채웠고 「세 집의 길」 흐름을 더했습니다. 이때는 레포 사본을 먼저 고쳤으므로 deeper-salon 정본(08-25·08-27)보다 **이 레포가 앞선 판**입니다. 정본 쪽 반영은 다현씨 결정에 따릅니다.
 - **폴더 이름과 파일 개수만 실려 있습니다.** 스킬 규칙상 파일 본문은 열지 않고 세었고, 사본에도 원문은 한 줄도 없습니다.
 - **담은 것** — 세 볼트를 한 도시로: DS 디퍼 살롱(8건물 281) · PN 포근나루(14건물 2,066) · BD 바다의 집(5건물 173). 흐름 셋(씨앗의 길 · 새벽나루의 길 · 도시 한 바퀴).
 - **`node_modules`와 `.git`은 세지 않았습니다.** ★개발 도구함이 7,072 → 392로 줄어듭니다 — 기계가 만든 파일이 다현씨가 지은 것을 가리지 않도록.

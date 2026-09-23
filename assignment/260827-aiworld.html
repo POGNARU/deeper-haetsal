@@ -30,7 +30,7 @@ body{
 .mono{font-family:Consolas,"D2Coding","Courier New",monospace;font-variant-numeric:tabular-nums}
 
 /* ── 뼈대 ── */
-#app{display:grid;grid-template-columns:246px 1fr;grid-template-rows:52px 1fr 46px;
+#app{display:grid;grid-template-columns:246px minmax(0,1fr);grid-template-rows:52px 1fr 46px;
      height:100vh;height:100dvh}
 #top{grid-column:1/3;display:flex;align-items:center;gap:22px;padding:0 22px;
      background:var(--panel);border-bottom:1px solid var(--line)}
@@ -43,7 +43,8 @@ body{
 .credit{margin-left:auto;color:var(--ink-2);font-size:10.5px;opacity:.85}
 .credit b{color:var(--ink);font-weight:600}
 .credit .ci{white-space:nowrap}
-@media (max-width:1280px){#foot .hide-m{display:none}}
+@media (max-width:1600px){#foot .hide-m{display:none}}   /* 크레딧이 길어져(2026-09) 조작 안내를 먼저 접는다 — 확대 버튼이 같은 일을 한다 */
+#foot{overflow:hidden;min-width:0}
 
 .back,.alt{color:var(--acc);text-decoration:none;font-size:12px;letter-spacing:.02em;
   padding:5px 11px;border:1px solid var(--line);border-radius:999px;white-space:nowrap;
@@ -180,20 +181,23 @@ body{
     <span><span class="dot" style="background:#FFD79A"></span>나룻배 = 흐르는 것</span>
     <span>🔒 열어보지 않은 자리</span>
     <span class="hide-s hide-m">휠 확대 · 드래그 이동 · 건물 클릭</span>
-    <span class="credit">이 페이지를 지은 식구 — <span class="ci">🦊 <b>사막여우</b> 도시 원본</span> · <span class="ci">🌳 <b>나무</b> 새벽 나루</span> · <span class="ci">🌊 <b>바다</b> 갈무리·발행</span></span>
+    <span class="credit">이 페이지를 지은 식구 — <span class="ci">🦊 <b>사막여우</b> 도시 원본</span> · <span class="ci">🌳 <b>나무</b> 새벽 나루·2026-09 갱신</span> · <span class="ci">🌊 <b>바다</b> 갈무리·발행</span></span>
   </div>
 </div>
 
 <script>
 /* ═══ 데이터 — 이름과 개수만. 본문은 열지 않았다 (원본 그대로) ═══ */
 const DATA=[
-{c:"DS",n:"디퍼 살롱",f:"OneDrive/deeper-salon",d:"문법·논리·수사 — 30일 여정이 걸어온 구역. 여우가 사는 자리.",b:[
-  ["01-Grammar",137],["여우 일지",59],["밤하늘 씨앗",42],["00-Daily",18],["참고 자료",8],["02-Logic",7],["03-Rhetoric",6],["광장",4]]},
-{c:"PN",n:"포근나루",f:"OneDrive/Obsidian Vault",d:"새벽에 쓰고, 다듬고, 세상으로 내보내는 본섬. 가장 오래 자란 구역.",b:[
-  ["모닝 페이지",428],["햇살",403],["클로드 에이전트",591],["★개발 도구함",392],["프리라이팅",64],["독서 노트",52],["Sunlit Days",35],["유튜브",32],["꿈 이야기",29],["포근나루",23],["별지기 저널",10],["회의 기록",4],["습작",2],["광장",1]]},
 {c:"BD",n:"바다의 집",f:"OneDrive/포근나루-바다",d:"식구들이 사는 자리. 기억과 정의와 스킬이 여기 산다.",b:[
-  ["memory",135],["_보관_260806-옛식구",14],["agents",10],["skills",9],["광장",5]]}
+  ["memory",181],["agents",16],["_보관_260806-옛식구",15],["skills",9],["광장",5]]},
+{c:"PN",n:"포근나루",f:"OneDrive/Pognaru",d:"새벽에 쓰고, 다듬고, 세상으로 내보내는 본섬. 가장 오래 자란 구역.",b:[
+  ["모닝 페이지",479],["햇살",406],["클로드 에이전트",1759],["★개발 도구함",1504],["포근나루",469],["콤포스텔라",385],["프리라이팅",82],["독서 노트",65],["살롱 드 나루",26],["별지기 저널",10],["습작",2],["광장",1]]},
+{c:"DS",n:"디퍼 살롱",f:"OneDrive/deeper-salon",d:"문법·논리·수사 — 30일 여정이 걸어온 구역. 여우가 사는 자리.",b:[
+  ["01-Grammar",176],["여우 일지",80],["밤하늘 씨앗",43],["00-Daily",29],["02-Logic",10],["참고 자료",8],["03-Rhetoric",6],["별지기 진행",2],["광장",6]]},
+{c:"AS",n:"Astra",f:"OneDrive/Astra",d:"솔☀️과 루나🌙가 사는 별도 작업실. Codex와 함께 일하는 자리 — 세 집의 규약이 여기 산다.",b:[
+  ["10-작업",28],["00-운영",17],["20-학습",9],["90-서식",4],["도구",1],["광장",2]]}
 ];
+/* 실측 2026-09-24 (바다🌊) — 이름과 개수만. 숨김·.git·node_modules·.obsidian 제외 */
 
 const FLOWS=[
  {t:"씨앗의 길", cargo:"오늘의 씨앗",
@@ -202,12 +206,15 @@ const FLOWS=[
  {t:"새벽나루의 길", cargo:"한 편의 글",
   lead:"쓴다 · 다듬는다 · 짓는다 · 내보낸다 — 하루가 흐르는 방향.",
   path:[["PN","모닝 페이지"],["PN","햇살"],["PN","클로드 에이전트"],["PN","★개발 도구함"],["PN","포근나루"]]},
+ {t:"세 집의 길", cargo:"건너가는 말",
+  lead:"읽기는 숲, 쓰기는 집 — 세 집을 건너간 말은 Astra의 회의록 한 장에 남는다.",
+  path:[["PN","콤포스텔라"],["DS","01-Grammar"],["AS","00-운영"]]},
  {t:"도시 한 바퀴", cargo:"오늘의 기록",
-  lead:"모든 구역을 차례로 지난다.",
+  lead:"네 섬을 차례로 지난다.",
   path:DATA.map(d=>[d.c])}
 ];
 
-/* ═══ 배치 — 물 위의 섬 세 개 ═══ */
+/* ═══ 배치 — 물 위의 섬 네 개 ═══ */
 const TW=36, TH=18;
 const iso=(gx,gy)=>({x:(gx-gy)*TW/2, y:(gx+gy)*TH/2});
 const hash=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)/4294967296};
@@ -218,36 +225,48 @@ DATA.forEach(d=>{d.total=0;d.b.forEach(b=>{d.total+=b[1];MAXN=Math.max(MAXN,b[1]
 const hgt=n=>12+58*Math.pow(n/MAXN,0.5);
 const wins=n=>Math.max(1,Math.min(13,Math.round(Math.sqrt(n)*1.05)));
 
-/* 섬을 지그재그로 놓아 사이에 물길이 굽이치게 한다 */
-const OFF=[{dx:0,dy:0},{dx:3,dy:5},{dx:0,dy:3}];
-let cur=1;
-DATA.forEach((d,di)=>{
-  const cols=Math.ceil(Math.sqrt(d.b.length));
-  const rows=Math.ceil(d.b.length/cols);
-  d.cols=cols; d.rows=rows;
-  d.gx=cur+(OFF[di%3].dx); d.gy=2+(OFF[di%3].dy);
-  d.b.forEach((b,k)=>{
-    const cx=d.gx+(k%cols), cy=d.gy+Math.floor(k/cols);
-    const p=iso(cx,cy);
-    b.gx=cx; b.gy=cy; b.wx=p.x; b.wy=p.y;
-    b.h = b[2] ? 30 : hgt(b[1]);
-    b.w = b[2] ? 3 : wins(b[1]);
-    b.dist=d; b.lit=-9999;
-    b.seed=hash(d.c+b[0]);
+/* 섬 자리는 화면 좌표로 먼저 정하고 격자로 되돌린다.
+   u = 화면 가로, v = 화면 세로 (타일 반폭·반높이 단위). 격자 한 칸 = ((u+v)/2, (v-u)/2)
+   · 넓은 화면 — 네 섬이 아래·위·아래·위로 늘어서 물길이 W자로 굽이친다.
+     본섬(PN)과 새 섬(AS)을 수평선 쪽으로 올려 가장 큰 것과 가장 새것이 멀리 선다.
+   · 세로 화면(폰) — 두 줄로 접는다. 윗줄 BD→PN, 아랫줄은 DS→AS로 거슬러 와
+     물길이 ㄷ자로 한 번 크게 돈다. 한 줄로 두면 폰에서 섬이 콩알만 해진다. */
+const SPOT={
+  wide:[{u:0,v:8},{u:11.6,v:1},{u:23.6,v:9},{u:34.4,v:3}],
+  tall:[{u:0,v:1},{u:11.6,v:5},{u:11.6,v:25},{u:0,v:21}]
+};
+let ALL=[], HIT=[], LAYOUT='';
+function layout(mode){
+  if(mode===LAYOUT) return; LAYOUT=mode;
+  DATA.forEach((d,di)=>{
+    const cols=Math.ceil(Math.sqrt(d.b.length));
+    const rows=Math.ceil(d.b.length/cols);
+    d.cols=cols; d.rows=rows;
+    const s=SPOT[mode][di];
+    const uc=s.u-(cols-rows)/2, vc=s.v-(cols+rows-2)/2;     /* 섬 중심 → 격자 원점 */
+    d.gx=Math.round((uc+vc)/2); d.gy=Math.round((vc-uc)/2);
+    d.b.forEach((b,k)=>{
+      const cx=d.gx+(k%cols), cy=d.gy+Math.floor(k/cols);
+      const p=iso(cx,cy);
+      b.gx=cx; b.gy=cy; b.wx=p.x; b.wy=p.y;
+      b.h = b[2] ? 30 : hgt(b[1]);
+      b.w = b[2] ? 3 : wins(b[1]);
+      b.dist=d; if(b.lit===undefined) b.lit=-9999;
+      b.seed=hash(d.c+b[0]);
+    });
+    /* 섬 폴리곤(등각 사각형)과 나루터 */
+    d.i0=d.gx-1.15; d.i1=d.gx+cols-1+1.15;
+    d.j0=d.gy-1.15; d.j1=d.gy+rows-1+1.15;
+    const dock=iso((d.i0+d.i1)/2+0.6,d.j1+0.55);
+    d.dock={wx:dock.x, wy:dock.y};
+    const ctr=iso((d.i0+d.i1)/2,(d.j0+d.j1)/2);
+    d.cx=ctr.x; d.cy=ctr.y;
   });
-  /* 섬 폴리곤(등각 사각형)과 나루터 */
-  d.i0=d.gx-1.15; d.i1=d.gx+cols-1+1.15;
-  d.j0=d.gy-1.15; d.j1=d.gy+rows-1+1.15;
-  const dock=iso((d.i0+d.i1)/2+0.6,d.j1+0.55);
-  d.dock={wx:dock.x, wy:dock.y};
-  const ctr=iso((d.i0+d.i1)/2,(d.j0+d.j1)/2);
-  d.cx=ctr.x; d.cy=ctr.y;
-  cur=d.gx+cols+3;
-});
-
-const ALL=[]; DATA.forEach(d=>d.b.forEach(b=>ALL.push(b)));
-ALL.sort((a,b)=>(a.gx+a.gy)-(b.gx+b.gy)||a.gy-b.gy);
-const HIT=ALL.slice().reverse();
+  ALL=[]; DATA.forEach(d=>d.b.forEach(b=>ALL.push(b)));
+  ALL.sort((a,b)=>(a.gx+a.gy)-(b.gx+b.gy)||a.gy-b.gy);
+  HIT=ALL.slice().reverse();
+}
+const layoutFor=(w,h)=>layout(w/h<0.95?'tall':'wide');
 
 /* ═══ 캔버스 ═══ */
 const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
@@ -513,10 +532,49 @@ function tower(x,y,hw,hd,h,pal,glow,now,seed){
   return {ty:ty-ry, faces:[faceCyl(x,wt,y,rx,ry,1.00,1)], wallDark:pal.r};
 }
 
+/* 관측소 (AS) : 낮은 원통 위 반구 돔 — 별(Astra)을 보는 작업실.
+   돔의 틈으로 등불이 샌다. 틈 하나가 이 섬의 표식이다 */
+function dome(x,y,hw,hd,h,pal,glow,now,seed){
+  const rx=hw*0.80, ry=hd*0.80, ty=y-h*0.92, dh=rx*0.92;
+  towerPath(x,ty,y,rx,ry);
+  ctx.fillStyle=pal.l; ctx.fill();
+  const g=ctx.createLinearGradient(x-rx,0,x+rx,0);
+  g.addColorStop(0,'rgba(14,10,24,.80)'); g.addColorStop(0.30,'rgba(14,10,24,.34)');
+  g.addColorStop(0.62,'rgba(255,238,208,.06)'); g.addColorStop(1,'rgba(14,10,24,.62)');
+  ctx.fillStyle=g; ctx.fill();
+  /* 돔 — 윗 반타원 + 앞 테두리 */
+  ctx.beginPath();
+  ctx.ellipse(x,ty,rx,dh,0,Math.PI,0,false);
+  ctx.ellipse(x,ty,rx,ry,0,0,Math.PI,false);
+  ctx.closePath();
+  ctx.fillStyle=pal.rt; ctx.fill();
+  const gd=ctx.createLinearGradient(x-rx,ty-dh,x+rx,ty);
+  gd.addColorStop(0,'rgba(14,10,24,.55)'); gd.addColorStop(0.55,'rgba(255,244,226,.10)');
+  gd.addColorStop(1,'rgba(14,10,24,.30)');
+  ctx.fillStyle=gd; ctx.fill();
+  /* 돔과 몸통 사이 띠 */
+  ctx.strokeStyle=pal.edge; ctx.globalAlpha=.45; ctx.lineWidth=Math.max(0.8,rx*0.08);
+  ctx.beginPath(); ctx.ellipse(x,ty,rx,ry,0,0,Math.PI,false); ctx.stroke();
+  /* 틈 — 정수리에서 앞쪽으로 내려오는 빛줄 */
+  const pulse=0.72+0.28*Math.sin(now/1300+seed*6.28), gl=Math.min(1,glow);
+  const sx0=x+rx*0.10, sy0=ty-dh*0.98, sx1=x+rx*0.30, sy1=ty+ry*0.62;
+  ctx.lineCap='round';
+  ctx.globalAlpha=(0.16+0.22*gl)*pulse; ctx.strokeStyle='#FFD79A'; ctx.lineWidth=Math.max(2,rx*0.46);
+  ctx.beginPath(); ctx.moveTo(sx0,sy0); ctx.quadraticCurveTo(x+rx*0.34,ty-dh*0.45,sx1,sy1); ctx.stroke();
+  ctx.globalAlpha=Math.min(1,(0.70+0.30*gl)*pulse); ctx.strokeStyle=gl>0.2?'#FFF1D6':'#F0B865';
+  ctx.lineWidth=Math.max(1,rx*0.16);
+  ctx.beginPath(); ctx.moveTo(sx0,sy0); ctx.quadraticCurveTo(x+rx*0.34,ty-dh*0.45,sx1,sy1); ctx.stroke();
+  ctx.globalAlpha=1; ctx.lineCap='butt';
+  return {ty:ty-dh, faces:[faceCyl(x,ty+ry,y,rx,ry,1.00,1)], wallDark:pal.r};
+}
+/* 돔이 몸통 위로 더 솟는 높이 (월드 단위) — 이름표·등불·클릭이 함께 쓴다 */
+const DOME_LIFT=TW*0.40*0.80*0.92;
+
 const PAL={
   DS:{rt:'#A87566',rt2:'#946256',l:'#7E5549',r:'#63423A',edge:'#D4A183'},
   PN:{rt:'#C9A98A',rt2:'#B4907A',rl:'#A8785F',rr:'#8E6150',l:'#5E4A55',r:'#463743',edge:'#D8B48F'},
-  BD:{rt:'#7C7FA0',rt2:'#6A6C8C',rl:'#8A6E84',rr:'#6E5568',l:'#565A7C',r:'#414463',edge:'#9AA0C4'}
+  BD:{rt:'#7C7FA0',rt2:'#6A6C8C',rl:'#8A6E84',rr:'#6E5568',l:'#565A7C',r:'#414463',edge:'#9AA0C4'},
+  AS:{rt:'#9DBDB6',rt2:'#86A8A1',l:'#3E5F62',r:'#2D484B',edge:'#BFE3D9'}
 };
 
 let selD=null, selB=null, focusI=1;    /* 지금 흐르는 갈래 하나. -1이면 아무것도 흐르지 않는다 */
@@ -661,6 +719,7 @@ function drawBuilding(b,now){
   if(b[2]) r=house(base.x,base.y,hw,hd,h*0.8,pal,0);
   else if(d.c==='DS') r=tent(base.x,base.y,hw,hd,h,pal,glow);
   else if(d.c==='BD') r=tower(base.x,base.y,hw,hd,h,pal,glow,now,b.seed);
+  else if(d.c==='AS') r=dome(base.x,base.y,hw,hd,h,pal,glow,now,b.seed);
   else r=house(base.x,base.y,hw,hd,h,pal,glow);
 
   /* 창불 — 파일의 밀도. 툭 사라지지 않게 페이드로 걷는다 */
@@ -694,7 +753,8 @@ function desat(hex){
 function drawLabel(d){
   let mx=0,my=1e9;
   const lift=d.c==='BD'?1.58:1.35;      /* 등대탑이 높아 라벨을 더 올린다 */
-  d.b.forEach(b=>{const p=S(b.wx,b.wy); mx+=p.x; my=Math.min(my,p.y-b.h*zoom*lift)});
+  const extra=d.c==='AS'?DOME_LIFT*zoom:0;
+  d.b.forEach(b=>{const p=S(b.wx,b.wy); mx+=p.x; my=Math.min(my,p.y-b.h*zoom*lift-extra)});
   mx/=d.b.length;
   const y=my-24;
   if(mx<-140||mx>W+140||y<-40||y>H+40) return;
@@ -765,7 +825,7 @@ const MOVE=1150, HOLD=560;
 function nodeOf(ref){
   const d=DATA.find(x=>x.c===ref[0]); if(!d) return null;
   if(ref[1]){const b=d.b.find(x=>x[0]===ref[1]);
-    if(b) return {wx:b.wx, wy:b.wy-b.h*(b.dist.c==='DS'?1.02:1.12)-9, b:b};}
+    if(b) return {wx:b.wx, wy:b.wy-(b.dist.c==='AS'?b.h*0.92+DOME_LIFT:b.h*(b.dist.c==='DS'?1.02:1.12))-9, b:b};}
   let mx=0,my=1e9,pick=null;
   d.b.forEach(b=>{mx+=b.wx; const t=b.wy-b.h*1.12; if(t<my){my=t;pick=b;}});
   return {wx:mx/d.b.length, wy:my-9, b:pick};
@@ -773,7 +833,7 @@ function nodeOf(ref){
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const LAMPS=[0,0.34,0.67];      /* 짐 세 알이 시차를 두고 함께 흐른다 */
 /* 한 번에 한 갈래만 흐른다. 색은 갈래마다 갈라 두어, 갈래를 바꾸면 빛깔도 바뀐다 */
-const FLOW_TINT=[{g:'#F0B865',c:'#FFE6BC'},{g:'#F6D9B0',c:'#FFF4E2'},{g:'#E8A79E',c:'#FFDCD0'}];
+const FLOW_TINT=[{g:'#F0B865',c:'#FFE6BC'},{g:'#F6D9B0',c:'#FFF4E2'},{g:'#A9DCCF',c:'#E6FFF8'},{g:'#E8A79E',c:'#FFDCD0'}];
 
 function flowPos(seq,t){
   const cycle=seq.length*HOLD+(seq.length-1)*MOVE;
@@ -804,7 +864,7 @@ function drawFlows(now){
   if(raw.length<2) return;
   const seq=raw.concat(raw.slice(0,-1).reverse());
   const cycle=seq.length*HOLD+(seq.length-1)*MOVE;
-  const tint=FLOW_TINT[fi%3];
+  const tint=FLOW_TINT[fi%FLOW_TINT.length];
 
   /* 지나갈 길 */
   ctx.strokeStyle=tint.g; ctx.globalAlpha=.20; ctx.lineWidth=Math.max(1,1.1*zoom);
@@ -890,7 +950,7 @@ function select(d,b){
 function hit(mx,my){
   const hw=TW*0.44*zoom, hd=TH*0.44*zoom;
   for(const b of HIT){
-    const p=S(b.wx,b.wy), h=b.h*zoom*(b.dist.c==='DS'?1.0:b.dist.c==='BD'?1.45:1.15);
+    const p=S(b.wx,b.wy), h=b.dist.c==='AS'?(b.h*0.92+DOME_LIFT)*zoom:b.h*zoom*(b.dist.c==='DS'?1.0:b.dist.c==='BD'?1.45:1.15);
     const dx=Math.abs(mx-p.x); if(dx>hw) continue;
     const off=hd*(1-dx/hw);
     if(my>=p.y-h-off && my<=p.y+off) return b;
@@ -923,7 +983,7 @@ function remeasure(){
   if(stage.clientWidth<2||stage.clientHeight<2) return;
   if(stage.clientWidth===lastW&&stage.clientHeight===lastH) return;
   lastW=stage.clientWidth; lastH=stage.clientHeight;
-  fit(); home();
+  fit(); layoutFor(W,H); home();
 }
 new ResizeObserver(remeasure).observe(stage);
 window.addEventListener('resize',remeasure);
@@ -932,7 +992,7 @@ window.addEventListener('resize',remeasure);
 document.getElementById('s-files').textContent=TOTAL.toLocaleString();
 document.getElementById('s-dist').textContent=DATA.length;
 document.getElementById('s-bld').textContent=NB;
-fit(); home(); requestAnimationFrame(draw);
+fit(); layoutFor(W||1,H||1); home(); requestAnimationFrame(draw);
 </script>
 </body>
 </html>

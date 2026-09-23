@@ -81,6 +81,9 @@ body{
              border:1px solid var(--edge);border-radius:3px;cursor:pointer;font-size:13px;
              font-family:inherit;line-height:1}
 #zoom button:hover{color:var(--gold);border-color:var(--gold)}
+.credit{font-size:10.5px;opacity:.85;white-space:nowrap}
+.credit b{color:var(--ink);font-weight:600}
+@media (max-width:1180px){.credit{display:none}}
 .dot{display:inline-block;width:7px;height:7px;border-radius:50%;vertical-align:1px;margin-right:5px}
 </style>
 </head>
@@ -124,6 +127,7 @@ body{
     <span><span class="dot" style="background:var(--gold)"></span>금빛 = 흐르는 것</span>
     <span>🔒 열어보지 않은 구역</span>
     <span style="margin-left:auto">휠 확대 · 드래그 이동 · 건물 클릭</span>
+    <span class="credit">🦊 <b>사막여우</b> 도시 원본 · 🌳 <b>나무</b> 2026-09 갱신 · 🌊 <b>바다</b> 갈무리·발행</span>
   </div>
 </div>
 
@@ -135,13 +139,16 @@ body{
    잠근 폴더는 세 번째 값 1: ["잠근폴더이름", 0, 1] — 개수를 세지 않고 🔒로만 선다
    아래는 형태를 보여주는 견본이다. 그대로 내보내지 말 것. */
 const DATA=[
-{c:"DS",n:"디퍼 살롱",f:"OneDrive/deeper-salon",d:"문법·논리·수사 — 30일 여정이 걸어온 구역. 여우가 사는 자리.",b:[
-  ["01-Grammar",137],["여우 일지",59],["밤하늘 씨앗",42],["00-Daily",18],["참고 자료",8],["02-Logic",7],["03-Rhetoric",6],["광장",4]]},
-{c:"PN",n:"포근나루",f:"OneDrive/Obsidian Vault",d:"새벽에 쓰고, 다듬고, 세상으로 내보내는 본섬. 가장 오래 자란 구역.",b:[
-  ["모닝 페이지",428],["햇살",403],["클로드 에이전트",591],["★개발 도구함",392],["프리라이팅",64],["독서 노트",52],["Sunlit Days",35],["유튜브",32],["꿈 이야기",29],["포근나루",23],["별지기 저널",10],["회의 기록",4],["습작",2],["광장",1]]},
 {c:"BD",n:"바다의 집",f:"OneDrive/포근나루-바다",d:"식구들이 사는 자리. 기억과 정의와 스킬이 여기 산다.",b:[
-  ["memory",135],["_보관_260806-옛식구",14],["agents",10],["skills",9],["광장",5]]}
+  ["memory",181],["agents",16],["_보관_260806-옛식구",15],["skills",9],["광장",5]]},
+{c:"PN",n:"포근나루",f:"OneDrive/Pognaru",d:"새벽에 쓰고, 다듬고, 세상으로 내보내는 본섬. 가장 오래 자란 구역.",b:[
+  ["모닝 페이지",479],["햇살",406],["클로드 에이전트",1759],["★개발 도구함",1504],["포근나루",469],["콤포스텔라",385],["프리라이팅",82],["독서 노트",65],["살롱 드 나루",26],["별지기 저널",10],["습작",2],["광장",1]]},
+{c:"DS",n:"디퍼 살롱",f:"OneDrive/deeper-salon",d:"문법·논리·수사 — 30일 여정이 걸어온 구역. 여우가 사는 자리.",b:[
+  ["01-Grammar",176],["여우 일지",80],["밤하늘 씨앗",43],["00-Daily",29],["02-Logic",10],["참고 자료",8],["03-Rhetoric",6],["별지기 진행",2],["광장",6]]},
+{c:"AS",n:"Astra",f:"OneDrive/Astra",d:"솔☀️과 루나🌙가 사는 별도 작업실. Codex와 함께 일하는 자리 — 세 집의 규약이 여기 산다.",b:[
+  ["10-작업",28],["00-운영",17],["20-학습",9],["90-서식",4],["도구",1],["광장",2]]}
 ];
+/* 실측 2026-09-24 (바다🌊) — 이름과 개수만. 숨김·.git·node_modules·.obsidian 제외 */
 /* ★★★ 교체 ① 끝 ★★★ */
 
 /* ★★★ 교체 ② — 흐름. 「도시 한 바퀴」는 그대로 두고,
@@ -154,6 +161,9 @@ const FLOWS=[
  {t:"새벽나루의 길", cargo:"한 편의 글",
   lead:"쓴다 · 다듬는다 · 짓는다 · 내보낸다 — 하루가 흐르는 방향.",
   path:[["PN","모닝 페이지"],["PN","햇살"],["PN","클로드 에이전트"],["PN","★개발 도구함"],["PN","포근나루"]]},
+ {t:"세 집의 길", cargo:"건너가는 말",
+  lead:"읽기는 숲, 쓰기는 집 — 세 집을 건너간 말은 Astra의 회의록 한 장에 남는다.",
+  path:[["PN","콤포스텔라"],["DS","01-Grammar"],["AS","00-운영"]]},
  {t:"도시 한 바퀴", cargo:"오늘의 기록",
   lead:"모든 구역을 차례로 지난다.",
   path:DATA.map(d=>[d.c])}
