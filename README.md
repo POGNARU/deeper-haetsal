@@ -67,11 +67,11 @@ deeper-haetsal/
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
-│   ├─ 260916-family.html   # 「함께 짓는 열일곱」 — 세 팀 17명 상징 픽셀아트·뒤집는 메시지 카드
+│   ├─ 260916-family.html   # 「함께 짓는 열일곱」 — 세 팀 19명 상징 픽셀아트·뒤집는 메시지 카드 (2026-09-26 기준 열아홉)
 │   ├─ 260916-family-chart.html # 「햇살의 세 작업실」 — 세 팀 전체 조직도·디자인 협업선
 │   ├─ 260916-family.css    # 두 발표 페이지 전용 스타일
-│   ├─ 260916-family-data.js # 17명 명단·상징·역할·메시지 정본
-│   ├─ 260916-family.js     # 24×24 픽셀 SVG·카드·필터·조직도 동작
+│   ├─ 260916-family-data.js # 19명 명단·상징·역할·메시지 정본
+│   ├─ 260916-family.js     # 24×24 픽셀 SVG·카드·필터·조직도 동작 — 픽셀 케이스가 없는 식구는 이모지로 대신 그린다
 │   ├─ family.html         # 「포근나루 식구」 — 픽셀 캐릭터 갤러리 (2026-09-13 사피어🪶 합류로 12장)
 │   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다 아래 네 기둥 + 별채(사막여우) · 2026-09-13 기준 열한 식구
 │                          #   2026-08-06 식구 정리 반영(14→8) · 화면판 팔레트 적용
@@ -130,8 +130,8 @@ deeper-haetsal/
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
-| 함께 짓는 열일곱 (포근나루14 · Astra2 · 디퍼1, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
-| 햇살의 세 작업실 (전체17명 조직도·디자인 협업, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
+| 함께 짓는 열일곱 (포근나루16 · Astra2 · 디퍼1 = 19명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
+| 햇살의 세 작업실 (전체19명 조직도·디자인 협업, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
 | 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/family-chart.html) |
 

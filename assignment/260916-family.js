@@ -29,8 +29,11 @@ function art(id){
  case 'dante':disk(12,13,7,gold);disk(11,12,6,yellow);box(4,14,2,3,gold);box(18,9,2,3,gold);box(7,9,2,3,'#FFF0A0');line(15,6,18,3,green,2);box(18,3,4,3,leaf);break;
  case 'sol':disk(12,12,6,gold);disk(11,11,4,yellow);for(const[x,y,a,b]of[[12,1,12,3],[12,21,12,23],[1,12,3,12],[21,12,23,12],[3,3,5,5],[19,19,21,21],[3,21,5,19],[19,5,21,3]])line(x,y,a,b,gold);break;
  case 'luna':disk(11,12,9,purple);disk(15,8,8,null);box(5,12,2,5,'#AEA9DB');star(19,17,3,yellow);star(20,5,2,yellow);break;
+ case 'aura':star(12,11,7,gold);star(12,11,3,'#FFF4C9');line(3,15,7,20,purple,2);line(7,20,16,21,purple,2);line(16,21,21,16,purple,2);star(4,5,2,yellow);star(20,6,2,yellow);break;
+ case 'vera':disk(12,4,2,gold);box(11,5,2,15,navy);box(6,20,12,2,navy);box(3,7,18,2,gold);line(5,9,5,13,ink);line(18,9,18,13,ink);box(2,14,7,2,gold);box(3,16,5,1,gold);box(15,14,7,2,gold);box(16,16,5,1,gold);break;
  case 'desertfox':for(let y=3;y<11;y++){box(4,y,Math.min(6,y-2),1,orange);box(20-Math.min(6,y-2),y,Math.min(6,y-2),1,orange);}box(5,5,2,4,ink);box(17,5,2,4,ink);for(let y=9;y<21;y++){let w=y<14?9:Math.max(2,21-y);box(12-w,y,2*w,1,orange);}box(6,14,4,3,'#FFF2D9');box(14,14,4,3,'#FFF2D9');box(9,17,6,3,'#FFF2D9');box(7,12,2,2,ink);box(15,12,2,2,ink);box(11,18,2,2,ink);break;
  }
+ if(!g.some(r=>r.some(Boolean))){const p=data.find(x=>x.id===id);return `<span class="pixel-art pixel-fallback" aria-hidden="true">${p?p.symbol:''}</span>`;}
  return `<svg class="pixel-art" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" shape-rendering="crispEdges">${g.map((row,y)=>row.map((c,x)=>c?`<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>`:'').join('')).join('')}</svg>`;
 }
 function small(p,extra=''){return `<article class="person ${extra}" data-person="${p.id}"><div class="mini-art">${art(p.id)}</div><div><h3>${esc(p.name)}</h3><p>${esc(p.role)}</p></div></article>`;}
