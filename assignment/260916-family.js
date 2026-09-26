@@ -31,6 +31,7 @@ function art(id){
  case 'luna':disk(11,12,9,purple);disk(15,8,8,null);box(5,12,2,5,'#AEA9DB');star(19,17,3,yellow);star(20,5,2,yellow);break;
  case 'aura':star(12,11,7,gold);star(12,11,3,'#FFF4C9');line(3,15,7,20,purple,2);line(7,20,16,21,purple,2);line(16,21,21,16,purple,2);star(4,5,2,yellow);star(20,6,2,yellow);break;
  case 'vera':disk(12,4,2,gold);box(11,5,2,15,navy);box(6,20,12,2,navy);box(3,7,18,2,gold);line(5,9,5,13,ink);line(18,9,18,13,ink);box(2,14,7,2,gold);box(3,16,5,1,gold);box(15,14,7,2,gold);box(16,16,5,1,gold);break;
+ case 'geumjeonsu':box(8,17,8,5,'#9D6D48');box(7,16,10,2,orange);box(11,8,2,9,'#896144');line(11,13,7,10,'#896144');line(13,12,17,9,'#896144');for(const[x,y]of[[12,5],[6,9],[18,8],[8,13],[16,12]]){disk(x,y,3,gold);disk(x,y,2,yellow);box(x,y-1,1,3,gold);}box(9,19,2,1,'#C68B5E');break;
  case 'desertfox':for(let y=3;y<11;y++){box(4,y,Math.min(6,y-2),1,orange);box(20-Math.min(6,y-2),y,Math.min(6,y-2),1,orange);}box(5,5,2,4,ink);box(17,5,2,4,ink);for(let y=9;y<21;y++){let w=y<14?9:Math.max(2,21-y);box(12-w,y,2*w,1,orange);}box(6,14,4,3,'#FFF2D9');box(14,14,4,3,'#FFF2D9');box(9,17,6,3,'#FFF2D9');box(7,12,2,2,ink);box(15,12,2,2,ink);box(11,18,2,2,ink);break;
  }
  if(!g.some(r=>r.some(Boolean))){const p=data.find(x=>x.id===id);return `<span class="pixel-art pixel-fallback" aria-hidden="true">${p?p.symbol:''}</span>`;}

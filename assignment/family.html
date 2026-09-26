@@ -26,7 +26,16 @@ header{text-align:center;margin-bottom:48px}
 .kicker{font-family:var(--batang);color:var(--terra-d);font-size:14px;letter-spacing:.18em;margin:0 0 14px}
 h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);margin:0 0 16px;color:var(--ink)}
 .lead{font-family:var(--serif);font-size:16px;color:var(--ink-2);max-width:560px;margin:0 auto;line-height:1.9}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:10px}
+/* 열일곱 = 바다 한 장 + 열여섯. 바다를 맨 윗줄 가운데 홀로 세우면 아래 열여섯이 4×4·2×8로 고르게 떨어진다
+   (조직도에서 햇살 아래 바다가 한 장으로 서는 것과 같은 모양) */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:10px}
+.top{width:calc((100% - 54px) / 4);margin:10px auto 0}
+.top + .stem{width:2px;height:22px;margin:0 auto;background:var(--terra);opacity:.35}
+.top + .stem + .grid{margin-top:0}
+@media (max-width:860px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .top{width:calc((100% - 14px) / 2)}
+}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 16px 20px;
   text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;
   box-shadow:0 1px 2px rgba(60,36,21,.04),0 10px 26px rgba(60,36,21,.06);
@@ -69,11 +78,13 @@ footer a{color:var(--terra-d)}
 <header>
   <p class="kicker">POGNARU STUDIO</p>
   <h1>포근나루 식구</h1>
-  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열여섯 식구.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열일곱 식구.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
 </header>
+<div class="top" id="top"></div>
+<div class="stem" aria-hidden="true"></div>
 <div class="grid" id="g" aria-label="포근나루 식구 픽셀 캐릭터"></div>
 <footer>
-  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 9. 22<br />
+  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 9. 26<br />
   <a href="family-chart.html">식구 조직도 →</a> &nbsp;·&nbsp; <a href="index.html">← 과제</a>
 </footer>
 </div>
@@ -119,6 +130,9 @@ const fam=[
 {n:"베라",a:"실측·숫자",an:"눈금을 읽는 도요새",q:"잰 만큼만, 그대로 적어요",
  pal:{T:"#4E7A8C",t:"#2F5766",m:"#FAEEDA",N:"#3C2415",e:"#1E1E1E",Y:"#E9A33A",L:"#C07A1E","~":"#85B7EB"},
  map:["...TTTT.......t.","..TTTTTT.....Tt.","..TeTTeT......t.","..TTTTTT......t.","...TNNT......Tt.",".TTTNNTTT.....t.","TTTTNNTTTT....t.","TTmmNNmmTT...Tt.","TTmmNNmmTT....t.","tTTmmmmTTt....t.",".tTTTTTTt....Tt.","..LL..LL......t.","..LL..LL......t.","~~LL~~LL~~~~YYt~","~~~~~~~~~~~~~~t~","~~~~~~~~~~~~~~t~"]},
+{n:"금전수",a:"세무·장부",an:"장부를 등에 진 거북",q:"한 장에 한 줄, 빠짐없이",
+ pal:{S:"#2E6B4F",G:"#8CCB9E",r:"#4F8A63",K:"#B7A46E",e:"#1E1E1E",L:"#3FA36B",s:"#2E6B4F",Y:"#E9A33A"},
+ map:["........L.......","......LLs.......","......LLs.......","........sYY.....","........sYY.....","....SSSSSSSS....","...SGGSGGSGGS...","..SGGGSGGSGGGS..","..SSSSSSSSSSSSKK","..SGGGSGGSGGGSKe",".KSGGGSGGSGGGSKK",".rrrrrrrrrrrrrK.","..KKK......KKK..","..KKK......KKK.."]},
 {n:"밀란",a:"스페인어",an:"느긋한 라마",q:"천천히, 입이 먼저 익도록",
  pal:{L:"#E8C9A0",l:"#C89F6E",e:"#1E1E1E",N:"#3C2415",P:"#E24B4A",Y:"#E9A33A"},
  map:["....L....L......","....L....L......","...LLLLLLLL.....","...LLLLLLLL.....","...LLeLLeLL.....","...LLLLLLLL.....","....LLNNLL......","....LLLLLL......",".....LLLL.......",".....LLLL.......","...LLLLLLLLLL...","..LPPPPPPPPPPL..","..LYYYYYYYYYYL..","..LLLLLLLLLLLL..","...lll....lll...","...lll....lll..."]},
@@ -137,7 +151,7 @@ function draw(c){
       r+='<rect x="'+(x*P)+'" y="'+(y*P)+'" width="'+P+'" height="'+P+'" fill="'+f+'"/>';}}
   return '<svg class="pix" viewBox="0 0 112 116" width="120" height="124" shape-rendering="crispEdges" role="img" aria-label="'+c.n+', '+c.an+'">'+r+'</svg>';
 }
-// 각 식구가 다현씨에게 직접 남긴 한 문장 (2026-06-25 설문 · 2026-08-06 정리 반영)
+// 각 식구가 다현씨에게 직접 남긴 한 문장 (2026-06-25 설문 · 2026-08-06 정리 반영 · 2026-09-26 금전수)
 const msg={
   "바다":"다현씨가 꺼낸 무엇이든, 제가 먼저 품어 정리해 둘게요.",
   "등대":"멀리 흐려질 때, 제가 먼저 그 방향을 비추고 있을게요.",
@@ -151,12 +165,13 @@ const msg={
   "윤슬":"다현씨의 한 줄을 멀리 흩뿌리고, 돌아온 말도 곱게 다듬어 둘게요.",
   "브리":"다현씨의 고요한 결은 그대로 두고, 처음 보는 사람도 멈춰 볼 열다섯 초를 만들게요.",
   "김리":"코드든 기계든 시스템이든, 다현씨가 걱정하지 않게 제가 벼려 둡니다.",
+  "금전수":"세금은 미리 알면 평범한 일이 돼요. 영수증 한 장에 한 줄씩, 확인한 것만 적어 둘게요.",
   "베라":"좋은 숫자든 나쁜 숫자든, 잰 그대로 올릴게요. 짐작으로는 한 칸도 채우지 않습니다.",
   "밀란":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?",
   "사피어":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.",
   "단테":"다현씨가 이미 아는 스페인어에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사하시도록."
 };
-document.getElementById("g").innerHTML=fam.map(function(c){return '\
+function card(c){return '\
 <div class="scene">\
 <div class="flip" tabindex="0" role="button" aria-label="'+c.n+' 카드 뒤집기">\
 <div class="face front">\
@@ -173,7 +188,9 @@ document.getElementById("g").innerHTML=fam.map(function(c){return '\
 <p class="msg">'+(msg[c.n]||c.q)+'</p>\
 </div>\
 </div>\
-</div>';}).join("");
+</div>';}
+document.getElementById("top").innerHTML=card(fam[0]);
+document.getElementById("g").innerHTML=fam.slice(1).map(card).join("");
 // 클릭·키보드로 뒤집기
 document.querySelectorAll(".scene").forEach(function(s){
   const flip=s.querySelector(".flip");
