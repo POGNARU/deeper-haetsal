@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>살롱 드 나루 구상</title>
+<meta name="description" content="써 둔 글을 자기 이름의 전자책으로 — 8주 살롱 「살롱 드 나루」의 골격과 지은 방법, 지금까지 온 자리.">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<style>
+  /* 해바라기 들판 — 아카이브 기본 팔레트.
+     글자에 쓰는 색 : brown · ink-soft · ink-faint · terra-ink (아이보리·흰 위)
+     면·선 전용 색  : sun · leaf · terra (글자에 쓰지 않는다) */
+  :root{
+    --ivory:#FFF7DE;
+    --card:#FFFFFF;
+    --sun:#FFC61E;
+    --sun-soft:#FFE9A6;
+    --leaf:#6FA52E;
+    --terra:#D55A2B;
+    --brown:#3A2A12;
+    --terra-ink:#A8421A;
+    --ink-soft:#6B5536;
+    --ink-faint:#7A6844;
+    --rule:#E8DCB8;
+    --rule-soft:#F0E7CC;
+    --night-ink:#EFE3C2;
+    --logo:'Gowun Batang',serif;
+    --serif:'Nanum Myeongjo',serif;
+    --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--sans);
+    line-height:1.7; -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:break-word;}
+  b,strong{font-weight:700;}
+
+  .backbar{max-width:900px; margin:22px auto 0; padding:0 clamp(1rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none;
+    font-size:.85rem; background:#fff; border:1.5px solid var(--rule);
+    color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover,.backbar a:focus-visible{background:var(--sun); border-color:var(--sun);}
+
+  .wrap{max-width:900px; margin:0 auto;
+    padding:clamp(1.4rem,4vw,2.4rem) clamp(1rem,4vw,2rem) 0;
+    display:flex; flex-direction:column; gap:clamp(3.2rem,7vw,4.8rem);}
+
+  /* ── 표제: 해바라기 면 ───────────────── */
+  .hero{background:var(--sun); border-radius:26px;
+    padding:clamp(1.6rem,5vw,2.8rem) clamp(1.2rem,4.5vw,2.6rem) clamp(2.6rem,6vw,3.4rem);
+    position:relative; overflow:hidden;}
+  .hero::after{content:""; position:absolute; right:-70px; top:-70px; width:220px; height:220px; border-radius:50%;
+    border:22px solid rgba(255,255,255,.28); pointer-events:none;}
+  .eyebrow{font-size:.8125rem; letter-spacing:.14em; color:var(--brown); position:relative;}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.12; position:relative;
+    font-size:clamp(2.4rem,8.4vw,4.1rem); margin:.5rem 0 1.3rem; letter-spacing:-.02em;}
+  .define{font-family:var(--serif); font-weight:800; line-height:1.6; position:relative;
+    font-size:clamp(1.18rem,3.7vw,1.6rem); max-width:34em;}
+  .define .u{background:linear-gradient(transparent 60%, rgba(255,255,255,.75) 60%); padding:0 .06em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;}
+  .origin{margin-top:1.1rem; font-size:.88rem; line-height:1.7; position:relative; max-width:40em;}
+
+  /* 한눈에 — 표제 아래에 걸치는 흰 판 */
+  .glance{background:var(--card); border-radius:18px; box-shadow:var(--shadow); border:1.5px solid var(--rule-soft);
+    margin:-1.6rem clamp(.4rem,2vw,1.2rem) 0; position:relative; z-index:1;
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr));}
+  .glance div{padding:1rem 1.05rem 1.05rem; border-left:1.5px solid var(--rule-soft); min-width:0;}
+  .glance div:first-child{border-left:0;}
+  .glance .k{display:block; font-size:.8125rem; letter-spacing:.12em; color:var(--terra-ink); margin-bottom:.3rem;}
+  .glance .v{display:block; font-family:var(--serif); font-weight:800; font-size:1rem; line-height:1.5; word-break:keep-all;}
+  .glance .s{display:block; font-size:.8125rem; color:var(--ink-soft); line-height:1.5; margin-top:.25rem; word-break:keep-all;}
+  @media (max-width:720px){
+    .glance{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .glance div:nth-child(3){border-left:0;}
+    .glance div:nth-child(n+3){border-top:1.5px solid var(--rule-soft);}
+  }
+
+  .toc{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.3rem;}
+  .toc a{font-size:.8125rem; text-decoration:none; color:var(--brown); background:#fff; border:1.5px solid var(--rule);
+    border-radius:99px; padding:.3rem .8rem; line-height:1.4;}
+  .toc a b{font-family:var(--logo); color:var(--terra-ink); margin-right:.3rem;}
+  .toc a:hover,.toc a:focus-visible{background:var(--sun-soft); border-color:var(--sun);}
+
+  /* ── 섹션 머리 ───────────────────── */
+  section{display:flex; flex-direction:column; gap:1.25rem; scroll-margin-top:1rem;}
+  .shead{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.2rem .9rem; align-items:end;}
+  .shead .no{font-family:var(--logo); font-weight:700; font-size:clamp(2rem,5.4vw,2.6rem); line-height:1; color:var(--terra-ink); grid-row:span 2;}
+  .shead .kick{font-size:.8125rem; letter-spacing:.12em; color:var(--ink-faint); line-height:1.3;}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35; font-size:clamp(1.3rem,4vw,1.85rem);}
+  .card{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:14px;
+    padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+
+  /* ── 01 골격: 써 둔 글 → 8주 → 책 ───────── */
+  .crossing{padding:1.3rem 1.1rem 1.25rem;}
+  .verbs,.cross{display:grid; grid-template-columns:minmax(0,1.3fr) repeat(8,minmax(0,1fr)) minmax(0,1.3fr); gap:6px;}
+  .verbs{margin-bottom:.45rem;}
+  .verb{font-family:var(--serif); font-weight:800; font-size:clamp(.9rem,1.9vw,1.05rem); text-align:center;
+    border-bottom:3px solid; padding-bottom:.3rem; line-height:1.2; white-space:nowrap;}
+  .verb.v1{grid-column:2 / span 2; border-color:var(--sun);}
+  .verb.v2{grid-column:4 / span 4; border-color:var(--leaf);}
+  .verb.v3{grid-column:9 / span 1; border-color:var(--brown);}
+  .bank{border-radius:12px; padding:.75rem .55rem; display:flex; flex-direction:column; justify-content:center;
+    text-align:center; font-size:.8125rem; line-height:1.45; word-break:keep-all; gap:.25rem;}
+  .bank b{font-family:var(--serif); font-weight:800; font-size:.95rem; line-height:1.4;}
+  .bank.from{background:#EFEADA; color:var(--brown);}
+  .bank.to{background:var(--brown); color:var(--ivory);}
+  .bank.to span{color:var(--night-ink);}
+  .wk{border-radius:10px; padding:.55rem .15rem .5rem; display:flex; flex-direction:column; align-items:center;
+    gap:.18rem; min-height:118px; min-width:0; text-align:center;}
+  .wk .n{font-family:var(--logo); font-weight:700; font-size:1.35rem; line-height:1;}
+  .wk .n small{font-size:.62em; font-weight:400;}
+  .wk .dt{font-size:.8125rem; line-height:1.2;}
+  .wk .st{font-size:.8125rem; line-height:1.25; word-break:keep-all;}
+  .wk .st .vb{display:none;}
+  .wk .mk{margin-top:auto;}
+  .wk.c1{background:var(--sun);}
+  .wk.c2{background:var(--leaf);}
+  .wk.c3{background:#fff; border:2px dashed var(--ink-faint);}
+  .wk.c4{background:var(--brown); color:var(--sun);}
+  .btn-glyph{width:22px; height:22px; border-radius:50%; background:var(--terra);
+    box-shadow:0 0 0 3px rgba(255,198,30,.9); display:inline-block; flex:none;}
+  .seed{width:18px; height:18px; border-radius:50%; background:#fff; border:2px dashed var(--brown);
+    flex:none; display:inline-block;}
+  .axis-line{margin-top:1.1rem; padding-top:1rem; border-top:1.5px solid var(--rule-soft);
+    font-family:var(--serif); font-size:.95rem; line-height:1.8;}
+  .axis-line b{font-weight:800;}
+  .facts{display:flex; flex-wrap:wrap; gap:.45rem;}
+  .chip{font-size:.8125rem; border-radius:99px; padding:.3rem .8rem; background:#FFF1C2; color:var(--brown); line-height:1.4;}
+  .chip.dark{background:var(--brown); color:var(--sun);}
+
+  @media (max-width:720px){
+    .verbs{display:none;}
+    .cross{grid-template-columns:minmax(0,1fr); gap:5px;}
+    .bank{flex-direction:row; flex-wrap:wrap; justify-content:flex-start; align-items:baseline; text-align:left;
+      gap:.1rem .6rem; padding:.7rem .9rem;}
+    .wk{display:grid; grid-template-columns:2.8rem 3.2rem minmax(0,1fr) auto; align-items:center;
+      min-height:0; padding:.5rem .85rem; text-align:left; gap:.5rem;}
+    .wk .mk{margin-top:0;}
+    .wk .st{font-size:.88rem;}
+    .wk .st .vb{display:inline; font-family:var(--serif); font-weight:800;}
+  }
+
+  .three{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem;}
+  @media (max-width:760px){ .three{grid-template-columns:minmax(0,1fr);} }
+  .three .card h3{font-family:var(--logo); font-weight:700; font-size:1.05rem; line-height:1.45; margin-bottom:.4rem;
+    display:flex; align-items:center; gap:.55rem;}
+  .three .card p{font-size:.88rem; color:var(--ink-soft); line-height:1.75;}
+  .three .card p b{color:var(--brown);}
+  .three .card.dark{background:var(--brown); border-color:var(--brown); color:var(--ivory);}
+  .three .card.dark h3{color:var(--sun);}
+  .three .card.dark p{color:var(--night-ink);}
+
+  /* ── 02 지은 방법 ───────────────────── */
+  .motto{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.5rem;}
+  .motto div{text-align:center; border-radius:12px; padding:.8rem .3rem; line-height:1.35;}
+  .motto b{display:block; font-family:var(--logo); font-size:clamp(1rem,3.4vw,1.3rem);}
+  .motto span{font-size:.8125rem;}
+  .m1{background:var(--sun);}
+  .m2{background:var(--leaf);}
+  .m3{background:#CFE7EF;}
+
+  .org{display:flex; flex-direction:column; align-items:stretch;}
+  .me{align-self:center; background:var(--sun); border-radius:14px; padding:.7rem 1.4rem; text-align:center; box-shadow:var(--shadow);}
+  .me b{font-family:var(--logo); font-size:1.15rem; display:block; line-height:1.3;}
+  .me span{font-size:.8125rem;}
+  .stem{align-self:center; width:3px; height:18px; background:var(--brown); opacity:.35;}
+  .sea{background:linear-gradient(90deg,#CFE7EF,#E6F3F7 50%,#CFE7EF); border-radius:12px;
+    padding:.6rem 1rem; text-align:center; font-size:.86rem; line-height:1.5;}
+  .sea b{font-family:var(--logo); font-size:1.02rem;}
+  .crew{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; margin-top:.7rem;}
+  .mate.wide{grid-column:span 2;}
+  @media (max-width:620px){ .crew{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  .mate{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:12px;
+    padding:.7rem .8rem; display:flex; flex-direction:column; gap:.2rem; box-shadow:var(--shadow); min-width:0;}
+  .mate .nm{font-family:var(--logo); font-weight:700; font-size:.98rem;}
+  .mate .job{font-size:.8125rem; color:var(--ink-soft); line-height:1.45; word-break:keep-all;}
+  .seedtag{display:inline-flex; align-items:center; gap:.4rem; margin-top:.35rem; font-size:.8125rem; color:var(--brown); line-height:1.4;}
+
+  .turn{display:flex; flex-direction:column; gap:.6rem;}
+  .turn h3{font-family:var(--logo); font-weight:700; font-size:1.1rem; line-height:1.45;}
+  .shift{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:.5rem; align-items:center;}
+  .shift .from{font-size:.86rem; color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--terra);
+    text-decoration-thickness:2px; text-align:right; line-height:1.4;}
+  .shift .arr{font-family:var(--logo); color:var(--terra-ink); font-weight:700;}
+  .shift .to{font-size:.92rem; font-weight:700; background:#FFF1C2; border-radius:8px; padding:.3rem .6rem; line-height:1.4;}
+  .turn .who{font-family:var(--serif); font-weight:800; font-size:1rem; margin-top:.3rem; line-height:1.7;}
+
+  .held{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem;}
+  @media (max-width:620px){ .held{grid-template-columns:minmax(0,1fr);} }
+  .held .card{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.75rem; align-items:center;}
+  .held .n{width:30px; height:30px; border-radius:50%; background:var(--brown); color:var(--sun);
+    font-family:var(--logo); font-weight:700; display:inline-flex; align-items:center; justify-content:center; line-height:1;}
+  .held p{font-family:var(--serif); font-weight:700; font-size:.98rem; line-height:1.65;}
+  .warn{border-left:4px solid var(--terra); padding:.2rem 0 .2rem .9rem; font-family:var(--serif); font-size:.95rem; line-height:1.8;}
+
+  /* ── 03 먼저 해 보는 책 ───────────────── */
+  .book{display:grid; grid-template-columns:auto minmax(0,1fr); gap:1.1rem; align-items:center;}
+  .spine{width:74px; height:104px; border-radius:4px 8px 8px 4px; background:var(--brown);
+    box-shadow:inset 7px 0 0 rgba(255,198,30,.9), var(--shadow); display:flex; align-items:flex-end; padding:0 0 .55rem 1rem;}
+  .spine i{display:block; width:34px; height:3px; background:var(--sun); border-radius:3px;}
+  .book h3{font-family:var(--serif); font-weight:800; font-size:clamp(1.1rem,3.4vw,1.35rem); line-height:1.45;}
+  .book .facts{margin-top:.6rem;}
+  .lessons{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem;}
+  @media (max-width:680px){ .lessons{grid-template-columns:minmax(0,1fr);} }
+  .lesson .ln{font-size:.8125rem; letter-spacing:.12em; color:var(--terra-ink); display:block; margin-bottom:.15rem;}
+  .lesson h3{font-family:var(--logo); font-weight:700; font-size:1.05rem; line-height:1.4;}
+  .split{display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); border-radius:12px; overflow:hidden; margin-top:.7rem;}
+  .split div{padding:.65rem .75rem; line-height:1.45;}
+  .split .k{display:block; font-size:.8125rem; letter-spacing:.04em; margin-bottom:.25rem;}
+  .split .v{font-weight:700; font-size:.88rem; word-break:keep-all;}
+  .split .with{background:#EFEADA; color:var(--ink-soft);}
+  .split .with .v{color:var(--brown);}
+  .split .mine{background:var(--sun);}
+  .swap{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:.5rem; align-items:center; margin-top:.7rem;}
+  .swap .ghost{border:2px dashed var(--ink-faint); border-radius:10px; padding:.55rem; text-align:center; font-size:.82rem; color:var(--ink-faint);}
+  .swap .real{background:var(--leaf); border-radius:10px; padding:.55rem .7rem; font-size:.86rem; font-weight:700; line-height:1.4;}
+  .swap .arr{font-family:var(--logo); color:var(--terra-ink); font-weight:700;}
+
+  /* ── 04 다음 일정 ─────────────── */
+  .sched{padding:1.3rem 1.1rem 1.3rem;}
+  .rline{position:relative; display:grid; grid-template-columns:repeat(6,minmax(0,1fr));}
+  .rline::before{content:""; position:absolute; left:8.33%; right:8.33%; top:17px; height:10px;
+    border-radius:99px; background:linear-gradient(90deg,var(--leaf) 0%, #A9D36B 30%, #9CCFE0 45%, #A9D36B 65%, var(--leaf) 100%); opacity:.55;}
+  .stop{position:relative; text-align:center; display:flex; flex-direction:column; align-items:center; gap:.35rem; padding:0 .15rem; min-width:0;}
+  .stop .dot{width:22px; height:22px; margin-top:11px; border-radius:50%; background:#fff;
+    border:3px solid var(--leaf); position:relative; z-index:1; flex:none;}
+  .stop.past .dot{background:var(--leaf);}
+  .stop.end .dot{border-radius:5px; background:var(--brown); border-color:var(--brown);}
+  .stop .boat{width:44px; height:34px; position:relative; z-index:1; flex:none;}
+  .stop .d{font-family:var(--logo); font-weight:700; font-size:.9rem; line-height:1.2;}
+  .stop .t{font-size:.8125rem; color:var(--ink-soft); line-height:1.4; word-break:keep-all;}
+  .stop.now .d{color:var(--terra-ink);}
+  .stop.now .t{color:var(--brown); font-weight:700;}
+  @media (max-width:620px){
+    .rline{grid-template-columns:minmax(0,1fr); gap:.15rem;}
+    .rline::before{left:21px; right:auto; top:18px; bottom:18px; width:8px; height:auto;
+      background:linear-gradient(180deg,var(--leaf) 0%, #A9D36B 30%, #9CCFE0 45%, #A9D36B 65%, var(--leaf) 100%);}
+    .stop{display:grid; grid-template-columns:50px 4.6rem minmax(0,1fr); align-items:center; text-align:left; gap:.2rem .5rem; padding:.35rem 0;}
+    .stop .dot{margin:0 auto;}
+    .stop .boat{margin:0 auto;}
+  }
+
+  /* ── 건네는 물음 (작게) ─────────────── */
+  .closing{background:var(--brown); color:var(--ivory); border-radius:20px;
+    padding:clamp(1.3rem,4vw,1.9rem) clamp(1.2rem,4vw,1.9rem); display:flex; flex-direction:column; gap:1rem;}
+  .axisq{font-family:var(--serif); font-size:.95rem; line-height:1.85; color:var(--night-ink);
+    border-left:3px solid var(--sun); padding-left:1rem;}
+  .axisq small{display:block; font-family:var(--sans); font-size:.8125rem; color:#D9CBA6; margin-bottom:.2rem;}
+  .ask{font-family:var(--serif); font-weight:800; line-height:1.7; font-size:clamp(1.02rem,3vw,1.2rem);}
+  .ask em{font-style:normal; color:var(--sun);}
+  .ask-own{font-size:.8125rem; color:#D9CBA6; line-height:1.6;}
+  .ask-own b{color:var(--sun); font-weight:700;}
+
+  /* ── 발치 ───────────────────────── */
+  footer{max-width:900px; margin:0 auto; padding:2.6rem clamp(1rem,4vw,2rem) 3.4rem; text-align:center;}
+  .footer-note{font-size:.8125rem; color:var(--ink-faint); line-height:1.85;}
+  .footer-note .brand{display:block; letter-spacing:.16em; color:var(--terra-ink); margin-top:.7rem;}
+  .footer-note .fam{display:block; margin-top:.35rem; color:var(--ink-soft);}
+
+  @media (max-width:520px){
+    .shift{grid-template-columns:minmax(0,1fr); gap:.2rem;}
+    .shift .from{text-align:left;}
+    .shift .arr{display:none;}
+    .swap{grid-template-columns:minmax(0,1fr);}
+    .swap .arr{text-align:center; transform:rotate(90deg);}
+    .split{grid-template-columns:minmax(0,1fr);}
+    .spine{width:58px; height:82px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backbar"><a href="index.html">← 과제 목록</a></div>
+
+<div class="wrap">
+
+  <!-- ── 표제 ── -->
+  <header>
+    <div class="hero">
+      <p class="eyebrow">디퍼 살롱 1기 · 콤포스텔라 모임 · <span style="white-space:nowrap">2026. 9. 28</span></p>
+      <h1>살롱 드 나루 구상</h1>
+      <p class="define">써 둔 글은 있는데 책으로 가는 길을 모르는 분이,<br><span class="u">자기 이름으로 전자책을 낸다.</span></p>
+      <p class="origin">언브랜딩 살롱에서 나온 살롱이다. 퍼핀님이 별지기들이 <b>각자 자기 힘으로 서기를</b> 바라며 개인 살롱을 권하셨고, 거기서 시작됐다.</p>
+    </div>
+
+    <div class="glance" aria-label="한눈에">
+      <div><span class="k">누구</span><span class="v">써 둔 글은 있는데 길을 모르는 분</span></div>
+      <div><span class="k">무엇</span><span class="v">자기 이름의 전자책 한 권</span><span class="s">그리고 다음 책을 혼자 낼 수 있는 힘</span></div>
+      <div><span class="k">언제</span><span class="v">화요일 밤 8~10시</span><span class="s">8주 · <span style="white-space:nowrap">10월 27일</span> ~ <span style="white-space:nowrap">12월 15일</span></span></div>
+      <div><span class="k">지금</span><span class="v">운영자가 같은 과정을 먼저 직접 해 보는 중</span><span class="s">첫 책 10월 8일 발행</span></div>
+    </div>
+
+    <nav class="toc" aria-label="차례">
+      <a href="#s1"><b>01</b>골격</a>
+      <a href="#s2"><b>02</b>지은 방법</a>
+      <a href="#s3"><b>03</b>먼저 해 보는 책</a>
+      <a href="#s4"><b>04</b>다음 일정</a>
+    </nav>
+  </header>
+
+  <!-- ── 01 골격 ── -->
+  <section id="s1">
+    <div class="shead"><span class="no">01</span><span class="kick">골격</span><h2>써 둔 글 → 8주 → 내 이름의 전자책</h2></div>
+
+    <div class="card crossing" aria-label="8주 구조">
+      <div class="verbs" aria-hidden="true">
+        <span class="verb v1">건지고</span>
+        <span class="verb v2">깎고</span>
+        <span class="verb v3">보여준다</span>
+      </div>
+      <div class="cross">
+        <div class="bank from"><b>써 둔 글</b><span>책으로 가는 길을 모른다</span></div>
+        <div class="wk c1"><span class="n">1<small>주</small></span><span class="dt">10/27</span><span class="st"><span class="vb">건지고 · </span>건지기</span></div>
+        <div class="wk c1"><span class="n">2<small>주</small></span><span class="dt">11/3</span><span class="st">건지기</span></div>
+        <div class="wk c2"><span class="n">3<small>주</small></span><span class="dt">11/10</span><span class="st"><span class="vb">깎고 · </span>깎기</span></div>
+        <div class="wk c2"><span class="n">4<small>주</small></span><span class="dt">11/17</span><span class="st">깎기</span></div>
+        <div class="wk c2"><span class="n">5<small>주</small></span><span class="dt">11/24</span><span class="st">깎기</span></div>
+        <div class="wk c2"><span class="n">6<small>주</small></span><span class="dt">12/1</span><span class="st">깎기</span><span class="mk seed" role="img" aria-label="뱃사공을 설치하는 주"></span></div>
+        <div class="wk c3"><span class="n">7<small>주</small></span><span class="dt">12/8</span><span class="st">점검</span></div>
+        <div class="wk c4"><span class="n">8<small>주</small></span><span class="dt">12/15</span><span class="st"><span class="vb">보여준다 · </span>내보내기</span><span class="mk btn-glyph" role="img" aria-label="등록 버튼을 누르는 날"></span></div>
+        <div class="bank to"><b>내 이름의 전자책</b><span>다음 책을 혼자 낼 수 있는 사람</span></div>
+      </div>
+      <p class="axis-line">건지기 2주 · 깎기 4주 · 점검 1주 · 내보내기 1주. 이 구조는 운영자 햇살의 의미의 축 <b>「빛나는 돌멩이를 건지고, 깎고, 보여준다」</b>를 여덟 칸에 그대로 나눈 것이다.</p>
+    </div>
+
+    <div class="facts">
+      <span class="chip">화요일 밤 8시 ~ 10시</span>
+      <span class="chip">8주</span>
+      <span class="chip dark">10월 27일 문을 연다</span>
+      <span class="chip">저자 본인 명의</span>
+      <span class="chip">유페이퍼 · 작가와</span>
+    </div>
+
+    <div class="three">
+      <div class="card dark">
+        <h3><span class="btn-glyph" aria-hidden="true"></span>8주차는 버튼을 누르는 날</h3>
+        <p>마지막 수업 중에 실제로 등록 버튼을 누른다. 책은 수업 중에 발행된다.</p>
+      </div>
+      <div class="card">
+        <h3>저자 본인 이름으로</h3>
+        <p>포근나루 이름으로 대신 내 주면 다음 책 때 다시 찾아와야 한다. 8주 뒤에 남는 것은 책 한 권이 아니라 <b>다음 책을 혼자 낼 수 있는 사람</b>이다.</p>
+      </div>
+      <div class="card">
+        <h3><span class="seed" aria-hidden="true"></span>6주차, 뱃사공을 설치한다</h3>
+        <p>원고 정리 도구 「뱃사공」을 참가자 컴퓨터에 직접 설치한다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 지은 방법 ── -->
+  <section id="s2">
+    <div class="shead"><span class="no">02</span><span class="kick">지은 방법</span><h2>클로드를 한 명이 아니라 식구로</h2></div>
+
+    <div class="motto">
+      <div class="m1"><b>정하는 건 햇살</b><span>운영자</span></div>
+      <div class="m2"><b>짓는 건 식구</b><span>맡은 일마다 따로</span></div>
+      <div class="m3"><b>잇는 건 바다</b><span>총괄</span></div>
+    </div>
+
+    <div class="org" aria-label="식구 배치">
+      <div class="me"><b>햇살</b><span>정한다</span></div>
+      <div class="stem"></div>
+      <div class="sea"><b>🌊 바다</b> · 총괄하며 잇는다</div>
+      <div class="crew">
+        <div class="mate"><span class="nm">🔭 등대</span><span class="job">시장조사 · 플랫폼 비교</span></div>
+        <div class="mate"><span class="nm">🌅 새벽</span><span class="job">8주 강의안</span></div>
+        <div class="mate"><span class="nm">🌳 나무</span><span class="job">배포물 · 디자인</span></div>
+        <div class="mate"><span class="nm">💰 금전수</span><span class="job">운영 규정의 법 조항 확인</span></div>
+        <div class="mate"><span class="nm">🌿 정원</span><span class="job">원고 퇴고</span></div>
+        <div class="mate"><span class="nm">🧭 나침반</span><span class="job">전자책 파일</span></div>
+        <div class="mate wide"><span class="nm">🔨 김리</span><span class="job">원고 정리 도구 「뱃사공」</span><span class="seedtag"><span class="seed" aria-hidden="true"></span>6주차에 참가자 컴퓨터에 설치한다</span></div>
+      </div>
+    </div>
+
+    <div class="card turn">
+      <h3>9월 22일 하루, 방향이 세 번 바뀌었다</h3>
+      <div class="shift"><span class="from">포근나루 이름으로</span><span class="arr">→</span><span class="to">저자 이름으로</span></div>
+      <div class="shift"><span class="from">플랫폼 하나로</span><span class="arr">→</span><span class="to">여럿으로 열었다</span></div>
+      <div class="shift"><span class="from">여럿으로</span><span class="arr">→</span><span class="to">유페이퍼와 작가와, 둘로</span></div>
+      <p class="who">식구들은 자료를 많이 가져왔고, 바꾸자고 한 것은 세 번 모두 햇살이었다.</p>
+    </div>
+
+    <div class="held">
+      <div class="card"><span class="n">1</span><p>무엇이 되면 좋겠는지 먼저 말한다</p></div>
+      <div class="card"><span class="n">2</span><p>가져온 것 앞에서 내 것인지 아닌지 고른다</p></div>
+    </div>
+    <p class="warn">사람이 맡는 것은 이 둘이다. 순서가 무너지면 일은 빨라지지만 결과가 내 것이 아니게 된다.</p>
+  </section>
+
+  <!-- ── 03 먼저 해 보는 책 ── -->
+  <section id="s3">
+    <div class="shead"><span class="no">03</span><span class="kick">먼저 해 보는 책</span><h2>살롱에서 가르칠 과정을 운영자가 먼저 직접 해 본다</h2></div>
+
+    <div class="card book">
+      <div class="spine" aria-hidden="true"><i></i></div>
+      <div>
+        <h3>『글은 있는데, 책은 아직이라면』</h3>
+        <div class="facts">
+          <span class="chip">실용서</span>
+          <span class="chip">저자 이름으로 유페이퍼에 직접 올리는 첫 책</span>
+          <span class="chip dark">10월 8일 발행 · 모집문과 같은 날</span>
+          <span class="chip">지금 2차 퇴고 · 통독 중</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lessons">
+      <div class="card lesson">
+        <span class="ln">쓰며 정한 것 하나</span>
+        <h3>초안은 AI에게 맡기지 않는다</h3>
+        <div class="split">
+          <div class="with"><span class="k">같이 하는 것</span><span class="v">원고 고르기 · 목차 세우기</span></div>
+          <div class="mine"><span class="k">저자가 하는 것</span><span class="v">초안 · 퇴고 · 제목 · 표지</span></div>
+        </div>
+      </div>
+      <div class="card lesson">
+        <span class="ln">쓰며 정한 것 둘</span>
+        <h3>가상 인물 대신 실제 기록</h3>
+        <div class="swap">
+          <span class="ghost">사례 속 가상 인물</span>
+          <span class="arr">→</span>
+          <span class="real">『파도는 여전히 하얗다』를 만든 실제 기록</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 다음 일정 ── -->
+  <section id="s4">
+    <div class="shead"><span class="no">04</span><span class="kick">다음 일정</span><h2>일정 — 지금 진행 중</h2></div>
+
+    <div class="card sched" aria-label="살롱 드 나루 일정">
+      <div class="rline">
+        <div class="stop past"><span class="dot"></span><span class="d">출발</span><span class="t">언브랜딩 살롱에서</span></div>
+        <div class="stop past"><span class="dot"></span><span class="d">9/22</span><span class="t">방향 세 번, 골격이 섰다</span></div>
+        <div class="stop now">
+          <svg class="boat" viewBox="0 0 44 34" aria-hidden="true">
+            <line x1="22" y1="3" x2="22" y2="21" stroke="#3A2A12" stroke-width="2"/>
+            <path d="M23 5 L35 19 L23 19 Z" fill="#FFC61E" stroke="#3A2A12" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M4 22 L40 22 L34 31 L10 31 Z" fill="#D55A2B" stroke="#3A2A12" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span class="d">9/28 오늘</span><span class="t">콤포스텔라에서 구상 공유</span></div>
+        <div class="stop"><span class="dot"></span><span class="d">10/8</span><span class="t">첫 책 발행 · 모집문</span></div>
+        <div class="stop"><span class="dot"></span><span class="d">10/27</span><span class="t">살롱 문을 연다</span></div>
+        <div class="stop end"><span class="dot"></span><span class="d">12/15</span><span class="t">버튼을 누르는 날</span></div>
+      </div>
+    </div>
+
+    <div class="closing" aria-label="건네는 물음">
+      <p class="axisq"><small>살롱과 책의 바탕이 된 문장</small>「직접 해 보고 캐낸 것을 자산으로 안고, 뒤에 올 사람이 스스로 해내도록 건넨다.」</p>
+      <p class="ask">여러분의 일에서, 클로드가 아무리 잘 지어 와도 <em>끝까지 손에 쥐고 있어야 할 결정 하나</em>는 무엇인가요?</p>
+      <p class="ask-own">살롱 드 나루의 답은 <b>누구 이름으로 건네는가</b>였다.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="footer-note">
+    2026년 9월 28일 콤포스텔라 모임에서 나눈 구상을 한 장으로 정리했습니다.
+    <span class="brand">POGNARU × DEEPER UNBRANDING</span>
+    <span class="fam">새벽🌅 원고 · 나무🌳 페이지 · 바다🌊 이음</span>
+  </p>
+</footer>
+
+</body>
+</html>

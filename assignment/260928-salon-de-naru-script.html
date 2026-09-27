@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>살롱 드 나루 — 7분 스피치</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<style>
+  /* 해바라기 들판 — 아카이브 기본 팔레트.
+     글자에 쓰는 색 : brown 12.9 · ink-soft 6.59 · ink-faint 5.04 · terra-ink 5.67 · leaf-ink 6.45 (모두 아이보리 위)
+     면·선 전용 색  : sun · leaf · terra (글자에 쓰지 않는다) */
+  :root{
+    --ivory:#FFF7DE;
+    --card:#FFFFFF;
+    --sun:#FFC61E;
+    --leaf:#6FA52E;
+    --terra:#D55A2B;
+    --brown:#3A2A12;
+    --terra-ink:#A8421A;
+    --leaf-ink:#3E6416;
+    --ink-soft:#6B5536;
+    --ink-faint:#7A6844;
+    --rule:#E8DCB8;
+    --rule-soft:#F0E7CC;
+    --logo:'Gowun Batang',serif;
+    --serif:'Nanum Myeongjo',serif;
+    --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--sans);
+    line-height:1.7; -webkit-font-smoothing:antialiased;}
+  b,strong{font-weight:700;}
+
+  .backbar{max-width:880px; margin:22px auto 0; padding:0 clamp(1rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none;
+    font-size:.85rem; background:#fff; border:1.5px solid var(--rule);
+    color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover,.backbar a:focus-visible{background:var(--sun); border-color:var(--sun);}
+
+  .wrap{max-width:880px; margin:0 auto;
+    padding:clamp(1.8rem,5vw,3.2rem) clamp(1rem,4vw,2rem) 0;
+    display:flex; flex-direction:column; gap:clamp(3rem,7vw,4.6rem);}
+
+  /* ── 표제 ───────────────────────── */
+  .eyebrow{font-size:.8125rem; letter-spacing:.16em; color:var(--terra-ink);}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.12;
+    font-size:clamp(2.5rem,9vw,4.3rem); margin:.55rem 0 .35rem; letter-spacing:-.02em;}
+  .sub{font-family:var(--serif); font-weight:700; font-size:clamp(1.05rem,3vw,1.3rem);
+    color:var(--ink-soft);}
+  .ask{margin-top:1.7rem; background:var(--card); border-radius:18px;
+    padding:1.3rem 1.35rem 1.4rem; box-shadow:var(--shadow);
+    border:1.5px solid var(--rule-soft); position:relative; overflow:hidden;}
+  .ask::before{content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--sun);}
+  .ask .k{font-size:.8125rem; letter-spacing:.14em; color:var(--terra-ink); display:block; margin-bottom:.45rem;}
+  .ask p{font-family:var(--serif); font-weight:800; line-height:1.65;
+    font-size:clamp(1.12rem,3.4vw,1.42rem);}
+  .mark{background:linear-gradient(transparent 58%, rgba(255,198,30,.62) 58%);
+    padding:0 .08em; -webkit-box-decoration-break:clone; box-decoration-break:clone;}
+
+  /* ── 일정 ─────────────────────── */
+  .sched{margin-top:2.1rem;}
+  .sched .rk{font-size:.8125rem; color:var(--ink-faint); margin-bottom:.9rem;}
+  .sched .rk b{color:var(--brown);}
+  .rline{position:relative; display:grid; grid-template-columns:repeat(5,minmax(0,1fr));}
+  .rline::before{content:""; position:absolute; left:10%; right:10%; top:17px; height:10px;
+    border-radius:99px; background:linear-gradient(90deg,var(--leaf) 0%, #A9D36B 40%, #9CCFE0 50%, #A9D36B 60%, var(--leaf) 100%); opacity:.55;}
+  .stop{position:relative; text-align:center; display:flex; flex-direction:column; align-items:center; gap:.35rem; padding:0 .15rem;}
+  .stop .dot{width:22px; height:22px; margin-top:11px; border-radius:50%; background:#fff;
+    border:3px solid var(--leaf); position:relative; z-index:1;}
+  .stop.bank .dot{border-radius:5px; background:var(--leaf); border-color:var(--leaf);}
+  .stop.now .dot{display:none;}
+  .stop .boat{width:44px; height:34px; position:relative; z-index:1;}
+  .stop .d{font-family:var(--logo); font-weight:700; font-size:.86rem; line-height:1.2;}
+  .stop .t{font-size:.8125rem; color:var(--ink-soft); line-height:1.4; word-break:keep-all;}
+  .stop.now .d{color:var(--terra-ink);}
+  .stop.now .t{color:var(--brown); font-weight:700;}
+
+  /* ── 7분 지도 ─────────────────────── */
+  .tmap{background:var(--card); border-radius:16px; padding:1.1rem 1.15rem 1.2rem;
+    border:1.5px solid var(--rule-soft); box-shadow:var(--shadow);}
+  .tmap h2{font-size:1rem;}
+  .tbar{display:grid; grid-template-columns:65fr 85fr 115fr 105fr 50fr; gap:4px; margin:.8rem 0 .9rem;}
+  .tbar a{display:flex; align-items:center; justify-content:center; height:42px; border-radius:8px;
+    text-decoration:none; color:var(--brown); font-family:var(--logo); font-weight:700; font-size:.95rem;}
+  .tbar a:nth-child(1){background:#FFE9A6;}
+  .tbar a:nth-child(2){background:var(--sun);}
+  .tbar a:nth-child(3){background:var(--leaf);}
+  .tbar a:nth-child(4){background:#FFE9A6;}
+  .tbar a:nth-child(5){background:var(--brown); color:var(--sun);}
+  .tbar a:hover,.tbar a:focus-visible{outline:3px solid var(--terra); outline-offset:1px;}
+  .tlegend{list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.35rem 1rem;}
+  .tlegend li{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.5rem; align-items:baseline; font-size:.82rem; line-height:1.45;}
+  .tlegend .n{font-family:var(--logo); font-weight:700; color:var(--terra-ink);}
+  .tlegend small{display:block; color:var(--ink-faint); font-size:.8125rem;}
+  .tlegend a{color:inherit; text-decoration:none;}
+  .tlegend a:hover{text-decoration:underline;}
+
+  /* ── 섹션 머리 ───────────────────── */
+  section{display:flex; flex-direction:column; gap:1.3rem; scroll-margin-top:1rem;}
+  .shead{display:flex; flex-direction:column; gap:.35rem;}
+  .when{font-size:.8125rem; letter-spacing:.12em; color:var(--terra-ink);}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35; font-size:clamp(1.35rem,4vw,1.85rem);}
+  .card{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:14px;
+    padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+  .lead{font-family:var(--serif); line-height:1.9; font-size:1.02rem;}
+  .note{font-size:.84rem; color:var(--ink-soft); line-height:1.8;}
+
+  /* ── 살롱 한 줄 ───────────────────── */
+  .oneline{font-family:var(--serif); font-weight:800; font-size:clamp(1.15rem,3.6vw,1.5rem); line-height:1.7;}
+  .facts{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.9rem;}
+  .chip{font-size:.8125rem; border-radius:99px; padding:.3rem .8rem; background:#FFF1C2; color:var(--brown); line-height:1.4;}
+  .chip.dark{background:var(--brown); color:var(--sun);}
+
+  /* ── 8주 ───────────────────────── */
+  .weeks{padding:1.3rem 1.1rem 1.2rem;}
+  .verbs{display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:5px; margin-bottom:.45rem;}
+  .verb{font-family:var(--serif); font-weight:800; font-size:clamp(.82rem,2.6vw,1.05rem); text-align:center;
+    border-bottom:3px solid; padding-bottom:.3rem; line-height:1.2; white-space:nowrap;}
+  .verb.v1{grid-column:1 / span 2; border-color:var(--sun);}
+  .verb.v2{grid-column:3 / span 4; border-color:var(--leaf);}
+  .verb.v3{grid-column:8 / span 1; border-color:var(--brown); display:flex; justify-content:flex-end;}
+  .cells{display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:5px;}
+  .cell{position:relative; border-radius:10px; min-height:84px; display:flex; flex-direction:column;
+    align-items:center; justify-content:flex-start; padding:.5rem .1rem .45rem; gap:.25rem;}
+  .cell .w{font-family:var(--logo); font-weight:700; font-size:clamp(1.05rem,3.4vw,1.45rem); line-height:1;}
+  .cell .w small{font-size:.55em; font-weight:400;}
+  .cell .p{font-size:.8125rem; line-height:1.25; text-align:center; word-break:keep-all;}
+  .cell.c1{background:var(--sun);}
+  .cell.c2{background:var(--leaf);}
+  .cell.c3{background:#fff; border:2px dashed var(--ink-faint);}
+  .cell.c4{background:var(--brown); color:var(--sun);}
+  .btn-glyph{width:22px; height:22px; border-radius:50%; background:var(--terra);
+    box-shadow:0 0 0 3px rgba(255,198,30,.9); margin-top:auto;}
+  .tag{font-size:.8125rem; line-height:1.2; border-radius:99px; padding:.12rem .4rem;
+    background:#fff; color:var(--brown); border:1.5px dashed var(--brown); margin-top:auto; white-space:nowrap;}
+  .seed{width:18px; height:18px; border-radius:50%; background:#fff; border:2px dashed var(--brown);
+    margin-top:auto; flex:none; display:inline-block;}
+  .seedtag{display:inline-flex; align-items:center; gap:.4rem; margin-top:.35rem; font-size:.8125rem; color:var(--brown);}
+  .seedtag .seed{margin-top:0;}
+  .wlegend{display:flex; flex-wrap:wrap; gap:.4rem 1.1rem; margin-top:.95rem; font-size:.8125rem; color:var(--ink-soft);}
+  .wlegend span{display:inline-flex; align-items:center; gap:.4rem;}
+  .wlegend i{width:14px; height:14px; border-radius:4px; display:inline-block; flex:none;}
+  .axis-line{margin-top:1.1rem; padding-top:1rem; border-top:1.5px solid var(--rule-soft);
+    font-family:var(--serif); font-size:.95rem; line-height:1.8;}
+  .axis-line b{font-weight:800;}
+
+  .eight{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.8rem;}
+  .eight .card h3{font-family:var(--logo); font-weight:700; font-size:1.05rem; line-height:1.4; margin-bottom:.35rem;}
+  .eight .card p{font-size:.88rem; color:var(--ink-soft); line-height:1.75;}
+  .eight .card.dark{background:var(--brown); border-color:var(--brown); color:var(--ivory);}
+  .eight .card.dark p{color:#EFE3C2;}
+  .eight .card.dark h3 .mark{background:none; color:var(--sun); padding:0;}
+
+  /* ── 식구 ───────────────────────── */
+  .motto{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.5rem;}
+  .motto div{text-align:center; border-radius:12px; padding:.75rem .3rem; line-height:1.35;}
+  .motto b{display:block; font-family:var(--logo); font-size:clamp(1rem,3.4vw,1.3rem);}
+  .motto span{font-size:.8125rem;}
+  .m1{background:var(--sun);}
+  .m2{background:var(--leaf);}
+  .m3{background:#CFE7EF;}
+
+  .org{display:flex; flex-direction:column; align-items:stretch; gap:0;}
+  .me{align-self:center; background:var(--sun); border-radius:14px; padding:.7rem 1.4rem; text-align:center; box-shadow:var(--shadow);}
+  .me b{font-family:var(--logo); font-size:1.15rem; display:block; line-height:1.3;}
+  .me span{font-size:.8125rem;}
+  .stem{align-self:center; width:3px; height:18px; background:var(--brown); opacity:.35;}
+  .sea{background:linear-gradient(90deg,#CFE7EF,#E6F3F7 50%,#CFE7EF); border-radius:12px;
+    padding:.6rem 1rem; text-align:center; font-size:.86rem; line-height:1.5;}
+  .sea b{font-family:var(--logo); font-size:1.02rem;}
+  .crew{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; margin-top:.7rem;}
+  .mate.wide{grid-column:span 2;}
+  @media (max-width:620px){.crew{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  .mate{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:12px;
+    padding:.7rem .8rem; display:flex; flex-direction:column; gap:.2rem; box-shadow:var(--shadow); min-width:0;}
+  .mate .nm{font-family:var(--logo); font-weight:700; font-size:.98rem;}
+  .mate .job{font-size:.8125rem; color:var(--ink-soft); line-height:1.45; word-break:keep-all;}
+  .mate .tag{align-self:flex-start; margin-top:.3rem;}
+
+  .turn{display:flex; flex-direction:column; gap:.6rem;}
+  .turn h3{font-family:var(--logo); font-weight:700; font-size:1.1rem;}
+  .shift{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:.5rem; align-items:center;}
+  .shift .from{font-size:.86rem; color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--terra);
+    text-decoration-thickness:2px; text-align:right; line-height:1.4;}
+  .shift .arr{font-family:var(--logo); color:var(--terra-ink); font-weight:700;}
+  .shift .to{font-size:.92rem; font-weight:700; background:#FFF1C2; border-radius:8px; padding:.3rem .6rem; line-height:1.4;}
+  .turn .who{font-family:var(--serif); font-weight:800; font-size:1rem; margin-top:.3rem;}
+
+  .two{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.7rem;}
+  .job2{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.75rem; align-items:start;}
+  .job2 .n{width:30px; height:30px; border-radius:50%; background:var(--brown); color:var(--sun);
+    font-family:var(--logo); font-weight:700; display:inline-flex; align-items:center; justify-content:center; line-height:1;}
+  .job2 p{font-family:var(--serif); font-weight:700; font-size:.98rem; line-height:1.65;}
+  .warn{border-left:4px solid var(--terra); padding:.2rem 0 .2rem .9rem; font-family:var(--serif); font-size:.95rem; line-height:1.8;}
+
+  /* ── 전자책 ───────────────────────── */
+  .book{display:grid; grid-template-columns:auto minmax(0,1fr); gap:1.1rem; align-items:center;}
+  .spine{width:74px; height:104px; border-radius:4px 8px 8px 4px; background:var(--brown);
+    box-shadow:inset 7px 0 0 rgba(255,198,30,.9), var(--shadow); display:flex; align-items:flex-end; padding:0 0 .55rem 1rem;}
+  .spine i{display:block; width:34px; height:3px; background:var(--sun); border-radius:3px;}
+  .book h3{font-family:var(--serif); font-weight:800; font-size:clamp(1.1rem,3.4vw,1.35rem); line-height:1.45;}
+  .book .facts{margin-top:.6rem;}
+  .split{display:grid; grid-template-columns:2fr 4fr; border-radius:12px; overflow:hidden; margin:.6rem 0 .5rem;}
+  .split div{padding:.65rem .75rem; line-height:1.45;}
+  .split .k{display:block; font-size:.8125rem; letter-spacing:.06em; margin-bottom:.25rem;}
+  .split .v{font-weight:700; font-size:.88rem; word-break:keep-all;}
+  .split .with{background:#EFEADA; color:var(--ink-soft);}
+  .split .mine{background:var(--sun);}
+  .swap{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:.5rem; align-items:center; margin:.6rem 0 .5rem;}
+  .swap .ghost{border:2px dashed var(--ink-faint); border-radius:10px; padding:.55rem; text-align:center; font-size:.82rem; color:var(--ink-faint);}
+  .swap .real{background:var(--leaf); border-radius:10px; padding:.55rem .7rem; font-size:.86rem; font-weight:700; line-height:1.4;}
+  .swap .arr{font-family:var(--logo); color:var(--terra-ink); font-weight:700;}
+  .lesson h3{font-family:var(--logo); font-weight:700; font-size:1.05rem; line-height:1.4;}
+  .lesson .ln{font-size:.8125rem; letter-spacing:.12em; color:var(--terra-ink); display:block; margin-bottom:.15rem;}
+  .quote{font-family:var(--serif); font-weight:800; font-size:.95rem; line-height:1.7;}
+  .blind{display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;}
+  .ai3{display:flex; gap:.35rem;}
+  .ai3 span{width:30px; height:30px; border-radius:50%; background:var(--brown); color:var(--sun);
+    font-family:var(--logo); font-weight:700; font-size:.82rem; display:inline-flex; align-items:center; justify-content:center;}
+  .blind p{font-size:.86rem; color:var(--ink-soft); line-height:1.6; flex:1 1 180px;}
+
+  /* ── 닫는 물음 (밤 면) ─────────────── */
+  .closing{background:var(--brown); color:var(--ivory); border-radius:22px;
+    padding:clamp(1.6rem,5vw,2.6rem) clamp(1.2rem,4vw,2.2rem); display:flex; flex-direction:column; gap:1.3rem;}
+  .closing .when{color:var(--sun);}
+  .closing h2{color:var(--ivory);}
+  .axisq{font-family:var(--serif); font-size:clamp(.98rem,2.8vw,1.1rem); line-height:1.9; color:#EFE3C2;
+    border-left:3px solid var(--sun); padding-left:1rem;}
+  .axisq small{display:block; font-family:var(--sans); font-size:.8125rem; color:#D9CBA6; margin-bottom:.2rem;}
+  .bigq{font-family:var(--serif); font-weight:800; line-height:1.7; font-size:clamp(1.2rem,3.8vw,1.6rem);}
+  .bigq em{font-style:normal; color:var(--sun);}
+  .answers{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.7rem;}
+  .ans{border-radius:14px; padding:1rem 1.1rem; line-height:1.5;}
+  .ans small{display:block; font-size:.8125rem; margin-bottom:.35rem;}
+  .ans.hers{background:var(--sun); color:var(--brown);}
+  .ans.hers b{font-family:var(--serif); font-weight:800; font-size:1.15rem;}
+  .ans.yours{border:2px dashed #D9CBA6; color:#EFE3C2;}
+  .ans.yours .blank{display:block; margin-top:1.3rem; border-bottom:1.5px solid #D9CBA6;}
+
+  /* ── 전문 ───────────────────────── */
+  details.full{background:var(--card); border:1.5px solid var(--rule); border-radius:14px; box-shadow:var(--shadow);}
+  details.full summary{cursor:pointer; list-style:none; padding:1rem 1.2rem; font-family:var(--logo); font-weight:700;
+    font-size:1.02rem; display:flex; justify-content:space-between; align-items:center; gap:1rem;}
+  details.full summary::-webkit-details-marker{display:none;}
+  details.full summary::after{content:"펼치기 ＋"; font-family:var(--sans); font-weight:400; font-size:.8125rem; color:var(--terra-ink); white-space:nowrap;}
+  details.full[open] summary::after{content:"접기 －";}
+  .script{padding:0 1.2rem 1.4rem; display:flex; flex-direction:column; gap:1.1rem; border-top:1.5px solid var(--rule-soft); padding-top:1.1rem;}
+  .script h4{font-family:var(--logo); font-weight:700; font-size:.95rem; color:var(--terra-ink);}
+  .script p{font-family:var(--serif); font-size:.95rem; line-height:1.95;}
+  .script p + p{margin-top:.7rem;}
+
+  /* ── 발치 ───────────────────────── */
+  footer{max-width:880px; margin:0 auto; padding:2.6rem clamp(1rem,4vw,2rem) 3.4rem; text-align:center;}
+  .footer-note{font-size:.8125rem; color:var(--ink-faint); line-height:1.85;}
+  .footer-note .brand{display:block; letter-spacing:.16em; color:var(--terra-ink); margin-top:.7rem; font-size:.8125rem;}
+  .footer-note .fam{display:block; margin-top:.35rem; color:var(--ink-soft);}
+
+  @media (max-width:520px){
+    .cell .p{display:none;}
+    .cell{min-height:70px;}
+    .cell{min-height:78px;}
+    .cell .p{font-size:.8125rem;}
+    .tag{font-size:.8125rem; padding:.1rem .25rem;}
+    .motto span{font-size:.8125rem;}
+    .shift{grid-template-columns:minmax(0,1fr); gap:.2rem;}
+    .shift .from{text-align:left;}
+    .shift .arr{display:none;}
+    .swap{grid-template-columns:minmax(0,1fr);}
+    .swap .arr{text-align:center; transform:rotate(90deg);}
+    .split{grid-template-columns:minmax(0,1fr);}
+    .stop .t{font-size:.8125rem;}
+    .stop .d{font-size:.8125rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backbar"><a href="index.html">← 과제 목록</a></div>
+
+<div class="wrap">
+
+  <!-- ── 표제 ── -->
+  <header>
+    <p class="eyebrow">디퍼 살롱 1기 · 콤포스텔라 모임 · 2026. 9. 28 · 7분 스피치</p>
+    <h1>살롱 드 나루</h1>
+    <p class="sub">사업을 구상하며 클로드를 쓰는 것</p>
+
+    <div class="ask">
+      <span class="k">핵심 물음</span>
+      <p>클로드가 아무리 잘 지어 와도,<br><span class="mark">끝까지 내 손에 쥐고 있어야 할 결정</span>은 무엇인가.</p>
+    </div>
+
+    <div class="sched" aria-label="살롱 드 나루 일정">
+      <p class="rk"><b>진행 중인 일의 중간 보고</b> — 다 끝난 이야기가 아니다</p>
+      <div class="rline">
+        <div class="stop bank"><span class="dot"></span><span class="d">출발</span><span class="t">언브랜딩 살롱에서 나왔다</span></div>
+        <div class="stop"><span class="dot"></span><span class="d">9/22</span><span class="t">하루에 방향 세 번</span></div>
+        <div class="stop now">
+          <svg class="boat" viewBox="0 0 44 34" aria-hidden="true">
+            <line x1="22" y1="3" x2="22" y2="21" stroke="#3A2A12" stroke-width="2"/>
+            <path d="M23 5 L35 19 L23 19 Z" fill="#FFC61E" stroke="#3A2A12" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M4 22 L40 22 L34 31 L10 31 Z" fill="#D55A2B" stroke="#3A2A12" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span class="d">9/28 오늘</span><span class="t">진행 중</span></div>
+        <div class="stop"><span class="dot"></span><span class="d">10/8</span><span class="t">첫 책 · 모집문</span></div>
+        <div class="stop bank"><span class="dot"></span><span class="d">10/27</span><span class="t">살롱 문을 연다</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 7분 지도 ── -->
+  <nav class="tmap" aria-label="7분의 순서">
+    <h2 style="font-family:var(--logo);">7분을 한 줄로</h2>
+    <div class="tbar">
+      <a href="#s1" aria-label="여는 말">①</a>
+      <a href="#s2" aria-label="살롱의 골격">②</a>
+      <a href="#s3" aria-label="클로드를 어떻게 썼나">③</a>
+      <a href="#s4" aria-label="전자책">④</a>
+      <a href="#s5" aria-label="닫는 말">⑤</a>
+    </div>
+    <ol class="tlegend">
+      <li><span class="n">①</span><a href="#s1">여는 말<small>0:00 — 진행 중인 일의 중간 보고</small></a></li>
+      <li><span class="n">②</span><a href="#s2">살롱의 골격<small>1:05 — 여덟 칸에 나눠 담은 축</small></a></li>
+      <li><span class="n">③</span><a href="#s3">클로드를 어떻게 썼나<small>2:30 — 한 명이 아니라 식구</small></a></li>
+      <li><span class="n">④</span><a href="#s4">전자책 — 먼저 해 보는 실험<small>4:25 — 가르칠 과정을 먼저 직접 해 본다</small></a></li>
+      <li><span class="n">⑤</span><a href="#s5">닫는 말 — 물음<small>6:10 — 끝까지 쥘 결정 하나</small></a></li>
+    </ol>
+  </nav>
+
+  <!-- ── ① 여는 말 ── -->
+  <section id="s1">
+    <div class="shead"><span class="when">① 여는 말 · 0:00</span><h2>퍼핀님 말씀에서 나온 살롱</h2></div>
+    <p class="lead">「살롱 드 나루」는 10월 27일에 문을 여는 포근나루의 살롱이다. 언브랜딩 살롱에서 나왔다 — 퍼핀님이 별지기들이 <b>각자 자기 힘으로 서기를</b> 바라셔서 개인 살롱을 권하셨다.</p>
+  </section>
+
+  <!-- ── ② 살롱의 골격 ── -->
+  <section id="s2">
+    <div class="shead"><span class="when">② 살롱의 골격 · 1:05</span><h2>한 줄로 말하면</h2></div>
+    <div class="card">
+      <p class="oneline">써 둔 글은 있는데 책으로 가는 길을 모르는 분이,<br><span class="mark">자기 이름으로</span> 전자책을 낸다.</p>
+      <div class="facts"><span class="chip">화요일 밤 8시 ~ 10시</span><span class="chip">8주</span><span class="chip dark">10월 27일 시작</span></div>
+    </div>
+
+    <div class="card weeks" aria-label="8주 구조">
+      <div class="verbs">
+        <span class="verb v1">건지고</span>
+        <span class="verb v2">깎고</span>
+        <span class="verb v3">보여준다</span>
+      </div>
+      <div class="cells">
+        <div class="cell c1"><span class="w">1</span><span class="p">건지기</span></div>
+        <div class="cell c1"><span class="w">2</span><span class="p">건지기</span></div>
+        <div class="cell c2"><span class="w">3</span><span class="p">깎기</span></div>
+        <div class="cell c2"><span class="w">4</span><span class="p">깎기</span></div>
+        <div class="cell c2"><span class="w">5</span><span class="p">깎기</span></div>
+        <div class="cell c2"><span class="w">6</span><span class="p">깎기</span><span class="seed" aria-label="뱃사공을 설치하는 주"></span></div>
+        <div class="cell c3"><span class="w">7</span><span class="p">점검</span></div>
+        <div class="cell c4"><span class="w">8</span><span class="p">내보내기</span><span class="btn-glyph" aria-hidden="true"></span></div>
+      </div>
+      <div class="wlegend">
+        <span><i style="background:var(--sun)"></i>건지기 2주</span>
+        <span><i style="background:var(--leaf)"></i>깎기 4주</span>
+        <span><i style="background:#fff;border:2px dashed var(--ink-faint)"></i>점검 1주</span>
+        <span><i style="background:var(--brown)"></i>내보내기 1주</span>
+        <span><span class="seed" aria-hidden="true"></span>6주차 · 뱃사공을 설치하는 주</span>
+      </div>
+      <p class="axis-line">짜 놓고 보니 의미의 축 그대로였다 — <b>「빛나는 돌멩이를 건지고, 깎고, 보여준다」.</b><br>매일 하는 일을 여덟 칸에 나눠 담은 것.</p>
+    </div>
+
+    <div class="eight">
+      <div class="card dark">
+        <h3><span class="mark">8주차는 「버튼을 누르는 날」</span></h3>
+        <p>수업 중에 실제로 등록 버튼을 누른다.</p>
+      </div>
+      <div class="card">
+        <h3>포근나루 이름이 아니라 저자 이름으로</h3>
+        <p>대신 내 드리면 다음 책 때 또 찾아오셔야 하니까. 8주 뒤에 남는 것은 책 한 권이 아니라 <b>다음 책을 혼자 낼 수 있는 사람</b>이었으면.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ③ 클로드 ── -->
+  <section id="s3">
+    <div class="shead"><span class="when">③ 클로드를 어떻게 썼나 · 2:30</span><h2>클로드는 한 명이 아니라 식구</h2></div>
+
+    <div class="motto">
+      <div class="m1"><b>정하는 건 나</b><span>햇살</span></div>
+      <div class="m2"><b>짓는 건 식구</b><span>맡은 일마다 따로</span></div>
+      <div class="m3"><b>잇는 건 바다</b><span>총괄</span></div>
+    </div>
+
+    <div class="org" aria-label="식구 배치">
+      <div class="me"><b>햇살</b><span>정한다</span></div>
+      <div class="stem"></div>
+      <div class="sea"><b>🌊 바다</b> · 총괄하며 잇는다</div>
+      <div class="crew">
+        <div class="mate"><span class="nm">🔭 등대</span><span class="job">시장조사 · 플랫폼 비교</span></div>
+        <div class="mate"><span class="nm">🌅 새벽</span><span class="job">8주 강의안</span></div>
+        <div class="mate"><span class="nm">🌳 나무</span><span class="job">배포물 · 디자인</span></div>
+        <div class="mate"><span class="nm">💰 금전수</span><span class="job">환불 규정의 법 조항 확인</span></div>
+        <div class="mate"><span class="nm">🌿 정원</span><span class="job">원고 퇴고</span></div>
+        <div class="mate"><span class="nm">🧭 나침반</span><span class="job">전자책 파일</span></div>
+        <div class="mate wide"><span class="nm">🔨 김리</span><span class="job">원고 정리 도구 「뱃사공」 — 참가자 컴퓨터에 설치한다</span><span class="seedtag"><span class="seed" aria-hidden="true"></span>6주차에 설치해 드림</span></div>
+      </div>
+    </div>
+
+    <div class="card turn">
+      <h3>9월 22일 하루, 방향이 세 번 바뀌었다</h3>
+      <div class="shift"><span class="from">포근나루 이름으로</span><span class="arr">→</span><span class="to">저자 이름으로</span></div>
+      <div class="shift"><span class="from">플랫폼 하나로</span><span class="arr">→</span><span class="to">여럿으로 열었다</span></div>
+      <div class="shift"><span class="from">여럿으로</span><span class="arr">→</span><span class="to">밤에는 유페이퍼와 작가와, 둘로</span></div>
+      <p class="who">식구들은 자료를 많이 가져왔지만, 바꾸자고 한 건 전부 나였다.</p>
+    </div>
+
+    <div class="two">
+      <div class="card job2"><span class="n">1</span><p>무엇이 되면 좋겠는지 말하는 것</p></div>
+      <div class="card job2"><span class="n">2</span><p>가져온 것 앞에서 이게 내 것인지 아닌지 고르는 것</p></div>
+    </div>
+    <p class="warn">이 순서가 무너지면 일은 빨라지는데, 내 것이 아니게 된다.</p>
+  </section>
+
+  <!-- ── ④ 전자책 ── -->
+  <section id="s4">
+    <div class="shead"><span class="when">④ 전자책 — 먼저 해 보는 실험 · 4:25</span><h2>살롱에서 가르칠 과정을 먼저 직접 해 본다</h2></div>
+
+    <div class="card book">
+      <div class="spine" aria-hidden="true"><i></i></div>
+      <div>
+        <h3>『글은 있는데, 책은 아직이라면』</h3>
+        <div class="facts">
+          <span class="chip">실용서</span>
+          <span class="chip">내 이름으로 유페이퍼에 직접 올리는 첫 책</span>
+          <span class="chip dark">10월 8일 · 모집문 나가는 날 함께</span>
+          <span class="chip">지금 2차 퇴고 — 워드에 표시하며 통독 중</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card lesson">
+      <span class="ln">배운 것 하나</span>
+      <h3>초안은 AI에게 맡기지 않는다</h3>
+      <div class="split">
+        <div class="with"><span class="k">같이 하는 것</span><span class="v">원고 고르기 · 목차 세우기</span></div>
+        <div class="mine"><span class="k">내가 하는 것</span><span class="v">초안 · 퇴고 · 제목 · 표지</span></div>
+      </div>
+    </div>
+
+    <div class="card lesson">
+      <span class="ln">배운 것 둘</span>
+      <h3>내가 있는데 왜 가상 인물을 세웠나</h3>
+      <div class="swap">
+        <span class="ghost">사례 속 가상 인물</span>
+        <span class="arr">→</span>
+        <span class="real">『파도는 여전히 하얗다』를 만든 실제 기록</span>
+      </div>
+      <p class="quote">이번에 제일 좋은 발견이었다.</p>
+    </div>
+
+    <div class="card blind">
+      <div class="ai3" aria-label="외부 AI 셋이 모두 같은 문구를 1위로"><span>1</span><span>1</span><span>1</span></div>
+      <p>제목은 후보들을 <b>이름을 가린 채</b> 외부 AI 셋에게 보여 줬다. 셋 다 같은 문구를 1위로 꼽아 그걸로 정했다.</p>
+    </div>
+  </section>
+
+  <!-- ── ⑤ 닫는 말 ── -->
+  <section id="s5" class="closing">
+    <div class="shead"><span class="when">⑤ 닫는 말 — 물음 · 6:10</span><h2>살롱도, 책도 결국 이 한 문장</h2></div>
+    <p class="axisq"><small>이번 달 디퍼 문법 여정을 마치며 정리한 문장</small>「직접 해 보고 캐낸 것을 자산으로 안고, 뒤에 올 사람이 스스로 해내도록 건넨다.」</p>
+    <p class="bigq">여러분 사업에서, 클로드가 아무리 잘 지어 와도<br><em>끝까지 내 손에 쥐고 있어야 할 결정 하나</em>는 뭔가요?</p>
+    <div class="answers">
+      <div class="ans hers"><small>햇살의 하나</small><b>누구 이름으로 건네는가</b></div>
+      <div class="ans yours"><small>여러분의 하나 — 듣고 싶어요</small><span class="blank" aria-hidden="true"></span></div>
+    </div>
+  </section>
+
+  <!-- ── 전문 ── -->
+  <details class="full">
+    <summary>스피치 전문 읽기</summary>
+    <div class="script">
+      <div>
+        <h4>여는 말</h4>
+        <p>안녕하세요, 햇살입니다. 오늘 주제가 「사업을 구상하며 클로드를 쓰는 것」인데요, 저는 설명 대신 지금 진행 중인 일을 하나 들고 왔어요. 이름은 「살롱 드 나루」. 10월 27일에 문을 여는 포근나루의 살롱입니다. 그러니까 오늘은 다 끝난 이야기가 아니라, 진행 중인 일의 중간 보고예요.</p>
+        <p>아시다시피 이 살롱은 우리 언브랜딩 살롱에서 나왔어요. 퍼핀님이 별지기들이 각자 자기 힘으로 서기를 바라셔서 개인 살롱을 권하셨잖아요.</p>
+      </div>
+      <div>
+        <h4>살롱의 골격</h4>
+        <p>한 줄로 말하면 이래요. 써 둔 글은 있는데 책으로 가는 길을 모르는 분이, 자기 이름으로 전자책을 낸다. 화요일 밤 여덟 시부터 열 시까지, 8주 동안요.</p>
+        <p>구조는 건지기 2주, 깎기 4주, 점검 1주, 내보내기 1주예요. 짜 놓고 보니 제 의미의 축이 「빛나는 돌멩이를 건지고, 깎고, 보여준다」잖아요. 제가 매일 하는 일을 그대로 여덟 칸에 나눠 담은 거더라고요.</p>
+        <p>마지막 8주차는 「버튼을 누르는 날」이에요. 수업 중에 실제로 등록 버튼을 누릅니다. 책은 포근나루 이름이 아니라 저자 본인 이름으로 나가요. 제가 대신 내 드리면, 다음 책 때 또 저를 찾아오셔야 하니까요. 8주 뒤에 남는 게 책 한 권이 아니라 다음 책을 혼자 낼 수 있는 사람이었으면 해요.</p>
+      </div>
+      <div>
+        <h4>클로드를 어떻게 썼나</h4>
+        <p>그럼 클로드는 어디 있었느냐. 저는 클로드를 한 명이 아니라 식구로 써요. 총괄하는 바다가 있고, 시장조사와 플랫폼 비교는 등대, 8주 강의안은 새벽, 배포물과 디자인은 나무, 환불 규정의 법 조항 확인은 금전수, 원고 퇴고는 정원, 전자책 파일은 나침반이 맡아요. 참가자 컴퓨터에 심을 원고 정리 도구 「뱃사공」은 김리가 지었고요. 6주차에 심어 드려요.</p>
+        <p>그런데 오늘 꼭 드리고 싶은 말은 도구 자랑이 아니에요. 9월 22일 하루에 방향이 세 번 바뀌었어요. 포근나루 이름으로 내려다가 저자 이름으로, 플랫폼 하나로 가려다가 여럿으로 열었다가, 밤에는 유페이퍼와 작가와 둘로. 식구들이 자료는 많이 가져왔지만, 바꾸자고 한 건 전부 저였어요. 정하는 건 나, 짓는 건 식구, 잇는 건 바다. 제가 한 일은 두 가지예요. 무엇이 되면 좋겠는지 말하는 것, 그리고 가져온 것 앞에서 이게 내 것인지 아닌지 고르는 것. 이 순서가 무너지면 일은 빨라지는데 제 것이 아니게 되더라고요.</p>
+      </div>
+      <div>
+        <h4>전자책 — 먼저 해 보는 실험</h4>
+        <p>그리고 하나 더요. 살롱에서 가르칠 과정을 제가 먼저 직접 해 보고 있어요. 『글은 있는데, 책은 아직이라면』이라는 실용서예요. 제 이름으로 유페이퍼에 직접 올리는 첫 책이고, 10월 8일, 모집문 나가는 날 같이 나와요. 지금은 2차 퇴고 중이라 워드에 고칠 곳을 표시하며 통독하고 있어요.</p>
+        <p>쓰면서 배운 게 둘 있어요. 하나, 초안은 AI에게 맡기지 않는다. 원고 고르고 목차 세우는 데까지는 같이 하지만, 초안과 퇴고, 제목, 표지는 제가 해요. 둘, 처음엔 사례로 가상 인물을 세웠는데, 가만 보니 제가 있잖아요. 『파도는 여전히 하얗다』를 만든 실제 기록으로 전부 갈아 끼웠어요. 내가 있는데 왜 가상 인물을 세웠나, 그게 이번에 제일 좋은 발견이었어요. 제목도 후보들을 이름을 가린 채 외부 AI 셋에게 보여 줬더니 셋 다 같은 문구를 1위로 꼽아서, 그걸로 정했어요.</p>
+      </div>
+      <div>
+        <h4>닫는 말 — 물음</h4>
+        <p>이번 달 디퍼 문법 여정을 마치며 정리한 문장이 있어요. 「직접 해 보고 캐낸 것을 자산으로 안고, 뒤에 올 사람이 스스로 해내도록 건넨다.」 살롱도, 책도 결국 이 한 문장이에요.</p>
+        <p>그래서 여쭙고 싶어요. 여러분 사업에서, 클로드가 아무리 잘 지어 와도 끝까지 내 손에 쥐고 있어야 할 결정 하나는 뭔가요? 저한테는 그게 「누구 이름으로 건네는가」였어요. 여러분 것도 듣고 싶어요. 고맙습니다.</p>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<footer>
+  <p class="footer-note">
+    2026년 9월 28일 콤포스텔라 모임에서 한 7분 스피치를 한 장으로 다시 옮겼습니다.
+    <span class="brand">POGNARU × DEEPER UNBRANDING</span>
+    <span class="fam">새벽🌅 스크립트 · 나무🌳 페이지 · 바다🌊 이음</span>
+  </p>
+</footer>
+
+</body>
+</html>
