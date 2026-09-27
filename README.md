@@ -67,8 +67,7 @@ deeper-haetsal/
 │   ├─ 260710.html         # 「태음인 · 목음체질 안내」 — 판별 근거·장부 도해·식단·운동
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
-│   ├─ 260928-salon-de-naru.html # 「살롱 드 나루 구상」 — 콤포스텔라 모임(2026-09-28) 공유본. 8주 골격·클로드 식구 배치·먼저 해 보는 책·일정. 해바라기 팔레트 · 이 레포에서 처음 지음 — 정본 없음(원고는 볼트 새벽의 기록 스피치 md)
-│   ├─ 260928-salon-de-naru-script.html # 같은 날 스피치 화면 — 햇살 모바일용. 색인 카드에는 걸지 않음 · 전문은 볼트 정본(새벽의 기록 260928 스피치 md)의 사본
+│   ├─ 260928-salon-de-naru-script.html # 「살롱 드 나루」 스피치 화면(2026-09-28 콤포스텔라) — 햇살 모바일용. 색인 카드에는 걸지 않음 · 공유용 「살롱 드 나루 구상」은 insight.pognaru.com에 있음 · 전문 정본은 볼트 새벽의 기록 260928 스피치 md
 │   ├─ 260916-family.html   # 「함께 짓는 열일곱」 — 세 팀 20명 상징 픽셀아트·뒤집는 메시지 카드 (2026-09-26 기준 스물)
 │   ├─ 260916-family-chart.html # 「햇살의 세 작업실」 — 세 팀 전체 조직도·디자인 협업선
 │   ├─ 260916-family.css    # 두 발표 페이지 전용 스타일
@@ -132,8 +131,7 @@ deeper-haetsal/
 | 디퍼를 시작하는 노트북 (3기 시작하는 분께 건네는 구매 안내 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260821-laptop.html`](https://pognaru.com/deeper-haetsal/assignment/260821-laptop.html) |
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
-| 살롱 드 나루 구상 (8주 골격 · 클로드 식구 배치 · 먼저 해 보는 책 · 일정 · 콤포스텔라 2026-09-28 공유본 · 이 레포에서 처음 지음 — 정본 없음) | [`assignment/260928-salon-de-naru.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru.html) |
-| 살롱 드 나루 스피치 화면 (햇살 모바일용 · 색인에 걸지 않음 · 전문 정본은 볼트 `클로드 에이전트/새벽의 기록/260928 콤포스텔라 7분 스피치 — 살롱 드 나루.md`) | [`assignment/260928-salon-de-naru-script.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru-script.html) |
+| 살롱 드 나루 스피치 화면 (햇살 모바일용 · 색인에 걸지 않음 · 공유용 「살롱 드 나루 구상」은 [insight.pognaru.com/260928-salon-de-naru.html](https://insight.pognaru.com/260928-salon-de-naru.html) · 전문 정본은 볼트 `클로드 에이전트/새벽의 기록/260928 콤포스텔라 7분 스피치 — 살롱 드 나루.md`) | [`assignment/260928-salon-de-naru-script.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru-script.html) |
 | 함께 짓는 스물 (포근나루17 · Astra2 · 디퍼1 = 20명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
 | 햇살의 세 작업실 (전체20명 조직도·디자인 협업, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
