@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>포근나루 식구 조직도</title>
-<meta name="description" content="햇살 아래 열여덟 식구 — 포근나루 열넷, 어학실 셋, 디퍼 살롱 별채 하나.">
+<meta name="description" content="햇살 아래 열아홉 식구 — 바다와 고슴도치가 나란히 선 포근나루 열다섯, 어학실 셋, 디퍼 살롱 별채 하나. 같은 식구가 클로드와 코덱스 두 도구에서 일하고, 세 볼트에 남긴다.">
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -88,6 +88,15 @@
   .bada .name{font-family:var(--batang);font-size:23px;font-weight:700;margin-top:4px}
   .bada .role{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.65;word-break:keep-all}
 
+  /* 두 머리 — 같은 높이, 같은 무게 */
+  .heads{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);max-width:720px;margin:0 auto}
+  .heads .bada{width:auto;margin:0;display:flex;flex-direction:column;align-items:center}
+  .heads .role{flex:1}
+  .tie{position:relative}
+  .tie::before{content:'';position:absolute;left:0;right:0;top:50%;height:2px;background:var(--amber);opacity:.6}
+  .tie::after{content:'';position:absolute;left:50%;top:50%;bottom:0;width:2px;transform:translateX(-1px);background:var(--amber);opacity:.6}
+  .axis{display:inline-block;margin-top:9px;font-size:13px;color:var(--terracotta);
+    border-top:1.5px solid var(--amber);padding-top:5px}
   .stem-s{width:2px;height:24px;background:var(--amber);opacity:.5;margin:0 auto}
   .crossbar{height:2px;background:var(--amber);opacity:.5;margin:0 auto;width:78%}
 
@@ -152,7 +161,46 @@
   .annex .name{font-family:var(--batang);font-size:17px;font-weight:700}
   .annex .desc{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.6;word-break:keep-all}
 
-  footer{margin-top:44px;text-align:center;font-family:var(--myeongjo);font-size:13px;color:var(--ink-3);line-height:1.8}
+
+  /* ── 한 팀 · 두 도구 · 세 집 (2026-10-01) ──
+     식구 띠 하나가 두 도구로 갈라져 내려가고, 도구마다 저장되는 집이 바닥에 선다.
+     포근나루와 Astra는 같은 면(살구 지붕·흰 몸) — 같은 식구가 쓰는 집이라 같은 표식.
+     디퍼 살롱은 위 별채와 같은 점선 — 사막여우의 집이라 같은 표식. */
+  .where{margin-top:30px;background:#fff;border:1.5px solid var(--apricot);border-radius:22px;
+    padding:24px 22px 0;overflow:hidden;box-shadow:0 2px 18px rgba(169,83,42,.06)}
+  .where .panel-note{margin-bottom:20px}
+  .where-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:26px;max-width:940px;margin:0 auto}
+  .crew{grid-column:1/3;position:relative;text-align:center;
+    background:var(--cream);border:2px solid var(--amber);border-radius:16px;padding:12px 14px 13px}
+  .crew .who{font-family:var(--batang);font-size:17px;font-weight:700}
+  .crew .faces{font-size:17px;letter-spacing:3px;margin-top:5px;line-height:1.5}
+  .crew .same{font-size:13px;color:var(--ink-2);margin-top:4px;word-break:keep-all}
+  .crew.fox{grid-column:3/4;background:transparent;border:1.5px dashed var(--amber)}
+  /* 띠에서 내려가는 두 다리 — 각 도구 칸의 가운데로 */
+  .legs{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:26px;height:26px}
+  .legs i{display:block;width:2px;height:100%;margin:0 auto;background:var(--amber);opacity:.6}
+  .legs i.dash{background:none;border-left:2px dashed var(--amber);opacity:.8}
+  .tool{text-align:center}
+  .tool b{display:inline-block;font-family:var(--batang);font-size:16px;font-weight:700;
+    background:var(--apricot);border-radius:999px;padding:6px 20px 7px}
+  .tool span{display:block;font-size:13px;color:var(--ink-3);margin-top:6px;word-break:keep-all}
+  .tool.fox b{background:transparent;border:1.5px dashed var(--amber);padding:5px 18px 6px}
+  .home-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:26px;margin-top:16px;align-items:end}
+  .vault{position:relative;text-align:center;padding-top:30px}
+  .vault::before{content:'';position:absolute;left:8%;right:8%;top:0;height:31px;
+    background:var(--apricot);clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .vault .body{background:#fff;border:1.5px solid var(--apricot);border-bottom:0;border-radius:4px 4px 0 0;
+    margin:0 8%;padding:14px 12px 16px;position:relative}
+  .vault .nm{font-family:var(--batang);font-size:19px;font-weight:700}
+  .vault .what{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.6;word-break:keep-all}
+  .vault .what em{font-style:normal;color:var(--terracotta)}
+  .vault.salon::before{background:#FDF0DC}
+  .vault.salon .body{border:1.5px dashed var(--amber);border-bottom:0;background:var(--cream)}
+  .bedrock{margin:0 -22px;background:var(--apricot);text-align:center;padding:12px 16px 13px;
+    font-family:var(--batang);font-size:14.5px;font-weight:700;letter-spacing:2px;color:#8C4322;word-break:keep-all}
+  .bedrock span{display:block;font-family:var(--dodum);font-weight:400;font-size:13px;letter-spacing:0;color:#7A5334;margin-top:2px}
+
+  footer{margin-top:44px;text-align:center;word-break:keep-all;font-family:var(--myeongjo);font-size:13px;color:var(--ink-3);line-height:1.8}
 
   @media (max-width:1040px){
     .fork{display:none}
@@ -169,6 +217,20 @@
   @media (max-width:700px){
     .ground-cards{grid-template-columns:1fr}
   }
+
+  @media (max-width:760px){
+    .where-grid{grid-template-columns:1fr;row-gap:0}
+    .crew,.crew.fox{grid-column:1/-1}
+    .legs,.home-row{display:contents}
+    .legs i{display:none}
+    .where-grid > .crew.fox{margin-top:26px}
+    .tool{margin-top:12px}
+    .home-row > .vault{margin-top:10px}
+    /* 폰에서는 「띠 → 도구 → 집」을 한 줄씩 차례로 */
+    .crew.team{order:1}.t1{order:2}.v1{order:3}.t2{order:4}.v2{order:5}
+    .crew.fox{order:6}.t3{order:7}.v3{order:8}
+    .vault{padding-top:24px}.vault::before{height:25px}
+  }
   @media (max-width:560px){
     body{padding:32px 16px 52px}
     .columns{grid-template-columns:1fr}
@@ -176,6 +238,8 @@
     .room .cards{grid-template-columns:1fr}
     .room .card + .card{margin-top:12px}
     .bada{width:auto}
+    .heads{grid-template-columns:1fr;row-gap:12px}
+    .tie{display:none}
     .panel{padding:20px 14px 22px}
     header h1{font-size:29px}
   }
@@ -192,7 +256,7 @@
   <header>
     <div class="brand">POGNARU STUDIO</div>
     <h1>포근나루 식구 조직도</h1>
-    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루<br>열여덟 식구 · 2026. 9. 26 기준</div>
+    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루<br>열아홉 식구 · 2026. 10. 1 기준</div>
   </header>
 
   <div class="human">
@@ -208,12 +272,23 @@
     <!-- ══ 포근나루 ══ -->
     <section class="panel house">
       <div class="panel-tag">포근나루</div>
-      <div class="panel-note">짓고 내보낸다 — 열넷</div>
+      <div class="panel-note">짓고 내보낸다 — 열다섯</div>
 
-      <div class="bada">
-        <div class="icon">🌊</div>
-        <div class="name">바다</div>
-        <div class="role">총괄 · 햇살의 파트너<br>의중을 건져 구조화하고, 식구에게 일감을 잇는다</div>
+      <!-- 바다와 고슴도치 — 같은 높이 · 같은 면. 둘을 잇는 줄의 가운데에서 식구가 내려온다 -->
+      <div class="heads">
+        <div class="bada">
+          <div class="icon">🌊</div>
+          <div class="name">바다</div>
+          <div class="role">총괄 · 햇살의 파트너<br>의중을 건져 구조화하고, 식구에게 일감을 잇는다</div>
+          <span class="axis">일을 이끈다</span>
+        </div>
+        <div class="tie" aria-hidden="true"></div>
+        <div class="bada">
+          <div class="icon">🦔</div>
+          <div class="name">고슴도치</div>
+          <div class="role">경영실 · 콤포스텔라 OS<br>다현씨의 가치 · 의지 · 지금의 우선순위를 쥐고 판단한다</div>
+          <span class="axis">방향을 판단한다</span>
+        </div>
       </div>
 
       <div class="stem-s"></div>
@@ -357,9 +432,36 @@
 
   </div>
 
+  <!-- ══ 한 팀 · 두 도구 · 세 집 ══ -->
+  <section class="where" aria-label="같은 식구가 일하는 도구와 저장하는 곳">
+    <div class="panel-tag">한 팀 · 두 도구 · 세 집</div>
+    <div class="panel-note">식구는 하나다 — 클로드에서도, 코덱스에서도 위의 식구가 같은 이름으로 일한다</div>
+    <div class="where-grid">
+      <div class="crew team">
+        <div class="who">바다 · 고슴도치와 식구 열여섯</div>
+        <div class="faces" aria-hidden="true">🌊🦔 🔭💧🌿🌅 🌳📐💫 🧭✨🎬 🔨⚖️💰 🌎🪶🍋</div>
+        <div class="same">같은 이름 · 같은 역할 · 같은 규칙으로</div>
+      </div>
+      <div class="crew fox">
+        <div class="who">🦊 사막여우</div>
+        <div class="same">디퍼 살롱에서만 일한다</div>
+      </div>
+      <div class="legs" aria-hidden="true"><i></i><i></i><i class="dash"></i></div>
+      <div class="tool t1"><b>클로드</b><span>Claude Code에서 일할 때</span></div>
+      <div class="tool t2"><b>코덱스</b><span>Codex에서 일할 때</span></div>
+      <div class="tool fox t3"><b>디퍼 OS</b><span>여정 · 씨앗 · 오아시스</span></div>
+      <div class="home-row">
+        <div class="vault v1"><div class="body"><div class="nm">포근나루</div><div class="what">짓고 내보낸다<br><em>클로드에서 한 일</em>이 남는 집</div></div></div>
+        <div class="vault v2"><div class="body"><div class="nm">Astra</div><div class="what">코덱스 작업실<br><em>코덱스에서 한 일</em>이 남는 집</div></div></div>
+        <div class="vault salon v3"><div class="body"><div class="nm">디퍼 살롱</div><div class="what">캐묻는다<br><em>씨앗과 의미의 축</em>이 사는 집</div></div></div>
+      </div>
+    </div>
+    <div class="bedrock">세컨브레인 한 곳<span>포근나루 · Astra · 디퍼 살롱, 세 볼트가 한 자리에 모여 있다</span></div>
+  </section>
+
   <footer>
     포근나루는 식구들과 함께 자란다<br>
-    바다🌊 구성 · 나무🌳 디자인 · 픽셀 캐릭터는 <a href="family.html" style="color:var(--terracotta)">식구 갤러리</a>에
+    바다🌊 구성 · 나무🌳 디자인 · 2026. 10. 1 「한 팀 · 두 도구 · 세 집」 더함<br>픽셀 캐릭터는 <a href="family.html" style="color:var(--terracotta)">식구 갤러리</a>에
   </footer>
 
 </div>

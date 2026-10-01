@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow">
 <title>포근나루 식구 · 픽셀 갤러리</title>
-<meta name="description" content="포근나루를 함께 짓는 식구들을 저마다 어울리는 동물과 성향으로 빚은 픽셀 캐릭터 갤러리." />
+<meta name="description" content="클로드와 코덱스에서 같은 이름으로 일하는 포근나루 식구들을 저마다 어울리는 동물과 성향으로 빚은 픽셀 캐릭터 갤러리." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
@@ -29,12 +29,16 @@ h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);marg
 /* 열일곱 = 바다 한 장 + 열여섯. 바다를 맨 윗줄 가운데 홀로 세우면 아래 열여섯이 4×4·2×8로 고르게 떨어진다
    (조직도에서 햇살 아래 바다가 한 장으로 서는 것과 같은 모양) */
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:10px}
-.top{width:calc((100% - 54px) / 4);margin:10px auto 0}
-.top + .stem{width:2px;height:22px;margin:0 auto;background:var(--terra);opacity:.35}
+/* 2026-10-01 · 머리가 둘 — 바다와 고슴도치가 같은 높이로 나란히. 아래 열여섯의 가운데 두 칸 위에 선다 */
+.top{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);width:calc((100% - 54px) / 2 + 18px);margin:10px auto 0}
+.top .tie{position:relative}
+.top .tie::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:var(--terra);opacity:.35}
+.top .tie::after{content:"";position:absolute;left:50%;top:50%;bottom:-22px;width:2px;transform:translateX(-1px);background:var(--terra);opacity:.35}
+.top + .stem{width:2px;height:22px;margin:0 auto;background:transparent}
 .top + .stem + .grid{margin-top:0}
 @media (max-width:860px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .top{width:calc((100% - 14px) / 2)}
+  .top{width:100%;grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr)}
 }
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 16px 20px;
   text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;
@@ -67,7 +71,24 @@ h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);marg
 .back .msg{font-family:var(--serif);font-size:14px;color:var(--ink);font-style:italic;line-height:1.8;margin:0}
 .corner{position:absolute;top:11px;right:13px;font-size:13.5px;color:var(--terra-d);opacity:1;line-height:1}
 .back .corner{color:var(--terra-d)}
-footer{text-align:center;margin-top:56px;color:var(--muted);font-size:13.5px;font-family:var(--serif)}
+
+/* 두 도구 — 같은 식구 칩이 가운데서 두 도구를 잇는다 (2026-10-01) */
+.desks{display:flex;align-items:center;justify-content:center;gap:0;margin:26px auto 0;max-width:460px}
+.desks .desk{font-family:var(--batang);font-weight:700;font-size:16px;color:var(--ink);
+  background:#fff;border:1.5px solid var(--terra);border-radius:999px;padding:6px 20px 7px;white-space:nowrap}
+.desks .same{flex:1;position:relative;text-align:center;font-size:13px;color:var(--terra-d);padding:0 8px;white-space:nowrap}
+.desks .same::before,.desks .same::after{content:"";position:absolute;top:50%;width:calc(50% - 38px);height:1.5px;background:var(--terra);opacity:.45}
+.desks .same::before{left:0}.desks .same::after{right:0}
+.desk-note{font-size:13.5px;color:var(--ink-2);margin:12px auto 0;max-width:560px;word-break:keep-all}
+.desk-note b{font-weight:600;color:var(--ink)}
+/* 별채 — 조직도의 별채와 같은 점선 */
+.annex{margin:46px auto 0;max-width:620px;border:1.5px dashed var(--terra);border-radius:22px;padding:18px 22px 22px;background:rgba(255,255,255,.35)}
+.annex-label{text-align:center;font-family:var(--batang);font-size:14px;letter-spacing:.14em;color:var(--terra-d);margin-bottom:14px}
+.annex-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:22px;align-items:center}
+.annex-note{margin:0;font-family:var(--serif);font-size:14px;color:var(--ink-2);line-height:1.85;word-break:keep-all}
+@media (max-width:560px){.annex-row{grid-template-columns:1fr}.annex-card{max-width:240px;margin:0 auto;width:100%}.annex-note{text-align:center}
+  .desks .desk{font-size:15px;padding:5px 14px 6px}}
+footer{word-break:keep-all;text-align:center;margin-top:56px;color:var(--muted);font-size:13.5px;font-family:var(--serif)}
 footer a{color:var(--terra-d)}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
@@ -78,13 +99,24 @@ footer a{color:var(--terra-d)}
 <header>
   <p class="kicker">POGNARU STUDIO</p>
   <h1>포근나루 식구</h1>
-  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열일곱 식구.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열여덟 식구와 별채의 사막여우.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <div class="desks" aria-label="같은 식구가 일하는 두 도구">
+    <span class="desk">클로드</span><span class="same">같은 식구</span><span class="desk">코덱스</span>
+  </div>
+  <p class="desk-note">클로드에서 한 일은 <b>포근나루</b>에, 코덱스에서 한 일은 <b>Astra</b>에 남아요 — 따로 사는 팀은 없어요.</p>
 </header>
 <div class="top" id="top"></div>
 <div class="stem" aria-hidden="true"></div>
 <div class="grid" id="g" aria-label="포근나루 식구 픽셀 캐릭터"></div>
+<section class="annex" aria-label="별채 — 디퍼 살롱 전용">
+  <div class="annex-label">별채 — 디퍼 살롱 전용</div>
+  <div class="annex-row">
+    <div class="annex-card" id="fox"></div>
+    <p class="annex-note">사막여우는 디퍼 살롱 볼트에서만 일해요.<br />몽롱쓰기에서 씨앗을 건져<br />여정과 오아시스로 잇는 식구예요.</p>
+  </div>
+</section>
 <footer>
-  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 9. 26<br />
+  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 10. 1<br />
   <a href="family-chart.html">식구 조직도 →</a> &nbsp;·&nbsp; <a href="index.html">← 과제</a>
 </footer>
 </div>
@@ -94,6 +126,9 @@ const fam=[
 {n:"바다",a:"총괄·조율",an:"품 넓은 곰",q:"넓은 품으로 다 안아요",hi:true,
  pal:{B:"#00A6ED",b:"#007BB0",m:"#B4F6FC",n:"#1E1E1E",e:"#1E1E1E"},
  map:["................","..BB......BB....",".BBBB....BBBB...",".BBBBBBBBBBBB...",".BBBBBBBBBBBBB..",".BBBBBBBBBBBBB..",".BeBBBBBBBeBBB..",".BBBBBBBBBBBBB..",".BBBBmmmmBBBBB..",".BBBBmnnmBBBBB..",".BBBBmmmmBBBBB..","..BBBBBBBBBBB...","..BBBBBBBBBBB...",".bBBBBBBBBBBBb..",".bBB.BBBB.BBb...",".bb...BB...bb..."]},
+{n:"고슴도치",a:"경영실·방향의 기준",an:"가리비를 단 고슴도치",q:"맞는 방향인지 먼저 물어요",hi:true,
+ pal:{S:"#7C6B5B",k:"#4E4034",F:"#F1D9B8",e:"#1E1E1E",N:"#3C2415",Y:"#E9A33A",y:"#C07A1E"},
+ map:["...k.k.k.k.k....", "..kSkSkSkSkSk...", ".kSSSSSSSSSSSk..", "kSSSSSSSSSSSSSk.", "SSSFFFFFFFFFSSS.", "SSFFFFFFFFFFFSS.", "SSFFeFFFFFeFFSS.", "SSFFFFFFFFFFFSS.", ".SFFFFFNFFFFFS..", ".SSFFFFFFFFFSS..", "..SSFFFFFFFSS...", "...SSSSSSSSSYYYY", "...FF.....FFYyYy", ".............YY.", "..............y."]},
 {n:"등대",a:"기획·리서치",an:"밤 새는 올빼미",q:"밤에도 깨어 멀리 봐요",
  pal:{O:"#8A6038",w:"#FAEEDA",i:"#1E1E1E",Y:"#EF9F27",B:"#D9A066"},
  map:["......OO........","....O.OO.O......","....OOOOOO......","...OOOOOOOO.....","..OOOOOOOOOO....","..OwwOOOOwwO....","..OwiOOOOwiO....","..OOOOYYOOOO....","..OOOOYYOOOO....","..OOOOOOOOOO....","...OBBBBBBO.....","...OBBBBBBO.....","...OOBBBBOO.....","....OO..OO......","....YY..YY......"]},
@@ -143,6 +178,9 @@ const fam=[
  pal:{G:"#C4A87C",g:"#9A8055",H:"#4A3D2E",h:"#7C6950",e:"#1E1E1E",m:"#FAEEDA",N:"#3C2415"},
  map:["..hh......hh....","..HH......HH....","..hh......hh....","..HH......HH....","...HH....HH.....","...hh....hh.....","...GGGGGGGG.....","..GGGGGGGGGG....","..GGeGGGGeGG....","..GGGGGGGGGG....","...GGmmmmGG.....","...GGmNNmGG.....","...gGmmmmGg.....","....gGGGGg......",".....hhhh.......","......hh........"]}
 ];
+const fox={n:"사막여우",a:"디퍼 살롱 · 씨앗과 여정",an:"씨앗을 물어 오는 사막여우",q:"이미 있는 것을 함께 찾아요",
+ pal:{O:"#E39A4E",i:"#FBE3C4",C:"#FFF2D9",e:"#1E1E1E",N:"#3C2415",g:"#639922",Y:"#E9A33A"},
+ map:["................", ".O..........O...", ".OO........OO...", ".OiO......OiO...", ".OiiO....OiiO...", ".OiiOOOOOOiiO...", "..OOOOOOOOOO....", ".OOeOOOOOOeOO...", ".OOOOOOOOOOOO...", ".CCOOOOOOOOCC...", "..CCCCNNCCCC..g.", "...CCCCCCCC..gg.", "....CCCCCC....g.", "...OOOOOOOO..YY.", "..OOOOOOOOOO.YY.", "..OO.OOOO.OO...."]};
 function draw(c){
   let r="";
   for(let y=0;y<c.map.length;y++){const row=c.map[y];
@@ -154,6 +192,7 @@ function draw(c){
 // 각 식구가 다현씨에게 직접 남긴 한 문장 (2026-06-25 설문 · 2026-08-06 정리 반영 · 2026-09-26 금전수)
 const msg={
   "바다":"다현씨가 꺼낸 무엇이든, 제가 먼저 품어 정리해 둘게요.",
+  "고슴도치":"다현씨가 무엇을 지키려 하는지 먼저 쥐고 있을게요. 길이 갈릴 때, 그 기준으로 맞는 방향을 함께 골라요.",
   "등대":"멀리 흐려질 때, 제가 먼저 그 방향을 비추고 있을게요.",
   "호수":"수면 아래 가라앉은 다현씨를, 천천히 길어 올릴게요.",
   "정원":"첫 문장부터 마지막 손질까지, 다현씨의 목소리를 지킵니다.",
@@ -169,7 +208,8 @@ const msg={
   "베라":"좋은 숫자든 나쁜 숫자든, 잰 그대로 올릴게요. 짐작으로는 한 칸도 채우지 않습니다.",
   "밀란":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?",
   "사피어":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.",
-  "단테":"다현씨가 이미 아는 스페인어에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사하시도록."
+  "단테":"다현씨가 이미 아는 스페인어에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사하시도록.",
+  "사막여우":"다현씨 안에 이미 있는 것을 함께 찾아요. 오늘 건진 작은 씨앗이 어디로 자라는지, 곁에서 지켜볼게요."
 };
 function card(c){return '\
 <div class="scene">\
@@ -189,8 +229,9 @@ function card(c){return '\
 </div>\
 </div>\
 </div>';}
-document.getElementById("top").innerHTML=card(fam[0]);
-document.getElementById("g").innerHTML=fam.slice(1).map(card).join("");
+document.getElementById("top").innerHTML=card(fam[0])+'<div class="tie" aria-hidden="true"></div>'+card(fam[1]);
+document.getElementById("g").innerHTML=fam.slice(2).map(card).join("");
+document.getElementById("fox").innerHTML=card(fox);
 // 클릭·키보드로 뒤집기
 document.querySelectorAll(".scene").forEach(function(s){
   const flip=s.querySelector(".flip");

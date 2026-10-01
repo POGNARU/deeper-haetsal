@@ -68,13 +68,13 @@ deeper-haetsal/
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
 │   ├─ 260928-salon-de-naru-script.html # 「살롱 드 나루」 스피치 화면(2026-09-28 콤포스텔라) — 햇살 모바일용. 색인 카드에는 걸지 않음 · 공유용 「살롱 드 나루 구상」은 insight.pognaru.com에 있음 · 전문 정본은 볼트 새벽의 기록 260928 스피치 md
-│   ├─ 260916-family.html   # 「함께 짓는 열일곱」 — 세 팀 20명 상징 픽셀아트·뒤집는 메시지 카드 (2026-09-26 기준 스물)
-│   ├─ 260916-family-chart.html # 「햇살의 세 작업실」 — 세 팀 전체 조직도·디자인 협업선
+│   ├─ 260916-family.html   # 「함께 짓는 열아홉」 — 19명 상징 픽셀아트·뒤집는 메시지 카드 (2026-10-01 기준)
+│   ├─ 260916-family-chart.html # 「세 집, 한 팀」 — 전체 조직도, 코덱스 작업실(Astra)에 같은 식구가 다시 앉는다
 │   ├─ 260916-family.css    # 두 발표 페이지 전용 스타일
-│   ├─ 260916-family-data.js # 20명 명단·상징·역할·메시지 정본
+│   ├─ 260916-family-data.js # 19명 명단·상징·역할·메시지 정본
 │   ├─ 260916-family.js     # 24×24 픽셀 SVG·카드·필터·조직도 동작 — 픽셀 케이스가 없는 식구는 이모지로 대신 그린다
-│   ├─ family.html         # 「포근나루 식구」 — 픽셀 캐릭터 갤러리 (2026-09-13 사피어🪶 합류로 12장)
-│   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다 아래 네 기둥 + 별채(사막여우) · 2026-09-13 기준 열한 식구
+│   ├─ family.html         # 「포근나루 식구」 — 픽셀 캐릭터 갤러리 (2026-10-01 바다·고슴도치 두 머리 + 열여섯 + 별채 사막여우)
+│   └─ family-chart.html   # 「포근나루 식구 조직도」 — 바다·고슴도치 아래 네 기둥 + 별채 + 「한 팀 · 두 도구 · 세 집」 · 2026-10-01 기준 열아홉 식구
 │                          #   2026-08-06 식구 정리 반영(14→8) · 화면판 팔레트 적용
 └─ assets/                 # 리포트용 이미지 (나루의밤 카드 · 바탕화면 아이콘 · 체질 도해 인물)
     └─ pognaru-symbol.svg  # 포근나루 로고 (260723 리포트에 삽입) · 원본은 볼트 `클로드 에이전트/브랜드/로고/`
@@ -132,8 +132,8 @@ deeper-haetsal/
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 살롱 드 나루 스피치 화면 (햇살 모바일용 · 색인에 걸지 않음 · 공유용 「살롱 드 나루 구상」은 [insight.pognaru.com/260928-salon-de-naru.html](https://insight.pognaru.com/260928-salon-de-naru.html) · 전문 정본은 볼트 `클로드 에이전트/새벽의 기록/260928 콤포스텔라 7분 스피치 — 살롱 드 나루.md`) | [`assignment/260928-salon-de-naru-script.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru-script.html) |
-| 함께 짓는 스물 (포근나루17 · Astra2 · 디퍼1 = 20명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
-| 햇살의 세 작업실 (전체20명 조직도·디자인 협업, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
+| 함께 짓는 열아홉 (포근나루18 · 디퍼1 = 19명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
+| 세 집, 한 팀 (전체 19명 조직도 · 클로드/코덱스 두 책상, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
 | 포근나루 식구 조직도 | [`assignment/family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/family-chart.html) |
 
@@ -418,3 +418,12 @@ favicon-180.png   애플 터치 아이콘
 - 부서별 카드 행을 CSS subgrid로 공유하여 어학실과 다른 부서의 시작점·높이를 맞췄습니다.
 - ‘햇살의 배움’ 안내는 문구를 보존해 카드 아래로 옮겼습니다.
 - 모바일·태블릿·데스크톱에서 카드 좌표와 가로 넘침을 확인했습니다. 나무🌳 수정안 / 바다🌊 검증·반영.
+
+## 2026-10-01 · 세 집, 한 팀 — 식구 화면 네 장 개편
+
+- **솔☀️·루나🌙 퇴역** — Astra는 별도 팀이 아니라 「코덱스 작업실」로 남는다. 포근나루 식구가 코덱스에서도 같은 이름으로 일하고, 그 작업이 Astra 볼트에 저장된다.
+- **고슴도치🦔 합류** — 콤포스텔라 OS 경영실. 바다🌊(일을 이끈다)와 같은 높이·같은 면으로 나란히 세우고(방향을 판단한다), 둘을 잇는 줄의 가운데에서 식구가 내려온다.
+- `family-chart.html` — 두 머리 + 맨 아래 「한 팀 · 두 도구 · 세 집」(식구 띠 → 클로드/코덱스 → 포근나루/Astra 집, 사막여우 → 디퍼 OS → 디퍼 살롱 집, 바닥은 세컨브레인 한 곳). 같은 식구의 집은 같은 면(살구 지붕), 사막여우의 집은 별채와 같은 점선.
+- `family.html` — 바다·고슴도치 두 장을 가운데 두 칸 위에, 아래 4×4 열여섯, 그 아래 별채 사막여우 카드(픽셀 새로 그림). 정원🌿(옆모습 고슴도치)과 겹치지 않게 고슴도치🦔는 정면 얼굴 + 가리비(까미노).
+- 발표판 — 명단 19명, 솔·루나 데이터와 art 케이스 삭제, 고슴도치 art 케이스 추가. Astra 칸은 「코덱스 책상」에 포근나루 식구 18명의 얼굴이 그대로 다시 앉는 모양. 팀 필터는 포근나루(클로드와 코덱스)·디퍼 살롱 둘.
+- 나무🌳 디자인 · 바다🌊 구성.

@@ -46,3 +46,24 @@
 @media (min-width: 1650px) {
   .chart-page .role-groups { --person-row-min: 75px; row-gap: 8px; }
 }
+
+/* 2026-10-01 · 코덱스 책상 — 포근나루 식구의 얼굴이 그대로 다시 앉는다 */
+.desk-card{border:1px dashed var(--teamline);background:white;border-radius:10px;padding:10px 10px 12px}
+.desk-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.desk-head strong{font-family:var(--serif);font-size:17px;color:var(--team)}
+.desk-head span{font-size:11px;color:var(--muted)}
+.desk-faces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 4px}
+.desk-face{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
+.desk-face .pixel-art{width:28px;height:28px}
+.desk-face b{font-weight:400;font-size:10.5px;color:var(--muted);white-space:nowrap}
+.desk-face .pixel-fallback{font-size:20px}
+.astra{--team:#5B4C86}
+@media(min-width:1650px){.desk-face .pixel-art{width:34px;height:34px}.desk-face b{font-size:12px}}
+@media(max-width:960px){.desk-faces{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:640px){.desk-faces{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* 2026-10-01 · 두 머리 — 바다와 고슴도치. 같은 카드, 같은 크기, 가운데 줄로 잇는다 */
+#bada{width:auto;max-width:520px;display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);margin:auto}
+#bada .head-tie{position:relative}
+#bada .head-tie::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:#d3b592}
+@media(max-width:640px){#bada{grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr)}#bada .person.leader h3{font-size:18px}}

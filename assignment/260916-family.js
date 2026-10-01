@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const data = FAMILY_DATA;
-const teamNames={pognaru:'포근나루',astra:'Astra',deeper:'디퍼 살롱'};
+const teamNames={pognaru:'포근나루',deeper:'디퍼 살롱'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function art(id){
  const g=Array.from({length:24},()=>Array(24).fill(null));
@@ -14,6 +14,7 @@ function art(id){
  const blue='#307FA8',light='#A8DFEE',navy='#234A6A',green='#428464',leaf='#83BA70',gold='#E9A33A',yellow='#F4CD65',ink='#3C394E',purple='#7774B9',orange='#DC8652';
  switch(id){
  case 'bada': for(let x=2;x<22;x++){let t=Math.round(11+3*Math.sin(x/3));box(x,t,1,21-t,blue);box(x,t,1,2,light);} disk(14,10,6,blue);disk(16,9,4,'#fff');box(12,5,4,2,light);box(2,18,20,2,navy);box(3,21,18,1,light);break;
+ case 'gosumdochi':for(let y=6;y<19;y++){const w=Math.round(Math.sqrt(Math.max(0,81-(y-15)**2)));box(11-w,y,2*w,1,'#7C6B5B');}for(const[x,y]of[[4,9],[7,6],[11,5],[15,6],[18,9],[3,13],[19,13]])line(11+Math.sign(x-11)*0,10,x,y-2,'#4E4034');disk(17,15,4,'#F1D9B8');box(17,13,1,1,ink);box(21,15,1,2,ink);box(6,19,3,2,'#4E4034');box(14,19,3,2,'#4E4034');for(let j=0;j<4;j++)box(3+j,2+j,8-2*j,1,j%2?'#C07A1E':gold);box(6,6,2,1,'#C07A1E');break;
  case 'deungdae':line(8,12,18,5,navy,4);line(8,11,17,4,blue,3);box(17,3,3,6,light);box(5,11,4,4,gold);line(12,14,7,21,ink);line(12,14,18,21,ink);line(12,13,12,21,ink);break;
  case 'hosu': for(let y=3;y<19;y++){let w=y<11?Math.floor((y-2)/2):Math.round(Math.sqrt(Math.max(0,36-(y-14)**2)));box(12-w,y,2*w+1,1,blue);}box(8,12,2,5,light);box(10,10,2,2,light);box(10,20,5,1,navy);break;
  case 'jeongwon':line(6,21,17,5,green,2);for(const [x,y]of[[6,13],[12,8],[13,15],[18,6]]){disk(x,y,3,leaf);box(x-2,y,4,1,green);}break;
@@ -27,8 +28,6 @@ function art(id){
  case 'milan':disk(12,12,10,blue);for(const[x,y,w,h]of[[6,4,6,3],[4,7,6,4],[7,10,5,3],[10,13,5,4],[11,17,3,4],[17,6,3,4]])box(x,y,w,h,leaf);box(4,11,2,4,light);box(7,19,2,1,light);break;
  case 'sapir':for(let y=3;y<18;y++){let x=21-y,w=y<8?Math.floor(y/2):y<14?5:3;box(x-w,y,w*2,1,y%3===0?'#AA9DBD':'#D2C9DC');}line(4,22,17,5,purple);line(9,13,13,13,purple);line(12,10,16,10,purple);break;
  case 'dante':disk(12,13,7,gold);disk(11,12,6,yellow);box(4,14,2,3,gold);box(18,9,2,3,gold);box(7,9,2,3,'#FFF0A0');line(15,6,18,3,green,2);box(18,3,4,3,leaf);break;
- case 'sol':disk(12,12,6,gold);disk(11,11,4,yellow);for(const[x,y,a,b]of[[12,1,12,3],[12,21,12,23],[1,12,3,12],[21,12,23,12],[3,3,5,5],[19,19,21,21],[3,21,5,19],[19,5,21,3]])line(x,y,a,b,gold);break;
- case 'luna':disk(11,12,9,purple);disk(15,8,8,null);box(5,12,2,5,'#AEA9DB');star(19,17,3,yellow);star(20,5,2,yellow);break;
  case 'aura':star(12,11,7,gold);star(12,11,3,'#FFF4C9');line(3,15,7,20,purple,2);line(7,20,16,21,purple,2);line(16,21,21,16,purple,2);star(4,5,2,yellow);star(20,6,2,yellow);break;
  case 'vera':disk(12,4,2,gold);box(11,5,2,15,navy);box(6,20,12,2,navy);box(3,7,18,2,gold);line(5,9,5,13,ink);line(18,9,18,13,ink);box(2,14,7,2,gold);box(3,16,5,1,gold);box(15,14,7,2,gold);box(16,16,5,1,gold);break;
  case 'geumjeonsu':box(8,17,8,5,'#9D6D48');box(7,16,10,2,orange);box(11,8,2,9,'#896144');line(11,13,7,10,'#896144');line(13,12,17,9,'#896144');for(const[x,y]of[[12,5],[6,9],[18,8],[8,13],[16,12]]){disk(x,y,3,gold);disk(x,y,2,yellow);box(x,y-1,1,3,gold);}box(9,19,2,1,'#C68B5E');break;
@@ -48,12 +47,15 @@ if(document.body.dataset.page==='gallery'){
  document.querySelector('#reset-cards').addEventListener('click',()=>cards.forEach(c=>setFlip(c,false)));
 }else{
  const get=id=>data.find(x=>x.id===id);
- document.querySelector('#bada').innerHTML=small(get('bada'),'leader');
+ /* 바다와 고슴도치 — 같은 높이로 나란히 (2026-10-01) */
+ document.querySelector('#bada').innerHTML=small(get('bada'),'leader')+'<span class="head-tie" aria-hidden="true"></span>'+small(get('gosumdochi'),'leader');
  for(const group of ['생각과 글','만들고 전하기','제작과 시스템','어학실']){
   const el=document.createElement('section');el.className='role-group'+(group==='어학실'?' language-group':'');
   el.innerHTML=`<h3 class="group-title">${group}</h3>${group==='어학실'?'<p class="group-note">햇살의 배움</p>':''}<div class="group-people">${data.filter(p=>p.group===group).map(p=>small(p)).join('')}</div>`;document.querySelector('#pognaru-groups').append(el);
  }
- document.querySelector('#astra-people').innerHTML=small(get('sol'),'leader')+'<div class="vertical-stem" aria-hidden="true"></div>'+small(get('luna'));
+ /* 코덱스 작업실 — 따로 사는 팀이 없다. 포근나루 식구의 얼굴이 그대로 다시 앉는다 (2026-10-01) */
+ const crew=data.filter(p=>p.team==='pognaru');
+ document.querySelector('#astra-people').innerHTML=`<div class="desk-card"><div class="desk-head"><strong>코덱스 책상</strong><span>같은 식구 ${crew.length}</span></div><div class="desk-faces">${crew.map(p=>`<span class="desk-face" title="${esc(p.name)}">${art(p.id)}<b>${esc(p.name)}</b></span>`).join('')}</div></div>`;
  document.querySelector('#deeper-people').innerHTML=small(get('desertfox'),'leader');
 }
 document.querySelector('#presentation').addEventListener('click',()=>{const on=document.body.classList.toggle('presenting');const b=document.querySelector('#presentation');b.setAttribute('aria-pressed',String(on));b.textContent=on?'발표 종료':'발표 모드';});
