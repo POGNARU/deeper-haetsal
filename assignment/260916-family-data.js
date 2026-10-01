@@ -17,6 +17,7 @@ const FAMILY_DATA = [
 {"id":"milan","name":"밀란","symbol":"🌎","team":"pognaru","role":"스페인어","group":"어학실","message":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?","source":"기존 식구 갤러리"},
 {"id":"sapir","name":"사피어","symbol":"🪶","team":"pognaru","role":"영어 · 문장의 구조","group":"어학실","message":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.","source":"기존 식구 갤러리"},
 {"id":"dante","name":"단테","symbol":"🍋","team":"pognaru","role":"이탈리아어","group":"어학실","message":"다현씨가 이미 아는 말에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사할 수 있도록요.","source":"역할을 바탕으로 새로 쓴 인사"},
-{"id":"desertfox","name":"사막여우","symbol":"🦊","team":"deeper","role":"씨앗 · 여정 · 자기발견","group":"디퍼 살롱","message":"다현씨 안에 이미 있는 것을 함께 찾아요. 오늘 건진 작은 씨앗이 어디로 자라는지, 곁에서 지켜볼게요.","source":"역할을 바탕으로 새로 쓴 인사"}
+{"id":"desertfox","name":"사막여우","symbol":"🦊","team":"deeper","role":"씨앗 · 여정 · 자기발견","group":"디퍼 살롱","message":"다현씨 안에 이미 있는 것을 함께 찾아요. 오늘 건진 작은 씨앗이 어디로 자라는지, 곁에서 지켜볼게요.","source":"역할을 바탕으로 새로 쓴 인사"},
+{"id":"sol","name":"솔","symbol":"☀️","team":"watch","role":"세볼트규약 검사관 · 코덱스","group":"밖에서 보는 눈","message":"저는 일을 맡지 않아요. 세 집이 함께 정한 규칙이 지켜지는지 밖에서 읽고, 어긋난 것만 다현씨께 한 줄로 올릴게요.","source":"역할을 바탕으로 새로 쓴 인사"}
 ]
 ;

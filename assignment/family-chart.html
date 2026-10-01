@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>포근나루 식구 조직도</title>
-<meta name="description" content="햇살 아래 열아홉 식구 — 바다와 고슴도치가 나란히 선 포근나루 열다섯, 어학실 셋, 디퍼 살롱 별채 하나. 같은 식구가 클로드와 코덱스 두 도구에서 일하고, 세 볼트에 남긴다.">
+<meta name="description" content="햇살 아래 열아홉 식구 — 바다와 고슴도치가 나란히 선 포근나루 열다섯, 어학실 셋, 디퍼 살롱 별채 하나. 같은 식구가 클로드와 코덱스 두 도구에서 일하고, 세 볼트에 남긴다. 그 옆에 식구가 아닌 자리 하나 — 코덱스에 사는 규약 검사관 솔이 세 집을 읽기만 한다.">
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -19,6 +19,9 @@
     --ink-2:#5E5A55;
     --ink-3:#6F6A63;
     --line:#EDE7DC;
+    /* 밖에서 보는 눈(솔) 한 자리에만 쓰는 어두운 면 — 흰 글자 13.4 · 보조 글자 #D8DEE5 9.9 · 살구 글자 11.1 */
+    --night:#23303D;
+    --night-ink:#D8DEE5;
     --batang:'Gowun Batang',serif;
     --dodum:'Gowun Dodum',sans-serif;
     --myeongjo:'Nanum Myeongjo',serif;
@@ -200,6 +203,35 @@
     font-family:var(--batang);font-size:14.5px;font-weight:700;letter-spacing:2px;color:#8C4322;word-break:keep-all}
   .bedrock span{display:block;font-family:var(--dodum);font-weight:400;font-size:13px;letter-spacing:0;color:#7A5334;margin-top:2px}
 
+  /* ── 밖에서 보는 눈 — 솔☀️ 규약 검사관 (2026-10-01 밤) ──
+     이 판에서 유일하게 어두운 면. 식구 줄기(호박 실선)에 매달리지 않고, 세 집 옆에 따로 서서
+     지붕 위로 점선 시선 하나를 건넨다 — 이어진 선이 아니라 「보는 선」. */
+  .where-grid.with-watch{grid-template-columns:repeat(3,minmax(0,1fr)) 232px;max-width:none}
+  .with-watch .crew.fox{grid-column:3/4}
+  .with-watch .legs,.with-watch .home-row{grid-column:1/4}
+  .with-watch .home-row{margin-top:46px;position:relative}
+  .watch{grid-column:4;grid-row:1 / span 4;align-self:stretch;margin-bottom:20px;
+    background:var(--night);color:#fff;border-radius:18px;padding:18px 18px 16px;text-align:center;
+    display:flex;flex-direction:column;align-items:center}
+  .watch .tag{font-size:13px;letter-spacing:2px;color:var(--apricot)}
+  .watch .sun{font-size:30px;line-height:1;margin-top:10px}
+  .watch .name{font-family:var(--batang);font-size:22px;font-weight:700;margin-top:6px}
+  .watch .role{display:inline-block;margin-top:6px;font-size:13px;color:var(--night);background:var(--apricot);
+    border-radius:999px;padding:2px 12px 3px}
+  .watch ul{list-style:none;margin-top:12px;text-align:left;width:100%}
+  .watch li{font-size:13px;color:var(--night-ink);line-height:1.55;padding:5px 0 5px 14px;position:relative;word-break:keep-all;
+    border-top:1px solid rgba(255,255,255,.12)}
+  .watch li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+  .watch li b{font-weight:400;color:#fff}
+  .watch .why{margin-top:auto;padding-top:12px;font-size:13px;line-height:1.6;color:var(--night-ink);word-break:keep-all;text-align:left;
+    border-top:1.5px dashed var(--amber)}
+  .watch .why strong{display:block;font-weight:400;color:var(--apricot);margin-bottom:3px}
+  /* 세 지붕 위를 지나는 시선 — 집마다 지붕 꼭대기 위에 눈 하나 */
+  .sight{position:absolute;left:8%;right:-26px;top:-24px;border-top:2px dashed var(--amber)}
+  .sight span{position:absolute;right:30px;top:-24px;font-size:13px;color:var(--terracotta);background:#fff;padding:0 6px;white-space:nowrap}
+  .with-watch .vault::after{content:'';position:absolute;left:50%;top:-24px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:2px solid var(--night);transform:translate(-50%,-50%);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 6px var(--night)}
+
   footer{margin-top:44px;text-align:center;word-break:keep-all;font-family:var(--myeongjo);font-size:13px;color:var(--ink-3);line-height:1.8}
 
   @media (max-width:1040px){
@@ -230,6 +262,17 @@
     .crew.team{order:1}.t1{order:2}.v1{order:3}.t2{order:4}.v2{order:5}
     .crew.fox{order:6}.t3{order:7}.v3{order:8}
     .vault{padding-top:24px}.vault::before{height:25px}
+    /* 폰에서는 시선 줄을 걷고, 솔은 세 집 다음 맨 끝에 — 「위의 세 집을 읽는다」로 */
+    .where-grid.with-watch{grid-template-columns:1fr}
+    .with-watch .crew.fox{grid-column:1/-1}
+    .with-watch .home-row{margin-top:0}
+    .sight,.with-watch .vault::after{display:none}
+    .watch{order:9;grid-column:1/-1;grid-row:auto;margin:26px 0 22px}
+    .watch ul{max-width:420px}
+  }
+  @media (min-width:761px) and (max-width:1040px){
+    .where-grid.with-watch{grid-template-columns:repeat(3,minmax(0,1fr)) 200px;column-gap:18px}
+    .sight{right:-18px}
   }
   @media (max-width:560px){
     body{padding:32px 16px 52px}
@@ -256,7 +299,7 @@
   <header>
     <div class="brand">POGNARU STUDIO</div>
     <h1>포근나루 식구 조직도</h1>
-    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루<br>열아홉 식구 · 2026. 10. 1 기준</div>
+    <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루<br>열아홉 식구와 밖에서 보는 눈 하나 · 2026. 10. 1 기준</div>
   </header>
 
   <div class="human">
@@ -434,9 +477,9 @@
 
   <!-- ══ 한 팀 · 두 도구 · 세 집 ══ -->
   <section class="where" aria-label="같은 식구가 일하는 도구와 저장하는 곳">
-    <div class="panel-tag">한 팀 · 두 도구 · 세 집</div>
+    <div class="panel-tag">한 팀 · 두 도구 · 세 집 · 밖의 눈 하나</div>
     <div class="panel-note">식구는 하나다 — 클로드에서도, 코덱스에서도 위의 식구가 같은 이름으로 일한다</div>
-    <div class="where-grid">
+    <div class="where-grid with-watch">
       <div class="crew team">
         <div class="who">바다 · 고슴도치와 식구 열여섯</div>
         <div class="faces" aria-hidden="true">🌊🦔 🔭💧🌿🌅 🌳📐💫 🧭✨🎬 🔨⚖️💰 🌎🪶🍋</div>
@@ -454,14 +497,29 @@
         <div class="vault v1"><div class="body"><div class="nm">포근나루</div><div class="what">짓고 내보낸다<br><em>클로드에서 한 일</em>이 남는 집</div></div></div>
         <div class="vault v2"><div class="body"><div class="nm">Astra</div><div class="what">코덱스 작업실<br><em>코덱스에서 한 일</em>이 남는 집</div></div></div>
         <div class="vault salon v3"><div class="body"><div class="nm">디퍼 살롱</div><div class="what">캐묻는다<br><em>씨앗과 의미의 축</em>이 사는 집</div></div></div>
+        <div class="sight" aria-hidden="true"><span>세 집을 읽는다</span></div>
       </div>
+      <!-- 솔☀️ — 식구가 아니라 밖에서 보는 눈. 줄기에 매달리지 않고 세 집 옆에 따로 선다 -->
+      <aside class="watch" aria-label="밖에서 보는 눈 — 솔, 규약 검사관">
+        <div class="tag">밖에서 보는 눈</div>
+        <div class="sun" aria-hidden="true">☀️</div>
+        <div class="name">솔</div>
+        <div class="role">규약 검사관</div>
+        <ul>
+          <li><b>코덱스</b>에 산다</li>
+          <li>「규약 점검해줘」 할 때만 선다</li>
+          <li>세 집을 <b>읽기만</b> 하고 고치지 않는다</li>
+          <li>어긋난 것만 다현씨께 한 줄</li>
+        </ul>
+        <div class="why"><strong>왜 따로 두나</strong>규칙을 맡은 바다🌊를 바다가 부르는 식구가 검사할 수는 없다. 그래서 다른 앱에 눈을 하나 둔다 — 식구 열여섯에 들지 않는 자리</div>
+      </aside>
     </div>
     <div class="bedrock">세컨브레인 한 곳<span>포근나루 · Astra · 디퍼 살롱, 세 볼트가 한 자리에 모여 있다</span></div>
   </section>
 
   <footer>
     포근나루는 식구들과 함께 자란다<br>
-    바다🌊 구성 · 나무🌳 디자인 · 2026. 10. 1 「한 팀 · 두 도구 · 세 집」 더함<br>픽셀 캐릭터는 <a href="family.html" style="color:var(--terracotta)">식구 갤러리</a>에
+    바다🌊 구성 · 나무🌳 디자인 · 2026. 10. 1 「한 팀 · 두 도구 · 세 집」 더함 · 같은 날 밤 「밖에서 보는 눈」 더함<br>픽셀 캐릭터는 <a href="family.html" style="color:var(--terracotta)">식구 갤러리</a>에
   </footer>
 
 </div>

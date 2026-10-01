@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const data = FAMILY_DATA;
-const teamNames={pognaru:'포근나루',deeper:'디퍼 살롱'};
+const teamNames={pognaru:'포근나루',deeper:'디퍼 살롱',watch:'밖에서 보는 눈'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function art(id){
  const g=Array.from({length:24},()=>Array(24).fill(null));
@@ -28,6 +28,8 @@ function art(id){
  case 'milan':disk(12,12,10,blue);for(const[x,y,w,h]of[[6,4,6,3],[4,7,6,4],[7,10,5,3],[10,13,5,4],[11,17,3,4],[17,6,3,4]])box(x,y,w,h,leaf);box(4,11,2,4,light);box(7,19,2,1,light);break;
  case 'sapir':for(let y=3;y<18;y++){let x=21-y,w=y<8?Math.floor(y/2):y<14?5:3;box(x-w,y,w*2,1,y%3===0?'#AA9DBD':'#D2C9DC');}line(4,22,17,5,purple);line(9,13,13,13,purple);line(12,10,16,10,purple);break;
  case 'dante':disk(12,13,7,gold);disk(11,12,6,yellow);box(4,14,2,3,gold);box(18,9,2,3,gold);box(7,9,2,3,'#FFF0A0');line(15,6,18,3,green,2);box(18,3,4,3,leaf);break;
+ /* ☀️ 솔 — 2026-09-16 첫 판 얼굴 그대로. 2026-10-01 밤 규약 검사관으로 다시 섰다 */
+ case 'sol':disk(12,12,6,gold);disk(11,11,4,yellow);for(const[x,y,a,b]of[[12,1,12,3],[12,21,12,23],[1,12,3,12],[21,12,23,12],[3,3,5,5],[19,19,21,21],[3,21,5,19],[19,5,21,3]])line(x,y,a,b,gold);break;
  case 'aura':star(12,11,7,gold);star(12,11,3,'#FFF4C9');line(3,15,7,20,purple,2);line(7,20,16,21,purple,2);line(16,21,21,16,purple,2);star(4,5,2,yellow);star(20,6,2,yellow);break;
  case 'vera':disk(12,4,2,gold);box(11,5,2,15,navy);box(6,20,12,2,navy);box(3,7,18,2,gold);line(5,9,5,13,ink);line(18,9,18,13,ink);box(2,14,7,2,gold);box(3,16,5,1,gold);box(15,14,7,2,gold);box(16,16,5,1,gold);break;
  case 'geumjeonsu':/* 💰 돈주머니 — 발표판은 이모지 문법 (2026-10-01) */disk(12,15,7,'#C68B4E');box(6,15,13,5,'#C68B4E');box(7,20,11,1,'#C68B4E');box(5,14,2,4,'#A9713A');box(9,5,6,3,'#C68B4E');box(8,4,2,2,'#C68B4E');box(14,4,2,2,'#C68B4E');box(9,8,6,1,'#7A4A22');box(10,9,4,1,'#A9713A');box(12,11,1,10,yellow);box(10,12,5,1,yellow);box(10,13,1,2,yellow);box(10,15,5,1,yellow);box(14,16,1,2,yellow);box(10,18,5,1,yellow);break;
@@ -39,12 +41,18 @@ function art(id){
 function small(p,extra=''){return `<article class="person ${extra}" data-person="${p.id}"><div class="mini-art">${art(p.id)}</div><div><h3>${esc(p.name)}</h3><p>${esc(p.role)}</p></div></article>`;}
 if(document.body.dataset.page==='gallery'){
  const grid=document.querySelector('#family-grid');
- grid.innerHTML=data.map((p,i)=>`<button class="family-card ${p.team}" data-team="${p.team}" data-person="${p.id}" aria-pressed="false" aria-label="${esc(p.name)} · ${esc(p.role)} · 인사 보기"><span class="card-turn"><span class="card-face card-front" aria-hidden="false"><span class="card-meta"><span>${teamNames[p.team]}</span><span>${String(i+1).padStart(2,'0')}</span></span><span class="art-stage">${art(p.id)}</span><span class="card-name">${esc(p.name)}</span><span class="card-role">${esc(p.role)}</span><span class="card-bottom"><span>${esc(p.group)}</span><span aria-hidden="true">↗</span></span></span><span class="card-face card-back" aria-hidden="true"><span class="back-label">${esc(p.name)}의 한마디</span><span class="message">${esc(p.message)}</span><span class="back-foot">${p.source==='기존 식구 갤러리'?'기존 식구의 인사':'역할에서 새로 쓴 인사'}<span aria-hidden="true">↶</span></span></span></span></button>`).join('');
+ /* 솔☀️은 식구가 아니라 밖에서 보는 눈 — 식구 격자(필터·셈) 밖, 아래 #watch에 따로 선다 (2026-10-01 밤) */
+ const crewData=data.filter(p=>p.team!=='watch');
+ const cardHTML=(p,i)=>`<button class="family-card ${p.team}" data-team="${p.team}" data-person="${p.id}" aria-pressed="false" aria-label="${esc(p.name)} · ${esc(p.role)} · 인사 보기"><span class="card-turn"><span class="card-face card-front" aria-hidden="false"><span class="card-meta"><span>${teamNames[p.team]}</span><span>${String(i+1).padStart(2,'0')}</span></span><span class="art-stage">${art(p.id)}</span><span class="card-name">${esc(p.name)}</span><span class="card-role">${esc(p.role)}</span><span class="card-bottom"><span>${esc(p.group)}</span><span aria-hidden="true">↗</span></span></span><span class="card-face card-back" aria-hidden="true"><span class="back-label">${esc(p.name)}의 한마디</span><span class="message">${esc(p.message)}</span><span class="back-foot">${p.source==='기존 식구 갤러리'?'기존 식구의 인사':'역할에서 새로 쓴 인사'}<span aria-hidden="true">↶</span></span></span></span></button>`;
+ grid.innerHTML=crewData.map(cardHTML).join('');
  const cards=[...grid.children];
+ const watch=document.querySelector('#watch-card'),sol=data.find(p=>p.team==='watch');
+ if(watch&&sol){watch.innerHTML=cardHTML(sol,-1).replace('<span>00</span>','<span>검사</span>');}
+ const allCards=watch?[...cards,...watch.children]:cards;
  const setFlip=(c,v)=>{c.classList.toggle('flipped',v);c.setAttribute('aria-pressed',String(v));c.querySelector('.card-front').setAttribute('aria-hidden',String(v));c.querySelector('.card-back').setAttribute('aria-hidden',String(!v));const p=data.find(x=>x.id===c.dataset.person);c.setAttribute('aria-label',v?`${p.name}의 한마디: ${p.message} · 앞면 보기`:`${p.name} · ${p.role} · 인사 보기`);};
- cards.forEach(c=>c.addEventListener('click',()=>setFlip(c,!c.classList.contains('flipped'))));
+ allCards.forEach(c=>c.addEventListener('click',()=>setFlip(c,!c.classList.contains('flipped'))));
  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));cards.forEach(c=>c.hidden=b.dataset.filter!=='all'&&c.dataset.team!==b.dataset.filter);document.querySelector('#visible-count').textContent=`${cards.filter(c=>!c.hidden).length}명의 식구`; }));
- document.querySelector('#reset-cards').addEventListener('click',()=>cards.forEach(c=>setFlip(c,false)));
+ document.querySelector('#reset-cards').addEventListener('click',()=>allCards.forEach(c=>setFlip(c,false)));
 }else{
  const get=id=>data.find(x=>x.id===id);
  /* 바다와 고슴도치 — 같은 높이로 나란히 (2026-10-01) */
@@ -57,6 +65,8 @@ if(document.body.dataset.page==='gallery'){
  const crew=data.filter(p=>p.team==='pognaru');
  document.querySelector('#astra-people').innerHTML=`<div class="desk-card"><div class="desk-head"><strong>코덱스 책상</strong><span>같은 식구 ${crew.length}</span></div><div class="desk-faces">${crew.map(p=>`<span class="desk-face" title="${esc(p.name)}">${art(p.id)}<b>${esc(p.name)}</b></span>`).join('')}</div></div>`;
  document.querySelector('#deeper-people').innerHTML=small(get('desertfox'),'leader');
+ /* 솔☀️ — 식구 줄기에 매달리지 않는 자리. 세 집을 읽기만 한다 (2026-10-01 밤) */
+ const w=document.querySelector('#watch-person');if(w)w.innerHTML=small(get('sol'),'leader watch-person');
 }
 document.querySelector('#presentation').addEventListener('click',()=>{const on=document.body.classList.toggle('presenting');const b=document.querySelector('#presentation');b.setAttribute('aria-pressed',String(on));b.textContent=on?'발표 종료':'발표 모드';});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.classList.remove('presenting');const b=document.querySelector('#presentation');b.setAttribute('aria-pressed','false');b.textContent='발표 모드';}});

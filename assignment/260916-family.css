@@ -67,3 +67,36 @@
 #bada .head-tie{position:relative}
 #bada .head-tie::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:#d3b592}
 @media(max-width:640px){#bada{grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr)}#bada .person.leader h3{font-size:18px}}
+
+
+/* 2026-10-01 밤 · 밖에서 보는 눈 — 솔☀️ 규약 검사관.
+   판 전체에서 유일하게 어두운 면. 햇살·바다에서 내려오는 실선에 매달리지 않고 세 집 아래 따로 선다.
+   흰 글자 13.4 · 보조 #D8DEE5 9.9 · 살구 #FBE7C9 11.1 (바탕 #23303D) */
+.watch{--team:#FBE7C9;--tint:#23303D;--artbg:#2F3E4D;--teamline:#3A4B5C}
+.watch-band{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:22px;align-items:center;
+  background:#23303D;color:#fff;border-radius:14px;padding:14px 18px;margin-top:14px}
+.watch-band .watch-kicker{margin:0 0 4px;font-size:11px;letter-spacing:.12em;color:#FBE7C9}
+.watch-band h2{font-family:var(--serif);font-size:24px;margin:0 0 8px;letter-spacing:-.04em}
+.watch-band ul{margin:0;padding:0;list-style:none}
+.watch-band .watch-text li,.watch-line{font-size:13px;line-height:1.65;color:#D8DEE5;margin:0;word-break:keep-all}
+.watch-band b{color:#fff;font-weight:700}
+.watch-why{margin:8px 0 0;padding-top:8px;border-top:1px dashed #E9A33A;font-size:12px;line-height:1.65;color:#D8DEE5;word-break:keep-all}
+.watch-why strong{color:#FBE7C9;font-weight:700}
+.watch-person.person{background:#2F3E4D;border-color:#3A4B5C;color:#fff;min-width:200px}
+.watch-person.person p{color:#D8DEE5}
+.watch-houses{display:flex;gap:8px}
+.watch-houses li{position:relative;font-size:12px;color:#fff;border:1px dashed #E9A33A;border-radius:999px;padding:4px 12px 5px 26px;white-space:nowrap}
+.watch-houses li::before{content:'';position:absolute;left:9px;top:50%;width:10px;height:10px;transform:translateY(-50%);border-radius:50%;
+  background:#23303D;box-shadow:0 0 0 2px #fff,inset 0 0 0 3px #23303D,inset 0 0 0 5px #fff}
+.line-legend span:nth-child(2):before{border-top-style:dashed;border-color:#9183af}
+.line-legend span:last-child:before{border-top:2px dotted #E9A33A}
+/* 갤러리 — 솔 카드는 식구 격자 밖. 카드 한 장 + 설명 */
+.gallery-watch{grid-template-columns:minmax(0,220px) minmax(0,1fr);margin-top:26px;padding:18px}
+.gallery-watch .family-card{width:100%}
+.watch .card-face{background:#2F3E4D;border-color:#3A4B5C;color:#fff}
+.watch .card-role,.watch .card-bottom,.watch .back-foot,.watch .card-meta>span:last-child{color:#D8DEE5}
+.watch .card-back{background:#23303D;border-color:#E9A33A}
+.watch .message{color:#fff}
+@media(max-width:960px){.chart-watch{grid-template-columns:1fr;gap:12px}.watch-houses{flex-wrap:wrap}}
+@media(max-width:640px){.gallery-watch{grid-template-columns:1fr}.gallery-watch .watch-card{max-width:240px;width:100%;margin:0 auto}
+  .watch-band h2{font-size:21px}.watch-person.person{min-width:0}}

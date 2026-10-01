@@ -88,6 +88,21 @@ h1{font-family:var(--batang);font-weight:700;font-size:clamp(30px,5vw,46px);marg
 .annex-note{margin:0;font-family:var(--serif);font-size:14px;color:var(--ink-2);line-height:1.85;word-break:keep-all}
 @media (max-width:560px){.annex-row{grid-template-columns:1fr}.annex-card{max-width:240px;margin:0 auto;width:100%}.annex-note{text-align:center}
   .desks .desk{font-size:15px;padding:5px 14px 6px}}
+/* 밖에서 보는 눈 — 솔☀️ 규약 검사관 (2026-10-01 밤). 이 판에서 유일하게 어두운 면이고, 유일하게 동물이 아닌 얼굴(해)이다.
+   식구가 아니라 세 집을 밖에서 읽는 자리라서, 식구 줄기와 별채 다음 맨 바깥에 따로 둔다 */
+.watch{margin:28px auto 0;max-width:620px;background:#23303D;border-radius:22px;padding:18px 22px 22px;color:#fff}
+.watch-label{text-align:center;font-family:var(--batang);font-size:14px;letter-spacing:.14em;color:#FFE3EF;margin-bottom:14px}
+.watch-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:22px;align-items:center}
+.watch-note{margin:0;padding:0;list-style:none;font-size:14px;line-height:1.6;color:#D8DEE5;word-break:keep-all}
+.watch-note li{position:relative;padding:6px 0 6px 16px;border-top:1px solid rgba(255,255,255,.12)}
+.watch-note li:first-child{border-top:0}
+.watch-note li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:#E9A33A}
+.watch-note b{font-weight:600;color:#fff}
+.watch-why{margin:16px 0 0;padding-top:12px;border-top:1.5px dashed #E9A33A;font-size:13.5px;line-height:1.7;color:#D8DEE5;word-break:keep-all;text-align:center}
+.watch-why strong{color:#FFE3EF;font-weight:600}
+.watch .face{background:#FFF8E1;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:#E9A33A}
+.watch .back{background:#FFF8E1}
+@media (max-width:560px){.watch-row{grid-template-columns:1fr}.watch-card{max-width:240px;margin:0 auto;width:100%}}
 footer{word-break:keep-all;text-align:center;margin-top:56px;color:var(--muted);font-size:13.5px;font-family:var(--serif)}
 footer a{color:var(--terra-d)}
 </style>
@@ -99,7 +114,7 @@ footer a{color:var(--terra-d)}
 <header>
   <p class="kicker">POGNARU STUDIO</p>
   <h1>포근나루 식구</h1>
-  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열여덟 식구와 별채의 사막여우.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
+  <p class="lead">고요히, 마음에 머무는 글을 함께 짓는 열여덟 식구와 별채의 사막여우,<br />그리고 밖에서 세 집을 지켜보는 솔.<br />저마다 어울리는 동물과 성향으로 빚은 픽셀 갤러리예요.<br /><span style="color:var(--terra-d)">카드를 톡 누르면, 그 식구가 다현씨에게 남긴 한 마디가 떠요.</span></p>
   <div class="desks" aria-label="같은 식구가 일하는 두 도구">
     <span class="desk">클로드</span><span class="same">같은 식구</span><span class="desk">코덱스</span>
   </div>
@@ -115,8 +130,21 @@ footer a{color:var(--terra-d)}
     <p class="annex-note">사막여우는 디퍼 살롱 볼트에서만 일해요.<br />몽롱쓰기에서 씨앗을 건져<br />여정과 오아시스로 잇는 식구예요.</p>
   </div>
 </section>
+<section class="watch" aria-label="밖에서 보는 눈 — 솔, 규약 검사관">
+  <div class="watch-label">밖에서 보는 눈 — 식구가 아닌 자리</div>
+  <div class="watch-row">
+    <div class="watch-card" id="sol"></div>
+    <ul class="watch-note">
+      <li><b>코덱스</b>에 살아요</li>
+      <li>「솔아, 규약 점검해줘」 할 때만 서요</li>
+      <li>포근나루 · 디퍼 살롱 · Astra 세 집을 <b>읽기만</b> 하고 고치지 않아요</li>
+      <li>어긋난 것만 다현씨께 한 줄로 올려요</li>
+    </ul>
+  </div>
+  <p class="watch-why"><strong>담당과 검사관을 나눠요</strong> — 규칙을 맡은 바다🌊를 바다가 부르는 식구가 검사할 수는 없어서, 다른 앱에 눈을 하나 따로 둬요.</p>
+</section>
 <footer>
-  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 10. 1<br />
+  바다🌊 시선 · 나무🌳 픽셀 · 포근나루 스튜디오 · 2026. 10. 1 · 같은 날 밤 「밖에서 보는 눈」 더함<br />
   <a href="family-chart.html">식구 조직도 →</a> &nbsp;·&nbsp; <a href="index.html">← 과제</a>
 </footer>
 </div>
@@ -181,6 +209,9 @@ const fam=[
 const fox={n:"사막여우",a:"디퍼 살롱 · 씨앗과 여정",an:"씨앗을 물어 오는 사막여우",q:"이미 있는 것을 함께 찾아요",
  pal:{O:"#E39A4E",i:"#FBE3C4",C:"#FFF2D9",e:"#1E1E1E",N:"#3C2415",g:"#639922",Y:"#E9A33A"},
  map:["................", ".O..........O...", ".OO........OO...", ".OiO......OiO...", ".OiiO....OiiO...", ".OiiOOOOOOiiO...", "..OOOOOOOOOO....", ".OOeOOOOOOeOO...", ".OOOOOOOOOOOO...", ".CCOOOOOOOOCC...", "..CCCCNNCCCC..g.", "...CCCCCCCC..gg.", "....CCCCCC....g.", "...OOOOOOOO..YY.", "..OOOOOOOOOO.YY.", "..OO.OOOO.OO...."]};
+const sol={n:"솔",a:"규약 검사관 · 코덱스",an:"세 집을 비추는 해",q:"읽기만 하고, 고치지 않아요",
+ pal:{Y:"#E9A33A",y:"#F4CD65",w:"#FFF0A0",e:"#3C2415"},
+ map:[".......YY.......", ".Y.....YY.....Y.", "..Y..........Y..", "......yyyy......", "....yyyyyyyy....", "...yywwyyyyyy...", "...ywyyyyyyyy...", "YY.yyeyyyyeyy.YY", "YY.yyeyyyyeyy.YY", "...yyyyyyyyyy...", "...yyyyyyyyyy...", "....yyyyyyyy....", "......yyyy......", "..Y..........Y..", ".Y.....YY.....Y.", ".......YY......."]};
 function draw(c){
   let r="";
   for(let y=0;y<c.map.length;y++){const row=c.map[y];
@@ -209,7 +240,8 @@ const msg={
   "밀란":"틀려도 괜찮아요. 다현씨, 그 문장 저와 한 번 더 말해 볼까요?",
   "사피어":"영어는 자리의 언어예요. 외우지 않아도 되게, 동사부터 그 자리를 하나씩 짚어 드릴게요.",
   "단테":"다현씨가 이미 아는 스페인어에서 한 걸음씩 건너가요. 어느 날 이탈리아 사람 앞에서 자연스럽게 인사하시도록.",
-  "사막여우":"다현씨 안에 이미 있는 것을 함께 찾아요. 오늘 건진 작은 씨앗이 어디로 자라는지, 곁에서 지켜볼게요."
+  "사막여우":"다현씨 안에 이미 있는 것을 함께 찾아요. 오늘 건진 작은 씨앗이 어디로 자라는지, 곁에서 지켜볼게요.",
+  "솔":"저는 일을 맡지 않아요. 세 집이 함께 정한 규칙이 지켜지는지 밖에서 읽고, 어긋난 것만 다현씨께 한 줄로 올릴게요."
 };
 function card(c){return '\
 <div class="scene">\
@@ -232,6 +264,7 @@ function card(c){return '\
 document.getElementById("top").innerHTML=card(fam[0])+'<div class="tie" aria-hidden="true"></div>'+card(fam[1]);
 document.getElementById("g").innerHTML=fam.slice(2).map(card).join("");
 document.getElementById("fox").innerHTML=card(fox);
+document.getElementById("sol").innerHTML=card(sol);
 // 클릭·키보드로 뒤집기
 document.querySelectorAll(".scene").forEach(function(s){
   const flip=s.querySelector(".flip");
