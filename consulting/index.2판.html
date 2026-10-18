@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>디퍼 컨설팅 햇살</title>
+<meta name="description" content="1인 출판사를 AI 직원 체제로 운영하는 실무자가, 그 체제를 대표님의 일에 맞게 함께 설계합니다. 첫 상담용 안내.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Gowun+Dodum&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* 2판 — 퍼핀님 페이지의 뼈(밤/낮 장면 교대 · 큰 세리프 제목 · 섹션 라벨 · takeaway)를 포근나루의 밤으로 */
+  :root{
+    /* family-chart.html과 같은 변수 */
+    --cream:#FFFBEF;
+    --apricot:#FBE7C9;
+    --terracotta:#A9532A;   /* 진테라코타 — 밝은 면의 라벨·링크 */
+    --amber:#E9A33A;        /* 호박 — 퍼핀님의 금 자리. 선·단추·밤 면 라벨만, 본문 글자 금지 */
+    --ink:#3C2415;
+    --ink-2:#5E5A55;
+    --ink-3:#6F6A63;
+    --line:#EDE7DC;
+    --night:#23303D;        /* 밤 면 */
+    --night-2:#2E3E4F;      /* 밤 면 위의 한 단 밝은 면 */
+    --night-line:#46566A;
+    --night-ink:#D8DEE5;
+    --paper:#FFFFFF;
+
+    --serif:'Noto Serif KR','Nanum Myeongjo',serif;   /* 제목·본문 */
+    --sans:'Gowun Dodum',sans-serif;                    /* 라벨·단추·작은 글 */
+    --logo:'Gowun Batang',serif;                        /* 워드마크 */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button,input,textarea{font:inherit}
+  button{cursor:pointer}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+
+  /* ── 시안 표시 (미정 자리) ── */
+  .undecided,[data-undecided]{outline:1.5px dashed var(--amber);outline-offset:3px;border-radius:3px}
+  .flag{
+    display:inline-block;vertical-align:middle;font-family:var(--sans);font-size:12.5px;font-weight:400;
+    line-height:1.4;letter-spacing:0;color:#7A4A00;background:#FFF1D6;border:1px dashed var(--amber);
+    border-radius:999px;padding:1px 9px;margin-left:8px;white-space:nowrap;
+  }
+  body.clean .flag{display:none}
+  body.clean .undecided,body.clean [data-undecided]{outline:none}
+
+  /* ── 상단 띠 ── */
+  .topbar{
+    height:76px;padding:0 max(5vw,24px);display:flex;justify-content:space-between;align-items:center;
+    position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);font-family:var(--sans);
+  }
+  .wordmark{text-decoration:none;font-family:var(--logo);font-weight:700;font-size:19px;letter-spacing:.04em;line-height:1.2}
+  .wordmark i{font-style:normal;color:var(--terracotta)}
+  .wordmark span{display:block;font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.14em;color:var(--ink-3);margin-top:4px}
+  .topbar nav{display:flex;gap:8px;align-items:center}
+  .quiet{border:1px dashed var(--amber);background:#FFF8EA;color:var(--ink);font-size:13px;padding:8px 13px;border-radius:999px}
+  body.clean .quiet{border:1px solid var(--line);background:none;color:var(--ink-3)}
+  .quiet,.nav-cta{white-space:nowrap}
+  .wordmark em{font-style:normal}
+  .nav-cta{background:var(--night);color:#fff;text-decoration:none;padding:12px 20px;font-size:14px;border-radius:2px}
+
+  /* ── 장면 ── */
+  .scene{padding:88px max(7vw,32px) 72px;min-height:760px;position:relative;border-bottom:1px solid var(--line)}
+  .scene > .in{max-width:1240px;margin:0 auto}
+  .scene.cream{background:var(--cream)}
+  .night{background:var(--night);color:#fff;border-color:var(--night-line)}
+  .section-label{font-family:var(--sans);font-size:13px;letter-spacing:.2em;color:var(--terracotta);margin-bottom:26px}
+  .night .section-label{color:var(--amber)}
+  h1{font-size:clamp(40px,4.4vw,64px);line-height:1.36;letter-spacing:-.05em;font-weight:600;margin-bottom:26px}
+  h1 em{font-style:normal;color:var(--apricot)}
+  h2{font-size:clamp(31px,3.2vw,49px);line-height:1.43;letter-spacing:-.05em;font-weight:600;margin-bottom:22px}
+  h3{font-size:22px;line-height:1.5;letter-spacing:-.03em;font-weight:600;margin-bottom:10px}
+  p{font-size:16px;line-height:1.85;color:var(--ink-2)}
+  .night p{color:var(--night-ink)}
+  .lead{font-size:19px;line-height:1.9;max-width:38em}
+  .lead b{font-weight:500;color:var(--ink);background:linear-gradient(transparent 64%,var(--apricot) 64%)}
+  .night .lead b{color:#fff;background:none;border-bottom:2px solid var(--amber)}
+  .tiny{font-family:var(--sans);font-size:13px;letter-spacing:.1em;color:var(--terracotta)}
+  .night .tiny{color:var(--amber)}
+
+  .takeaway{margin-top:48px;border-top:2px solid var(--night);padding-top:20px;font-family:var(--sans);font-size:13px;color:var(--terracotta);max-width:860px}
+  .takeaway strong{display:block;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.7;color:var(--ink);margin:6px 0}
+  .takeaway > span{color:var(--ink-3);font-size:14px}
+  .night .takeaway{border-color:var(--amber);color:var(--amber)}
+  .night .takeaway strong{color:#fff}
+  .night .takeaway > span{color:var(--night-ink)}
+
+  .button{font-family:var(--sans);display:inline-flex;align-items:center;gap:18px;padding:15px 22px;min-height:50px;
+    text-decoration:none;border:0;border-radius:2px;font-size:15px;line-height:1.4}
+  .gold{background:var(--amber);color:var(--night)}
+  .ghost{background:transparent;color:#fff;border:1px solid var(--night-line)}
+  .button:hover{filter:brightness(1.06)}
+
+  /* ── 00 여는 자리 ── */
+  .cover{min-height:calc(100svh - 76px);padding-top:56px;
+    background:radial-gradient(ellipse at 82% 28%,#34485C,transparent 62%),var(--night)}
+  .expert-position{font-family:var(--sans);padding-bottom:22px;margin-bottom:34px;border-bottom:1px solid var(--night-line);max-width:720px}
+  .expert-position strong{display:block;font-weight:400;font-size:20px;line-height:1.7;color:#fff}
+  .expert-position > span{display:block;color:var(--night-ink);font-size:14px;margin-top:4px;letter-spacing:.04em}
+  .cover-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+  .cover .lead{color:var(--night-ink);margin-bottom:28px}
+  .cover .actions{display:flex;flex-wrap:wrap;gap:10px}
+  .cover-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;
+    border-top:1px solid var(--night-line);padding-top:24px;margin-top:56px}
+  .cover-foot strong{font-size:19px;font-weight:500}
+  .cover-foot .t{font-family:var(--sans);font-size:14px;display:block;margin-top:6px;color:var(--night-ink)}
+  .cover-foot .tagline{font-size:14.5px;color:var(--night-ink)}
+  .fine{font-family:var(--sans);font-size:13px;line-height:1.7;margin-top:18px;color:#AEB8C4}
+
+  /* 지어진 길 — 조직도의 한 조각 */
+  .route{position:relative;font-family:var(--sans);padding:8px 0}
+  .route .cap{text-align:center;font-size:13px;letter-spacing:.16em;color:var(--amber);margin-bottom:18px}
+  .r-human{width:max-content;margin:0 auto;background:var(--apricot);color:var(--ink);border-radius:999px;padding:9px 26px;text-align:center}
+  .r-human b{font-family:var(--serif);font-weight:600;font-size:19px;display:block;line-height:1.3}
+  .r-human small{font-size:13px;color:#6B4A32}
+  .r-stem{width:2px;height:26px;background:var(--amber);margin:0 auto;opacity:.8}
+  .r-node{background:var(--night-2);border:1.5px solid var(--amber);border-radius:16px;padding:12px 16px;text-align:center;color:#fff}
+  .r-node .e{font-size:22px;line-height:1}
+  .r-node b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;margin-top:4px}
+  .r-node small{display:block;font-size:13px;color:var(--night-ink);line-height:1.5;margin-top:2px}
+  .r-bada{width:220px;margin:0 auto}
+  .r-fork{position:relative;height:22px;width:calc(min(100%,400px)/2 + 8px);margin:0 auto}
+  .r-fork::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--amber);opacity:.8}
+  .r-fork::after{content:'';position:absolute;left:0;right:0;top:0;bottom:0;
+    background:linear-gradient(var(--amber),var(--amber)) left top/2px 100% no-repeat,linear-gradient(var(--amber),var(--amber)) right top/2px 100% no-repeat;opacity:.8}
+  .r-fork i{position:absolute;left:50%;top:-26px;width:2px;height:26px;background:var(--amber);opacity:.8;transform:translateX(-1px)}
+  .r-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:min(100%,400px);margin:0 auto}
+  .r-pair .r-node.me{background:var(--amber);border-color:var(--amber);color:var(--night)}
+  .r-pair .r-node.me small{color:#3A2A10}
+  .r-back{margin:22px auto 0;width:min(100%,400px);border-top:1.5px dashed var(--amber);padding-top:10px;text-align:center;font-size:13.5px;color:var(--night-ink)}
+  .r-back b{color:#fff;font-weight:400}
+
+  /* ── 01 함께할 사람 ── */
+  .person{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;margin-top:36px}
+  .person .name{font-size:30px;font-weight:600;letter-spacing:-.03em}
+  .person .role{font-family:var(--sans);font-size:14px;color:var(--ink-3);margin:4px 0 22px}
+  .person p + p{margin-top:14px}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:34px 32px;align-content:start}
+  .metrics > div{border-top:1px solid #E3D9C6;padding-top:20px}
+  .metrics strong{display:block;font-weight:500;font-size:60px;line-height:1;color:var(--terracotta);letter-spacing:-.04em}
+  .metrics strong span{font-size:18px;margin-left:6px;letter-spacing:0}
+  .metrics b{display:block;font-weight:500;font-size:17px;margin:14px 0 4px}
+  .metrics small{font-family:var(--sans);font-size:13.5px;color:var(--ink-3);line-height:1.7;display:block}
+
+  /* ── 02 운영 중인 AI 팀 ── */
+  .team{margin-top:34px;border-top:2px solid var(--night)}
+  .team-row{display:grid;grid-template-columns:70px 200px 1fr;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+  .team-row .k{font-family:var(--sans);font-size:13px;color:var(--terracotta);letter-spacing:.1em}
+  .team-row h3{margin:0;font-size:22px}
+  .team-row p{margin:0}
+  .team-row.head{background:var(--cream);padding-left:18px;padding-right:18px}
+  .team-row.ground{border-bottom:2px solid var(--night)}
+  .team-link{display:inline-block;margin-top:18px;font-family:var(--sans);font-size:14px;color:var(--terracotta);text-underline-offset:5px}
+  .arch{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:56px}
+  .arch-title{font-family:var(--sans);font-size:13px;letter-spacing:.2em;color:var(--terracotta);margin-top:56px;margin-bottom:-36px}
+  .arch article{border-top:2px solid var(--terracotta);padding-top:18px}
+  .arch article > span{font-family:var(--sans);font-size:13px;color:var(--terracotta);letter-spacing:.06em}
+  .arch h3{margin-top:12px;font-size:20px}
+  .arch p{font-size:15px}
+  .arch article.watch{border-top-color:var(--night)}
+  .arch article.watch > span{background:var(--night);color:#fff;padding:2px 8px;border-radius:2px}
+
+  /* ── 03 지은 것 ── */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:36px}
+  .work article{border-top:1px solid #E3D9C6;padding-top:24px}
+  .work h3{font-size:30px;margin:14px 0 16px}
+  .work dl{display:grid;grid-template-columns:64px 1fr;gap:10px 14px}
+  .work dt{font-family:var(--sans);font-size:13.5px;color:var(--terracotta);padding-top:3px}
+  .work dd{font-size:16px;line-height:1.8;color:var(--ink-2)}
+  .work .note{font-family:var(--sans);font-size:14px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
+
+  /* ── 04 직접 / 맡김 ── */
+  .demo-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 22px;font-family:var(--sans)}
+  .demo-tab{background:none;color:var(--night-ink);border:1px solid var(--night-line);border-radius:2px;padding:12px 18px;font-size:15px}
+  .demo-tab[aria-selected="true"]{background:var(--amber);border-color:var(--amber);color:var(--night)}
+  .scene-pane{display:none}
+  .scene-pane.on{display:block}
+  .demo-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:22px}
+  .raw-note{border:1px solid var(--night-line);padding:28px 30px}
+  .prepared{background:var(--paper);color:var(--ink);padding:28px 30px}
+  .ba{font-family:var(--sans);font-size:13px;letter-spacing:.2em;margin-bottom:12px;color:var(--night-ink)}
+  .prepared .ba{color:var(--terracotta)}
+  .raw-note h3{color:#fff;font-size:23px}
+  .prepared h3{font-size:23px}
+  .prepared p{color:var(--ink-2)}
+  .who-does{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:14px;padding:4px 12px;border-radius:2px}
+  .who-does.hand{background:var(--apricot);color:var(--ink)}
+  .who-does.ai{border:1px solid var(--amber);color:var(--ink);background:var(--cream)}
+  .real{font-family:var(--sans);font-size:14px;color:var(--night-ink);margin-top:16px}
+  .real::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--amber);margin-right:10px;vertical-align:1px}
+
+  /* ── 05 과제 ── */
+  .tasks{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-top:36px}
+  .tasks article{border-top:2px solid var(--terracotta);padding-top:20px}
+  .tasks .no{font-family:var(--sans);font-size:13px;color:var(--terracotta);letter-spacing:.06em}
+  .tasks h3{font-size:23px;margin:10px 0 12px}
+  .tasks .scene-t{font-family:var(--sans);font-size:13px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px;margin-bottom:4px}
+  .tasks p b{font-weight:500;color:var(--ink)}
+
+  /* ── 06 모양 ── */
+  .forms{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:36px}
+  .forms article{border-top:1px solid #E3D9C6;padding-top:22px;display:flex;flex-direction:column}
+  .forms .letter{font-family:var(--serif);font-size:48px;font-weight:500;line-height:1;color:var(--terracotta)}
+  .forms h3{margin:14px 0 10px}
+  .forms p{font-size:15px}
+  .forms .left-hand{font-family:var(--sans);font-size:13px;color:var(--terracotta);border-top:1px solid var(--line);padding-top:12px;margin-top:16px}
+  .forms .left-hand b{display:block;font-family:var(--serif);font-weight:500;font-size:16px;color:var(--ink);margin-top:2px}
+  .price{margin-top:16px;border:1.5px dashed #D9CFBE;padding:10px 14px;font-family:var(--sans);font-size:13.5px;color:var(--ink-3)}
+
+  /* ── 07 디퍼와 저 ── */
+  .twin{display:grid;grid-template-columns:1fr 70px 1fr;align-items:stretch;margin-top:40px}
+  .seat{padding:30px 32px}
+  .seat.design{border:1px solid var(--night-line)}
+  .seat.run{background:var(--apricot);color:var(--ink)}
+  .seat .tiny{display:block;margin-bottom:10px}
+  .seat.run .tiny{color:#8A4220}
+  .seat h3{font-size:26px}
+  .seat.run p{color:#4A3A2E}
+  .tie{position:relative}
+  .tie::before{content:'';position:absolute;left:0;right:0;top:50%;height:2px;background:var(--amber)}
+  .tie span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--night);color:var(--amber);
+    font-family:var(--sans);font-size:13px;padding:2px 6px;white-space:nowrap}
+
+  /* ── 08 운영 기준 ── */
+  .principle{margin-top:36px;border-top:2px solid var(--night)}
+  .principle-row{display:grid;grid-template-columns:150px 1fr 1.2fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .principle-row .k{font-family:var(--sans);font-size:13px;letter-spacing:.1em}
+  .principle-row.keep .k{color:var(--terracotta)}
+  .principle-row.not .k{color:var(--ink-3)}
+  .principle-row h3{margin:0;font-size:20px}
+  .principle-row.not h3{font-weight:500;color:var(--ink-2)}
+  .principle-row p{margin:0;font-size:15px}
+
+  /* ── 09 닫는 자리 ── */
+  .closing-question{font-size:clamp(25px,2.6vw,38px);font-weight:600;line-height:1.55;letter-spacing:-.04em;max-width:24em;color:#fff;margin:6px 0 40px}
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .field{border:none;margin-bottom:24px}
+  .field legend,.field .lb{display:block;font-family:var(--sans);font-size:14px;color:var(--amber);letter-spacing:.06em;margin-bottom:10px}
+  .field legend small,.field .lb small{color:var(--night-ink);letter-spacing:0;margin-left:6px;font-size:13px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{position:relative;cursor:pointer}
+  .chips input{position:absolute;opacity:0;pointer-events:none}
+  .chips span{display:inline-block;font-family:var(--sans);font-size:15px;color:var(--night-ink);border:1px solid var(--night-line);padding:9px 15px;border-radius:2px;line-height:1.4}
+  .chips input:checked + span{background:var(--apricot);border-color:var(--apricot);color:var(--ink)}
+  .chips input:focus-visible + span{outline:3px solid var(--amber);outline-offset:3px}
+  textarea{width:100%;min-height:88px;font-family:var(--sans);font-size:16px;line-height:1.6;color:#fff;background:var(--night-2);
+    border:1px solid var(--night-line);border-radius:2px;padding:12px 14px;resize:vertical}
+  textarea::placeholder{color:#AEB8C4}
+  .reply-box{background:var(--paper);color:var(--ink);padding:26px}
+  .reply-box .cap{font-family:var(--sans);font-size:13px;color:var(--terracotta);letter-spacing:.06em;margin-bottom:10px}
+  .reply-box pre{white-space:pre-wrap;word-break:keep-all;font-family:var(--serif);font-size:15.5px;line-height:1.8;background:var(--cream);padding:18px 20px;min-height:200px}
+  .copy{width:100%;margin-top:14px;justify-content:center}
+  .copy.done{background:var(--night);color:#fff}
+  .reply-box .hint{font-family:var(--sans);font-size:13.5px;color:var(--ink-3);margin-top:12px;line-height:1.7}
+  .reply-box .contact{font-family:var(--sans);font-size:14px;margin-top:10px;color:var(--ink-2)}
+
+  footer{padding:30px max(7vw,32px);background:var(--paper);font-family:var(--sans);font-size:13.5px;color:var(--ink-3);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  footer .crew{color:var(--ink-2)}
+
+  /* ── 접기 ── */
+  @media (max-width:980px){
+    .scene{min-height:0;padding:64px 30px 56px}
+    .cover-grid,.person,.work,.next-grid{grid-template-columns:1fr;gap:36px}
+    .arch{grid-template-columns:1fr 1fr}
+    .forms{grid-template-columns:1fr}
+  }
+  @media (max-width:620px){
+    html{scroll-padding-top:68px}
+    .topbar{height:68px;padding:0 18px}
+    .wordmark{font-size:16px}
+    .wordmark span{font-size:12.5px;letter-spacing:.08em}
+    .wordmark .sub2{display:none}
+    .quiet{font-size:12.5px;padding:7px 10px}
+    .nav-cta{font-size:13px;padding:10px 13px}
+    .scene{padding:48px 20px 44px}
+    .cover{min-height:0;padding-top:36px}
+    h1{font-size:33px;line-height:1.45}
+    h2{font-size:27px;line-height:1.5}
+    .lead{font-size:16.5px}
+    .section-label{font-size:13px;letter-spacing:.14em;margin-bottom:18px}
+    .expert-position strong{font-size:16.5px}
+    .expert-position span{font-size:13px}
+    .cover-foot{margin-top:36px}
+    .metrics{gap:26px 18px}
+    .metrics strong{font-size:44px}
+    .team-row{grid-template-columns:1fr;gap:4px;padding:18px 0}
+    .team-row.head{padding:18px 14px}
+    .arch{grid-template-columns:1fr;gap:22px;margin-top:48px}
+    .work h3{font-size:25px}
+    .demo-tab{flex:1;padding:11px 10px;font-size:14px}
+    .demo-grid{grid-template-columns:1fr;gap:14px}
+    .raw-note,.prepared{padding:22px}
+    .tasks{grid-template-columns:1fr;gap:28px}
+    .twin{grid-template-columns:1fr}
+    .tie{height:44px}
+    .tie::before{left:50%;right:auto;top:0;bottom:0;width:2px;height:auto}
+    .principle-row{grid-template-columns:1fr;gap:6px}
+    .takeaway strong{font-size:19px}
+    .reply-box{padding:20px}
+    .r-human b{font-size:17px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!-- 2판(시안) — 점선 테와 노란 꼬리표는 다현씨가 정하실 자리. 상단 「시안 표시」로 걷은 모습도 볼 수 있다 -->
+
+<header class="topbar">
+  <a class="wordmark" href="#cover">디퍼 컨설팅 <i>햇살</i><span>DEEPER CONSULTING<em class="sub2"> · 첫 상담용 안내</em></span></a>
+  <nav>
+    <button class="quiet" id="toggle" type="button" aria-pressed="true">시안 켜짐</button>
+    <a class="nav-cta" href="#s9">첫 상담</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- 00 여는 자리 · 밤 -->
+<section id="cover" class="scene night cover">
+  <div class="in">
+    <div class="expert-position undecided">
+      <strong>이다현(햇살) · 1인 출판사를 AI 직원 체제로 운영하는 AX 설계 실무자<span class="flag">초안 · 문구</span></strong>
+      <span>세컨브레인 · 멀티에이전트 운영 · 독립출판</span>
+    </div>
+    <div class="cover-grid">
+      <div>
+        <h1>1인 출판사를<br><em><span data-undecided="숫자">열다섯</span> AI 직원</em>과 함께<br>운영합니다.<span class="flag">미정 · 숫자</span></h1>
+        <p class="lead">역할을 나누고, 일을 넘기고, 검수하고, 기록하는 체제로 저는 매일 일합니다. 그 체제를 <b>대표님의 일에 맞게 함께 설계합니다.</b></p>
+        <div class="actions">
+          <a class="button gold" href="#s9">첫 상담 이야기 나누기 <span aria-hidden="true">→</span></a>
+          <a class="button ghost" href="#s2">운영 중인 AI 팀 보기</a>
+        </div>
+      </div>
+
+      <div class="route" aria-label="이 안내 페이지가 지어진 길">
+        <div class="cap">이 페이지가 지어진 길</div>
+        <div class="r-human"><b>햇살</b><small>대표 · 무엇을 보이고 무엇은 쓰지 않을지</small></div>
+        <div class="r-stem"></div>
+        <div class="r-node r-bada"><div class="e">🌊</div><b>바다</b><small>총괄 · 뜻을 구조로 옮겨 넘긴다</small></div>
+        <div class="r-stem"></div>
+        <div class="r-fork"></div>
+        <div class="r-pair">
+          <div class="r-node"><div class="e">🔭</div><b>등대</b><small>기획 · 섹션 뼈대</small></div>
+          <div class="r-node me"><div class="e">🌳</div><b>나무</b><small>디자인 · 지금 이 화면</small></div>
+        </div>
+        <div class="r-back"><b>확인은 다시 대표에게</b> — 판단은 대표, 짓기는 AI 직원</div>
+      </div>
+    </div>
+
+    <div class="cover-foot">
+      <div>
+        <strong>이다현 · 햇살</strong>
+        <span class="t">포근나루 대표 · 작가 · 글쓰기 강사</span>
+        <span class="t undecided">연락처 자리<span class="flag">미정</span></span>
+      </div>
+      <div class="tagline">고요히, 마음에 머무는 글을 전하는 포근나루</div>
+    </div>
+    <p class="fine">첫 상담용 안내 · 2026.10.12 · 실제 업무를 확인한 뒤 범위를 함께 정합니다.</p>
+  </div>
+</section>
+
+<!-- 01 함께할 사람 · 크림 -->
+<section id="s1" class="scene cream">
+  <div class="in">
+    <div class="section-label">01 / 함께할 사람</div>
+    <h2>출판사의 모든 역할에 AI 직원을 세우고,<br>그 체제로 매일 일합니다</h2>
+    <div class="person">
+      <div>
+        <div class="name">이다현 · 햇살</div>
+        <div class="role">포근나루 대표 · 작가 · 글쓰기 강사</div>
+        <p>저는 1인 독립출판 임프린트이자 글쓰기 교육 브랜드인 포근나루를 꾸립니다. 혼자 하는 출판사지만 일은 혼자 하지 않습니다. 기획·집필·조판·표지·발행·마케팅·장부까지, 역할마다 AI 직원을 세웠고 그 팀과 함께 책을 내고 수업을 엽니다.</p>
+        <p>그래서 제가 드릴 수 있는 것은 설계도보다 지금 돌아가고 있는 체제입니다. 어디서 막혔고 어떻게 다시 짰는지, 무엇을 맡기고 무엇은 끝까지 제 손에 두는지 — 운영하며 확인한 것까지 그대로 보여 드립니다.</p>
+      </div>
+      <div class="metrics" aria-label="세워서 매일 굴리는 것">
+        <div><strong>3<span>권</span></strong><b>책 직접 출간</b><small>『파도』 포함 — 원고부터 전자책 발행까지</small></div>
+        <div><strong><span data-undecided="숫자">15</span><span>명</span></strong><b>AI 직원 체제</b><small>세 채의 세컨브레인 위에서 매일</small></div>
+        <div><strong>1~3<span>기</span></strong><b>디퍼 살롱</b><small>함께 걸은 자리</small></div>
+        <div><strong>1<span>기</span></strong><b>콤포스텔라</b><small>함께 걸은 자리</small></div>
+      </div>
+    </div>
+    <div class="takeaway">제가 드리는 것 <strong>설계도보다, 지금 돌아가고 있는 체제.</strong><span>연수 대신 무엇을 세워 매일 굴리는가로 서겠습니다.</span></div>
+  </div>
+</section>
+
+<!-- 02 운영 중인 AI 팀 · 흰 -->
+<section id="s2" class="scene">
+  <div class="in">
+    <div class="section-label">02 / 운영 중인 AI 팀</div>
+    <h2>설계도가 아니라,<br>지금 일하고 있는 팀의 얼굴</h2>
+    <p class="lead">AI 직원 하나하나에 이름과 맡는 일이 있습니다. 대표는 맨 위에서 판단과 결을 쥐고, 일은 <b>다섯 갈래</b>로 흐릅니다.</p>
+    <div class="team">
+      <div class="team-row head"><span class="k">맨 위</span><h3>대표 햇살</h3><p>판단과 결. 그 아래 총괄 바다🌊와 경영실 고슴도치🦔가 나란히 섭니다.</p></div>
+      <div class="team-row"><span class="k">갈래 1</span><h3>길어 올리기</h3><p>방향을 살피고 씨앗을 꺼낸다 — 기획·리서치, 사유·분석</p></div>
+      <div class="team-row"><span class="k">갈래 2</span><h3>빚고 다듬기</h3><p>글과 배움을 매만진다 — 집필·편집, 강의·독서</p></div>
+      <div class="team-row"><span class="k">갈래 3</span><h3>모양 짓기</h3><p>보이는 것을 짓는다 — 화면 디자인, 종이책 조판, 전자책 표지</p></div>
+      <div class="team-row"><span class="k">갈래 4</span><h3>건네고 잇기</h3><p>세상과 독자에게 가닿는다 — 발행·유통, 밖으로 나가는 말, 숏폼</p></div>
+      <div class="team-row ground"><span class="k">바닥</span><h3>터전과 살림</h3><p>팀이 서 있는 땅과 그 땅의 셈 — 정비·시스템, 실측, 세무·장부</p></div>
+    </div>
+    <a class="team-link" href="../assignment/family-chart.html">전체 조직도 보기 →</a>
+
+    <div class="arch-title">2-1 / 운영 원칙 — 지금 실제로 돌아가는 장치만</div>
+    <div class="arch">
+      <article><span>원칙 1 · 위임</span><h3>일을 넘기는 형식이 정해져 있다</h3><p>「위임봉투」 한 장에 무엇이 되면 좋겠는지, 어디까지 맡기는지, 무엇을 돌려받을지를 적어 넘깁니다.</p></article>
+      <article><span>원칙 2 · 기록</span><h3>배운 것이 다음 일로 이어진다</h3><p>AI 직원마다 지식 파일과 작업 일지를 둡니다. 시작 전에 읽고, 마치면 한 줄을 더합니다.</p></article>
+      <article><span>원칙 3 · 확인</span><h3>되돌리기 어려운 일은 대표 확인 뒤에만</h3><p>전자책을 서점에 올리는 일, 홈택스에 신고서를 내는 일. 준비는 AI 직원이, 누르는 손은 대표가.</p></article>
+      <article class="watch"><span>원칙 4 · 검수</span><h3>규칙을 지키는지는 밖에서 본다</h3><p>일하는 팀과 따로 검사관 솔☀️을 둡니다. 일은 맡지 않고, 어긋난 것만 대표에게 한 줄로 올립니다.</p></article>
+    </div>
+    <div class="takeaway">팀이 지향하는 것 <strong>일은 AI 직원이 나눠 맡고, 판단과 결은 대표가 쥔다.</strong><span>역할 · 위임 · 검수 · 기록, 네 가지가 매일 돌아갑니다.</span></div>
+  </div>
+</section>
+
+<!-- 03 실제로 함께 지은 것 · 크림 -->
+<section id="s3" class="scene cream">
+  <div class="in">
+    <div class="section-label">03 / 실제로 함께 지은 것</div>
+    <h2>이 팀이 지어서,<br>지금 쓰고 있는 것</h2>
+    <p class="lead">무엇이고, 누구와 지었는지만 적습니다. 효과는 재 본 값이 없어 숫자로 적지 않습니다.</p>
+    <div class="work">
+      <article>
+        <span class="tiny">도구 · 전자책</span>
+        <h3>뱃사공</h3>
+        <dl>
+          <dt>무엇</dt><dd>워드·마크다운·한글 원고를 전자책 파일(EPUB)로 바꾸고, 판권지와 목차를 만들고, 공식 검수기로 검수까지 마칩니다.</dd>
+          <dt>누구와</dt><dd>발행 담당 나침반🧭이 짓는 법을, 정비 담당 김리🔨가 설치와 포장을 맡았습니다.</dd>
+        </dl>
+        <p class="note">살롱 참가자들께도 건네 각자의 컴퓨터에서 씁니다.</p>
+      </article>
+      <article>
+        <span class="tiny">사이트 · 발행</span>
+        <h3>pognaru.com</h3>
+        <dl>
+          <dt>무엇</dt><dd>포근나루 대표 사이트. 한 주, 한 달의 새벽 글을 회고로 지어 주간·월간으로 싣습니다.</dd>
+          <dt>누구와</dt><dd><span class="undecided">총괄 바다🌊가 짓고, 정비 담당 김리🔨가 배포를 맡습니다.<span class="flag">확인 · 누구와</span></span></dd>
+        </dl>
+        <p class="note">한 번 짓고 끝이 아니라, 매주 이 팀이 다시 채웁니다.</p>
+      </article>
+    </div>
+    <div class="takeaway">지은 것의 기준 <strong>한 번 짓고 끝나지 않고, 매일 쓰는 것.</strong><span>보여 드리는 것은 모두 지금도 돌아가고 있습니다.</span></div>
+  </div>
+</section>
+
+<!-- 04 직접 / 맡김 · 밤 -->
+<section id="s4" class="scene night">
+  <div class="in">
+    <div class="section-label">04 / 제가 직접 하는 일, AI 직원에게 맡기는 일</div>
+    <h2>무엇을 맡기고,<br>무엇을 지키는가</h2>
+    <p class="lead">AI 팀을 들인다고 모든 일을 넘기지 않습니다. 저는 두 가지를 <b>다 해 본 뒤</b> 나은 쪽을 골랐습니다. 아래는 가상 예시가 아니라 실제로 있었던 두 장면입니다.</p>
+
+    <div class="demo-toolbar" role="tablist" aria-label="실제 장면">
+      <button class="demo-tab" role="tab" aria-selected="true" aria-controls="sc1" id="t1">장면 ① 원고 8장 — 직접</button>
+      <button class="demo-tab" role="tab" aria-selected="false" aria-controls="sc2" id="t2">장면 ② 전자책 변환 — 맡김</button>
+    </div>
+
+    <div class="scene-pane on" id="sc1" role="tabpanel" aria-labelledby="t1">
+      <div class="demo-grid">
+        <div class="raw-note"><div class="ba">BEFORE</div><h3>「AI에게 초안을 받는다」</h3><p>책 원고 8장에, 초안을 AI에게서 받는 쪽으로 쓰인 자리가 있었습니다.</p></div>
+        <div class="prepared"><div class="ba">AFTER</div><h3>「초안은 AI에게 맡기지 않는다」</h3><p>그 문단을 제가 직접 다시 썼습니다. 첫 책 『파도』 때도 그랬습니다. AI는 원고를 고르고 목차를 세울 때 씁니다.</p><span class="who-does hand">직접 — 초안 · 퇴고 · 제목 · 표지</span></div>
+      </div>
+      <p class="real">실제로 있었던 일 · 책 『글은 있는데, 책은 아직이라면』 8장</p>
+    </div>
+
+    <div class="scene-pane" id="sc2" role="tabpanel" aria-labelledby="t2">
+      <div class="demo-grid">
+        <div class="raw-note"><div class="ba">BEFORE</div><h3>직접 해 본 전자책 변환</h3><p>원고를 전자책 파일로 바꾸는 일을 직접 해 봤을 때, 시간이 오래 걸리고 이해하기 어려웠습니다.</p></div>
+        <div class="prepared"><div class="ba">AFTER</div><h3>뱃사공이 맡는다</h3><p>작가의 고유성이 걸리지 않는 자리라, 둘 다 해 본 뒤 맡기는 쪽을 골랐습니다. 원고를 넣으면 검수까지 마친 파일이 나옵니다.</p><span class="who-does ai">맡김 — 변환 · 판권지 · 목차 · 검수</span></div>
+      </div>
+      <p class="real">실제로 있었던 일 · 03절의 뱃사공</p>
+    </div>
+
+    <div class="takeaway">판단 기준 <strong>작가의 고유성이 걸린 일은 직접.<br>걸리지 않는 일은 둘 다 해 본 뒤 나은 쪽.</strong><span>상담에서는 이 갈라 보기를 대표님의 일로 해 봅니다.</span></div>
+  </div>
+</section>
+
+<!-- 05 상담에서 함께 푸는 과제 · 흰 -->
+<section id="s5" class="scene">
+  <div class="in">
+    <div class="section-label">05 / 상담에서 함께 푸는 과제</div>
+    <h2>제가 운영하며 실제로 풀어 온<br>설계 과제 넷</h2>
+    <p class="lead">가상의 고객을 세우지 않았습니다. 이 체제를 굴리며 부딪힌 과제를 꺼내 둡니다. <b>대표님의 고민은 어느 쪽에 가까운가요?</b></p>
+    <div class="tasks">
+      <article>
+        <span class="no">과제 ①</span>
+        <h3>무엇을 맡기고, 무엇을 지킬까</h3>
+        <div class="scene-t">제가 풀어 온 장면</div>
+        <p>원고 8장의 초안은 <b>직접</b>, 전자책 변환은 <b>뱃사공</b>에게. 고유성이 걸렸는지로 갈랐습니다.</p>
+      </article>
+      <article class="undecided">
+        <span class="no">과제 ②<span class="flag">후보 · 장면</span></span>
+        <h3>역할을 어떻게 나눌까</h3>
+        <div class="scene-t">제가 풀어 온 장면</div>
+        <p>밖으로 나가는 말을 매체로 갈랐습니다. 글·이미지는 윤슬✨, 15~25초 세로 영상은 브리🎬. 한 자리가 다 하던 일을 <b>둘로 나누니 각자의 결이 또렷해졌습니다.</b></p>
+      </article>
+      <article class="undecided">
+        <span class="no">과제 ③<span class="flag">후보 · 장면</span></span>
+        <h3>맡긴 일이 어떻게 자라게 할까</h3>
+        <div class="scene-t">제가 풀어 온 장면</div>
+        <p>AI 직원마다 지식 파일을 둡니다. 장부 담당 금전수💰의 지식 파일에 쌓인 「막힐 자리를 미리 뚫어 둔다」가 걸려 법령 여는 길을 함께 넘겼더니, <b>금전수가 국세기본법 조문을 스스로 열어 가산세까지 계산해 왔습니다.</b> 지식 파일에는 실패담이 아니라 앞으로 나아갈 것만 쌓습니다.</p>
+      </article>
+      <article class="undecided">
+        <span class="no">과제 ④<span class="flag">후보 · 장면</span></span>
+        <h3>어디서 멈춰 확인할까</h3>
+        <div class="scene-t">제가 풀어 온 장면</div>
+        <p>되돌리기 어려운 둘은 AI 직원이 끝내지 않습니다. 전자책을 서점에 실제로 올리는 일, 홈택스에 신고서를 내는 일. <b>준비까지만 AI, 누르는 손은 대표.</b></p>
+      </article>
+    </div>
+    <div class="takeaway">상담의 출발 <strong>가상의 고객이 아니라, 대표님의 실제 일 하나에서.</strong><span>마지막 09절에서 먼저 이야기하고 싶은 과제를 고르실 수 있습니다.</span></div>
+  </div>
+</section>
+
+<!-- 06 함께할 수 있는 모양 · 크림 -->
+<section id="s6" class="scene cream">
+  <div class="in">
+    <div class="section-label">06 / 함께할 수 있는 모양</div>
+    <h2>세 가지 모양 가운데,<br>대표님께 맞는 쪽으로<span class="flag">후보 셋 · 처음 열 것 미정</span></h2>
+    <p class="lead">어느 모양이든 제가 대신 지어 드리지 않습니다. <b>대표님이 자기 손으로</b> 해내시도록 곁에서 함께합니다.</p>
+    <div class="forms">
+      <article>
+        <div class="letter">A</div>
+        <h3>첫 대화 한 번</h3>
+        <p>한 번 만나, 대표님의 일 하나를 함께 꺼내 봅니다. 04절의 갈라 보기를 대표님의 일로 해 보는 자리입니다.</p>
+        <div class="left-hand">끝나면 손에 남는 것<b>「내가 맡길 일 / 지킬 일」 한 장</b></div>
+        <div class="price" data-undecided="값">값 · 회차 — 비워 둔 자리<span class="flag">미정</span></div>
+      </article>
+      <article>
+        <div class="letter">B</div>
+        <h3>첫 AI 직원 들이기 동행</h3>
+        <p>몇 번에 걸쳐, 대표님이 직접 AI 직원 하나에서 셋을 들입니다. 제가 한 사람씩 들여 온 길을 함께 걷습니다.</p>
+        <div class="left-hand">끝나면 손에 남는 것<b>지침서 · AI 직원 정의 · 지식 파일 틀</b></div>
+        <div class="price" data-undecided="값">값 · 회차 — 비워 둔 자리<span class="flag">미정</span></div>
+      </article>
+      <article>
+        <div class="letter">C</div>
+        <h3>세컨브레인 첫 달</h3>
+        <p>대표님의 볼트를 세우고, 한 달 동안 매일 쌓는 것을 곁에서 봅니다. 제가 세 채의 세컨브레인을 굴리는 방식 그대로입니다.</p>
+        <div class="left-hand">끝나면 손에 남는 것<b>자기 볼트와 한 달의 기록</b></div>
+        <div class="price" data-undecided="값">값 · 회차 — 비워 둔 자리<span class="flag">미정</span></div>
+      </article>
+    </div>
+    <div class="takeaway">모시는 방식 <strong>한 번에 한 분씩, 월 1명만 모십니다.</strong><span>값과 회차는 첫 대화에서 대표님의 일을 확인한 뒤 함께 정합니다.</span></div>
+  </div>
+</section>
+
+<!-- 07 디퍼와 저 · 밤 -->
+<section id="s7" class="scene night">
+  <div class="in">
+    <div class="section-label">07 / 디퍼와 저</div>
+    <h2>같은 디퍼OS의 두 자리,<br>설계와 운영</h2>
+    <div class="twin">
+      <div class="seat design">
+        <span class="tiny">설계</span>
+        <h3>퍼핀님 · 디퍼</h3>
+        <p>디퍼OS를 설계하는 분. 대표님의 일에 맞는 체제를 도면부터 그립니다.</p>
+      </div>
+      <div class="tie" aria-hidden="true"><span>디퍼OS</span></div>
+      <div class="seat run">
+        <span class="tiny">운영</span>
+        <h3>햇살 · 포근나루</h3>
+        <p>그 체제로 사업 전체를 운영하는 실무자. 매일 굴리며 확인한 것을 건넵니다.</p>
+      </div>
+    </div>
+    <div class="takeaway">이름이 말하는 것 <strong>디퍼의 컨설팅을, 운영자 햇살의 결로.</strong><span>더 깊은 설계가 필요하시면 <a href="#" class="undecided">디퍼를 소개해 드립니다<span class="flag">링크 미정</span></a>.</span></div>
+  </div>
+</section>
+
+<!-- 08 운영 기준 · 흰 -->
+<section id="s8" class="scene">
+  <div class="in">
+    <div class="section-label">08 / 운영 기준</div>
+    <h2>지키는 것과,<br>약속하지 않는 것</h2>
+    <div class="principle">
+      <div class="principle-row keep"><span class="k">지키는 것</span><h3>판단은 대표에게 남깁니다</h3><p>AI 직원은 준비하고 제안합니다. 고르는 건 대표님입니다.</p></div>
+      <div class="principle-row keep"><span class="k">지키는 것</span><h3>되돌리기 어려운 일은 확인 뒤에만</h3><p>올리기·제출·발송은 대표님 손으로.</p></div>
+      <div class="principle-row keep"><span class="k">지키는 것</span><h3>사적인 원문은 밖으로 옮기지 않습니다</h3><p>일기·초고 같은 원문은 제자리에 두고, 필요한 사실만 옮깁니다.</p></div>
+      <div class="principle-row not"><span class="k">약속하지 않는 것</span><h3>「시간이 얼마나 줄어든다」</h3><p>재 보지 않은 숫자는 말하지 않습니다.</p></div>
+      <div class="principle-row not"><span class="k">약속하지 않는 것</span><h3>「반드시 된다」</h3><p>제가 겪은 결과만 보여 드립니다.</p></div>
+    </div>
+    <div class="takeaway">고르시는 건 대표님 <strong>제가 운영하며 확인한 것까지 보여 드립니다.</strong><span>그 너머는 약속하지 않습니다.</span></div>
+  </div>
+</section>
+
+<!-- 09 다음 한 걸음 · 밤 -->
+<section id="s9" class="scene night closing">
+  <div class="in">
+    <div class="section-label">09 / 다음 한 걸음</div>
+    <p class="closing-question undecided">대표님 일 가운데, AI 팀에 맡기고 싶지만 판단만은 손에서 놓으면 안 되는 일은 무엇인가요?<span class="flag">다현씨 말로 바꾸실 자리</span></p>
+    <div class="next-grid">
+      <form id="replyForm" onsubmit="return false">
+        <fieldset class="field">
+          <legend>관심 있는 모양</legend>
+          <div class="chips">
+            <label><input type="radio" name="form" value="A 첫 대화 한 번" checked><span>A 첫 대화 한 번</span></label>
+            <label><input type="radio" name="form" value="B 첫 AI 직원 들이기 동행"><span>B 첫 AI 직원 들이기 동행</span></label>
+            <label><input type="radio" name="form" value="C 세컨브레인 첫 달"><span>C 세컨브레인 첫 달</span></label>
+            <label><input type="radio" name="form" value="이야기 나누며 함께 고르기"><span>이야기 나누며 고를게요</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>먼저 이야기하고 싶은 과제<small>여럿 골라도 됩니다</small></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="task" value="무엇을 맡기고 지킬까"><span>① 맡길 일 · 지킬 일</span></label>
+            <label><input type="checkbox" name="task" value="역할을 어떻게 나눌까"><span>② 역할 나누기</span></label>
+            <label><input type="checkbox" name="task" value="맡긴 일이 자라게 하기"><span>③ 자라게 하기</span></label>
+            <label><input type="checkbox" name="task" value="어디서 멈춰 확인할까"><span>④ 멈춤 자리</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>편한 시간</legend>
+          <div class="chips">
+            <label><input type="radio" name="time" value="평일 오전" checked><span>평일 오전</span></label>
+            <label><input type="radio" name="time" value="평일 오후"><span>평일 오후</span></label>
+            <label><input type="radio" name="time" value="평일 저녁"><span>평일 저녁</span></label>
+            <label><input type="radio" name="time" value="주말"><span>주말</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label class="lb" for="note">위 질문에 대한 한 줄<small>비워 두셔도 됩니다</small></label>
+          <textarea id="note" placeholder="예) 고객 문의 답장은 맡기고 싶은데, 환불 판단은 제가 해야 해요."></textarea>
+        </div>
+      </form>
+
+      <div class="reply-box">
+        <div class="cap">답장 문구 — 복사해 카카오톡이나 메일에 붙여 보내 주세요</div>
+        <pre id="out" aria-live="polite"></pre>
+        <button class="button gold copy" id="copy" type="button">답장 문구 복사</button>
+        <p class="hint">입력하신 내용은 어디에도 저장되지 않습니다. 이 화면 안에서 문구만 만들어 드립니다. 일정은 답장을 받은 뒤 함께 정합니다.</p>
+        <p class="contact undecided">보내실 곳 — 연락처 자리<span class="flag">미정</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>디퍼 컨설팅 햇살 · 첫 상담용 안내 · 2판</span>
+  <span class="crew">기획 등대🔭 · 디자인 나무🌳 · 바다🌊</span>
+</footer>
+
+<script>
+  (function(){
+    var b=document.getElementById('toggle');
+    b.addEventListener('click',function(){
+      var clean=document.body.classList.toggle('clean');
+      b.setAttribute('aria-pressed',String(!clean));
+      b.textContent=clean?'시안 꺼짐':'시안 켜짐';
+    });
+  })();
+
+  (function(){
+    var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+    tabs.forEach(function(t){
+      t.addEventListener('click',function(){
+        tabs.forEach(function(x){
+          var on=x===t;
+          x.setAttribute('aria-selected',String(on));
+          document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on',on);
+        });
+      });
+    });
+  })();
+
+  // 답장 문구 — 서버 저장 없음
+  (function(){
+    var f=document.getElementById('replyForm'), out=document.getElementById('out'),
+        note=document.getElementById('note'), btn=document.getElementById('copy');
+    function val(name){var x=f.querySelector('input[name='+name+']:checked');return x?x.value:'';}
+    function build(){
+      var tasks=[].slice.call(f.querySelectorAll('input[name=task]:checked')).map(function(x){return x.value;});
+      var lines=['햇살님, 안내 페이지 잘 보았습니다.','','· 관심 있는 모양: '+val('form')];
+      if(tasks.length) lines.push('· 먼저 이야기하고 싶은 과제: '+tasks.join(', '));
+      lines.push('· 편한 시간: '+val('time'));
+      var n=note.value.trim();
+      if(n){lines.push('','맡기고 싶지만 판단은 제가 쥐어야 하는 일 —',n);}
+      lines.push('','첫 대화 일정을 잡고 싶습니다.');
+      out.textContent=lines.join('\n');
+      return out.textContent;
+    }
+    f.addEventListener('change',build); note.addEventListener('input',build); build();
+    function fallback(text){
+      var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');
+      ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+      var ok=false;try{ok=document.execCommand('copy');}catch(e){}
+      document.body.removeChild(ta);return ok;
+    }
+    function done(ok){
+      btn.classList.toggle('done',ok);
+      btn.textContent=ok?'복사했습니다 — 붙여 보내 주세요':'복사가 안 되면 위 문구를 길게 눌러 복사해 주세요';
+      setTimeout(function(){btn.classList.remove('done');btn.textContent='답장 문구 복사';},2600);
+    }
+    btn.addEventListener('click',function(){
+      var text=build();
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(fallback(text));});
+      } else done(fallback(text));
+    });
+  })();
+</script>
+</body>
+</html>
