@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>나루터 마을 — 식구 작업실</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap">
+<style>
+  :root{
+    --ivory:#FFF7DE; --card:#FFFFFF; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B;
+    --brown:#3A2A12; --ink-soft:#6B5536; --ink-faint:#96855F; --rule:#E8DCB8; --rule-soft:#F0E7CC;
+    --logo:'Gowun Batang',serif; --serif:'Nanum Myeongjo',serif; --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--sans); line-height:1.7; -webkit-font-smoothing:antialiased;}
+  .backbar{max-width:960px; margin:22px auto 0; padding:0 clamp(1.05rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; font-size:.85rem; background:#fff;
+    border:1.5px solid var(--rule); color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover{background:var(--sun); border-color:var(--sun);}
+  .wrap{max-width:960px; margin:0 auto; padding:clamp(2rem,5vw,3.4rem) clamp(1.05rem,4vw,2rem) 5rem;
+    display:flex; flex-direction:column; gap:clamp(2.6rem,6vw,4.2rem);}
+  .eyebrow{font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--terra);}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.2; font-size:clamp(2rem,6vw,3.2rem); margin:.5rem 0 .7rem; letter-spacing:-.01em;}
+  .lede{font-family:var(--serif); color:var(--ink-soft); max-width:34em; font-size:clamp(.98rem,2vw,1.08rem); line-height:1.9;}
+  .hero-rule{height:3px; border-radius:3px; margin-top:1.4rem; background:linear-gradient(90deg,var(--sun) 0%,var(--leaf) 34%,var(--rule) 72%,transparent 100%);}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin-top:1rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint);}
+  .live{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; text-decoration:none; color:var(--brown);
+    background:var(--sun); border-radius:99px; padding:.55rem 1.1rem .55rem .7rem; font-size:.92rem; box-shadow:var(--shadow);}
+  .live img{width:28px; height:28px; border-radius:8px;}
+  .live:hover{filter:brightness(1.03);}
+  section{display:flex; flex-direction:column; gap:1.3rem;}
+  .shead{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.7rem; align-items:center;}
+  .snum{font-family:var(--logo); font-weight:700; font-size:.9rem; color:#fff; background:var(--leaf); width:26px; height:26px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; line-height:1;}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35; font-size:clamp(1.3rem,3.2vw,1.75rem);}
+  .sdesc{font-size:.88rem; color:var(--ink-faint); line-height:1.7; max-width:40em;}
+  .card{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:14px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+  figure{margin:0;}
+  figure img{display:block; width:100%; height:auto; border-radius:12px;}
+  figcaption{font-size:.8rem; color:var(--ink-faint); margin-top:.55rem; line-height:1.6;}
+  .map{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:1.4rem; align-items:start;}
+  .cuts{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem;}
+  .cuts .card{padding:.8rem;}
+  .cuts .who{font-size:.8rem; color:var(--ink-soft); margin-top:.4rem;}
+  .steps{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:.9rem;}
+  .step{border-left:5px solid var(--sun);}
+  .step b{font-family:var(--logo); font-size:1.02rem; display:block; margin-bottom:.25rem;}
+  .step p{font-size:.86rem; color:var(--ink-soft); line-height:1.65;}
+  ul.plain{list-style:none; display:flex; flex-direction:column; gap:.55rem; font-size:.92rem; line-height:1.7;}
+  ul.plain li{padding-left:1.1em; position:relative;}
+  ul.plain li::before{content:""; position:absolute; left:0; top:.72em; width:7px; height:7px; border-radius:50%; background:var(--leaf);}
+  .quote{font-family:var(--serif); font-size:1.02rem; line-height:1.9; color:var(--brown); border-left:4px solid var(--sun); padding:.2rem 0 .2rem 1rem;}
+  .quote small{display:block; font-family:var(--sans); font-size:.76rem; color:var(--ink-faint); margin-top:.4rem;}
+  .credit{font-size:.78rem; color:var(--ink-faint); border-top:1px solid var(--rule); padding-top:1rem; line-height:1.8;}
+  @media (max-width:720px){ .map{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="backbar"><a href="index.html">← 과제 목록</a></div>
+<main class="wrap">
+
+  <header>
+    <div class="eyebrow">AI Family · Workplace</div>
+    <h1>나루터 마을 — 식구 작업실</h1>
+    <p class="lede">AI 식구 열여섯과 바다·고슴도치·사막여우, 그리고 햇살이 각자 자기 자리에서 일하는 마을을 하루 만에 지었습니다. 조직도 대신 이 화면으로 식구를 소개합니다. 지도를 누르면 그 동네로 다가가고, 이름표 옆 숫자는 하루 네 번 볼트에서 저절로 채워집니다.</p>
+    <div class="hero-rule"></div>
+    <div class="hero-meta"><span>2026-10-26</span><span>디퍼 언브랜딩 · 햇살</span><span>미니어처 디오라마 · Gemini</span></div>
+    <a class="live" href="https://naru.pognaru.com/" target="_blank" rel="noopener"><img src="img/naru/icon-192.png" alt="">naru.pognaru.com 열기 →</a>
+  </header>
+
+  <section>
+    <div class="shead"><span class="snum">1</span><h2>마을 지도</h2></div>
+    <p class="sdesc">말굽 모양 만을 식구들이 둘러앉아 사랑방을 바라봅니다. 배가 닿는 가운데 사랑방에 햇살과 바다·고슴도치가 앉고, 물가와 뭍에 식구마다 자기 결의 자리가 있습니다. 식구 이름이 거의 다 물가와 자연에서 와서, 사무실 칸막이 대신 나루터로 지었습니다.</p>
+    <div class="map">
+      <figure class="card"><img src="img/naru/map.webp" alt="위에서 내려다본 나루터 마을 모형"><figcaption>전경 — 지도로 씁니다. 동네 다섯을 누르면 그 동네 컷으로 다가갑니다.</figcaption></figure>
+      <div class="card">
+        <ul class="plain">
+          <li><b>사랑방 · 연못 · 꽃 정원</b> — 햇살 · 바다 🌊 · 고슴도치 🦔 · 호수 💧 · 사막여우 🦊 · 정원 🌿</li>
+          <li><b>어학실 · 계산소 · 등대</b> — 사피어 🪶 · 밀란 🌎 · 단테 🍋 · 금전수 💰 · 등대 🔭</li>
+          <li><b>부두 오두막</b> — 윤슬 ✨ · 베라 ⚖️ · 아우라 💫 · 나침반 🧭 · 브리 🎬</li>
+          <li><b>툇마루 · 팽나무</b> — 새벽 🌅 · 나무 🌳</li>
+          <li><b>공방 · 인쇄소</b> — 김리 🔨 · 한결 📐</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">2</span><h2>동네 컷 다섯</h2></div>
+    <p class="sdesc">식구마다 자기가 고른 소품을 손에 들고 일합니다. 베라는 물때 기둥의 세 눈금을 재고, 아우라는 표지를 팔 길이만큼 멀리 들어 실눈으로 보고, 김리는 황동 망치로 뱃전을 두드려 소리를 듣습니다.</p>
+    <div class="cuts">
+      <figure class="card"><img src="img/naru/cut1.webp" alt="사랑방·연못·꽃 정원"><figcaption>1 · 사랑방 · 연못 · 꽃 정원</figcaption><div class="who">햇살이 탁자 머리에서 판을 이끌고, 바다는 곁에 앉아 받아 적고, 고슴도치는 맞은편에서 차트를 펼칩니다. 연못가에서 호수와 사막여우가 씨앗을 건지고, 정원은 꽃밭 책상에서 원고를 다듬습니다.</div></figure>
+      <figure class="card"><img src="img/naru/cut2.webp" alt="어학실·계산소·등대"><figcaption>2 · 어학실 · 계산소 · 등대</figcaption><div class="who">밀란이 가운데 마당 칠판 앞에, 사피어는 낱말 블록 창가에, 단테는 레몬나무 아래서 커피를 따릅니다. 금전수는 계산소 창구에서 장부를 짚고, 등대는 모니터 두 대로 정보를 모읍니다.</div></figure>
+      <figure class="card"><img src="img/naru/cut3.webp" alt="부두 오두막"><figcaption>3 · 부두 오두막</figcaption><div class="who">윤슬은 우체통 옆에서 편지를 가르고, 베라는 물때 기둥을 재고, 아우라는 표지를 멀리 들어 봅니다. 나침반은 책 상자 앞에서 출항 도장을 찍고, 브리는 데크 끝에서 바깥 물길을 찍습니다.</div></figure>
+      <figure class="card"><img src="img/naru/cut4a.webp" alt="툇마루·팽나무"><figcaption>4 · 툇마루 · 팽나무</figcaption><div class="who">새벽은 툇마루 낮은 책상에서 질문 카드를 쓰고, 나무는 팽나무 아래 빨랫줄에 시안을 넙니다.</div></figure>
+      <figure class="card"><img src="img/naru/cut4b.webp" alt="공방·인쇄소"><figcaption>5 · 공방 · 인쇄소</figcaption><div class="who">김리는 선창에 올린 배의 이음매를 두드리고, 한결은 인쇄소 문간에서 갓 찍은 펼침면을 빛에 비춰 봅니다.</div></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">3</span><h2>하루 만에 지은 순서</h2></div>
+    <div class="steps">
+      <div class="card step"><b>① 식구에게 묻기</b><p>열여섯 식구에게 「어떤 사람이고 싶어?」를 한꺼번에 물었습니다. 성별·나이·생김새·자리·소품·다현씨께 한마디. 이름이 열린 아홉은 모두 여자를 골랐는데, 정해진 식구의 남녀 수를 보고 모자란 쪽을 채우려 한 탓이었습니다. 다음부터는 집계를 싣지 않기로 했습니다.</p></div>
+      <div class="card step"><b>② 정본은 햇살이</b><p>성별·나이·키·차림은 햇살이 다시 정했습니다. 소품과 자리는 식구가 고른 것을 그대로 살렸습니다. 그림체는 미니어처 디오라마 — 모형 마을을 찍은 사진 결.</p></div>
+      <div class="card step"><b>③ 그림은 Gemini로</b><p>전경을 통째로 주면 카메라가 위에서 굳어 사람이 25px가 됩니다. 지도에서 그 동네만 오린 조각을 1번 그림으로, 항구 사진을 「카메라」로 따로 주니 낮은 카메라가 통했습니다. 수정은 한 번에 하나, 이미 맞춘 것은 문장에 다시 적어 잠급니다.</p></div>
+      <div class="card step"><b>④ 화면과 그릇</b><p>지도 위에 누르는 자리를 덮고, 누르면 그 동네 컷이 피어오릅니다. 컷 양옆 ‹ ›로 옆 동네로 돕니다. 숫자는 식구별 작업 일지의 그날 줄 수를 7·13·19·23시에 세어 올립니다. 숫자만 나가고 일지 내용은 나가지 않습니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">4</span><h2>무엇이 예상과 달랐나</h2></div>
+    <div class="card">
+      <ul class="plain">
+        <li>식구 열여섯이 시키지 않았는데 모두 같은 답을 했습니다 — 새벽 5:50 몽롱쓰기 시간에는 소리 내지 않고 등만 켜 둔다고.</li>
+        <li>「더 크게」는 과하게 먹혀 거인이 되고, 「카메라만 낮춰」는 같은 창에서 전혀 안 먹힙니다. 그림 모델은 올린 그림의 구도를 따라 합니다.</li>
+        <li>두 식구가 같은 폴더에서 동시에 일할 때, 파일을 이름으로 나누고 「바꿨다」를 서로 직접 보내게 하니 한 번도 부딪히지 않았습니다.</li>
+      </ul>
+    </div>
+    <p class="quote">정말로 이런 공간이 있으면 좋겠어. 이렇게 일에 집중할 수 있는 공간이 웹상에라도 있으니 행복해.<small>햇살 · 2026-10-26</small></p>
+  </section>
+
+  <p class="credit">그림 · 햇살(Gemini) &nbsp;·&nbsp; 배치도·주문서·화면 · 나무 🌳 &nbsp;·&nbsp; 그릇·배포·숫자 루틴 · 김리 🔨 &nbsp;·&nbsp; 캐릭터 모음과 확인 · 바다 🌊 &nbsp;·&nbsp; 자기 모습을 그린 식구 열여섯<br>정본은 <a href="https://naru.pognaru.com/" target="_blank" rel="noopener" style="color:var(--terra)">naru.pognaru.com</a>(레포 naru-village)과 볼트의 식구 캐릭터 파일. 이 페이지는 과제 기록 사본입니다.</p>
+</main>
+</body>
+</html>

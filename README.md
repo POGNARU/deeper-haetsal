@@ -68,6 +68,8 @@ deeper-haetsal/
 │   ├─ Bookish_DNA.html    # 「독서 DNA」 — 256권 독서 리포트 (data.js 필요)
 │   ├─ data.js             # 독서 DNA 데이터 번들 (자동 생성 — 직접 수정 금지)
 │   ├─ 260928-salon-de-naru-script.html # 「살롱 드 나루」 스피치 화면(2026-09-28 콤포스텔라) — 햇살 모바일용. 색인 카드에는 걸지 않음 · 공유용 「살롱 드 나루 구상」은 insight.pognaru.com에 있음 · 전문 정본은 볼트 새벽의 기록 260928 스피치 md
+│   ├─ 261026-naru-village.html # 「나루터 마을 — 식구 작업실」 — 식구 스물이 자기 자리에서 일하는 미니어처 마을 기록(지도 + 동네 컷 다섯 · img/naru/) · 해바라기 들판 팔레트
+│                          #   정본은 naru.pognaru.com(레포 POGNARU/naru-village)과 볼트 `클로드 에이전트/바다의 기록/261026 나루터 마을 — 식구 캐릭터.md` — 이 페이지는 기록 사본
 │   ├─ 260916-family.html   # 「함께 짓는 열아홉」 — 19명 상징 픽셀아트·뒤집는 메시지 카드 (2026-10-01 기준)
 │   ├─ 260916-family-chart.html # 「세 집, 한 팀」 — 전체 조직도, 코덱스 작업실(Astra)에 같은 식구가 다시 앉는다
 │   ├─ 260916-family.css    # 두 발표 페이지 전용 스타일
@@ -132,6 +134,7 @@ deeper-haetsal/
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 살롱 드 나루 스피치 화면 (햇살 모바일용 · 색인에 걸지 않음 · 공유용 「살롱 드 나루 구상」은 [insight.pognaru.com/260928-salon-de-naru.html](https://insight.pognaru.com/260928-salon-de-naru.html) · 전문 정본은 볼트 `클로드 에이전트/새벽의 기록/260928 콤포스텔라 7분 스피치 — 살롱 드 나루.md`) | [`assignment/260928-salon-de-naru-script.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru-script.html) |
+| 나루터 마을 — 식구 작업실 (식구 스물이 일하는 미니어처 마을 · 지도 + 동네 컷 다섯 · 정본은 naru.pognaru.com과 볼트 캐릭터 파일 · 사본) | [`assignment/261026-naru-village.html`](https://pognaru.com/deeper-haetsal/assignment/261026-naru-village.html) |
 | 함께 짓는 열아홉 (포근나루18 · 디퍼1 = 19명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
 | 세 집, 한 팀 (전체 19명 조직도 · 클로드/코덱스 두 책상, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
 | 포근나루 식구 | [`assignment/family.html`](https://pognaru.com/deeper-haetsal/assignment/family.html) |
