@@ -72,7 +72,7 @@ deeper-haetsal/
 │                          #   정본은 잠긴 사이트(레포 POGNARU/dungji, 비공개)와 볼트 `클로드 에이전트/나무의 기록/261019 루틴 집 첫 장/회의 메모.md` — 주소 버튼은 둔다(2026-11-02 다현씨: 과제 페이지 자체가 남이 안 들어오는 자리라 실어도 된다. 사이트는 Access로 잠겨 있다)
 │   ├─ 261022-hada.html    # 「하다하우스 — 아이의 루틴 집」 — 아이 스케치가 정본인 자매판 기록 사본(낮·밤 집 그림 · img/hada/) · 해바라기 들판 팔레트
 │                          #   정본은 잠긴 사이트(레포 POGNARU/ella, 비공개)와 볼트 `클로드 에이전트/나무의 기록/261022 엘라의 집 첫 장/회의 메모.md` — 주소 버튼은 두되 아이 이름·비밀번호는 싣지 않는다(사이트는 비밀번호로 잠겨 있다)
-│   ├─ 261026-naru-village.html # 「나루터 마을 — 식구 작업실」 — 식구 스물이 자기 자리에서 일하는 미니어처 마을 기록(지도 + 동네 컷 다섯 · img/naru/) · 해바라기 들판 팔레트
+│   ├─ 261026-naru-village.html # 「나루터 마을 — 식구 작업실」(페이지 안에 날짜 없음 — 2026-11-02 다현씨) — 식구 스물이 자기 자리에서 일하는 미니어처 마을 기록(지도 + 동네 컷 다섯 · img/naru/) · 해바라기 들판 팔레트
 │                          #   정본은 naru.pognaru.com(레포 POGNARU/naru-village)과 볼트 `클로드 에이전트/바다의 기록/261026 나루터 마을 — 식구 캐릭터.md` — 이 페이지는 기록 사본
 │   ├─ 260916-family.html   # 「함께 짓는 열아홉」 — 19명 상징 픽셀아트·뒤집는 메시지 카드 (2026-10-01 기준)
 │   ├─ 260916-family-chart.html # 「세 집, 한 팀」 — 전체 조직도, 코덱스 작업실(Astra)에 같은 식구가 다시 앉는다
@@ -138,8 +138,8 @@ deeper-haetsal/
 | 태음인 · 목음체질 안내 | [`assignment/260710.html`](https://pognaru.com/deeper-haetsal/assignment/260710.html) |
 | 독서 DNA | [`assignment/Bookish_DNA.html`](https://pognaru.com/deeper-haetsal/assignment/Bookish_DNA.html) |
 | 살롱 드 나루 스피치 화면 (햇살 모바일용 · 색인에 걸지 않음 · 공유용 「살롱 드 나루 구상」은 [insight.pognaru.com/260928-salon-de-naru.html](https://insight.pognaru.com/260928-salon-de-naru.html) · 전문 정본은 볼트 `클로드 에이전트/새벽의 기록/260928 콤포스텔라 7분 스피치 — 살롱 드 나루.md`) | [`assignment/260928-salon-de-naru-script.html`](https://pognaru.com/deeper-haetsal/assignment/260928-salon-de-naru-script.html) |
-| 루틴 하우스 — 둥지 (방을 누르면 기록이 열리는 집 · 정본은 비공개 레포 dungji와 볼트 회의 메모 · 사본 · 잠긴 주소 버튼 · 맨 아래 인용에 날짜 없음) | [`assignment/261021-dungji.html`](https://pognaru.com/deeper-haetsal/assignment/261021-dungji.html) |
-| 하다하우스 — 아이의 루틴 집 (아이 스케치가 정본인 자매판 · 정본은 비공개 레포 ella와 볼트 회의 메모 · 사본 · 잠긴 주소 버튼, 아이 이름 미수록 · 맨 아래 인용에 날짜 없음) | [`assignment/261022-hada.html`](https://pognaru.com/deeper-haetsal/assignment/261022-hada.html) |
+| 루틴 하우스 — 둥지 (방을 누르면 기록이 열리는 집 · 정본은 비공개 레포 dungji와 볼트 회의 메모 · 사본 · 잠긴 주소 버튼 · 페이지 안에 날짜 없음) | [`assignment/261021-dungji.html`](https://pognaru.com/deeper-haetsal/assignment/261021-dungji.html) |
+| 하다하우스 — 아이의 루틴 집 (아이 스케치가 정본인 자매판 · 정본은 비공개 레포 ella와 볼트 회의 메모 · 사본 · 잠긴 주소 버튼, 아이 이름 미수록 · 페이지 안에 날짜 없음) | [`assignment/261022-hada.html`](https://pognaru.com/deeper-haetsal/assignment/261022-hada.html) |
 | 나루터 마을 — 식구 작업실 (식구 스물이 일하는 미니어처 마을 · 지도 + 동네 컷 다섯 · 정본은 naru.pognaru.com과 볼트 캐릭터 파일 · 사본) | [`assignment/261026-naru-village.html`](https://pognaru.com/deeper-haetsal/assignment/261026-naru-village.html) |
 | 함께 짓는 열아홉 (포근나루18 · 디퍼1 = 19명, 상징 픽셀아트·메시지 카드) | [`assignment/260916-family.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family.html) |
 | 세 집, 한 팀 (전체 19명 조직도 · 클로드/코덱스 두 책상, 발표용) | [`assignment/260916-family-chart.html`](https://pognaru.com/deeper-haetsal/assignment/260916-family-chart.html) |
