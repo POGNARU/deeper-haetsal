@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>하다하우스 — 아이의 루틴 집</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap">
+<style>
+  :root{
+    --ivory:#FFF7DE; --card:#FFFFFF; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B;
+    --brown:#3A2A12; --ink-soft:#6B5536; --ink-faint:#96855F; --rule:#E8DCB8; --rule-soft:#F0E7CC;
+    --logo:'Gowun Batang',serif; --serif:'Nanum Myeongjo',serif; --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--sans); line-height:1.7; -webkit-font-smoothing:antialiased;}
+  .backbar{max-width:960px; margin:22px auto 0; padding:0 clamp(1.05rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; font-size:.85rem; background:#fff;
+    border:1.5px solid var(--rule); color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover{background:var(--sun); border-color:var(--sun);}
+  .wrap{max-width:960px; margin:0 auto; padding:clamp(2rem,5vw,3.4rem) clamp(1.05rem,4vw,2rem) 5rem;
+    display:flex; flex-direction:column; gap:clamp(2.6rem,6vw,4.2rem);}
+  .eyebrow{font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--terra);}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.2; font-size:clamp(2rem,6vw,3.2rem); margin:.5rem 0 .7rem; letter-spacing:-.01em;}
+  .lede{font-family:var(--serif); color:var(--ink-soft); max-width:34em; font-size:clamp(.98rem,2vw,1.08rem); line-height:1.9;}
+  .hero-rule{height:3px; border-radius:3px; margin-top:1.4rem; background:linear-gradient(90deg,var(--sun) 0%,var(--leaf) 34%,var(--rule) 72%,transparent 100%);}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin-top:1rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint);}
+  .live{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; text-decoration:none; color:var(--brown);
+    background:var(--sun); border-radius:99px; padding:.55rem 1.1rem .55rem .7rem; font-size:.92rem; box-shadow:var(--shadow);}
+  .live img{width:28px; height:28px; border-radius:8px;}
+  .live:hover{filter:brightness(1.03);}
+  section{display:flex; flex-direction:column; gap:1.3rem;}
+  .shead{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.7rem; align-items:center;}
+  .snum{font-family:var(--logo); font-weight:700; font-size:.9rem; color:#fff; background:var(--leaf); width:26px; height:26px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; line-height:1;}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35; font-size:clamp(1.3rem,3.2vw,1.75rem);}
+  .sdesc{font-size:.88rem; color:var(--ink-faint); line-height:1.7; max-width:40em;}
+  .card{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:14px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+  figure{margin:0;}
+  figure img{display:block; width:100%; height:auto; border-radius:12px;}
+  figcaption{font-size:.8rem; color:var(--ink-faint); margin-top:.55rem; line-height:1.6;}
+  .map{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:1.4rem; align-items:start;}
+  .cuts{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem;}
+  .cuts .card{padding:.8rem;}
+  .cuts .who{font-size:.8rem; color:var(--ink-soft); margin-top:.4rem;}
+  .steps{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:.9rem;}
+  .step{border-left:5px solid var(--sun);}
+  .step b{font-family:var(--logo); font-size:1.02rem; display:block; margin-bottom:.25rem;}
+  .step p{font-size:.86rem; color:var(--ink-soft); line-height:1.65;}
+  ul.plain{list-style:none; display:flex; flex-direction:column; gap:.55rem; font-size:.92rem; line-height:1.7;}
+  ul.plain li{padding-left:1.1em; position:relative;}
+  ul.plain li::before{content:""; position:absolute; left:0; top:.72em; width:7px; height:7px; border-radius:50%; background:var(--leaf);}
+  .quote{font-family:var(--serif); font-size:1.02rem; line-height:1.9; color:var(--brown); border-left:4px solid var(--sun); padding:.2rem 0 .2rem 1rem;}
+  .quote small{display:block; font-family:var(--sans); font-size:.76rem; color:var(--ink-faint); margin-top:.4rem;}
+  .credit{font-size:.78rem; color:var(--ink-faint); border-top:1px solid var(--rule); padding-top:1rem; line-height:1.8;}
+  .two{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;}
+  .rooms{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:.8rem;}
+  .room{border-top:4px solid var(--leaf); padding:.9rem 1rem;}
+  .room b{font-family:var(--logo); display:block; margin-bottom:.2rem;}
+  .room p{font-size:.84rem; color:var(--ink-soft); line-height:1.6;}
+  .locked{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; color:var(--ink-soft); background:#fff;
+    border:1.5px dashed var(--rule); border-radius:99px; padding:.5rem 1.1rem; font-size:.86rem;}
+  @media (max-width:720px){ .map{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="backbar"><a href="index.html">← 과제 목록</a></div>
+<main class="wrap">
+
+  <header>
+    <div class="eyebrow">Routine House · Hada House</div>
+    <h1>하다하우스 — 아이의 루틴 집</h1>
+    <p class="lede">루틴 하우스를 본 아이가 「내 것도」 하고 청해 하루 만에 세운 자매판입니다. 집 모양은 아이가 그린 스케치가 정본이고, 방 일곱 개도 아이가 직접 정했습니다. 아이 노트북에서 비밀번호 하나로 들어가 방마다 기록하고, 기록은 아침에 부모 노트북이 내려받습니다. 첨삭은 내려받은 노트에 직접.</p>
+    <div class="hero-rule"></div>
+    <div class="hero-meta"><span>2026-10-22</span><span>디퍼 언브랜딩 · 햇살</span><span>아이 스케치 → Gemini</span></div>
+    <span class="locked">🔒 아이의 자리라 주소는 적지 않습니다 — 화면 공유로만 보여 드립니다</span>
+  </header>
+
+  <section>
+    <div class="shead"><span class="snum">1</span><h2>스케치대로 지은 집</h2></div>
+    <p class="sdesc">둥근 지붕 다락에 2층·1층, 양옆으로 아치 지붕의 포켓하우스 둘. 1판은 둥지의 집 그림 위에 방만 옮겼다가 「그림 초안 준 거랑 너무 다르다」로 돌아왔고, 스케치 꼴을 따른 2판이 한 번에 통했습니다. 밤 불빛은 처음 「흰 LED」였다가 그림이 낸 노란빛을 아이가 그대로 두기로 했습니다.</p>
+    <div class="two">
+      <figure class="card"><img src="img/hada/house-day.webp" alt="하다하우스 낮 그림"><figcaption>낮 — 다락 유리 테이블, 2층 서재, 1층 소파와 책상, 양옆 포켓하우스, 마당의 자전거.</figcaption></figure>
+      <figure class="card"><img src="img/hada/house-night.webp" alt="하다하우스 밤 그림"><figcaption>밤 — 달은 그림에 박힌 초승달을 가리고 오늘의 실제 달을 그립니다. 밤 장면은 흐리게 겹치지 않고 진짜 밤 그림으로 굽습니다.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">2</span><h2>아이가 정한 일곱 방</h2></div>
+    <p class="sdesc">기록은 세 가지 꼴뿐입니다 — 스탬프 하나, 제목과 숫자, 그리고 글. 아이 기록은 어디에도 공개되지 않고 깃에도 올라가지 않습니다.</p>
+    <div class="rooms">
+      <div class="card room"><b>다락 · 숙제</b><p>유리 테이블에 앉아 숙제. 하루 한 번 스탬프가 달력에 찍힙니다.</p></div>
+      <div class="card room"><b>2층 · 독서</b><p>안락의자에 앉아 책. 제목과 읽은 페이지를 적습니다.</p></div>
+      <div class="card room"><b>1층 소파 · 밤톨이 놀이</b><p>재미로 여러 번 눌러도 됩니다. 기록은 남기지 않습니다.</p></div>
+      <div class="card room"><b>1층 책상 · 글쓰기</b><p>글감 없이 자유롭게. 쓴 글은 노트로 저장되고, 첨삭은 내려받은 노트에서 합니다.</p></div>
+      <div class="card room"><b>왼쪽 포켓 · 수면</b><p>「자러 가요」를 누른 시각만. 인형이 침대에 눕습니다.</p></div>
+      <div class="card room"><b>오른쪽 포켓 · 식물 물주기</b><p>스탬프는 토마토 모양으로 — 아이의 주문입니다.</p></div>
+      <div class="card room"><b>마당 · 운동</b><p>자전거 타기. 뒷자리 바구니에 밤톨이를 태웁니다. 처음엔 밤톨이가 따라 뛰었는데 「질질 끌려가는 것 같아」 바구니로 옮겼습니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">3</span><h2>지은 순서</h2></div>
+    <div class="steps">
+      <div class="card step"><b>① 스케치를 표로</b><p>아이의 손그림에서 방 배치와 기록 꼴을 바다가 표로 읽어 확인받았습니다. 「방 배치」만이 아니라 「집 모양」까지 정본으로 읽어야 한다는 걸 1판에서 배웠습니다.</p></div>
+      <div class="card step"><b>② 둥지 그릇을 복사</b><p>저장소·아침 내려받기·배포는 둥지의 것을 그대로 가져왔고, 잠금만 이메일 대신 비밀번호 하나로 바꿨습니다(아이가 쓰기 쉽게). 그릇은 김리🔨.</p></div>
+      <div class="card step"><b>③ 인형은 집에 심어 받기</b><p>앉고 눕는 자세를 조각으로 얹으면 「얹은 티」·「꽂힘」이 남습니다. 집 그림에 인형이 앉은 판을 통째로 받아 방 둘레만 오리는 길로 바꾸고, 나무🌳가 그 조각법을 스크립트로 만들어 새 그림이 오면 파일만 바꿔 다시 돌립니다.</p></div>
+      <div class="card step"><b>④ 아이 말은 원문으로</b><p>아이의 요청은 부모를 거쳐 오니, 한마디 한마디를 회의 메모에 원문으로 쌓았습니다 — 파자마 핏, 슬리퍼에서 맨발로, 토마토 스탬프, 노란 불빛. 라이브를 본 뒤 고치는 판이 열일곱 번 돌았습니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">4</span><h2>무엇이 예상과 달랐나</h2></div>
+    <div class="card">
+      <ul class="plain">
+        <li>그림 모델은 「다른 그림과 같은 크기로」를 못 듣습니다(세 번 다 어긋남). 통한 길은 나무가 머리 폭을 자로 재어 인형만 오려 줄인 합성본을 주고 「크기는 지키고 이음매만 다듬어」 — 「줄여라」보다 「지켜라」를 잘 듣습니다.</li>
+        <li>낮 인형에 밤 불빛을 입히는 법은 색이 바래 「여전히 흐릿」했습니다. 밤 네 방은 전부 진짜 밤 그림을 따로 받아 해 질 녘에 바꿔 끼웁니다.</li>
+        <li>아이는 노트북으로만 씁니다. 폰 기준으로 재던 크기를 노트북 화면 기준으로 다시 잡고, 창을 열면 집을 줄이는 대신 그 방으로 다가가게 했습니다.</li>
+        <li>「밤톨이도 같이 자게」는 그림 모델이 세 번 다 소파로 보내서, 결국 「밤톨이는 크니까 소파에서」로 아이가 받아들였습니다.</li>
+      </ul>
+    </div>
+    <p class="quote">내 루틴 하우스를 보고 자기 것도 만들어 달라는데.<small>햇살 · 2026-10-22</small></p>
+  </section>
+
+  <p class="credit">스케치·방 일곱 · 아이 &nbsp;·&nbsp; 그림 · 햇살(Gemini) &nbsp;·&nbsp; 표·프롬프트·회의 메모 · 바다 🌊 &nbsp;·&nbsp; 화면·조각 스크립트 · 나무 🌳 &nbsp;·&nbsp; 그릇·잠금·아침 루틴 · 김리 🔨<br>정본은 잠긴 사이트(레포 POGNARU/ella, 비공개)와 볼트 <code>클로드 에이전트/나무의 기록/261022 엘라의 집 첫 장/회의 메모.md</code>. 이 페이지는 과제 기록 사본이며 주소는 싣지 않습니다.</p>
+
+</main>
+</body>
+</html>

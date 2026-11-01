@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>루틴 하우스 — 둥지</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Myeongjo:wght@400;700&display=swap">
+<style>
+  :root{
+    --ivory:#FFF7DE; --card:#FFFFFF; --sun:#FFC61E; --leaf:#6FA52E; --terra:#D55A2B;
+    --brown:#3A2A12; --ink-soft:#6B5536; --ink-faint:#96855F; --rule:#E8DCB8; --rule-soft:#F0E7CC;
+    --logo:'Gowun Batang',serif; --serif:'Nanum Myeongjo',serif; --sans:'Gowun Dodum','Malgun Gothic',sans-serif;
+    --shadow:0 1px 2px rgba(58,42,18,.05), 0 10px 26px -20px rgba(58,42,18,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  body{background:var(--ivory); color:var(--brown); font-family:var(--sans); line-height:1.7; -webkit-font-smoothing:antialiased;}
+  .backbar{max-width:960px; margin:22px auto 0; padding:0 clamp(1.05rem,4vw,2rem);}
+  .backbar a{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; font-size:.85rem; background:#fff;
+    border:1.5px solid var(--rule); color:var(--brown); border-radius:99px; padding:.38rem .95rem;}
+  .backbar a:hover{background:var(--sun); border-color:var(--sun);}
+  .wrap{max-width:960px; margin:0 auto; padding:clamp(2rem,5vw,3.4rem) clamp(1.05rem,4vw,2rem) 5rem;
+    display:flex; flex-direction:column; gap:clamp(2.6rem,6vw,4.2rem);}
+  .eyebrow{font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--terra);}
+  h1{font-family:var(--logo); font-weight:700; line-height:1.2; font-size:clamp(2rem,6vw,3.2rem); margin:.5rem 0 .7rem; letter-spacing:-.01em;}
+  .lede{font-family:var(--serif); color:var(--ink-soft); max-width:34em; font-size:clamp(.98rem,2vw,1.08rem); line-height:1.9;}
+  .hero-rule{height:3px; border-radius:3px; margin-top:1.4rem; background:linear-gradient(90deg,var(--sun) 0%,var(--leaf) 34%,var(--rule) 72%,transparent 100%);}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin-top:1rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint);}
+  .live{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; text-decoration:none; color:var(--brown);
+    background:var(--sun); border-radius:99px; padding:.55rem 1.1rem .55rem .7rem; font-size:.92rem; box-shadow:var(--shadow);}
+  .live img{width:28px; height:28px; border-radius:8px;}
+  .live:hover{filter:brightness(1.03);}
+  section{display:flex; flex-direction:column; gap:1.3rem;}
+  .shead{display:grid; grid-template-columns:auto minmax(0,1fr); gap:.7rem; align-items:center;}
+  .snum{font-family:var(--logo); font-weight:700; font-size:.9rem; color:#fff; background:var(--leaf); width:26px; height:26px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; line-height:1;}
+  h2{font-family:var(--logo); font-weight:700; line-height:1.35; font-size:clamp(1.3rem,3.2vw,1.75rem);}
+  .sdesc{font-size:.88rem; color:var(--ink-faint); line-height:1.7; max-width:40em;}
+  .card{background:var(--card); border:1.5px solid var(--rule-soft); border-radius:14px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); min-width:0;}
+  figure{margin:0;}
+  figure img{display:block; width:100%; height:auto; border-radius:12px;}
+  figcaption{font-size:.8rem; color:var(--ink-faint); margin-top:.55rem; line-height:1.6;}
+  .map{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:1.4rem; align-items:start;}
+  .cuts{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem;}
+  .cuts .card{padding:.8rem;}
+  .cuts .who{font-size:.8rem; color:var(--ink-soft); margin-top:.4rem;}
+  .steps{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:.9rem;}
+  .step{border-left:5px solid var(--sun);}
+  .step b{font-family:var(--logo); font-size:1.02rem; display:block; margin-bottom:.25rem;}
+  .step p{font-size:.86rem; color:var(--ink-soft); line-height:1.65;}
+  ul.plain{list-style:none; display:flex; flex-direction:column; gap:.55rem; font-size:.92rem; line-height:1.7;}
+  ul.plain li{padding-left:1.1em; position:relative;}
+  ul.plain li::before{content:""; position:absolute; left:0; top:.72em; width:7px; height:7px; border-radius:50%; background:var(--leaf);}
+  .quote{font-family:var(--serif); font-size:1.02rem; line-height:1.9; color:var(--brown); border-left:4px solid var(--sun); padding:.2rem 0 .2rem 1rem;}
+  .quote small{display:block; font-family:var(--sans); font-size:.76rem; color:var(--ink-faint); margin-top:.4rem;}
+  .credit{font-size:.78rem; color:var(--ink-faint); border-top:1px solid var(--rule); padding-top:1rem; line-height:1.8;}
+  .two{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;}
+  .rooms{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:.8rem;}
+  .room{border-top:4px solid var(--leaf); padding:.9rem 1rem;}
+  .room b{font-family:var(--logo); display:block; margin-bottom:.2rem;}
+  .room p{font-size:.84rem; color:var(--ink-soft); line-height:1.6;}
+  .locked{display:inline-flex; align-items:center; gap:.5rem; margin-top:1.4rem; color:var(--ink-soft); background:#fff;
+    border:1.5px dashed var(--rule); border-radius:99px; padding:.5rem 1.1rem; font-size:.86rem;}
+  @media (max-width:720px){ .map{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="backbar"><a href="index.html">← 과제 목록</a></div>
+<main class="wrap">
+
+  <header>
+    <div class="eyebrow">Routine House · Dungji</div>
+    <h1>루틴 하우스 — 둥지</h1>
+    <p class="lede">방을 누르면 그 루틴의 기록이 열리는 집입니다. 부산의 실제 해 뜨고 지는 시각을 따라 낮 그림과 밤 그림을 오가고, 저녁부터는 그날 기록이 있는 방에만 램프가 켜집니다. 하루를 밤에 램프로 돌아보는 그림 — 2026-10-19 밤 러프 한 장에서 시작해 10-21 낮에 1판이 섰습니다.</p>
+    <div class="hero-rule"></div>
+    <div class="hero-meta"><span>2026-10-21</span><span>디퍼 언브랜딩 · 햇살</span><span>클레이 인형의 집 · Gemini</span></div>
+    <span class="locked">🔒 잠긴 자리라 주소는 적지 않습니다 — 화면 공유로만 보여 드립니다</span>
+  </header>
+
+  <section>
+    <div class="shead"><span class="snum">1</span><h2>같은 집, 낮과 밤</h2></div>
+    <p class="sdesc">빨간 지붕 인형의 집. 왼쪽은 땅과 이어진 마당(공 하나), 오른쪽은 바다 위 나루에 집 벽에서 이어진 지붕이 덮입니다. 밤에는 별하늘 아래 모든 방에 전등이 켜지고, 기록이 있는 방은 램프 한 겹이 더 켜집니다. 달은 자리를 두고 오늘의 위상만 바뀝니다.</p>
+    <div class="two">
+      <figure class="card"><img src="img/dungji/house-day.webp" alt="둥지 낮 그림"><figcaption>낮 — 표시 없이 집 그대로. 루틴을 기다리는 모양이 기본입니다.</figcaption></figure>
+      <figure class="card"><img src="img/dungji/house-night.webp" alt="둥지 밤 그림"><figcaption>밤 — 그날 기록이 있는 방만 램프가 켜집니다. 그림은 낮·밤 두 장이면 되고, 램프는 방마다 따로 겹칩니다.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">2</span><h2>일곱 방</h2></div>
+    <p class="sdesc">방마다 열리는 기록이 다르고, 기록이 남는 자리도 다릅니다. 본문이 밖으로 나가는 방은 하나도 없습니다 — 새벽 글은 날짜·제목·글자 수만 셉니다.</p>
+    <div class="rooms">
+      <div class="card room"><b>묵상 다락</b><p>오늘 구절 한 줄과 체크. 성경과 공책이 펼쳐져 있습니다.</p></div>
+      <div class="card room"><b>침실</b><p>하루 닫기. 누우면 인형이 잠들고, 밤톨이는 침대 곁 방석에서 함께 잡니다.</p></div>
+      <div class="card room"><b>새벽 책상</b><p>몽롱쓰기 달력 — 쓴 날엔 해 스티커, 칸엔 글자 수. 주·월 합계가 바로 보입니다. 글이 들어오면 찻잔 김이 꺼집니다.</p></div>
+      <div class="card room"><b>서재</b><p>오늘 읽은 책 제목과 문장 수집, 그리고 스페인어 동화 앱에서 읽은 것. 읽는 방이라 여기서만 돋보기를 씁니다.</p></div>
+      <div class="card room"><b>라이팅 룸</b><p>글감 카드 서른한 장(정원🌿) 가운데 하나를 뽑아 웹에서 바로 쓰고 저장합니다. 목적지는 블로그 저널의 활성화.</p></div>
+      <div class="card room"><b>볕방</b><p>운동 체크. 따로 쓰는 운동 노트의 기록을 그대로 읽어 옵니다.</p></div>
+      <div class="card room"><b>나루</b><p>산책 — 「산책 나가요」와 「다녀왔어요」 둘뿐. 몇 번·몇 분은 화면이 셉니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">3</span><h2>지은 순서</h2></div>
+    <div class="steps">
+      <div class="card step"><b>① 러프 여덟 판</b><p>그림을 뽑기 전에 방 배치만 보는 러프 SVG를 바다가 그려 PNG로 보냈습니다. 한 줄 바뀔 때마다 판을 올리고 말씀 원문을 회의 메모에 붙여, 여덟 번 바뀌어도 넘길 정본은 한 장으로 남았습니다.</p></div>
+      <div class="card step"><b>② 기록 화면이 먼저</b><p>「그림보다 방을 누르면 열리는 기록 화면 쪽을 먼저 짜자」 — 방마다 무엇이 열리고 어디에 남는지를 정하고, 셋 중 「밤에 램프」 안을 골랐습니다. 물건이 바뀌는 안은 기록 전 모양이 기준이라 한눈에 안 읽힌다는 판단이었습니다.</p></div>
+      <div class="card step"><b>③ 셋을 동시에</b><p>화면은 나무🌳, 그릇(자료 뽑기·저장소·아침 내려받기·잠금)은 김리🔨, 글감과 에세이 뼈대는 정원🌿. 접점 한 장(기록 파일 꼴과 API 둘)을 브리프에 박아 세 식구가 바다 없이 꼴과 셈을 맞췼습니다. 러프 SVG를 집 바탕으로 쓰고 그림 없이 1판이 섰습니다.</p></div>
+      <div class="card step"><b>④ 그림은 Gemini로</b><p>캔바로 시작했다가 같은 날 저녁 Gemini 그림으로 바꿨습니다. 집은 통째로 다시 그리지 않고, 인형과 밤톨이는 초록 바탕 스프라이트로 따로 뽑아 나무가 얹습니다 — 고칠 때마다 집 화질이 깎여서였습니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="snum">4</span><h2>무엇이 예상과 달랐나</h2></div>
+    <div class="card">
+      <ul class="plain">
+        <li>그림이 없어도 기록 화면은 먼저 섭니다. 러프를 바탕으로 쓰니 그림을 기다리는 날이 없었습니다.</li>
+        <li>그림 모델은 「지워라」와 「한 장에 하나」는 잘 듣고, 「상대 위치로 옮겨라」는 네 번 다 못 했습니다. 방석은 지우고 나무가 좌표에 얹는 길로 돌았습니다.</li>
+        <li>잠긴 사이트의 「눌러도 안 돼요」는 식구 둘이 로컬에서 재현하지 못했고, 실제 자리에서 한 번 눌러 보니 5분 만에 원인이 나왔습니다. 배포본 고장은 먼저 그 자리에서 봅니다.</li>
+        <li>캔바 판 집 위에 방만 옮긴 안은 통했지만, 「캔바보다 나노바나나 그림이 훨씬 마음에 들어」 한마디로 도구가 바뀌었습니다. 되돌릴 자리는 폴더에 그대로 두었습니다.</li>
+      </ul>
+    </div>
+    <p class="quote">같은 집인데 낮엔 밝고 밤엔 배경도 같이 어두워지고 넘 아름답지?<small>햇살 · 2026-10-19</small></p>
+  </section>
+
+  <p class="credit">그림 · 햇살(Gemini) &nbsp;·&nbsp; 러프·회의 메모 · 바다 🌊 &nbsp;·&nbsp; 화면 · 나무 🌳 &nbsp;·&nbsp; 그릇·잠금·아침 루틴 · 김리 🔨 &nbsp;·&nbsp; 글감 카드 · 정원 🌿<br>정본은 잠긴 사이트(레포 POGNARU/dungji, 비공개)와 볼트 <code>클로드 에이전트/나무의 기록/261019 루틴 집 첫 장/회의 메모.md</code>. 이 페이지는 과제 기록 사본이며 주소는 싣지 않습니다.</p>
+
+</main>
+</body>
+</html>
